@@ -1,8 +1,17 @@
 /* This is the style sheet for the main landing page of the website @author Rhys Howell*/
 
 .landingPage {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    float: left;
+    background-color: $clouds;
+
     .banner {
-        font-size: 1.5em;
-        color: #000000;
+        text-align: center;
+        font-size: 2.5em;
+        color: $peter-river;
+
     }
 }

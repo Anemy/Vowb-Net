@@ -31,6 +31,14 @@ table {
 
 /* END Reset CSS */
 /* This is the style sheet for the main landing page of the website @author Rhys Howell*/
-.landingPage .banner {
-  font-size: 1.5em;
-  color: #000000; }
+.landingPage {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  float: left;
+  background-color: #ECF0F1; }
+  .landingPage .banner {
+    text-align: center;
+    font-size: 2.5em;
+    color: #3498DB; }
