@@ -12,7 +12,8 @@ var http = require('http');
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
+var portNumber = '3000';
+var port = normalizePort(process.env.PORT || portNumber);
 app.set('port', port);
 
 /**
@@ -89,4 +90,4 @@ function onListening() {
   debug('Listening on ' + bind);
 }
 
-console.log("Server is now online and listening...")
+console.log('Server is now online and listening on localhost:'+portNumber)

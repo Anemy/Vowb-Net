@@ -1,21 +1,94 @@
 /* This is the style sheet for the main landing page of the website @author Rhys Howell*/
 
 .landingPage {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    float: left;
+    background-color: $clouds;
+    background-image: url("/images/squairy_light.png");
+
+    font-family: 'Cabin';
+
     .banner {
-        background-color: rgba(53,53,53);
-        height: 2em;
-        font-size: 1em;
-        color: #CCCCCC;
-        position: absolute;
+        background-color: #3D3938;
+
+        box-shadow: 0px 2px 2px #000000;
+
         top: 0;
+        left: 0;
         width: 100%;
+        height: 3em;
+        box-sizing: border-box;
+        text-decoration: none;
+
         .vowbText {
-            margin-top: .25em;
-            font-size: 1.5em;
-            color: #FF3B30;
+            position: absolute;
+            margin-top:.25em;
+            margin-left: .25em;
+            font-size: 2em;
+            color: #FFFFFF;
+        }
+        .vowbText:hover {
+            cursor:pointer;
         }
         .quickLinks {
-            color: #FF3B30;
+            top: 1.02em;
+            position: relative;
+            color: #E6E3E6;
+            margin-left: 12em;
+
+
+            .lobbiesButton {
+                display: inline-block;
+            }
+            .lobbiesButton :hover {
+                cursor: pointer;
+                color: #FFFFFF;
+            }
+            .forumsButton {
+                display: inline-block;
+                margin-left: 4em;
+            }
+            .forumsButton :hover {
+                cursor: pointer;
+                color: #FFFFFF;
+            }
+        }
+
+        .signupButton {
+            text-align: center;
+            color: #FFFFFF;
+
+            position: absolute;
+
+            background-color: #E83A25;
+            border-radius: 5px;
+
+            padding-top: 0.3em;
+
+            top: .7em;
+            right: 8em;
+
+
+            height: 1.4em;
+            width: 5em;
+        }
+        .signupButton:hover {
+            cursor: pointer;
+            background-color: #E33822;
+        }
+
+        .loginButton {
+            top: 1em;
+            position: absolute;
+            color: #E6E3E6;
+            right: 3em;
+            background: none;
+        }
+        .loginButton:hover {
+            cursor: pointer;
+            color: #FFFFFF;
         }
     }
 }

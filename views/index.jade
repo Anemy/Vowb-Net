@@ -2,10 +2,20 @@ extends layout
 block content
     .landingPage
         .banner
-            .vowbText vowb.net
+            .vowbText(href="/")
+                a(href="/").
+                    vowb.net
             .quickLinks
-                .lobbiesButton lobbies
-                .forumsButton forums
-            .signupButton sign up
-            .loginButton log in
-    
+                .lobbiesButton(href="/lobbies")
+                    a(href="/lobbies").
+                        lobbies
+                .forumsButton(href="/forums")
+                    a(href="/forums").
+                        forums
+            .button
+                .signupButton(href="/signup")
+                    a(href="/signup").
+                        sign up
+                .loginButton(onclick="loginButtonClicked()")
+                    a.
+                        log in

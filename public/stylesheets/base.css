@@ -30,7 +30,81 @@ table {
   border-spacing: 0; }
 
 /* END Reset CSS */
+/* This file just holds font families for use in the styling @author Rhys */
+@font-face {
+  font-family: 'Cabin';
+  src: url('/fonts/Cabin-Regular.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'Cabin-Bold';
+  src: url('/fonts/Cabin-Bold.ttf') format("truetype"); }
+
 /* This is the style sheet for the main landing page of the website @author Rhys Howell*/
-.landingPage .banner {
-  font-size: 1.5em;
-  color: #000000; }
+.landingPage {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  float: left;
+  background-color: #ECF0F1;
+  background-image: url("/images/squairy_light.png");
+  font-family: 'Cabin'; }
+  .landingPage .banner {
+    background-color: #3D3938;
+    box-shadow: 0px 2px 2px #000000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3em;
+    box-sizing: border-box;
+    text-decoration: none; }
+    .landingPage .banner .vowbText {
+      position: absolute;
+      margin-top: .25em;
+      margin-left: .25em;
+      font-size: 2em;
+      color: #FFFFFF; }
+    .landingPage .banner .vowbText:hover {
+      cursor: pointer; }
+    .landingPage .banner .quickLinks {
+      top: 1.02em;
+      position: relative;
+      color: #E6E3E6;
+      margin-left: 12em; }
+      .landingPage .banner .quickLinks .lobbiesButton {
+        display: inline-block; }
+      .landingPage .banner .quickLinks .lobbiesButton :hover {
+        cursor: pointer;
+        color: #FFFFFF; }
+      .landingPage .banner .quickLinks .forumsButton {
+        display: inline-block;
+        margin-left: 4em; }
+      .landingPage .banner .quickLinks .forumsButton :hover {
+        cursor: pointer;
+        color: #FFFFFF; }
+    .landingPage .banner .signupButton {
+      text-align: center;
+      color: #FFFFFF;
+      position: absolute;
+      background-color: #E83A25;
+      border-radius: 5px;
+      padding-top: 0.3em;
+      top: .7em;
+      right: 8em;
+      height: 1.4em;
+      width: 5em; }
+    .landingPage .banner .signupButton:hover {
+      cursor: pointer;
+      background-color: #E33822; }
+    .landingPage .banner .loginButton {
+      top: 1em;
+      position: absolute;
+      color: #E6E3E6;
+      right: 3em;
+      background: none; }
+    .landingPage .banner .loginButton:hover {
+      cursor: pointer;
+      color: #FFFFFF; }
+
+a, a:visited, a:hover, a:active {
+  color: inherit;
+  text-decoration: none; }
