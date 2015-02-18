@@ -2,7 +2,20 @@
 
 .landingPage {
     .banner {
-        font-size: 1.5em;
-        color: #000000;
+        background-color: rgba(53,53,53);
+        height: 2em;
+        font-size: 1em;
+        color: #CCCCCC;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        .vowbText {
+            margin-top: .25em;
+            font-size: 1.5em;
+            color: #FF3B30;
+        }
+        .quickLinks {
+            color: #FF3B30;
+        }
     }
 }
