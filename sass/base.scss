@@ -35,10 +35,13 @@ $concrete: #95A5A6;
 $asbestos: #7F8C8D;
 
 /* Pallete currently in use */
-$light: #E6E3E6; // light whitish color for text in the header
-$dark: #3D3938;
-$accent: #E83A25;
-$accent-dark: #D82A15;
+$light-light: #F7FCFC;
+$light: #ECF0F1; // light whitish color for text in the header
+$light-dark: #E4E8E8;
+$medium: #BDC3C7;
+$dark: #290E03;
+$accent: #F39C12;// #E83A25;
+$accent-dark: #E38C02;
 
 // Includes
 @import "reset";

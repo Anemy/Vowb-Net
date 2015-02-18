@@ -46,12 +46,16 @@ table {
   height: 100%;
   position: absolute;
   float: left;
-  background-color: #ECF0F1;
-  background-image: url("/images/squairy_light.png");
+  background-color: white;
   font-family: 'Cabin'; }
   .landingPage .banner {
-    background-color: #3D3938;
-    box-shadow: 0px 2px 2px black;
+    background: -webkit-linear-gradient(#F7FCFC, #ECF0F1);
+    /* For Safari 5.1 to 6.0 */
+    /* For Opera 11.1 to 12.0 */
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#F7FCFC, #ECF0F1);
+    /* Standard syntax */
+    box-shadow: 0px 2px 2px #BDC3C7;
     top: 0;
     left: 0;
     width: 100%;
@@ -59,54 +63,67 @@ table {
     box-sizing: border-box;
     text-decoration: none; }
     .landingPage .banner .bannerLeftSide {
-      margin-left: 2em; }
+      margin-left: 6em; }
       .landingPage .banner .bannerLeftSide .vowbText {
         position: absolute;
         margin-top: .25em;
         margin-left: .25em;
         font-size: 2em;
-        color: white; }
+        color: #290E03; }
       .landingPage .banner .bannerLeftSide .vowbText:hover {
-        cursor: pointer; }
+        cursor: pointer;
+        color: #F39C12; }
       .landingPage .banner .bannerLeftSide .quickLinks {
         top: 1.02em;
         position: relative;
-        color: #E6E3E6;
+        color: #290E03;
         margin-left: 11.5em; }
         .landingPage .banner .bannerLeftSide .quickLinks .lobbiesButton {
           display: inline-block; }
         .landingPage .banner .bannerLeftSide .quickLinks .lobbiesButton :hover {
           cursor: pointer;
-          color: white; }
+          color: #F39C12; }
         .landingPage .banner .bannerLeftSide .quickLinks .forumsButton {
           display: inline-block;
           margin-left: 2em; }
         .landingPage .banner .bannerLeftSide .quickLinks .forumsButton :hover {
           cursor: pointer;
-          color: white; }
+          color: #F39C12; }
     .landingPage .banner .signupButton {
       text-align: center;
-      color: white;
+      color: #290E03;
       position: absolute;
-      background-color: #E83A25;
+      background: -webkit-linear-gradient(white, #ECF0F1);
+      /* For Safari 5.1 to 6.0 */
+      /* For Opera 11.1 to 12.0 */
+      /* For Firefox 3.6 to 15 */
+      background: linear-gradient(white, #ECF0F1);
+      /* Standard syntax */
       border-radius: 5px;
-      padding-top: 0.3em;
-      top: .7em;
-      right: 8em;
-      height: 1.4em;
-      width: 5em; }
+      border: 2px solid #BDC3C7;
+      padding-top: 0.4em;
+      top: .5em;
+      right: 10em;
+      height: 1.5em;
+      width: 4.5em; }
     .landingPage .banner .signupButton:hover {
       cursor: pointer;
-      background-color: #D82A15; }
+      background: -webkit-linear-gradient(white, #E4E8E8);
+      /* For Safari 5.1 to 6.0 */
+      /* For Opera 11.1 to 12.0 */
+      /* For Firefox 3.6 to 15 */
+      background: linear-gradient(white, #E4E8E8);
+      /* Standard syntax */
+      color: #F39C12; }
     .landingPage .banner .loginButton {
       top: 1em;
       position: absolute;
-      color: #E6E3E6;
-      right: 3em;
+      color: #290E03;
+      right: 6em;
       background: none; }
     .landingPage .banner .loginButton:hover {
       cursor: pointer;
-      color: white; }
+      color: #F39C12; }
 
 a, a:visited, a:hover, a:active {
   color: inherit;

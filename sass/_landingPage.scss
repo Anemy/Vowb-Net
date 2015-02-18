@@ -5,15 +5,20 @@
     height: 100%;
     position: absolute;
     float: left;
-    background-color: $clouds;
-    background-image: url("/images/squairy_light.png");
+    background-color: white; // $clouds;
+
+    // background-image: url("/images/squairy_light.png");
 
     font-family: 'Cabin';
 
     .banner {
-        background-color: $dark;
+        // background-color: $light;
+        background: -webkit-linear-gradient($light-light, $light); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient($light-light, $light); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient($light-light, $light); /* For Firefox 3.6 to 15 */
+        background: linear-gradient($light-light, $light); /* Standard syntax */
 
-        box-shadow: 0px 2px 2px black;
+        box-shadow: 0px 2px 2px $medium;
 
         top: 0;
         left: 0;
@@ -23,22 +28,23 @@
         text-decoration: none;
 
         .bannerLeftSide {
-            margin-left: 2em;
+            margin-left: 6em;
 
             .vowbText {
                 position: absolute;
                 margin-top:.25em;
                 margin-left: .25em;
                 font-size: 2em;
-                color: white;
+                color: $dark;
             }
             .vowbText:hover {
                 cursor:pointer;
+                color: $accent;
             }
             .quickLinks {
                 top: 1.02em;
                 position: relative;
-                color: $light;
+                color: $dark;
                 margin-left: 11.5em;
 
 
@@ -47,7 +53,7 @@
                 }
                 .lobbiesButton :hover {
                     cursor: pointer;
-                    color: white;
+                    color: $accent;
                 }
                 .forumsButton {
                     display: inline-block;
@@ -55,44 +61,55 @@
                 }
                 .forumsButton :hover {
                     cursor: pointer;
-                    color: white;
+                    color: $accent;
                 }
             }
         }
 
         .signupButton {
             text-align: center;
-            color: white;
+            color: $dark;
 
             position: absolute;
 
-            background-color: $accent;
+            // background-color: $accent;
+            // background-color: $light;
+            background: -webkit-linear-gradient(white, $light); /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient(white, $light); /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient(white, $light); /* For Firefox 3.6 to 15 */
+            background: linear-gradient(white, $light); /* Standard syntax */
+
             border-radius: 5px;
+            border: 2px solid $medium;
 
-            padding-top: 0.3em;
+            padding-top: 0.4em;
+            top: .5em;
+            right: 10em;
 
-            top: .7em;
-            right: 8em;
 
-
-            height: 1.4em;
-            width: 5em;
+            height: 1.5em;
+            width: 4.5em;
         }
         .signupButton:hover {
             cursor: pointer;
-            background-color: $accent-dark;
+            background: -webkit-linear-gradient(white, $light-dark); /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient(white, $light-dark); /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient(white, $light-dark); /* For Firefox 3.6 to 15 */
+            background: linear-gradient(white, $light-dark); /* Standard syntax */
+            // border: 2px solid $accent;
+            color: $accent;
         }
 
         .loginButton {
             top: 1em;
             position: absolute;
-            color: $light;
-            right: 3em;
+            color: $dark;
+            right: 6em;
             background: none;
         }
         .loginButton:hover {
             cursor: pointer;
-            color: white;
+            color: $accent;
         }
     }
 }
