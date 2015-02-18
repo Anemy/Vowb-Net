@@ -1,4 +1,5 @@
 /* Flat ui colors for reference */
+/* Pallete currently in use */
 /* START Reset CSS */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
@@ -50,7 +51,7 @@ table {
   font-family: 'Cabin'; }
   .landingPage .banner {
     background-color: #3D3938;
-    box-shadow: 0px 2px 2px #000000;
+    box-shadow: 0px 2px 2px black;
     top: 0;
     left: 0;
     width: 100%;
@@ -62,7 +63,7 @@ table {
       margin-top: .25em;
       margin-left: .25em;
       font-size: 2em;
-      color: #FFFFFF; }
+      color: white; }
     .landingPage .banner .vowbText:hover {
       cursor: pointer; }
     .landingPage .banner .quickLinks {
@@ -74,16 +75,16 @@ table {
         display: inline-block; }
       .landingPage .banner .quickLinks .lobbiesButton :hover {
         cursor: pointer;
-        color: #FFFFFF; }
+        color: white; }
       .landingPage .banner .quickLinks .forumsButton {
         display: inline-block;
         margin-left: 4em; }
       .landingPage .banner .quickLinks .forumsButton :hover {
         cursor: pointer;
-        color: #FFFFFF; }
+        color: white; }
     .landingPage .banner .signupButton {
       text-align: center;
-      color: #FFFFFF;
+      color: white;
       position: absolute;
       background-color: #E83A25;
       border-radius: 5px;
@@ -94,7 +95,7 @@ table {
       width: 5em; }
     .landingPage .banner .signupButton:hover {
       cursor: pointer;
-      background-color: #E33822; }
+      background-color: #D82A15; }
     .landingPage .banner .loginButton {
       top: 1em;
       position: absolute;
@@ -103,7 +104,7 @@ table {
       background: none; }
     .landingPage .banner .loginButton:hover {
       cursor: pointer;
-      color: #FFFFFF; }
+      color: white; }
 
 a, a:visited, a:hover, a:active {
   color: inherit;
