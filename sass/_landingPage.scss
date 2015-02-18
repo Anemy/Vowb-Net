@@ -22,37 +22,41 @@
         box-sizing: border-box;
         text-decoration: none;
 
-        .vowbText {
-            position: absolute;
-            margin-top:.25em;
-            margin-left: .25em;
-            font-size: 2em;
-            color: white;
-        }
-        .vowbText:hover {
-            cursor:pointer;
-        }
-        .quickLinks {
-            top: 1.02em;
-            position: relative;
-            color: $light;
-            margin-left: 12em;
+        .bannerLeftSide {
+            margin-left: 2em;
 
-
-            .lobbiesButton {
-                display: inline-block;
-            }
-            .lobbiesButton :hover {
-                cursor: pointer;
+            .vowbText {
+                position: absolute;
+                margin-top:.25em;
+                margin-left: .25em;
+                font-size: 2em;
                 color: white;
             }
-            .forumsButton {
-                display: inline-block;
-                margin-left: 4em;
+            .vowbText:hover {
+                cursor:pointer;
             }
-            .forumsButton :hover {
-                cursor: pointer;
-                color: white;
+            .quickLinks {
+                top: 1.02em;
+                position: relative;
+                color: $light;
+                margin-left: 11.5em;
+
+
+                .lobbiesButton {
+                    display: inline-block;
+                }
+                .lobbiesButton :hover {
+                    cursor: pointer;
+                    color: white;
+                }
+                .forumsButton {
+                    display: inline-block;
+                    margin-left: 2em;
+                }
+                .forumsButton :hover {
+                    cursor: pointer;
+                    color: white;
+                }
             }
         }
 

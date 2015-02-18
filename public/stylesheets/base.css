@@ -58,30 +58,32 @@ table {
     height: 3em;
     box-sizing: border-box;
     text-decoration: none; }
-    .landingPage .banner .vowbText {
-      position: absolute;
-      margin-top: .25em;
-      margin-left: .25em;
-      font-size: 2em;
-      color: white; }
-    .landingPage .banner .vowbText:hover {
-      cursor: pointer; }
-    .landingPage .banner .quickLinks {
-      top: 1.02em;
-      position: relative;
-      color: #E6E3E6;
-      margin-left: 12em; }
-      .landingPage .banner .quickLinks .lobbiesButton {
-        display: inline-block; }
-      .landingPage .banner .quickLinks .lobbiesButton :hover {
-        cursor: pointer;
+    .landingPage .banner .bannerLeftSide {
+      margin-left: 2em; }
+      .landingPage .banner .bannerLeftSide .vowbText {
+        position: absolute;
+        margin-top: .25em;
+        margin-left: .25em;
+        font-size: 2em;
         color: white; }
-      .landingPage .banner .quickLinks .forumsButton {
-        display: inline-block;
-        margin-left: 4em; }
-      .landingPage .banner .quickLinks .forumsButton :hover {
-        cursor: pointer;
-        color: white; }
+      .landingPage .banner .bannerLeftSide .vowbText:hover {
+        cursor: pointer; }
+      .landingPage .banner .bannerLeftSide .quickLinks {
+        top: 1.02em;
+        position: relative;
+        color: #E6E3E6;
+        margin-left: 11.5em; }
+        .landingPage .banner .bannerLeftSide .quickLinks .lobbiesButton {
+          display: inline-block; }
+        .landingPage .banner .bannerLeftSide .quickLinks .lobbiesButton :hover {
+          cursor: pointer;
+          color: white; }
+        .landingPage .banner .bannerLeftSide .quickLinks .forumsButton {
+          display: inline-block;
+          margin-left: 2em; }
+        .landingPage .banner .bannerLeftSide .quickLinks .forumsButton :hover {
+          cursor: pointer;
+          color: white; }
     .landingPage .banner .signupButton {
       text-align: center;
       color: white;
