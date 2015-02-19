@@ -47,6 +47,7 @@ table {
   position: absolute;
   float: left;
   background-color: white;
+  z-index: -2;
   font-family: 'Cabin'; }
   .landingPage .banner {
     background: -webkit-linear-gradient(#F7FCFC, #ECF0F1);
@@ -135,11 +136,71 @@ table {
     .landingPage .mainContent .accentText {
       color: #FC4349; }
     .landingPage .mainContent .bodyLine {
-      width: 70%;
+      width: 80%;
       margin-left: 15%;
       height: 1px;
       background-color: #ECF0F1;
       margin-top: 0.2em; }
+    .landingPage .mainContent .signupButton {
+      margin-top: 1em;
+      right: 45%;
+      text-align: center;
+      z-index: 1;
+      background: -webkit-linear-gradient(#FC4349, #DC2329);
+      /* For Safari 5.1 to 6.0 */
+      /* For Opera 11.1 to 12.0 */
+      /* For Firefox 3.6 to 15 */
+      background: linear-gradient(#FC4349, #DC2329);
+      /* Standard syntax */
+      box-shadow: inset 0px 0px 6px 6px rgba(255, 255, 255, 0.1);
+      color: white;
+      font-size: 1.2em;
+      font-family: 'Cabin-Bold';
+      border-radius: 5px;
+      padding-top: 0.25em;
+      padding-bottom: 0.25em;
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+      display: inline-block; }
+    .landingPage .mainContent .signupButton:hover {
+      cursor: pointer; }
+    .landingPage .mainContent .signupButton:active {
+      cursor: pointer;
+      box-shadow: inset 0px 0px 10px 10px rgba(0, 0, 0, 0.1); }
+    .landingPage .mainContent .macarena {
+      position: absolute;
+      top: 3.25em;
+      left: 19%;
+      z-index: -1; }
+    .landingPage .mainContent .rightPanel {
+      z-index: 2;
+      display: inline-block;
+      margin-top: 1em;
+      margin-left: 5%;
+      width: 28%;
+      height: 30em;
+      border-radius: 10px;
+      background: -webkit-linear-gradient(#F7FCFC, white);
+      /* For Safari 5.1 to 6.0 */
+      /* For Opera 11.1 to 12.0 */
+      /* For Firefox 3.6 to 15 */
+      background: linear-gradient(#F7FCFC, white);
+      /* Standard syntax */ }
+      .landingPage .mainContent .rightPanel .features h1 {
+        font-size: 1.4em;
+        margin-top: 0.6em; }
+      .landingPage .mainContent .rightPanel .features hr {
+        margin-top: 0.2em;
+        width: 80%; }
+      .landingPage .mainContent .rightPanel .features .individuals {
+        margin-top: 1em;
+        text-align: left;
+        margin-left: 12%;
+        width: 76%;
+        height: 100%; }
+        .landingPage .mainContent .rightPanel .features .individuals p {
+          font-size: 1em;
+          line-height: 1.4em; }
 
 /* This is the style sheet for the sign page of vowbnet @author Rhys Howell*/
 .signupPage {

@@ -6,6 +6,7 @@
     position: absolute;
     float: left;
     background-color: white; // $clouds;
+    z-index: -2;
 
     // background-image: url("/images/squairy_light.png");
 
@@ -123,15 +124,90 @@
         .accentText {
             color: $accent;
         }
-        .signupButton {
-
-        }
         .bodyLine {
-            width: 70%;
+            width: 80%;
             margin-left: 15%;
             height: 1px;
             background-color: $light;
             margin-top: 0.2em;
+        }
+        .signupButton {
+            margin-top: 1em;
+
+            right: 45%;
+            text-align:center;
+
+            z-index: 1;
+
+            background: -webkit-linear-gradient($accent, $accent-dark); /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient($accent, $accent-dark); /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient($accent, $accent-dark); /* For Firefox 3.6 to 15 */
+            background: linear-gradient($accent, $accent-dark); /* Standard syntax */
+
+            // border: 2px solid $medium;
+            box-shadow: inset 0px 0px 6px 6px rgba(255,255,255, 0.1);
+
+            color: white;
+            font-size: 1.2em;
+            font-family: 'Cabin-Bold';
+            //text-spacing: 2em;
+
+            border-radius: 5px;
+            padding-top: 0.25em;
+            padding-bottom: 0.25em;
+            padding-left: 0.5em;
+            padding-right: 0.5em;
+            display: inline-block;
+        }
+        .signupButton:hover {
+            cursor: pointer;
+        }
+        .signupButton:active {
+            cursor: pointer;
+            box-shadow: inset 0px 0px 10px 10px rgba(0,0,0, 0.1);
+        }
+        .macarena {
+          position: absolute;
+          top: 3.25em;
+          left: 19%;
+          z-index: -1;
+        }
+        .rightPanel {
+            z-index: 2;
+            display: inline-block;
+            margin-top: 1em;
+            margin-left: 5%;
+            width: 28%;
+            height: 30em;
+            border-radius: 10px;
+
+            background: -webkit-linear-gradient($light-light, white); /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient($light-light, white); /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient($light-light, white); /* For Firefox 3.6 to 15 */
+            background: linear-gradient($light-light, white); /* Standard syntax */
+
+            .features {
+                h1 {
+                    font-size: 1.4em;
+                    margin-top: 0.6em;
+                }
+                hr {
+                    margin-top: 0.2em;
+                    width: 80%;
+                }
+                .individuals {
+                    margin-top: 1em;
+                    text-align: left;
+                    margin-left: 12%;
+                    width: 76%;
+                    height: 100%;
+
+                    p {
+                        font-size: 1em;
+                        line-height: 1.4em;
+                    }
+                }
+            }
         }
     }
 }
