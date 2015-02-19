@@ -114,7 +114,11 @@ table {
       /* For Firefox 3.6 to 15 */
       background: linear-gradient(white, #E4E8E8);
       /* Standard syntax */
+      border: 2px solid #F39C12;
       color: #F39C12; }
+    .landingPage .banner .signupButton:active {
+      box-shadow: inset 0px 0px 2px 2px #BDC3C7;
+      border: 2px solid #F39C12; }
     .landingPage .banner .loginButton {
       top: 1em;
       position: absolute;
