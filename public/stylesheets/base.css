@@ -71,9 +71,13 @@ table {
         margin-left: .25em;
         font-size: 2em;
         color: #290E03; }
+        .landingPage .banner .bannerLeftSide .vowbText .vowbAccentText {
+          color: #FC4349; }
       .landingPage .banner .bannerLeftSide .vowbText:hover {
         cursor: pointer;
         color: #FC4349; }
+        .landingPage .banner .bannerLeftSide .vowbText:hover .vowbAccentText {
+          color: #290E03; }
       .landingPage .banner .bannerLeftSide .quickLinks {
         top: 1.02em;
         position: relative;
@@ -118,7 +122,7 @@ table {
       border: 2px solid #FC4349;
       color: #FC4349; }
     .landingPage .banner .signupButton:active {
-      box-shadow: inset 0px 0px 2px 2px #BDC3C7;
+      box-shadow: inset 0px 0px 5px 5px rgba(0, 0, 0, 0.1);
       border: 2px solid #FC4349; }
     .landingPage .banner .loginButton {
       top: 1em;
@@ -143,14 +147,15 @@ table {
       margin-top: 0.2em; }
     .landingPage .mainContent .signupButton {
       margin-top: 1em;
+      margin-right: 5%;
       right: 45%;
       text-align: center;
       z-index: 1;
-      background: -webkit-linear-gradient(#FC4349, #DC2329);
+      background: -webkit-linear-gradient(#FF474E, #DC2329);
       /* For Safari 5.1 to 6.0 */
       /* For Opera 11.1 to 12.0 */
       /* For Firefox 3.6 to 15 */
-      background: linear-gradient(#FC4349, #DC2329);
+      background: linear-gradient(#FF474E, #DC2329);
       /* Standard syntax */
       box-shadow: inset 0px 0px 6px 6px rgba(255, 255, 255, 0.1);
       color: white;
@@ -176,7 +181,6 @@ table {
       z-index: 2;
       display: inline-block;
       margin-top: 1em;
-      margin-left: 5%;
       width: 28%;
       height: 30em;
       border-radius: 10px;
@@ -189,13 +193,16 @@ table {
       .landingPage .mainContent .rightPanel .features h1 {
         font-size: 1.4em;
         margin-top: 0.6em; }
-      .landingPage .mainContent .rightPanel .features hr {
-        margin-top: 0.2em;
-        width: 80%; }
+      .landingPage .mainContent .rightPanel .features .featuresLine {
+        width: 80%;
+        margin-left: 10%;
+        height: 1px;
+        background-color: #FC4349;
+        margin-top: 0.2em; }
       .landingPage .mainContent .rightPanel .features .individuals {
         margin-top: 1em;
         text-align: left;
-        margin-left: 12%;
+        margin-left: 20%;
         width: 76%;
         height: 100%; }
         .landingPage .mainContent .rightPanel .features .individuals p {

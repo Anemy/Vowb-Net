@@ -5,7 +5,7 @@ block content
             .bannerLeftSide
                 .vowbText(href="/")
                     a(href="/").
-                        vowb.net
+                        vowb<span class="vowbAccentText">.</span>net
                 .quickLinks
                     .lobbiesButton(href="/lobbies")
                         a(href="/lobbies").
@@ -23,15 +23,15 @@ block content
               a.
                   Talk with all of your friends and guild mates using <span class="accentText">vowb.net</span>!
               .bodyLine
-              img(class="macarena" src="https://d13yacurqjgara.cloudfront.net/users/218750/screenshots/1933555/ey-macarena.gif")
+              // img(class="macarena" src="https://d13yacurqjgara.cloudfront.net/users/218750/screenshots/1933555/ey-macarena.gif")
               .signupButton
-                  a.
+                  a(href="/signup").
                       SIGN UP
               .rightPanel
                   .features
                       h1.
                           Features
-                      hr
+                      .featuresLine
                       .individuals
                           p.
                               - Create public and private voice chat lobbies <br>
