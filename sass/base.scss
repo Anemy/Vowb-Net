@@ -40,13 +40,14 @@ $light: #ECF0F1; // light whitish color for text in the header
 $light-dark: #E4E8E8;
 $medium: #BDC3C7;
 $dark: #290E03;
-$accent: #F39C12;// #E83A25;
+$accent: #FC4349;// #F39C12;
 $accent-dark: #E38C02;
 
-// Includes
+// Includes - add extra scss files here
 @import "reset";
 @import "fonts";
 @import "landingPage";
+@import "signupPage";
 
 a, a:visited, a:hover, a:active {
     color: inherit;

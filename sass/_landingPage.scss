@@ -116,4 +116,22 @@
             color: $accent;
         }
     }
+    .mainContent {
+        text-align: center;
+        font-size: 1.2em;
+        margin-top: 1em;
+        .accentText {
+            color: $accent;
+        }
+        .signupButton {
+
+        }
+        .bodyLine {
+            width: 70%;
+            margin-left: 15%;
+            height: 1px;
+            background-color: $light;
+            margin-top: 0.2em;
+        }
+    }
 }

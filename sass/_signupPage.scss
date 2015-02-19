@@ -1,0 +1,25 @@
+/* This is the style sheet for the sign page of vowbnet @author Rhys Howell*/
+
+.signupPage {
+    text-align: center;
+    background-color: $clouds;
+
+    font-family: 'Cabin';
+
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .accentText {
+        color: $accent;
+    }
+
+    .tempText {
+        color: $dark;
+        font-size: 2em;
+        margin-top: 2em;
+    }
+}

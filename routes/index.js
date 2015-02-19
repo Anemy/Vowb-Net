@@ -5,11 +5,15 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
     //console.log("HOME PAGE REQUESTED");
 
-    res.render('index', { title: 'Vowb'});
+    res.render('index', { title: 'Vowb.net'});
 });
 
 /* INSERT MORE WEB PAGE ROUTES HERE (FOR EXAMPLE SIGN UP PAGE) */
+router.get('/signup', function(req, res, next) {
+    //console.log("HOME PAGE REQUESTED");
 
+    res.render('signup', { title: 'Signup - Vowb.net'});
+});
 
 /* */
 
