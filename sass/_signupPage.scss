@@ -2,7 +2,7 @@
 
 .signupPage {
     text-align: center;
-    background-color: $clouds;
+    background-color: white;
 
     font-family: 'Cabin';
 
@@ -17,9 +17,155 @@
         color: $accent;
     }
 
-    .tempText {
+    .titleText {
         color: $dark;
         font-size: 2em;
         margin-top: 2em;
+    }
+
+    .bodyLine {
+        width: 60%;
+        margin-left: 20%;
+        height: 1px;
+        background-color: $light;
+        margin-top: 0.25em;
+    }
+    #signupForm {
+        width: 28%;
+        margin-right: 2%;
+        display: inline-block;
+        height: 30em;
+        position: relative;
+
+        .signupFormHeader {
+            font-size: 1.4em;
+            margin-top: 0.4em;
+
+            .signupFormLine {
+                width: 80%;
+                margin-left: 10%;
+                height: 1px;
+                background-color: $accent;
+                margin-top: 0.2em;
+            }
+        }
+
+        background: -webkit-linear-gradient($light-light, white); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient($light-light, white); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient($light-light, white); /* For Firefox 3.6 to 15 */
+        background: linear-gradient($light-light, white); /* Standard syntax */
+        border-radius: 10px;
+
+        .fields {
+            float: left;
+            .aboutText {
+                color: $dark;
+                font-size: 1em;
+                margin-top: 1em;
+                float: left;
+                margin-left: 12%;
+            }
+            .inputBox {
+                height: 2em;
+                float: left;
+                width: 80%;
+                margin-left: 10%;
+                margin-top: 6px;
+
+                border: none;
+                outline: none;
+                box-shadow: 0 0 2px $dark;
+
+                font-size: 0.8em;
+                padding: 0px 6px;
+
+                border-radius: 5px;
+                font-size: 0.8em;
+            }
+            .inputBox:focus {
+                box-shadow: 0 0 6px $highlight;
+            }
+
+            .signupButtonWrap {
+                position: relative;
+                float: left;
+
+                width: 100%;
+                height: 5em;
+                .signupButton {
+                    margin-top: 1em;
+                    outline: none;
+                    border: none;
+
+                    text-align:center;
+
+                    background: -webkit-linear-gradient($accent-light, $accent-dark); /* For Safari 5.1 to 6.0 */
+                    background: -o-linear-gradient($accent-light, $accent-dark); /* For Opera 11.1 to 12.0 */
+                    background: -moz-linear-gradient($accent-light, $accent-dark); /* For Firefox 3.6 to 15 */
+                    background: linear-gradient($accent-light, $accent-dark); /* Standard syntax */
+
+                    // border: 2px solid $medium;
+                    box-shadow: inset 0px 0px 6px 6px rgba(255,255,255, 0.1);
+
+                    color: white;
+                    font-size: 1.2em;
+                    font-family: 'Cabin-Bold';
+
+                    border-radius: 5px;
+                    padding-top: 0.25em;
+                    padding-bottom: 0.25em;
+                    padding-left: 0.5em;
+                    padding-right: 0.5em;
+                }
+                .signupButton:hover {
+                    cursor: pointer;
+                }
+                .signupButton:active {
+                    cursor: pointer;
+                    box-shadow: inset 0px 0px 10px 10px rgba(0,0,0, 0.1);
+                }
+            }
+        }
+    }
+
+    .rightPanel {
+        position: relative;
+        display: inline-block;
+        margin-top: 1em;
+        width: 28%;
+        height: 30em;
+        border-radius: 10px;
+
+        background: -webkit-linear-gradient($light-light, white); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient($light-light, white); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient($light-light, white); /* For Firefox 3.6 to 15 */
+        background: linear-gradient($light-light, white); /* Standard syntax */
+
+        .features {
+            .featuresTitle {
+                font-size: 1.4em;
+                margin-top: 0.4em;
+            }
+
+            .featuresLine {
+                width: 80%;
+                margin-left: 10%;
+                height: 1px;
+                background-color: $accent;
+                margin-top: 0.2em;
+            }
+            .individuals {
+                margin-top: 1em;
+                text-align: left;
+                margin-left: 12%;
+                width: 76%;
+                height: 100%;
+
+                p {
+                    font-size: 1em;
+                    line-height: 1.4em;
+                }
+            }
+        }
     }
 }
