@@ -1,4 +1,4 @@
-
+/* Importing Google Webfonts */
 /* Flat ui colors for reference */
 // Greens
 $turquoise: #1ABC9C;
@@ -47,8 +47,10 @@ $accent-dark: #DC2329;
 // Includes - add extra scss files here
 @import "reset";
 @import "fonts";
+@import "loginPage";
 @import "landingPage";
 @import "signupPage";
+
 
 a, a:visited, a:hover, a:active {
     color: inherit;

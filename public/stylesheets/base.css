@@ -1,3 +1,4 @@
+/* Importing Google Webfonts */
 /* Flat ui colors for reference */
 /* Pallete currently in use */
 /* START Reset CSS */
@@ -39,6 +40,31 @@ table {
 @font-face {
   font-family: 'Cabin-Bold';
   src: url('/fonts/Cabin-Bold.ttf') format("truetype"); }
+
+.loginPage {
+  display: none;
+  font-family: 'Cabin';
+  z-index: 1;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  /* Modal box or Popup box */ }
+  .loginPage .mask {
+    position: fixed;
+    z-index: 2;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3); }
+  .loginPage .loginPopup {
+    z-index: 3;
+    position: absolute;
+    width: 330px;
+    height: 500px;
+    left: 45%;
+    top: 80px;
+    background: #FFF; }
 
 /* This is the style sheet for the main landing page of the website @author Rhys Howell*/
 .landingPage {

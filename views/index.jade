@@ -1,40 +1,81 @@
 extends layout
 block content
     .landingPage
-        .banner
-            .bannerLeftSide
-                .vowbText(href="/")
-                    a(href="/").
-                        vowb<span class="vowbAccentText">.</span>net
-                .quickLinks
-                    .lobbiesButton(href="/lobbies")
-                        a(href="/lobbies").
-                            lobbies
-                    .forumsButton(href="/forums")
-                        a(href="/forums").
-                            forums
-            .button
-                a(class="signupButton" href="/signup").
-                      sign up
-                .loginButton(onclick="loginButtonClicked()")
-                    a.
-                        log in
-          .mainContent
+      .loginPage
+        .mask
+        .loginPopup
+      .banner
+          .bannerLeftSide
+              .vowbText(href="/")
+                  a(href="/").
+                      vowb<span class="vowbAccentText">.</span>net
+              .quickLinks
+                  .lobbiesButton(href="/lobbies")
+                      a(href="/lobbies").
+                          lobbies
+                  .forumsButton(href="/forums")
+                      a(href="/forums").
+                          forums
+          .button
+              a(class="signupButton" href="/signup").
+                    sign up
+          .loginButton(onclick="loginButtonClicked()")
               a.
-                  Talk with all of your friends and guild mates using <span class="accentText">vowb.net</span>!
-              .bodyLine
-              // img(class="macarena" src="https://d13yacurqjgara.cloudfront.net/users/218750/screenshots/1933555/ey-macarena.gif")
-              .signupButton
-                  a(href="/signup").
-                      SIGN UP
-              .rightPanel
-                  .features
-                      h1.
-                          Features
-                      .featuresLine
-                      .individuals
-                          p.
-                              - Create public and private voice chat lobbies <br>
-                              - Voice chat anonymously <br>
-                              - Chat on forums <br>
-                              - 100% free. <br>
+                    log in
+      .mainContent
+          a.
+              Talk with all of your friends and guild mates using <span class="accentText">vowb.net</span>!
+          .bodyLine
+          // img(class="macarena" src="https://d13yacurqjgara.cloudfront.net/users/218750/screenshots/1933555/ey-macarena.gif")
+          .signupButton
+              a(href="/signup").
+                  SIGN UP
+          .rightPanel
+              .features
+                  h1.
+                      Features
+                  .featuresLine
+                  .individuals
+                      p.
+                          - Create public and private voice chat lobbies <br>
+                          - Voice chat anonymously <br>
+                          - Chat on forums <br>
+                          - 100% free. <br>   
+    
+        
+
+
+
+    //- #modal.popupContainer(style='display:none;')
+          //-   header.popupHeader
+          //-     span.header_title Login
+          //-     span.modal_close
+          //-       i.fa.fa-times
+    //- .loginPage             
+    //-   #modal.popupContainer(style='display:none;')
+    //-     header.popupHeader
+    //-       span.header_title Login
+    //-       span.modal_close
+    //-         i.fa.fa-times
+    //-     section.popupBody
+    //-       .user_login
+    //-         form
+    //-           label Email / Username
+    //-           input(type='text')
+    //-           br
+    //-           label Password
+    //-           input(type='password')
+    //-           br
+    //-           .checkbox
+    //-             input#remember(type='checkbox')
+    //-             label(for='remember') Remember me on this computer
+    //-           .action_btns
+    //-             .one_half
+    //-               a.btn.back_btn(href='#') Back
+    //-             .one_half.last
+    //-               a.btn.btn_red(href='#') Login
+    //-           a.forgot_password(href='#') Forgot password?
+    //-           
+              
+
+      
