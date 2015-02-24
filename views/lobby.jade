@@ -1,0 +1,24 @@
+extends layout
+block content
+    script(defer="defer" src="/javascripts/lobby.js")
+    .lobbyPage
+        .titleText(href="/").
+            vowb<span class="accentText">.</span>net
+        .bodyLine
+        .pageThings
+            form#lobbyForm
+                .lobbyForm Lobby
+                    .lobbyFormLine
+                    .fields
+                        .aboutText.
+                            message
+                        input.inputBox(type="text" placeHolder="Pls tlk 2 meh")
+                .rightPanel
+                    .features
+                        .featuresTitle.
+                            features
+                        .featuresLine
+                        .individuals
+                            p.
+                                - messages will appear here <br>
+                                - through magic<br>
