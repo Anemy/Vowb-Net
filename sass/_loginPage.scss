@@ -47,8 +47,75 @@
       .loginBody {
         padding: 20px;
       }
-        .loginForm {
+      .loginForm  {
+    }
+ 
+.loginForm label  {
+    display:  block;
+     margin-bottom: 5px;
+}
+ 
+.loginForm input[type="text"],  .loginForm input[type="email"],  .loginForm input[type="password"]  {
+    display:  block;
+     width: 90%;
+     padding:  10px;
+     border: 1px solid #DDD;
+     color: #666;
+}
+ 
+.loginForm input[type="checkbox"]  {
+    float: left;
+     margin-right: 5px;
+}
+ 
+.loginForm input[type="checkbox"]+label  {
+    float: left;
+}
+ 
+ 
+.loginForm .checkbox  {
+    margin-bottom:  10px;
+     clear:  both;
+     overflow:  hidden;
+}
 
-        }
+.btn  {
+    padding: 10px 20px;
+     background:  #F4F4F2;
+}
+
+.btn_red  {
+    background:  #ED6347;
+     color:  #FFF;
+}
+
+.btn:hover  {
+    background:  #E4E4E2;
+}
+
+.btn_red:hover  {
+    background:  #C12B05;
+}
+
+a.btn  {
+    color: #666;
+     text-align:  center;
+     text-decoration:  none;
+}
+
+a.btn_red  {
+    color:  #FFF;
+}
+
+.one_half  {
+    width: 50%;
+     display:  block;
+     float: left;
+}
+
+.one_half.last  {
+    width: 45%;
+     margin-left: 5%;
+}
 
 }

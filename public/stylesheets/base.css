@@ -83,6 +83,47 @@ table {
     font-size: 16px; }
   .loginPage .loginBody {
     padding: 20px; }
+  .loginPage .loginForm label {
+    display: block;
+    margin-bottom: 5px; }
+  .loginPage .loginForm input[type="text"], .loginPage .loginForm input[type="email"], .loginPage .loginForm input[type="password"] {
+    display: block;
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #DDD;
+    color: #666; }
+  .loginPage .loginForm input[type="checkbox"] {
+    float: left;
+    margin-right: 5px; }
+  .loginPage .loginForm input[type="checkbox"] + label {
+    float: left; }
+  .loginPage .loginForm .checkbox {
+    margin-bottom: 10px;
+    clear: both;
+    overflow: hidden; }
+  .loginPage .btn {
+    padding: 10px 20px;
+    background: #F4F4F2; }
+  .loginPage .btn_red {
+    background: #ED6347;
+    color: #FFF; }
+  .loginPage .btn:hover {
+    background: #E4E4E2; }
+  .loginPage .btn_red:hover {
+    background: #C12B05; }
+  .loginPage a.btn {
+    color: #666;
+    text-align: center;
+    text-decoration: none; }
+  .loginPage a.btn_red {
+    color: #FFF; }
+  .loginPage .one_half {
+    width: 50%;
+    display: block;
+    float: left; }
+  .loginPage .one_half.last {
+    width: 45%;
+    margin-left: 5%; }
 
 /* This is the style sheet for the main landing page of the website @author Rhys Howell*/
 .landingPage {
@@ -189,15 +230,6 @@ table {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.3); }
-  .landingPage .loginSomething {
-    display: none;
-    z-index: 11;
-    margin-left: 40%;
-    margin-top: 30%;
-    height: 20%;
-    width: 20%;
-    background-color: #ECF0F1;
-    text-align: center; }
   .landingPage .mainContent {
     text-align: center;
     font-size: 1.2em;
