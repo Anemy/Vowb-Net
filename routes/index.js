@@ -19,7 +19,8 @@ router.post('/signup', function(req, res) {
     // do something with the req data
     // is it a valid username?!
 });
-router.get('/lobby', function(req,res) {
+
+router.get('/lobby', function(req, res, next) {
   res.render('lobby', {title: 'Basic Lobby'});
 });
 /* */
