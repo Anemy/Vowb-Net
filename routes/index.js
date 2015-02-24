@@ -14,10 +14,13 @@ router.get('/signup', function(req, res, next) {
 
     res.render('signup', { title: 'Signup - Vowb.net'});
 });
+
 router.post('/signup', function(req, res) {
     console.log("Sign up request from client! There's data!!!");
     // do something with the req data
     // is it a valid username?!
+    
+
 });
 
 router.get('/lobby', function(req, res, next) {

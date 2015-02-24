@@ -32,6 +32,15 @@ app.use(function(req, res, next) {
     next(err);
 });
 
+
+// manages socket io connections and client in lobby status
+var lobby_manager = require('./lobby-manager/lobby');
+// this creates a lobby listener at the port.
+app.createLobbyListener = function(server) {
+    // start listening to socket io
+    lobby_manager.startListening(server);
+}
+
 // error handlers
 
 // development error handler

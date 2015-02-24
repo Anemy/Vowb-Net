@@ -99,6 +99,12 @@
 
             height: 1.5em;
             width: 4.5em;
+
+            -webkit-transition: all .25s ease;
+            -moz-transition: all .25s ease;
+            -ms-transition: all .25s ease;
+            -o-transition: all .25s ease;
+            transition: all .25s ease;
         }
         .signupButton:hover {
             cursor: pointer;
@@ -110,8 +116,12 @@
             color: $accent;
         }
         .signupButton:active {
-            box-shadow: inset 0px 0px 5px 5px rgba(0,0,0,0.1);
-            border: 2px solid $accent;
+            box-shadow: inset 0px 0px 2px 2px rgba(0,0,0,0.2);
+            -webkit-transition: all .1s ease;
+            -moz-transition: all .1s ease;
+            -ms-transition: all .1s ease;
+            -o-transition: all .1s ease;
+            transition: all .1s ease;
         }
 
         .loginButton {
@@ -151,7 +161,7 @@
         width: 20%;
         background-color: $light;
         text-align: center;
-        
+
         //more login stuff here!
     }
 
@@ -187,16 +197,22 @@
             box-shadow: inset 0px 0px 6px 6px rgba(255,255,255, 0.1);
 
             color: white;
-            font-size: 1.2em;
+            font-size: 0.8em;
             font-family: 'Cabin-Bold';
             //text-spacing: 2em;
 
             border-radius: 5px;
-            padding-top: 0.25em;
-            padding-bottom: 0.25em;
-            padding-left: 0.5em;
-            padding-right: 0.5em;
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
+            padding-left: 1.0em;
+            padding-right: 1.0em;
             display: inline-block;
+
+            -webkit-transition: all .25s ease;
+            -moz-transition: all .25s ease;
+            -ms-transition: all .25s ease;
+            -o-transition: all .25s ease;
+            transition: all .25s ease;
         }
         .signupButton:hover {
             cursor: pointer;
