@@ -22,7 +22,9 @@ router.post('/signup', function(req, res) {
     
 
 });
-
+router.get('/lobby', function(req,res) {
+  res.render('lobby', {title: 'Basic Lobby'});
+});
 /* */
 
 
