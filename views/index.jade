@@ -3,7 +3,12 @@ block content
     .landingPage
       .loginPage
         .mask
-        .loginPopup
+        div.loginPopup
+          header.loginHeader
+            span.headerTitle Login
+            span.loginClose(onclick = "exitButtonClicked()") X  
+          div.loginBody
+            div.loginForm
       .banner
           .bannerLeftSide
               .vowbText(href="/")

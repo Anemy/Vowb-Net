@@ -4,11 +4,12 @@
 var loginButtonClicked = function() {
     /* Do something */
     $('.loginPage').fadeIn(600);
-    //$('.mask').fadeIn(500);
-    //$('.loginPopup').fadeIn(700);
     console.log("derp");
 }
+var exitButtonClicked = function() {
+	$('.loginPage').fadeOut(600);
   // Calling Login Form
+}
 //$(function(){//  $(".user_login").show();
 //    console.log("Login button clicked.");
 //    console.log("derp");

@@ -44,27 +44,45 @@ table {
 .loginPage {
   display: none;
   font-family: 'Cabin';
-  z-index: 1;
-  position: fixed;
+  z-index: 10;
   top: 0px;
   left: 0px;
-  /* Modal box or Popup box */ }
+  /* Popup Styles*/ }
   .loginPage .mask {
     position: fixed;
-    z-index: 2;
+    z-index: 11;
     top: 0px;
     left: 0px;
     height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.3); }
   .loginPage .loginPopup {
-    z-index: 3;
     position: absolute;
     width: 330px;
-    height: 500px;
-    left: 45%;
+    height: auto;
+    left: 40%;
     top: 80px;
-    background: #FFF; }
+    background: #FFF;
+    z-index: 12; }
+  .loginPage .loginHeader {
+    font-size: 16px;
+    text-transform: uppercase;
+    background: #F4F4F2;
+    position: relative;
+    padding: 10px 20px;
+    border-bottom: 1px solid #DDD;
+    font-weight: bold; }
+  .loginPage .loginClose {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 10px 15px;
+    background: #E4E4E2;
+    cursor: pointer;
+    color: #aaa;
+    font-size: 16px; }
+  .loginPage .loginBody {
+    padding: 20px; }
 
 /* This is the style sheet for the main landing page of the website @author Rhys Howell*/
 .landingPage {
