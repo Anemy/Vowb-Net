@@ -1,0 +1,40 @@
+.loginPage {
+    display: none;
+
+    font-family: 'Cabin'; // $clouds;
+    z-index: 1;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+
+    .mask {
+      position: fixed;
+      z-index:2;
+      top: 0px;
+      left: 0px;
+      height:100%;
+      width:100%;
+      background-color: rgba(0,0,0,0.3);
+    }
+    .loginPopup {
+      z-index:3;
+      position:absolute;
+      width:330px;
+      height: 500px;
+      left:45%;
+      top:80px;
+      background: #FFF;
+    }
+    /* Modal box or Popup box */
+
+    // .loginScreen {
+    //   font
+    //   z-index: 12;
+    //   margin-left: 40%;
+    //   margin-top: 30%;
+    //   height: 20%;
+    //   width: 20%;
+    //   background-color: white;
+    //   text-align: center;
+    // }
+}

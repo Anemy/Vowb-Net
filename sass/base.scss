@@ -1,0 +1,59 @@
+/* Importing Google Webfonts */
+/* Flat ui colors for reference */
+// Greens
+$turquoise: #1ABC9C;
+$green-sea: #16A085;
+$emerald: #2ECC71;
+$nephritis: #27AE60;
+
+// Blues
+$peter-river: #3498DB;
+$belize-hole: #2980B9;
+$wet-asphalt: #34495E;
+$midnight-blue: #2C3E50;
+
+// Purples
+$amethyst: #9B59B6;
+$wisteria: #8E44AD;
+
+// Yellows
+$sunflower: #F1C40F;
+
+// Oranges
+$orange: #F39C12;
+$carrot: #E67E22;
+$pumpkin: #D35400;
+
+// Reds
+$alizarin: #E74C3C;
+$pomegranate: #C0392B;
+
+// Grays
+$clouds: #ECF0F1;
+$silver: #BDC3C7;
+$concrete: #95A5A6;
+$asbestos: #7F8C8D;
+
+/* Pallete currently in use */
+$light-light: #F7FCFC;
+$light: #ECF0F1; // light whitish color for text in the header
+$light-dark: #E4E8E8;
+$medium: #BDC3C7;
+$dark: #290E03;
+$accent-light: #FF474E;
+$accent: #FC4349;// #F39C12;
+$accent-dark: #DC2329;
+$highlight: #2ECC71;
+
+// Includes - add extra scss files here
+@import "reset";
+@import "fonts";
+@import "loginPage";
+@import "landingPage";
+@import "signupPage";
+
+
+a, a:visited, a:hover, a:active {
+    color: inherit;
+    text-decoration: none;
+}
