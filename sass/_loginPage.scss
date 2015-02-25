@@ -17,7 +17,7 @@
     }
     .loginPopup {
       position:absolute;
-      width:330px;
+      width:300px;
       height: auto;
       left:40%;
       top:80px;
@@ -95,6 +95,13 @@
 
 .btn_red:hover  {
     background:  #C12B05;
+}
+.action_btns  {
+    clear: both;
+     overflow:  hidden;
+}
+.action_btns a  {
+    display:  block;
 }
 
 a.btn  {

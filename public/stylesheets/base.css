@@ -58,7 +58,7 @@ table {
     background-color: rgba(0, 0, 0, 0.3); }
   .loginPage .loginPopup {
     position: absolute;
-    width: 330px;
+    width: 300px;
     height: auto;
     left: 40%;
     top: 80px;
@@ -111,6 +111,11 @@ table {
     background: #E4E4E2; }
   .loginPage .btn_red:hover {
     background: #C12B05; }
+  .loginPage .action_btns {
+    clear: both;
+    overflow: hidden; }
+  .loginPage .action_btns a {
+    display: block; }
   .loginPage a.btn {
     color: #666;
     text-align: center;
