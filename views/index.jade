@@ -8,21 +8,18 @@ block content
             span.headerTitle Login
             span.loginClose(onclick = "exitButtonClicked()") X  
           div.loginBody
-            div.loginForm
-              label Full Name
-                input(type='text')
-                br         
-                label Email Address
-                input(type='email')
-                br
-                label Password
-                input(type='password')
-                br
-                .checkbox
-                  input#remember(type='checkbox') 
-                  label(for='remember') Remember me on this computer
-                .action_btns
-                  a.btn.btn_red(onclick="loginSubClicked()") Login 
+            div.loginForm      
+              label Username
+              input(type='username')
+              br
+              label Password
+              input(type='password')
+              br
+              .checkbox
+                input#remember(type='checkbox') 
+                label(for='remember') Remember me on this computer
+              .action_btns
+                a.btn.btn_red(onclick="loginSubClicked()") Login 
       .banner
           .bannerLeftSide
               .vowbText(href="/")
