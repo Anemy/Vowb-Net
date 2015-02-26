@@ -41,6 +41,10 @@ table {
   font-family: 'Cabin-Bold';
   src: url('/fonts/Cabin-Bold.ttf') format("truetype"); }
 
+@font-face {
+  font-family: 'Blenda';
+  src: url('/fonts/Blenda-Script.otf'); }
+
 .loginPage {
   display: none;
   font-family: 'Cabin';
@@ -139,93 +143,6 @@ table {
   background-color: white;
   z-index: -2;
   font-family: 'Cabin'; }
-  .landingPage .banner {
-    background: -webkit-linear-gradient(#F7FCFC, #ECF0F1);
-    /* For Safari 5.1 to 6.0 */
-    /* For Opera 11.1 to 12.0 */
-    /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#F7FCFC, #ECF0F1);
-    /* Standard syntax */
-    box-shadow: 0px 2px 2px #BDC3C7;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 3em;
-    box-sizing: border-box;
-    text-decoration: none; }
-    .landingPage .banner .bannerLeftSide {
-      margin-left: 6em; }
-      .landingPage .banner .bannerLeftSide .vowbText {
-        position: absolute;
-        margin-top: .25em;
-        margin-left: .25em;
-        font-size: 2em;
-        color: #290E03; }
-        .landingPage .banner .bannerLeftSide .vowbText .vowbAccentText {
-          color: #FC4349; }
-      .landingPage .banner .bannerLeftSide .vowbText:hover {
-        cursor: pointer;
-        color: #FC4349; }
-        .landingPage .banner .bannerLeftSide .vowbText:hover .vowbAccentText {
-          color: #290E03; }
-      .landingPage .banner .bannerLeftSide .quickLinks {
-        top: 1.02em;
-        position: relative;
-        color: #290E03;
-        margin-left: 11.5em; }
-        .landingPage .banner .bannerLeftSide .quickLinks .lobbiesButton {
-          display: inline-block; }
-        .landingPage .banner .bannerLeftSide .quickLinks .lobbiesButton :hover {
-          cursor: pointer;
-          color: #FC4349; }
-        .landingPage .banner .bannerLeftSide .quickLinks .forumsButton {
-          display: inline-block;
-          margin-left: 2em; }
-        .landingPage .banner .bannerLeftSide .quickLinks .forumsButton :hover {
-          cursor: pointer;
-          color: #FC4349; }
-    .landingPage .banner .signupButton {
-      text-align: center;
-      color: #290E03;
-      position: absolute;
-      background: -webkit-linear-gradient(white, #ECF0F1);
-      /* For Safari 5.1 to 6.0 */
-      /* For Opera 11.1 to 12.0 */
-      /* For Firefox 3.6 to 15 */
-      background: linear-gradient(white, #ECF0F1);
-      /* Standard syntax */
-      border-radius: 5px;
-      border: 2px solid #BDC3C7;
-      padding-top: 0.4em;
-      top: .5em;
-      right: 10em;
-      height: 1.5em;
-      width: 4.5em;
-      -webkit-transition: all .25s ease;
-      transition: all .25s ease; }
-    .landingPage .banner .signupButton:hover {
-      cursor: pointer;
-      background: -webkit-linear-gradient(white, #E4E8E8);
-      /* For Safari 5.1 to 6.0 */
-      /* For Opera 11.1 to 12.0 */
-      /* For Firefox 3.6 to 15 */
-      background: linear-gradient(white, #E4E8E8);
-      /* Standard syntax */
-      border: 2px solid #FC4349;
-      color: #FC4349; }
-    .landingPage .banner .signupButton:active {
-      box-shadow: inset 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
-      -webkit-transition: all .1s ease;
-      transition: all .1s ease; }
-    .landingPage .banner .loginButton {
-      top: 1em;
-      position: absolute;
-      color: #290E03;
-      right: 6em;
-      background: none; }
-    .landingPage .banner .loginButton:hover {
-      cursor: pointer;
-      color: #FC4349; }
   .landingPage .blackBackground {
     display: none;
     z-index: 10;
@@ -446,6 +363,153 @@ table {
       .signupPage .pageThings .rightPanel .features .individuals p {
         font-size: 1em;
         line-height: 1.4em; }
+
+/* This is the styling page for the lobby page */
+.banner {
+  background: -webkit-linear-gradient(#F7FCFC, #ECF0F1);
+  /* For Safari 5.1 to 6.0 */
+  /* For Opera 11.1 to 12.0 */
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#F7FCFC, #ECF0F1);
+  /* Standard syntax */
+  font-family: 'Cabin';
+  box-shadow: 0px 2px 2px #BDC3C7;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3em;
+  box-sizing: border-box;
+  text-decoration: none; }
+  .banner .bannerLeftSide {
+    margin-left: 6em; }
+    .banner .bannerLeftSide .vowbText {
+      position: absolute;
+      margin-top: .25em;
+      margin-left: .25em;
+      font-size: 2em;
+      color: #290E03; }
+      .banner .bannerLeftSide .vowbText .vowbAccentText {
+        color: #FC4349; }
+    .banner .bannerLeftSide .vowbText:hover {
+      cursor: pointer;
+      color: #FC4349; }
+      .banner .bannerLeftSide .vowbText:hover .vowbAccentText {
+        color: #290E03; }
+    .banner .bannerLeftSide .quickLinks {
+      top: 1.02em;
+      position: relative;
+      color: #290E03;
+      margin-left: 11.5em; }
+      .banner .bannerLeftSide .quickLinks .lobbiesButton {
+        display: inline-block; }
+      .banner .bannerLeftSide .quickLinks .lobbiesButton :hover {
+        cursor: pointer;
+        color: #FC4349; }
+      .banner .bannerLeftSide .quickLinks .forumsButton {
+        display: inline-block;
+        margin-left: 2em; }
+      .banner .bannerLeftSide .quickLinks .forumsButton :hover {
+        cursor: pointer;
+        color: #FC4349; }
+  .banner .signupButton {
+    text-align: center;
+    color: #290E03;
+    position: absolute;
+    background: -webkit-linear-gradient(white, #ECF0F1);
+    /* For Safari 5.1 to 6.0 */
+    /* For Opera 11.1 to 12.0 */
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(white, #ECF0F1);
+    /* Standard syntax */
+    border-radius: 5px;
+    border: 2px solid #BDC3C7;
+    padding-top: 0.4em;
+    top: .5em;
+    right: 10em;
+    height: 1.5em;
+    width: 4.5em;
+    -webkit-transition: all .25s ease;
+    transition: all .25s ease; }
+  .banner .signupButton:hover {
+    cursor: pointer;
+    background: -webkit-linear-gradient(white, #E4E8E8);
+    /* For Safari 5.1 to 6.0 */
+    /* For Opera 11.1 to 12.0 */
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(white, #E4E8E8);
+    /* Standard syntax */
+    border: 2px solid #FC4349;
+    color: #FC4349; }
+  .banner .signupButton:active {
+    box-shadow: inset 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+    -webkit-transition: all .1s ease;
+    transition: all .1s ease; }
+  .banner .loginButton {
+    top: 1em;
+    position: absolute;
+    color: #290E03;
+    right: 6em;
+    background: none; }
+  .banner .loginButton:hover {
+    cursor: pointer;
+    color: #FC4349; }
+
+/* Styling for the about page */
+.aboutPage {
+  height: 100%;
+  width: 100%;
+  float: left;
+  background-color: white;
+  position: absolute; }
+  .aboutPage .mainContent {
+    margin-top: 2%;
+    text-align: center;
+    color: #290E03;
+    font-size: 1.4em;
+    /* Cabin is the other font */
+    font-family: 'Blenda'; }
+    .aboutPage .mainContent .wordAccent {
+      color: #FC4349; }
+
+/* The styling for the copyright footer on a webpage */
+/* must change later for webpages greater than a page */
+.copyright {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ECF0F1;
+  color: #290E03;
+  padding-left: 10%;
+  height: 2em;
+  font-family: 'Cabin';
+  font-size: 0.8em; }
+  .copyright .words {
+    margin-top: 0.4em; }
+    .copyright .words .pageLink {
+      text-decoration: underline;
+      margin-left: 1em; }
+    .copyright .words .linkSplit {
+      padding-left: 0.8em;
+      padding-right: 0.8em; }
+    .copyright .words .individualLink {
+      text-decoration: underline; }
+
+/* Styling sheet for the /jobs page */
+.jobsPage {
+  height: 100%;
+  width: 100%;
+  float: left;
+  background-color: white;
+  position: absolute; }
+  .jobsPage .mainContent {
+    margin-top: 10%;
+    text-align: center;
+    color: #290E03;
+    font-size: 1.2em;
+    font-family: 'Blenda'; }
+    .jobsPage .mainContent .wordAccent {
+      color: #FC4349; }
 
 a, a:visited, a:hover, a:active {
   color: inherit;
