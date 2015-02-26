@@ -1,0 +1,23 @@
+/* Styling sheet for the /jobs page */
+
+.jobsPage {
+  height: 100%;
+  width: 100%;
+  float: left;
+  background-color: white;
+  position: absolute;
+
+  .mainContent {
+    margin-top: 10%;
+    text-align: center;
+
+    color: $dark;
+    font-size: 1.2em;
+
+    font-family: 'Blenda';
+
+    .wordAccent {
+      color: $accent;
+    }
+  }
+}

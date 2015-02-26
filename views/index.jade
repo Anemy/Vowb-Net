@@ -23,24 +23,7 @@ block content
                   label(for='remember') Remember me on this computer
                 .action_btns
                   a.btn.btn_red(onclick="loginSubClicked()") Login 
-      .banner
-          .bannerLeftSide
-              .vowbText(href="/")
-                  a(href="/").
-                      vowb<span class="vowbAccentText">.</span>net
-              .quickLinks
-                  .lobbiesButton(href="/lobby")
-                      a(href="/lobby").
-                          lobbies
-                  .forumsButton(href="/forums")
-                      a(href="/forums").
-                          forums
-          .button
-              a(class="signupButton" href="/signup").
-                    sign up
-          .loginButton(onclick="loginButtonClicked()")
-              a.
-                    log in
+      include banner
       .mainContent
           a.
               Talk with all of your friends and guild mates using <span class="accentText">vowb.net</span>!
@@ -63,3 +46,5 @@ block content
                           - Voice chat anonymously <br>
                           - Chat on forums <br>
                           - 100% free. <br>
+      include copyright                    
+        

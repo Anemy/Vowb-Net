@@ -1,0 +1,24 @@
+/* Styling for the about page */
+
+.aboutPage {
+  height: 100%;
+  width: 100%;
+  float: left;
+  background-color: white;
+  position: absolute;
+
+  .mainContent {
+    margin-top: 2%;
+    text-align: center;
+
+    color: $dark;
+    font-size: 1.4em;
+
+    /* Cabin is the other font */
+    font-family: 'Blenda';
+
+    .wordAccent {
+      color: $accent;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+/* The styling for the copyright footer on a webpage */
+/* must change later for webpages greater than a page */
+
+.copyright {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: $light;
+  color: $dark;
+  padding-left: 10%;
+  height: 2em;
+
+  font-family: 'Cabin';
+
+  font-size: 0.8em;
+  .words {
+    margin-top: 0.4em;
+    .pageLink {
+      text-decoration: underline;
+      margin-left: 1em;
+    }
+    .linkSplit {
+      padding-left: 0.8em;
+      padding-right: 0.8em;
+    }
+    .individualLink {
+      text-decoration: underline;
+    }
+  }
+}
