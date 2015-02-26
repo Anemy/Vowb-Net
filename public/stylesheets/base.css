@@ -65,7 +65,7 @@ table {
     width: 300px;
     height: auto;
     left: 40%;
-    top: 80px;
+    top: 150px;
     background: #FFF;
     z-index: 12; }
   .loginPage .loginHeader {
@@ -90,7 +90,7 @@ table {
   .loginPage .loginForm label {
     display: block;
     margin-bottom: 5px; }
-  .loginPage .loginForm input[type="text"], .loginPage .loginForm input[type="email"], .loginPage .loginForm input[type="password"] {
+  .loginPage .loginForm input[type="username"], .loginPage .loginForm input[type="password"] {
     display: block;
     width: 90%;
     padding: 10px;

@@ -20,7 +20,7 @@
       width:300px;
       height: auto;
       left:40%;
-      top:80px;
+      top:150px;
       background: #FFF;
       z-index:12;
     }
@@ -55,7 +55,7 @@
      margin-bottom: 5px;
 }
  
-.loginForm input[type="text"],  .loginForm input[type="email"],  .loginForm input[type="password"]  {
+.loginForm input[type="username"], .loginForm input[type="password"]  {
     display:  block;
      width: 90%;
      padding:  10px;
