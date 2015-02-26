@@ -16,7 +16,8 @@ $(document).ready(function() {
 $("#m").keyup(function(e) {
     if(e.keyCode == 13) {
     	socket.emit('chat message', $('#m').val());
-        $('#messages').append($('<li>').text(msg));
+    	$('#m').val('');
+        return false;
     }
 });
 });
