@@ -19,12 +19,8 @@ router.post('/signup', function(req, res) {
     console.log("Sign up request from client! There's data!!!");
     // do something with the req data
     // is it a valid username?!
-    
 
-});
 
-router.get('/lobby', function(req, res, next) {
-  res.render('lobby', {title: 'Basic Lobby'});
 });
 /* */
 
