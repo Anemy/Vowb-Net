@@ -12,16 +12,16 @@ block content
                 .fields
                     .aboutText.
                         username
-                    input.inputBox(type="text" placeholder="2-16 characters, numbers, and spaces")
+                    input.inputBox(type="text" id="username_id" placeholder="2-16 characters, numbers, and spaces")
                     .aboutText.
                         email
-                    input.inputBox(type="email" placeholder="we will not spam you.")
+                    input.inputBox(type="email" id="email_id" placeholder="we will not spam you.")
                     .aboutText.
                         password
-                    input.inputBox(type="text" placeholder="4-16 characters, keep it original plz")
+                    input.inputBox(type="password" id="password_id" placeholder="4-16 characters, keep it original plz")
                     .aboutText.
                         re-enter your password
-                    input.inputBox(type="text" placeholder="same as up there ^^")
+                    input.inputBox(type="password" id="reenterpw_id" placeholder="same as up there ^^")
                     .signupButtonWrap
                         input.signupButton(type="submit" value="Sign up")
             .rightPanel
