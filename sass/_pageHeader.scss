@@ -101,17 +101,14 @@
     }
     .signupButton:active {
         box-shadow: inset 0px 0px 2px 2px rgba(0,0,0,0.2);
-        -webkit-transition: all .1s ease;
-        -moz-transition: all .1s ease;
-        -ms-transition: all .1s ease;
-        -o-transition: all .1s ease;
-        transition: all .1s ease;
     }
-    .signupButton .dontShowGradient {
-        background-color: red;
-
-        border: 2px solid $light;
-    }
+    .dontShowGradient {
+       -webkit-transition: none;
+       -moz-transition: none;
+       -ms-transition: none;
+       -o-transition: none;
+       transition: none;
+   }
 
     .loginButton {
         top: 1em;

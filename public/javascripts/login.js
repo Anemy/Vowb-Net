@@ -1,12 +1,11 @@
 /* This script will open the log in dialogue and handle client side log in things */
 
-
 var loginButtonClicked = function() {
-    $('.signupButton').addClass('dontShowGradient');
-    $('.loginPage').fadeIn(250);
+  $('.signupButton').addClass('dontShowGradient');
+  $('.loginPage').fadeIn(50);
 }
 var exitButtonClicked = function() {
-	$('.loginPage').fadeOut(250);
+	$('.loginPage').fadeOut(50);
   $('.signupButton').removeClass('dontShowGradient');
 }
 

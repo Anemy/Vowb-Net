@@ -2,14 +2,14 @@
     display: none;
 
     font-family: 'Cabin'; // $clouds;
-    z-index: 10;
+    z-index: 100;
     top: 0px;
     left: 0px;
     color: $dark;
 
     .mask {
       position: fixed;
-      z-index:11;
+      z-index:101;
       top: 0px;
       left: 0px;
       height:100%;
@@ -23,7 +23,7 @@
       left:40%;
       top:150px;
       background: white;
-      z-index:12;
+      z-index:102;
       border-radius: 5px;
     }
     /* Popup Styles*/
