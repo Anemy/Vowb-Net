@@ -2,27 +2,14 @@
 
 
 var loginButtonClicked = function() {
-    /* Do something */
-    $('.loginPage').fadeIn(600);
-    console.log("derp");
+    $('.signupButton').addClass('dontShowGradient');
+    $('.loginPage').fadeIn(250);
 }
 var exitButtonClicked = function() {
-	$('.loginPage').fadeOut(600);
-  // Calling Login Form
+	$('.loginPage').fadeOut(250);
+  $('.signupButton').removeClass('dontShowGradient');
 }
 
 var loginSubClicked = function() {
 	console.log("loginsub clicked");
 }
-//$(function(){//  $(".user_login").show();
-//    console.log("Login button clicked.");
-//    console.log("derp");
-//});
-
-//$(document).ready( function() {
-//  $("#trigger").leanModal({top : 200, overlay : .6, closeButton: ".modal_close" });
-
-//  $("#trigger").click( function() {
-//    $(".user_login").show();
-//  });
-//});

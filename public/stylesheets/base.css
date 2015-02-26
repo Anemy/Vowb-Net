@@ -51,6 +51,7 @@ table {
   z-index: 10;
   top: 0px;
   left: 0px;
+  color: #290E03;
   /* Popup Styles*/ }
   .loginPage .mask {
     position: fixed;
@@ -66,25 +67,35 @@ table {
     height: auto;
     left: 40%;
     top: 150px;
-    background: #FFF;
-    z-index: 12; }
+    background: white;
+    z-index: 12;
+    border-radius: 5px; }
   .loginPage .loginHeader {
     font-size: 16px;
     text-transform: uppercase;
-    background: #F4F4F2;
+    background: #ECF0F1;
     position: relative;
     padding: 10px 20px;
-    border-bottom: 1px solid #DDD;
-    font-weight: bold; }
+    border-bottom: 1px solid #BDC3C7;
+    font-weight: bold;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px; }
   .loginPage .loginClose {
     position: absolute;
     right: 0;
     top: 0;
-    padding: 10px 15px;
-    background: #E4E4E2;
+    padding: 8px 12px;
     cursor: pointer;
     color: #aaa;
-    font-size: 16px; }
+    font-size: 20px;
+    -webkit-transition: all .1s ease;
+    transition: all .1s ease; }
+  .loginPage .loginClose:hover {
+    padding: 7px 11px;
+    cursor: pointer;
+    font-size: 24px; }
+  .loginPage .loginClose:active {
+    color: #888; }
   .loginPage .loginBody {
     padding: 20px; }
   .loginPage .loginForm label {
@@ -93,9 +104,16 @@ table {
   .loginPage .loginForm input[type="username"], .loginPage .loginForm input[type="password"] {
     display: block;
     width: 90%;
-    padding: 10px;
-    border: 1px solid #DDD;
-    color: #666; }
+    padding: 6px;
+    color: #666;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 2px #290E03;
+    -webkit-transition: all .25s ease;
+    transition: all .25s ease; }
+  .loginPage .loginForm input[type="username"]:focus, .loginPage .loginForm input[type="password"]:focus {
+    box-shadow: 0 0 6px #2ECC71; }
   .loginPage .loginForm input[type="checkbox"] {
     float: left;
     margin-right: 5px; }
@@ -105,16 +123,15 @@ table {
     margin-bottom: 10px;
     clear: both;
     overflow: hidden; }
-  .loginPage .btn {
-    padding: 10px 20px;
-    background: #F4F4F2; }
   .loginPage .btn_red {
-    background: #ED6347;
-    color: #FFF; }
-  .loginPage .btn:hover {
-    background: #E4E4E2; }
+    background: #FC4349;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px; }
   .loginPage .btn_red:hover {
-    background: #C12B05; }
+    background: #DC2329; }
+  .loginPage .btn_red:active {
+    box-shadow: inset 0px 0px 2px 2px rgba(0, 0, 0, 0.2); }
   .loginPage .action_btns {
     clear: both;
     overflow: hidden; }
@@ -125,7 +142,7 @@ table {
     text-align: center;
     text-decoration: none; }
   .loginPage a.btn_red {
-    color: #FFF; }
+    color: white; }
   .loginPage .one_half {
     width: 50%;
     display: block;
@@ -444,6 +461,9 @@ table {
     box-shadow: inset 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
     -webkit-transition: all .1s ease;
     transition: all .1s ease; }
+  .banner .signupButton .dontShowGradient {
+    background-color: red;
+    border: 2px solid #ECF0F1; }
   .banner .loginButton {
     top: 1em;
     position: absolute;
@@ -477,7 +497,7 @@ table {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: 90%;
   background-color: #ECF0F1;
   color: #290E03;
   padding-left: 10%;

@@ -107,6 +107,11 @@
         -o-transition: all .1s ease;
         transition: all .1s ease;
     }
+    .signupButton .dontShowGradient {
+        background-color: red;
+
+        border: 2px solid $light;
+    }
 
     .loginButton {
         top: 1em;
