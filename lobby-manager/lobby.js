@@ -22,5 +22,6 @@ lobbyManager.startListening = function(http) {
 	  });
 
     });
+
 }
 
