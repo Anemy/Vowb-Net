@@ -2,6 +2,33 @@ extends layout
 block content
     include banner
     .aboutPage
-      .mainContent.
-        The <span class="wordAccent">Dream</span> Team
+      .mainContent
+        .dreamText.
+          The <span class="wordAccent">Dream</span> Team
+        //- Individual Images
+        .profiles
+          .bio
+            img(class="bioImage" src="/images/eric.jpg")
+            .name.
+              Eric
+          .bio
+            img(class="bioImage" src="/images/mason.jpg")
+            .name.
+              Mason
+          .bio
+            img(class="bioImage" src="/images/pascal.jpg")
+            .name.
+              Pascal
+          .bio
+            img(class="bioImage" src="/images/rashmi.jpg")
+            .name.
+              Rashmi
+          .bio
+            img(class="bioImage" src="/images/rhys.jpg")
+            .name.
+              Rhys
+          .bio
+            img(class="bioImage" src="/images/stephan.jpg")
+            .name.
+              Stephan
     include copyright
