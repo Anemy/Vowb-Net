@@ -48,14 +48,14 @@ table {
 .loginPage {
   display: none;
   font-family: 'Cabin';
-  z-index: 10;
+  z-index: 100;
   top: 0px;
   left: 0px;
   color: #290E03;
   /* Popup Styles*/ }
   .loginPage .mask {
     position: fixed;
-    z-index: 11;
+    z-index: 101;
     top: 0px;
     left: 0px;
     height: 100%;
@@ -68,7 +68,7 @@ table {
     left: 40%;
     top: 150px;
     background: white;
-    z-index: 12;
+    z-index: 102;
     border-radius: 5px; }
   .loginPage .loginHeader {
     font-size: 16px;
@@ -382,6 +382,26 @@ table {
         line-height: 1.4em; }
 
 /* This is the styling page for the lobby page */
+.lobbyPage .usersOnline {
+  font-family: tahoma;
+  font-size: 14;
+  color: orange;
+  border: 1px black solid;
+  width: 150px;
+  height: 225px;
+  overflow: scroll;
+  margin-left: 1px; }
+.lobbyPage .chatbox {
+  font-family: tahoma;
+  font-size: 12px;
+  color: black;
+  border: 1px black solid;
+  height: 225px;
+  width: 400px;
+  word-wrap: break-word;
+  overflow-y: auto;
+  float: left; }
+
 .banner {
   background: -webkit-linear-gradient(#F7FCFC, #ECF0F1);
   /* For Safari 5.1 to 6.0 */
@@ -396,7 +416,8 @@ table {
   width: 100%;
   height: 3em;
   box-sizing: border-box;
-  text-decoration: none; }
+  text-decoration: none;
+  z-index: 1; }
   .banner .bannerLeftSide {
     margin-left: 6em; }
     .banner .bannerLeftSide .vowbText {
@@ -458,12 +479,10 @@ table {
     border: 2px solid #FC4349;
     color: #FC4349; }
   .banner .signupButton:active {
-    box-shadow: inset 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
-    -webkit-transition: all .1s ease;
-    transition: all .1s ease; }
-  .banner .signupButton .dontShowGradient {
-    background-color: red;
-    border: 2px solid #ECF0F1; }
+    box-shadow: inset 0px 0px 2px 2px rgba(0, 0, 0, 0.2); }
+  .banner .dontShowGradient {
+    -webkit-transition: none;
+    transition: none; }
   .banner .loginButton {
     top: 1em;
     position: absolute;
@@ -490,6 +509,24 @@ table {
     font-family: 'Blenda'; }
     .aboutPage .mainContent .wordAccent {
       color: #FC4349; }
+    .aboutPage .mainContent .profiles {
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 0.2em;
+      max-width: 700px;
+      font-family: 'Blenda'; }
+      .aboutPage .mainContent .profiles .bio {
+        display: inline-block;
+        margin: 10px;
+        margin-bottom: 40px;
+        padding-bottom: 2px;
+        border-radius: 5px; }
+        .aboutPage .mainContent .profiles .bio .bioImage {
+          height: 200px;
+          width: 200px;
+          margin: 2px;
+          border-radius: 5px; }
 
 /* The styling for the copyright footer on a webpage */
 /* must change later for webpages greater than a page */
@@ -497,18 +534,19 @@ table {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 90%;
-  background-color: #ECF0F1;
+  width: 96%;
+  background-color: white;
   color: #290E03;
-  padding-left: 10%;
+  padding-left: 4%;
   height: 2em;
+  box-shadow: 0 -2px 2px #BDC3C7;
   font-family: 'Cabin';
   font-size: 0.8em; }
   .copyright .words {
     margin-top: 0.4em; }
     .copyright .words .pageLink {
       text-decoration: underline;
-      margin-left: 1em; }
+      margin-left: 1.6em; }
     .copyright .words .linkSplit {
       padding-left: 0.8em;
       padding-right: 0.8em; }
@@ -527,9 +565,39 @@ table {
     text-align: center;
     color: #290E03;
     font-size: 1.2em;
-    font-family: 'Blenda'; }
+    font-family: 'Blenda';
+    line-height: 1.4em; }
     .jobsPage .mainContent .wordAccent {
       color: #FC4349; }
+
+.fourOhFour {
+  font-family: 'Cabin';
+  background-color: #ECF0F1;
+  color: #290E03;
+  font-size: 1em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%; }
+  .fourOhFour .titleText {
+    margin-left: 2em;
+    margin-top: 2em;
+    font-size: 2.2em; }
+  .fourOhFour .errorText {
+    margin-left: 5em;
+    margin-top: 1.5em;
+    font-size: 1.2em; }
+  .fourOhFour .accentText {
+    color: #FC4349; }
+  .fourOhFour .macarena {
+    text-align: center;
+    width: 100%;
+    margin-top: 5em;
+    position: absolute; }
+    .fourOhFour .macarena .macImage {
+      width: 20%;
+      height: auto; }
 
 a, a:visited, a:hover, a:active {
   color: inherit;

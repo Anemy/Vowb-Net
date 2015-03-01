@@ -8,9 +8,11 @@ block content
             vowb<span class="accentText">.</span>net
         .bodyLine
         .pageThings
-            ul#messages
-            #content(style='width: 500px; height: 300px; margin: 0 0 20px 0; border: solid 1px #999; overflow-y: scroll;')
+            #msgBox.chatbox
+                ul#messages
+            .usersOnline
+
             .controls
-                input.inputBox#m(type="text" placeHolder="Insert message...")
-            
+                textarea.inputBox#m(type="text" placeHolder="Insert message...", cols = '50', rows='5')
+
     include copyright
