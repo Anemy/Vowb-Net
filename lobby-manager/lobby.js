@@ -7,7 +7,7 @@ var includeInThisContext = function(path) {
     vm.runInThisContext(code, path);
 }.bind(this);
 
-includeInThisContext(__dirname + "/voice.js");
+//includeInThisContext(__dirname + "/voice.js");
 var lobbyManager = module.exports =  {
     io: {}
 }

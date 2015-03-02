@@ -11,4 +11,23 @@ var exitButtonClicked = function() {
 
 var loginSubClicked = function() {
 	console.log("loginsub clicked");
+	// Pascal adding post request for login button 03/02/15
+	$.ajax({
+            url: "/login",
+            type: "POST",
+            data: {
+                username : $("#un_id").val(),
+                password : $("#pw_id").val(),
+            },
+            success: function(data){
+                console.log("Success from server");
+                var delay = 3000; //Your delay in milliseconds
+                setTimeout(function(){ window.location = "/"; }, delay);
+                //display "redirecting in 3 seconds"
+            },
+            error: function(data){
+                console.log("Failure from server");
+                 
+            }
+    });
 }
