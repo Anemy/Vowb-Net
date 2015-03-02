@@ -2,17 +2,16 @@ extends layout
 block content
     include banner
     .landingPage
-<<<<<<< HEAD
       .loginPage
         .mask
         div.loginPopup
           header.loginHeader
             span.headerTitle Login
-            span.loginClose(onclick = "exitButtonClicked()") X  
+            span.loginClose(onclick = "exitButtonClicked()") X
           div.loginBody
-            div.loginForm      
+            div.loginForm
               label Username
-              
+
               //adding id's (Pascal 03/02/15)
               input(type='username' id = "un_id")
               br
@@ -20,12 +19,10 @@ block content
               input(type='password' id = "pw_id")
               br
               .checkbox
-                input#remember(type='checkbox') 
+                input#remember(type='checkbox')
                 label(for='remember') Remember me on this computer
               .action_btns
-                a.btn.btn_red(onclick="loginSubClicked()") Login 
-=======
->>>>>>> e6f748169d9a705c42459bcb772dc2ee814ed3db
+                a.btn.btn_red(onclick="loginSubClicked()") Login
       .mainContent
           a.
               Talk with all of your friends and guild mates using <span class="accentText">vowb.net</span>!
@@ -48,5 +45,4 @@ block content
                           - Voice chat anonymously <br>
                           - Chat on forums <br>
                           - 100% free. <br>
-    include copyright                    
-        
+    include copyright
