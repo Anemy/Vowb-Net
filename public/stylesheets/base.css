@@ -625,6 +625,13 @@ table {
     .fourOhFour .macarena .macImage {
       width: 20%;
       height: auto; }
+  .fourOhFour .cats {
+    width: 100%;
+    height: auto;
+    overflow-y: none;
+    left: 0;
+    top: 0;
+    position: absolute; }
 
 a, a:visited, a:hover, a:active {
   color: inherit;
