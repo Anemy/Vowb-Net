@@ -28,8 +28,7 @@ lobbyManager.startListening = function(http) {
 	    that.io.emit('chat message', msg);
 	  });
 
-    });
-    /*function log() {
+    function log(){
         var array = [">>> Message from server: "];
       for (var i = 0; i < arguments.length; i++) {
         array.push(arguments[i]);
@@ -44,7 +43,7 @@ lobbyManager.startListening = function(http) {
     });
 
     socket.on('create or join', function (room) {
-        var numClients = io.sockets.clients(room).length;
+        var numClients = that.io.sockets.clients(room).length;
 
         log('Room ' + room + ' has ' + numClients + ' client(s)');
         log('Request to create or join room ' + room);
@@ -53,7 +52,7 @@ lobbyManager.startListening = function(http) {
             socket.join(room);
             socket.emit('created', room);
         } else if (numClients === 1) {
-            io.sockets.in(room).emit('join', room);
+            that.io.sockets.in(room).emit('join', room);
             socket.join(room);
             socket.emit('joined', room);
         } else { // max two clients
@@ -62,7 +61,7 @@ lobbyManager.startListening = function(http) {
         socket.emit('emit(): client ' + socket.id + ' joined room ' + room);
         socket.broadcast.emit('broadcast(): client ' + socket.id + ' joined room ' + room);
 
-    });*/
-
+    });
+    });
 }
 

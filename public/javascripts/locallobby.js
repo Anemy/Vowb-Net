@@ -4,28 +4,28 @@ var isInitiator;
 
 room = prompt("Enter Lobby Name:");
 
-var socket = io.connect();
+var sckt = io.connect();
 
 if (room !== "") {
   console.log('Joining Lobby ' + room);
-  socket.emit('Create or Join', room);
+  sckt.emit('Create or Join', room);
 }
 
-socket.on('Full', function (room){
+sckt.on('Full', function (room){
   console.log('Lobby ' + room + ' is full');
 });
 
-socket.on('Empty', function (room){
+sckt.on('Empty', function (room){
   isInitiator = true;
   console.log('Lobby ' + room + ' is empty');
 });
 
-socket.on('Join', function (room){
+sckt.on('Join', function (room){
   console.log('Making request to join Lobby ' + room);
   console.log('You are the initiator!');
 });
 
-socket.on('log', function (array){
+sckt.on('log', function (array){
   console.log.apply(console, array);
 });
 
