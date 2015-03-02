@@ -1,5 +1,7 @@
 //var pg = require("pg");
 
+var DUMMY_DATABASE = {};
+
 var db = module.exports = {
    query: function(text, values, cb) {
        cb("No error",{rows:[{data:"empty returned data"}]});
@@ -64,6 +66,13 @@ db.hashPassword = function(string) {
  *
  */
 db.add = function(tablename, data) {
+    console.log("dummy table (before): " + JSON.stringify(DUMMY_DATABASE[tablename]));
+    if( !DUMMY_DATABASE[tablename] )
+        DUMMY_DATABASE[tablename] = [];
+    console.log("dummy table thinking...");
+    DUMMY_DATABASE[tablename].push(data);
+    console.log("dummy table (after): " + JSON.stringify(DUMMY_DATABASE[tablename]));
+    return;
     var queryString = "INSERT INTO "+tablename+"(";
     var i = 0;
     var itemIndex = 1;
@@ -118,6 +127,24 @@ db.add = function(tablename, data) {
  *
  */
 db.search = function(tablename, data, callback) {
+    if( !DUMMY_DATABASE[tablename] )
+        DUMMY_DATABASE[tablename] = [];
+    var dummyResults = [];
+    for(var i = 0; i < DUMMY_DATABASE[tablename].length; i++ ) {
+        var match = true;
+        for (var column in data) {
+            if (data.hasOwnProperty(column)) {
+                if( DUMMY_DATABASE[tablename][i][column] != data[column] ) {
+                    match = false;
+                }
+            }
+        }
+        if( match )
+            dummyResults.push(DUMMY_DATABASE[tablename][i]);
+    }
+    console.log("dummy results: " + JSON.stringify(dummyResults));
+    callback(dummyResults);
+    return;
     var queryString = "SELECT * FROM "+tablename+" WHERE ";
     var i = 0;
     var itemIndex = 1;
