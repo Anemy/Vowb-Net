@@ -1,6 +1,7 @@
 /* This is the routing for basic webpages (landing, sign up, about, etc.) */
 
 var express = require('express');
+var db = require("../database-manager/database");
 var router = express.Router();
 
 /* GET home page. */
@@ -21,6 +22,36 @@ router.post('/signup', function(req, res) {
     console.log("Sign up request from client! There's data!!!");
     // do something with the req data
     // is it a valid username?!
+    
+    
+    // For this, first:
+    //  - Run a "search" on the database for a user with "username" matching
+    //  - the username stored in the body of the request
+    
+    // Make a searchParams object for this
+    var searchParams = {
+        username: req.body.username
+    };
+    
+    // Call search function using these parameters
+    db.search(db.userDB, searchParams, function(results) {
+        if( results.length == 0 ) {
+            // If there are no results when looking for a user of that name,
+            // then we add a new one
+            console.log("Signup: Ready to add new user \""+req.body.username+"\".");
+            
+            // Add new user to the "userDB" database
+            db.add(db.userDB, {
+                username: req.body.username,
+                email_account: req.body.email,
+                password_hash: db.hashPassword(req.body.password)
+            });
+        } else {
+            // Otherwise, complain -- the user already exists!
+            // (In the future, warning message should be added here!)
+            console.log("Signup ERROR: User " + req.body.username + " already exists!");
+        }
+    });
 });
 
 //Pascal 03/02/15

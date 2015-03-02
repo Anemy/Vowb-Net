@@ -1,0 +1,145 @@
+//var pg = require("pg");
+
+var db = module.exports = {
+   query: function(text, values, cb) {
+       cb("No error",{rows:[{data:"empty returned data"}]});
+      /*pg.connect("pg://postgres:vowb-secure@localhost:5432/vowbnet", function(err, client, done) {
+        client.query(text, values, function(err, result) {
+          done();
+          cb(err, result);
+        })
+      });*/
+   }
+}
+
+db.userDB = "users";
+db.forumDB = "forums";
+db.lobbyDB = "lobbies";
+db.postDB = "posts";
+db.profileDB = "profiles";
+db.threadDB = "threads";
+
+db.user = function(username, callback) {
+    db.query("SELECT * FROM users WHERE username=$1 ORDER BY username, email_account", [username], function(err, result) {
+        callback(result.rows[0]);
+    });
+}
+
+db.userId = function(user_id) {
+    db.query("SELECT * FROM users WHERE user_id=$1 ORDER BY username, email_account", [user_id], function(err, result) {
+        callback(result.rows[0]);
+    });
+}
+
+db.addUser = function(username, email, password) {
+    console.log("Calling db.addUser(" + username + "," + email + "," + password + ")");
+    var conString = "pg://postgres:vowb-secure@localhost:5432/vowbnet";
+    var client = new pg.Client(conString);
+    client.connect(); 
+    console.log("here!!");
+    // Creat table and insert 2 records into it
+    console.log("Inserting : " + JSON.stringify([username, email, password]));
+    var qq = client.query("INSERT INTO users(username, email_account, password_hash) values($1, $2, $3)", [username, email, password]);
+    console.log(qq);
+}
+
+db.hashPassword = function(string) {
+    return "DUMMY_HASH!!"+string+"!!DUMMY_HASH";
+}
+
+/*
+ *  Generic "db.add" function.
+ *  Vulnerable to SQL injection via the tablename
+ *  and data property name variables, so don't call
+ *  it on tablenames or property names that
+ *  aren't guaranteed to be correct!
+ *
+ *  Example call:
+ *
+ *  db.add(db.userDB, {
+ *      username: "etheller",
+ *      email_account: "etheller@purdue.edu",
+ *      password_hash: "hfo8q374r2yu3fifaehf437r234ur3iff"
+ *  });
+ *
+ */
+db.add = function(tablename, data) {
+    var queryString = "INSERT INTO "+tablename+"(";
+    var i = 0;
+    var itemIndex = 1;
+    var values = [];//tablename];
+    for (var column in data) {
+        if (data.hasOwnProperty(column)) {
+            if( i > 0 )
+                queryString += ", ";
+            //queryString += "$" + (itemIndex++);
+            //values.push(column);
+            queryString += column;
+            i++;
+        }
+    }
+    queryString += ") values(";
+    i = 0;
+    for (var column in data) {
+        if (data.hasOwnProperty(column)) {
+            if( i > 0 )
+                queryString += ", ";
+            queryString += "$" + (itemIndex++);
+            values.push(data[column]);
+            i++;
+        }
+    }
+    queryString += ")";
+    console.log("search: " + queryString);
+    db.query(queryString, values, function(err, result) {
+        if( err ) {
+            console.log("Database .add ERROR: " + err.toString());
+            throw err;
+        } else
+            console.log("Database .add: No error");
+    });
+}
+
+/*
+ *  Another generic database usage function.
+ *  Vulnerable to SQL injection via the tablename
+ *  variable, so don't call it on tablenames that
+ *  aren't from something like "db.userDB"!
+ * 
+ *  Example call:
+ *
+ *  db.search(db.userDB, { username: "etheller" }, function(results) {
+ *      for(i = 0; i < results.length; i++ ) {
+ *          console.log(results[i].email_account);
+ *      }
+ *  });
+ *
+ *  This code would print out the email address of all users named "etheller"
+ *
+ */
+db.search = function(tablename, data, callback) {
+    var queryString = "SELECT * FROM "+tablename+" WHERE ";
+    var i = 0;
+    var itemIndex = 1;
+    var values = [];//tablename];
+    for (var column in data) {
+        if (data.hasOwnProperty(column)) {
+            if( i > 0 )
+                queryString += " AND ";
+            queryString += "$" + (itemIndex++) + "=$" + (itemIndex++);
+            values.push(column);
+            values.push(data[column]);
+            i++;
+        }
+    }
+    console.log("search: " + queryString);
+    db.query(queryString, values, function(err, result) {
+        if( err ) {
+            console.log("Database .search ERROR: " + err.toString());
+            throw err;
+        } else {
+            console.log("Database .search: No error");
+            callback(result.rows);
+        }
+    });
+}
