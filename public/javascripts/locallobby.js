@@ -39,10 +39,12 @@ socket.on('log', function (array){
 
   socket.on('chat message', function(msg){
     $('#messages').append($('<li>').text(msg));
+    document.getElementById("msgBox").scrollTop = document.getElementById("msgBox").scrollHeight;
   });
 
 //Hitting enter sends the message
 $(document).ready(function() {
+
 $("#m").keyup(function(e) {
     if(e.keyCode == 13) {
       socket.emit('chat message', $('#m').val());
@@ -51,3 +53,4 @@ $("#m").keyup(function(e) {
     }
 });
 });
+

@@ -1,5 +1,31 @@
 /* This is the styling page for the lobby page */
 
 .lobbyPage {
-    
+    .usersOnline{
+        font-family:tahoma;
+        font-size:14;
+        color:orange;
+        border:1px black solid;
+        width:150px;
+        height:225px;
+        overflow:scroll;
+        margin-left:1px;
+    }
+    .chatbox{
+        font-family:tahoma;
+        font-size:12px;
+        color:black;
+        border: 1px black solid;
+        height: 225px;
+        width: 400px;
+        word-wrap: break-word;
+        overflow-y: auto;
+        float:left;
+
+    }
+
+    .controls{
+    }
+
+
 }

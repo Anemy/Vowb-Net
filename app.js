@@ -27,13 +27,30 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/lobby', lobbies);
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
-});
+//404 :'(
+app.use(function(req, res, next){
+  res.status(404);
 
+  // respond with html page
+  if (req.accepts('html')) {
+    res.render('404', { title: "404: Vowb.net page not found", url: req.url });
+    return;
+  }
+
+  // respond with json
+  if (req.accepts('json')) {
+    res.send({ error: 'Not found' });
+    return;
+  }
+
+  // default to plain-text. send()
+  res.type('txt').send('Not found');
+
+  //add the not found error
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
+});
 
 // manages socket io connections and client in lobby status
 var lobby_manager = require('./lobby-manager/lobby');
