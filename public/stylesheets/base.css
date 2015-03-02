@@ -53,14 +53,15 @@ table {
   left: 0px;
   color: #290E03;
   /* Popup Styles*/ }
-  .loginPage .mask {
+  .loginPage .overlay {
     position: fixed;
     z-index: 101;
     top: 0px;
     left: 0px;
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.3); }
+    pointer-events: none;
+    background-color: rgba(0, 0, 0, 0.8); }
   .loginPage .loginPopup {
     position: absolute;
     width: 300px;
@@ -150,6 +151,14 @@ table {
   .loginPage .one_half.last {
     width: 45%;
     margin-left: 5%; }
+
+.profilePage {
+  display: block;
+  font-family: 'Cabin';
+  z-index: 100;
+  margin-top: 60px;
+  margin-left: auto;
+  color: #290E03; }
 
 /* This is the style sheet for the main landing page of the website @author Rhys Howell*/
 .landingPage {
