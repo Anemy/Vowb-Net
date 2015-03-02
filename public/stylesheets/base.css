@@ -382,6 +382,10 @@ table {
         line-height: 1.4em; }
 
 /* This is the styling page for the lobby page */
+.lobbyPage .userTitle {
+  font-family: tahoma;
+  font-size: 14;
+  color: orange; }
 .lobbyPage .usersOnline {
   font-family: tahoma;
   font-size: 14;
@@ -396,6 +400,8 @@ table {
   font-size: 12px;
   color: black;
   border: 1px black solid;
+  position: relative;
+  top: 15px;
   height: 225px;
   width: 400px;
   word-wrap: break-word;
