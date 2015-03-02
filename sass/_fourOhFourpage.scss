@@ -1,0 +1,46 @@
+// Styling for the 404 of vowb.net
+
+.fourOhFour {
+  font-family: 'Cabin';
+
+  background-color: $light;
+  color: $dark;
+
+  font-size: 1em;
+
+  position: absolute;
+  top:0;
+  left: 0;
+
+  height: 100%;
+  width: 100%;
+
+  .titleText {
+    margin-left: 2em;
+    margin-top: 2em;
+    font-size: 2.2em;
+  }
+
+  .errorText {
+    margin-left: 5em;
+    margin-top: 1.5em;
+    font-size: 1.2em;
+  }
+
+  .accentText {
+    color: $accent;
+  }
+
+  .macarena {
+    text-align:center;
+    width: 100%;
+    margin-top: 5em;
+    position:absolute;
+    .macImage{
+      width:20%;
+      height: auto;
+      //margin-left: auto;
+      //margin-right: auto;
+    }
+  }
+}

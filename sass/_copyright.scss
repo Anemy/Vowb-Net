@@ -5,11 +5,18 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%;
-  background-color: $light;
+  width: 96%;
+  background-color: white;
   color: $dark;
-  padding-left: 10%;
+  padding-left: 4%;
   height: 2em;
+
+  // border-top-width: 2px;
+  // border-style: solid;
+  // border-color: $light;
+  -moz-box-shadow: 0 -2px 2px $medium;
+  -webkit-box-shadow: 0 -2px 2px $medium;
+  box-shadow: 0 -2px 2px $medium;
 
   font-family: 'Cabin';
 
@@ -18,7 +25,7 @@
     margin-top: 0.4em;
     .pageLink {
       text-decoration: underline;
-      margin-left: 1em;
+      margin-left: 1.6em;
     }
     .linkSplit {
       padding-left: 0.8em;

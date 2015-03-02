@@ -2,13 +2,14 @@
     display: none;
 
     font-family: 'Cabin'; // $clouds;
-    z-index: 10;
+    z-index: 100;
     top: 0px;
     left: 0px;
+    color: $dark;
 
     .mask {
       position: fixed;
-      z-index:11;
+      z-index:101;
       top: 0px;
       left: 0px;
       height:100%;
@@ -21,108 +22,134 @@
       height: auto;
       left:40%;
       top:150px;
-      background: #FFF;
-      z-index:12;
+      background: white;
+      z-index:102;
+      border-radius: 5px;
     }
     /* Popup Styles*/
-      .loginHeader  {
-        font-size: 16px;
-        text-transform:  uppercase;
-        background: #F4F4F2;
-        position: relative;
-        padding: 10px 20px;
-        border-bottom: 1px solid #DDD;
-        font-weight: bold;
-      }
-        .loginClose  {
-          position:  absolute;
-          right:  0;
-          top: 0;
-          padding: 10px 15px;
-          background: #E4E4E2;
-          cursor:  pointer;
-          color: #aaa;
-          font-size: 16px;
-        }
-      .loginBody {
-        padding: 20px;
-      }
-      .loginForm  {
+    .loginHeader  {
+      font-size: 16px;
+      text-transform:  uppercase;
+      background: $light;
+      position: relative;
+      padding: 10px 20px;
+      border-bottom: 1px solid $medium;
+      font-weight: bold;
+
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
     }
- 
-.loginForm label  {
-    display:  block;
-     margin-bottom: 5px;
-}
- 
-.loginForm input[type="username"], .loginForm input[type="password"]  {
-    display:  block;
-     width: 90%;
-     padding:  10px;
-     border: 1px solid #DDD;
-     color: #666;
-}
- 
-.loginForm input[type="checkbox"]  {
-    float: left;
-     margin-right: 5px;
-}
- 
-.loginForm input[type="checkbox"]+label  {
-    float: left;
-}
- 
- 
-.loginForm .checkbox  {
-    margin-bottom:  10px;
-     clear:  both;
-     overflow:  hidden;
-}
+    .loginClose  {
+      position:  absolute;
+      right:  0;
+      top: 0;
+      padding: 8px 12px;
+      cursor:  pointer;
+      color: #aaa;
+      font-size: 20px;
 
-.btn  {
-    padding: 10px 20px;
-     background:  #F4F4F2;
-}
+      -webkit-transition: all .1s ease;
+      -moz-transition: all .1s ease;
+      -ms-transition: all .1s ease;
+      -o-transition: all .1s ease;
+      transition: all .1s ease;
+    }
+    .loginClose:hover  {
+      padding: 7px 11px;
+      cursor:  pointer;
+      font-size: 24px;
+    }
+    .loginClose:active  {
+      color: #888;
+    }
 
-.btn_red  {
-    background:  #ED6347;
-     color:  #FFF;
-}
+    .loginBody {
+      padding: 20px;
+    }
 
-.btn:hover  {
-    background:  #E4E4E2;
-}
+    .loginForm label  {
+        display:  block;
+        margin-bottom: 5px;
+    }
 
-.btn_red:hover  {
-    background:  #C12B05;
-}
-.action_btns  {
-    clear: both;
-     overflow:  hidden;
-}
-.action_btns a  {
-    display:  block;
-}
+    .loginForm input[type="username"], .loginForm input[type="password"]  {
+        display:  block;
+         width: 90%;
+         padding:  6px;
+         // border: 1px solid #DDD;
+         color: #666;
+         border-radius: 5px;
 
-a.btn  {
-    color: #666;
-     text-align:  center;
-     text-decoration:  none;
-}
+         border: none;
+         outline: none;
+         box-shadow: 0 0 2px $dark;
 
-a.btn_red  {
-    color:  #FFF;
-}
+         -webkit-transition: all .25s ease;
+         -moz-transition: all .25s ease;
+         -ms-transition: all .25s ease;
+         -o-transition: all .25s ease;
+         transition: all .25s ease;
+    }
 
-.one_half  {
-    width: 50%;
-     display:  block;
-     float: left;
-}
+    .loginForm input[type="username"]:focus, .loginForm input[type="password"]:focus {
+      box-shadow: 0 0 6px $highlight;
+    }
 
-.one_half.last  {
-    width: 45%;
-     margin-left: 5%;
-}
+    .loginForm input[type="checkbox"]  {
+        float: left;
+         margin-right: 5px;
+    }
+
+    .loginForm input[type="checkbox"]+label  {
+        float: left;
+    }
+
+
+    .loginForm .checkbox  {
+        margin-bottom:  10px;
+         clear:  both;
+         overflow:  hidden;
+    }
+
+    .btn_red  {
+        background:  $accent;
+        color:  white;
+        padding: 10px 20px;
+        border-radius: 5px;
+    }
+    .btn_red:hover  {
+        background:  $accent-dark;
+    }
+    .btn_red:active  {
+        box-shadow: inset 0px 0px 2px 2px rgba(0,0,0,0.2);
+    }
+    .action_btns  {
+        clear: both;
+        overflow:  hidden;
+    }
+    .action_btns a  {
+        display:  block;
+    }
+
+    a.btn  {
+        color: #666;
+        text-align:  center;
+        text-decoration:  none;
+    }
+
+    a.btn_red  {
+        color:  white;
+    }
+
+    .one_half  {
+        width: 50%;
+         display:  block;
+         float: left;
+    }
+
+    .one_half.last  {
+        width: 45%;
+         margin-left: 5%;
+    }
 
 }

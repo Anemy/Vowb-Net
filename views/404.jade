@@ -1,0 +1,12 @@
+//- The 404 page of our site
+
+extends layout
+block content
+  .fourOhFour
+    .titleText
+      a(href="/").
+        vowb<span class="accentText">.</span>net
+    .errorText
+      a.
+        <span class="accentText">404</span>: oops we couldn't find vowb.net#{url} sorry!
+  include copyright
