@@ -11,10 +11,12 @@ block content
           div.loginBody
             div.loginForm      
               label Username
-              input(type='username')
+              
+              //adding id's (Pascal 03/02/15)
+              input(type='username' id = "un_id")
               br
               label Password
-              input(type='password')
+              input(type='password' id = "pw_id")
               br
               .checkbox
                 input#remember(type='checkbox') 

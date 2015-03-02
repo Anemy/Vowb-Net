@@ -6,6 +6,8 @@ $('#signupForm').ready (function() {
     $('#signupForm').submit( function (event) {
         console.log ("Signup form submitted");
 
+        // get data from each thing and send to server
+
         // get data from each thing and send to server 
         //(Pascal 2/24/2015)
         if ($("#password_id").val() == $("#reenterpw_id").val()) {
@@ -20,9 +22,13 @@ $('#signupForm').ready (function() {
                 },
                 success: function(data){
                     console.log("Success from server");
+                    var delay = 3000; //Your delay in milliseconds
+                    setTimeout(function(){ window.location = "/"; }, delay);
+                    //display "redirecting in 3 seconds"
                 },
                 error: function(data){
                     console.log("Failure from server");
+                    
                 }
             });
         } else {
