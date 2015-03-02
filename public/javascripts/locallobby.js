@@ -2,9 +2,39 @@
 //Create a room
 var isInitiator;
 
+//
+// rtc.createStream({"video": false, "audio":true}, function(stream){
+//   // get local stream for manipulation
+//
+// }
+// rtc.connect('http://localhost:8001');//, optionalRoom);//ws://
+
+navigator.getUserMedia = navigator.getUserMedia ||  navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+
+var constraints = {video: false, audio: true};
+
+function successCallback(localMediaStream) {
+  window.stream = localMediaStream; // stream available to console
+  console.log("Sucessfull callback on the stream!!!");
+  // var video = document.querySelector("video");
+  // video.src = window.URL.createObjectURL(localMediaStream);
+  // video.play();
+}
+
+function errorCallback(error){
+  console.log("navigator.getUserMedia error: ", error);
+}
+
+navigator.getUserMedia(constraints, successCallback, errorCallback);
+
+
+
+
+
 room = prompt("Enter Lobby Name:");
 
 var sckt = io.connect();
+
 
 if (room !== "") {
   console.log('Joining Lobby ' + room);
@@ -53,4 +83,3 @@ $("#m").keyup(function(e) {
     }
 });
 });
-

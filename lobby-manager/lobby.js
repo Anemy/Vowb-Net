@@ -7,7 +7,13 @@ var includeInThisContext = function(path) {
     vm.runInThisContext(code, path);
 }.bind(this);
 
-//includeInThisContext(__dirname + "/voice.js");
+// This import voice.js
+includeInThisContext(__dirname + "/voice.js");
+
+var webRTC = require('webrtc.io').listen(8001);
+
+console.log("Web RTC listening on port 8001.");
+
 var lobbyManager = module.exports =  {
     io: {}
 }
@@ -15,18 +21,18 @@ var lobbyManager = module.exports =  {
 lobbyManager.startListening = function(http) {
     this.io = require('socket.io')(http);
     //require('http').Server(app);
-    
+
     //hacky fix for stuff
     var that = this;
 
     this.io.on('connection', function(socket) {
       console.log("New socket io connection made.");
-        // can do something with socket here.
+      // can do something with socket here.
 
-	  socket.on('chat message', function(msg){
-	  	console.log("Message Received");
-	    that.io.emit('chat message', msg);
-	  });
+  	  socket.on('chat message', function(msg){
+  	  	console.log("Message Received");
+  	    that.io.emit('chat message', msg);
+  	  });
 
     function log(){
         var array = [">>> Message from server: "];
@@ -64,4 +70,3 @@ lobbyManager.startListening = function(http) {
     });
     });
 }
-
