@@ -2,7 +2,7 @@
 /* must change later for webpages greater than a page */
 
 .copyright {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 96%;
@@ -14,7 +14,7 @@
   // border-top-width: 2px;
   // border-style: solid;
   // border-color: $light;
-  -moz-box-shadow: 0 -2px 2px $medium;
+  -moz-box-shadow: 0 -2px 2px $medium; 
   -webkit-box-shadow: 0 -2px 2px $medium;
   box-shadow: 0 -2px 2px $medium;
 

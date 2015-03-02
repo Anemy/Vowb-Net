@@ -17,6 +17,11 @@ router.get('/signup', function(req, res, next) {
 
     res.render('signup', { title: 'Signup - Vowb.net'});
 });
+//tmp page
+router.get('/profile', function(req, res, next) { //tmp
+    // tmp profile page
+    res.render('profile', { title: 'ProfilePage - Vowb.net'});
+});
 
 router.post('/signup', function(req, res) {
     console.log("Sign up request from client! There's data!!!");
