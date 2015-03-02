@@ -28,6 +28,13 @@ router.post('/signup', function(req, res) {
     // is it a valid username?!
 });
 
+//Pascal 03/02/15
+router.post('/login', function(req, res) {
+    console.log("Log in request from client! There's data!!!");
+    // do something with the req data
+    // is it a valid username?!
+});
+
 router.get('/about', function(req, res, next) {
     //console.log("HOME PAGE REQUESTED");
 

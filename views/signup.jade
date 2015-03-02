@@ -2,8 +2,9 @@ extends layout
 block content
     script(defer="defer" src="/javascripts/signupPage.js")
     .signupPage
-        .titleText(href="/" ).
-            vowb<span class="accentText">.</span>net
+        .titleText
+            a(href="/").
+              vowb<span class="accentText">.</span>net
         .bodyLine
         .pageThings
             form#signupForm
