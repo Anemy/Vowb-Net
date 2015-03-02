@@ -9,6 +9,8 @@ var isInitiator;
 // }
 // rtc.connect('http://localhost:8001');//, optionalRoom);//ws://
 
+
+
 navigator.getUserMedia = navigator.getUserMedia ||  navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 
 var constraints = {video: false, audio: true};
@@ -31,7 +33,8 @@ navigator.getUserMedia(constraints, successCallback, errorCallback);
 
 
 
-room = prompt("Enter Lobby Name:");
+// room = prompt("Enter Lobby Name:");
+room = "default";
 
 var sckt = io.connect();
 

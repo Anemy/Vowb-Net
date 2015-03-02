@@ -7,15 +7,15 @@ block content
     // script(defer="defer" src="/webrtc.io/webrtc.io.js")
     include banner
     .lobbyPage
-        .titleText(href="/").
         .bodyLine
         .pageThings
-            #msgBox.chatbox
-                ul#messages
             .userTitle
                 Online Users
                 .usersOnline
-            .controls
-                textarea.inputBox#m(type="text" placeHolder="Insert message...", cols = '50', rows='5')
+            .chatArea
+                #msgBox.chatbox
+                    ul#messages
+                .controls
+                    textarea.inputBox#m(type="text" placeHolder="Insert message...")
 
     include copyright
