@@ -27,7 +27,7 @@ lobbyManager.startListening = function(http) {
     this.io.on('connection', function(socket) {
       //console.log("New socket io connection made.");
 
-      socket.emit('chat message', 'Welcome to the lobby chat room!  There are currently ' + that.numberOfClients + ' users connected.');
+      socket.emit('chat message', '  -- Welcome to the lobby chat room!  There are currently ' + that.numberOfClients + ' users connected. --  ');
       that.numberOfClients++;
 
   	  socket.on('chat message', function(msg){
