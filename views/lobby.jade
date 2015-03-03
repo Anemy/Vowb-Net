@@ -1,30 +1,29 @@
 extends layout
 block content
-      
+
     script(src='https://cdn.socket.io/socket.io-1.2.0.js')
     script(src='https://cdn.webrtc-experiment.com/RTCMultiConnection.js')
     script(defer="defer" src="/javascripts/locallobby.js")
-    
+
     include banner
     .lobbyPage
         .bodyLine
         .pageThings
             .experiment
-                //next two lines are for Creating lobbies
-                //<input type="text" id="conference-name">
-                <button id="setup-new-conference" class="setup">Join Lobby</button>
-                <!-- list of all available broadcasting rooms -->
-                //<table style="width: 100%;" id="rooms-list"></table>
 
-                <!-- local/remote videos container -->
-                <div id="audios-container"></div>
-            .userTitle
-                Online Users
-                .usersOnline
+                .createLobby
+                    input#conference-name(type="text" placeHolder="Insert Lobby name")
+                    button#setup-new-conference.setup Create lobby
+
+                // list of all available broadcasting rooms
+                table#rooms-list(style='width: 100%;')
+                // local/remote videos container
+                #audios-container
+
             .chatArea
+                .lobbySideBar
                 #msgBox.chatbox
                     ul#messages
-                .controls
-                    textarea.inputBox#m(type="text" placeHolder="Insert message...")
+                input#m.controls(type="text" placeHolder="Insert message...")
 
     include copyright
