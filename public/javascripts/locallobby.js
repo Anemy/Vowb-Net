@@ -49,9 +49,10 @@ var sessions = {};
 connection.onNewSession = function(session) {
     if (sessions[session.sessionid]) return;
     sessions[session.sessionid] = session;
-    var tr = document.createElement('tr');
     tr.innerHTML = '<td><strong>' + session.extra['session-name'] + '</strong> lobby</td>' +
         '<td><button class="join">Join</button></td>';
+    
+    var tr = document.createElement('tr');
     roomsList.insertBefore(tr, roomsList.firstChild);
     var joinRoomButton = tr.querySelector('.join');
     joinRoomButton.setAttribute('data-sessionid', session.sessionid);
@@ -68,7 +69,8 @@ var roomsList = document.getElementById('rooms-list');
 document.getElementById('setup-new-conference').onclick = function() {
     this.disabled = true;
     connection.extra = {
-        'session-name': document.getElementById('conference-name').value || 'Anonymous'
+        //'session-name': document.getElementById('conference-name').value || 'Anonymous'
+        'session-name': 'Public'
     };
     connection.open();
 };
