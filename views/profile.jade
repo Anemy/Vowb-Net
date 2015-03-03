@@ -4,5 +4,26 @@ block content
 	include banner
 
 	.profilePage
+		.leftPane
+			img(class="profIMG" src="/images/M.jpg")
+			.statusBar
+				img(class="statusIMG" src="/images/online.png") 
+				.pStatus ONLINE
+				.p Current Lobby:  
+				.pCurrLobby CSGO MM
+			.interactionBar
+				a(href="/").
+					Add to Friends List <br>
+				a(href="/").
+					Send Message <br>
+				a(href="/").
+					All Posts <br>
+				a(href="/").
+					Threads Started <br>
 
-		.p profile page
+		.centerPane
+			.p profile page
+		.rightPage
+			.p profile page
+
+	include copyright

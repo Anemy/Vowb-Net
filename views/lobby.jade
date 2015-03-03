@@ -1,28 +1,29 @@
 extends layout
 block content
-    script(src='https://cdn.socket.io/socket.io-1.2.0.js')
-    script(defer="defer" src="/javascripts/locallobby.js")
-      
-    //<script src="//cdn.webrtc-experiment.com/socket.io.js"> </script>
-    <script src="//cdn.webrtc-experiment.com/RTCPeerConnection-v1.5.js"> </script>
-    <script src="//cdn.webrtc-experiment.com/video-conferencing/conference.js"> </script>
 
-    
-    script(defer="defer" src="/javascripts/adapter.js")
-    // script(defer="defer" src="/webrtc.io/webrtc.io.js")
-    
+    script(src='https://cdn.socket.io/socket.io-1.2.0.js')
+    script(src='https://cdn.webrtc-experiment.com/RTCMultiConnection.js')
+    script(defer="defer" src="/javascripts/locallobby.js")
+
     include banner
     .lobbyPage
         .bodyLine
         .pageThings
-            <button id="setup-new-room">Setup New Conference</button>
-            .userTitle
-                Online Users
-                .usersOnline
+            .experiment
+                .createLobby
+                    input#conference-name(type="text" placeHolder="Insert Lobby name")
+                    button#setup-new-conference.setup Create lobby
+
+                // list of all available broadcasting rooms
+                table#rooms-list(style='width: 100%;')
+                // local/remote videos container
+                #audios-container
+
+
             .chatArea
+                .lobbySideBar
                 #msgBox.chatbox
                     ul#messages
-                .controls
-                    textarea.inputBox#m(type="text" placeHolder="Insert message...")
+                input#m.controls(type="text" placeHolder="Insert message...")
 
     include copyright
