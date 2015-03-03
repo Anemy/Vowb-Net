@@ -15,7 +15,6 @@ $(document).ready(function() {
       return false;
     });
 
-
     //Hitting enter sends the message
     $("#m").keyup(function(e) {
         if(e.keyCode == 13) {
@@ -25,8 +24,6 @@ $(document).ready(function() {
         }
     });
 });
-
-
 
 /*
 THERE IS NO SERVER CODE.
@@ -62,6 +59,7 @@ connection.onNewSession = function(session) {
         session = sessions[sessionid];
         if (!session) throw 'No such session exists.';
         connection.join(session);
+        socket.emit('chat message', 'A user has connected.');
     };
 };
 var audioContainer = document.getElementById('audios-container') || document.body;
