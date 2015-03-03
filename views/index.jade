@@ -2,27 +2,6 @@ extends layout
 block content
     include banner
     .landingPage
-      .loginPage
-        .mask
-        div.loginPopup
-          header.loginHeader
-            span.headerTitle Login
-            span.loginClose(onclick = "exitButtonClicked()") X
-          div.loginBody
-            div.loginForm
-              label Username
-
-              //adding id's (Pascal 03/02/15)
-              input(type='username' id = "un_id")
-              br
-              label Password
-              input(type='password' id = "pw_id")
-              br
-              .checkbox
-                input#remember(type='checkbox')
-                label(for='remember') Remember me on this computer
-              .action_btns
-                a.btn.btn_red(onclick="loginSubClicked()") Login
       .mainContent
           a.
               Talk with all of your friends and guild mates using <span class="accentText">vowb.net</span>!
@@ -30,7 +9,7 @@ block content
           // img(class="macarena" src="https://d13yacurqjgara.cloudfront.net/users/218750/screenshots/1933555/ey-macarena.gif")
           .signupButton
               a(href="/signup").
-                  SIGN UP
+                  Sign Up
           //- .quickConnectButton
           //-     a(href="/lobby").
           //-         QUICK CONNECT
