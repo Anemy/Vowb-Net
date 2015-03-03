@@ -1,21 +1,23 @@
 extends layout
 block content
-    script(src='https://cdn.socket.io/socket.io-1.2.0.js')
-    script(defer="defer" src="/javascripts/locallobby.js")
       
-    //<script src="//cdn.webrtc-experiment.com/socket.io.js"> </script>
-    <script src="//cdn.webrtc-experiment.com/RTCPeerConnection-v1.5.js"> </script>
-    <script src="//cdn.webrtc-experiment.com/video-conferencing/conference.js"> </script>
-
-    
-    script(defer="defer" src="/javascripts/adapter.js")
-    // script(defer="defer" src="/webrtc.io/webrtc.io.js")
+    script(src='https://cdn.socket.io/socket.io-1.2.0.js')
+    script(src='https://cdn.webrtc-experiment.com/RTCMultiConnection.js')
+    script(defer="defer" src="/javascripts/locallobby.js")
     
     include banner
     .lobbyPage
         .bodyLine
         .pageThings
-            <button id="setup-new-room">Setup New Conference</button>
+            .experiment
+                <input type="text" id="conference-name">
+                <button id="setup-new-conference" class="setup">Create lobby</button>
+
+                <!-- list of all available broadcasting rooms -->
+                <table style="width: 100%;" id="rooms-list"></table>
+
+                <!-- local/remote videos container -->
+                <div id="audios-container"></div>
             .userTitle
                 Online Users
                 .usersOnline
