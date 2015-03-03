@@ -156,9 +156,70 @@ table {
   display: block;
   font-family: 'Cabin';
   z-index: 100;
+  width: 1000px;
   margin-top: 60px;
   margin-left: auto;
-  color: #290E03; }
+  margin-right: auto;
+  color: #290E03;
+  text-align: center; }
+  .profilePage .leftPane {
+    width: 180px;
+    text-align: center;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto; }
+    .profilePage .leftPane .profIMG {
+      height: 180px;
+      width: 180px;
+      border: 1px solid black;
+      box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.43); }
+    .profilePage .leftPane .statusBar {
+      border: 1px solid dimgrey;
+      box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.43);
+      margin-top: 4px;
+      width: 180px;
+      height: 40px;
+      font-size: 12px;
+      text-align: left;
+      display: inline-block; }
+      .profilePage .leftPane .statusBar .statusIMG {
+        padding-left: 4px;
+        margin-top: 3px;
+        display: inline-block;
+        height: 10px;
+        width: 10px; }
+      .profilePage .leftPane .statusBar .pStatus {
+        margin-top: 6px;
+        display: inline-block;
+        padding-left: 10px;
+        width: 140px;
+        height: 16px; }
+      .profilePage .leftPane .statusBar .p {
+        margin-left: 3px;
+        display: inline-block; }
+      .profilePage .leftPane .statusBar .pCurrLobby {
+        margin-left: 3px;
+        display: inline-block; }
+    .profilePage .leftPane .interactionBar {
+      border: 1px solid dimgrey;
+      box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.43);
+      margin-top: 4px;
+      font-size: 12px;
+      text-align: left;
+      width: 180px;
+      height: 80px; }
+  .profilePage .centerPane {
+    width: 640px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block; }
+  .profilePage .rightPage {
+    width: 180px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block; }
 
 /* This is the style sheet for the main landing page of the website @author Rhys Howell*/
 .landingPage {
