@@ -18,13 +18,13 @@ lobbyManager.startListening = function(http) {
     //hacky fix for stuff
     var that = this;
 
-    this.numberOfClients = 0;
+    that.numberOfClients = 0;
 
     //creates a listening socket io connection
-    this.io.on('connection', function(socket) {
+    that.io.on('connection', function(socket) {
       //console.log("New socket io connection made.");
 
-      socket.emit('server message', {text:'  -- Welcome to the lobby chat room!  There are currently ' + that.numberOfClients + ' users connected. --  ' ,type: 'join'});
+      socket.emit('server message', {text: '  -- Welcome to the lobby chat room!  You are User Number ' + that.numberOfClients + '. --  ' ,type: 'join'});
       that.numberOfClients++;
 
   	  socket.on('chat message', function(msg){

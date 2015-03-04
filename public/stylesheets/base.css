@@ -165,10 +165,11 @@ table {
   position: relative; }
   .profilePage .leftPane {
     width: 180px;
+    position: absolute;
+    top: 0;
+    left: 0;
     text-align: center;
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto; }
+    display: inline-block; }
     .profilePage .leftPane .profIMG {
       height: 180px;
       width: 180px;
@@ -252,14 +253,16 @@ table {
   .profilePage .centerPane {
     width: 640px;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    position: absolute;
+    top: 0;
+    left: 180px;
     display: inline-block; }
   .profilePage .rightPage {
     width: 180px;
+    position: absolute;
+    top: 0;
+    left: 820px;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
     display: inline-block; }
     .profilePage .rightPage .friendsListPane {
       text-align: right;
@@ -521,6 +524,20 @@ table {
         line-height: 1.4em; }
 
 /* This is the styling page for the lobby page */
+.lobbyPage .joinVoiceChat {
+  font-family: 'Cabin';
+  text-align: center;
+  width: 120px;
+  height: 30px;
+  padding-top: 8px;
+  font-size: 18px;
+  color: #290E03;
+  border: 2px solid #FC4349;
+  border-radius: 5px; }
+.lobbyPage .joinVoiceChat:hover {
+  cursor: pointer; }
+.lobbyPage .joinVoiceChat:active {
+  color: #FC4349; }
 .lobbyPage .chatArea {
   position: absolute;
   width: 100%;
@@ -530,7 +547,7 @@ table {
   .lobbyPage .chatArea .lobbySideBar {
     position: absolute;
     right: 0%;
-    width: 15%;
+    width: 14%;
     height: 100%;
     bottom: 24px;
     font-family: tahoma;
@@ -551,6 +568,12 @@ table {
     left: 0;
     word-wrap: break-word;
     overflow-y: auto; }
+    .lobbyPage .chatArea .chatbox #messages li {
+      padding-top: 3px;
+      padding-bottom: 3px;
+      padding-left: 6px; }
+    .lobbyPage .chatArea .chatbox #messages .serverMessage {
+      background-color: #ECF0F1; }
   .lobbyPage .chatArea .controls {
     position: absolute;
     left: 0;
