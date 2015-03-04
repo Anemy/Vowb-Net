@@ -114,6 +114,8 @@ db.add = function(tablename, data) {
  *  Vulnerable to SQL injection via the tablename
  *  variable, so don't call it on tablenames that
  *  aren't from something like "db.userDB"!
+ *  Also searchParams property names are vulnerable
+ *  as well.
  * 
  *  Example call:
  *
@@ -126,15 +128,15 @@ db.add = function(tablename, data) {
  *  This code would print out the email address of all users named "etheller"
  *
  */
-db.search = function(tablename, data, callback) {
+db.search = function(tablename, searchParams, callback) {
     if( !DUMMY_DATABASE[tablename] )
         DUMMY_DATABASE[tablename] = [];
     var dummyResults = [];
     for(var i = 0; i < DUMMY_DATABASE[tablename].length; i++ ) {
         var match = true;
-        for (var column in data) {
-            if (data.hasOwnProperty(column)) {
-                if( DUMMY_DATABASE[tablename][i][column] != data[column] ) {
+        for (var column in searchParams) {
+            if (searchParams.hasOwnProperty(column)) {
+                if( DUMMY_DATABASE[tablename][i][column] != searchParams[column] ) {
                     match = false;
                 }
             }
@@ -149,13 +151,12 @@ db.search = function(tablename, data, callback) {
     var i = 0;
     var itemIndex = 1;
     var values = [];//tablename];
-    for (var column in data) {
-        if (data.hasOwnProperty(column)) {
+    for (var column in searchParams) {
+        if (searchParams.hasOwnProperty(column)) {
             if( i > 0 )
                 queryString += " AND ";
-            queryString += "$" + (itemIndex++) + "=$" + (itemIndex++);
-            values.push(column);
-            values.push(data[column]);
+            queryString += column + "=$" + (itemIndex++);
+            values.push(searchParams[column]);
             i++;
         }
     }
@@ -167,6 +168,82 @@ db.search = function(tablename, data, callback) {
         } else {
             console.log("Database .search: No error");
             callback(result.rows);
+        }
+    });
+}
+
+
+/*
+ *  Another generic database usage function.
+ *  Vulnerable to SQL injection via the tablename
+ *  and data property name variables, so don't call
+ *  it on tablenames or property names that
+ *  aren't guaranteed to be correct!
+ * 
+ *  Example call:
+ *
+ *  db.update(db.userDB, { username: "etheller" }, {
+ *      signature: "My signature just got 2x cooler."
+ *  });
+ *
+ *  This code would update the signature for user "etheller"
+ *  to the phrase shown above.
+ *
+ */
+db.update = function(tablename, searchParams, data) {
+    
+    if( !DUMMY_DATABASE[tablename] )
+        DUMMY_DATABASE[tablename] = [];
+    for(var i = 0; i < DUMMY_DATABASE[tablename].length; i++ ) {
+        var match = true;
+        for (var column in searchParams) {
+            if (searchParams.hasOwnProperty(column)) {
+                if( DUMMY_DATABASE[tablename][i][column] != searchParams[column] ) {
+                    match = false;
+                }
+            }
+        }
+        if( match ) {
+            for (var column in data) {
+                if (data.hasOwnProperty(column)) {
+                    DUMMY_DATABASE[tablename][i][column] = data[column];
+                }
+            }
+        }
+    }
+    return;
+    var queryString = "UPDATE "+tablename+" SET ";
+    var i = 0;
+    var itemIndex = 1;
+    var values = [];
+    for (var column in data) {
+        if (data.hasOwnProperty(column)) {
+            if( i > 0 )
+                queryString += ", ";
+            queryString += column + "=$" + (itemIndex++);
+            values.push(data[column]);
+            i++;
+        }
+    }
+    queryString += " WHERE "
+    i = 0;
+    for (var column in searchParams) {
+        if (searchParams.hasOwnProperty(column)) {
+            if( i > 0 )
+                queryString += " AND ";
+            queryString += column + "=$" + (itemIndex++);
+            values.push(searchParams[column]);
+            i++;
+        }
+    }
+    queryString += ";";
+    console.log("update: " + queryString +"; " + JSON.stringify(values));
+    db.query(queryString, values, function(err, result) {
+        if( err ) {
+            console.log("Database .update ERROR: " + err.toString());
+            throw err;
+        } else {
+            console.log("Database .update: No error");
         }
     });
 }
