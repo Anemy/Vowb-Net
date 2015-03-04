@@ -59,6 +59,7 @@ connection.onNewSession = function(session) {
         session = sessions[sessionid];
         if (!session) throw 'No such session exists.';
         connection.join(session);
+        
         socket.emit('chat message', 'A user has connected.');
     };
 };
@@ -67,8 +68,7 @@ var roomsList = document.getElementById('rooms-list');
 document.getElementById('setup-new-conference').onclick = function() {
     this.disabled = true;
     connection.extra = {
-        //'session-name': document.getElementById('conference-name').value || 'Anonymous'
-        'session-name': 'Public'
+        'session-name': document.getElementById('conference-name').value || 'Anonymous'
     };
     connection.open();
 };

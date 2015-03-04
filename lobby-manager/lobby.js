@@ -31,10 +31,6 @@ lobbyManager.startListening = function(http) {
   	  	//console.log("Message Received");
   	    that.io.emit('chat message', msg);
   	  });
-      
-      socket.on('connect', function () {
-        that.io.emit('chat message', 'A user has connected.');
-      });
 
       socket.on('disconnect', function () {
         that.numberOfClients--;
