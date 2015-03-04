@@ -1,29 +1,30 @@
 .profilePage {
 	display: block;
-    font-family: 'Cabin'; // $clouds;
-    z-index: 100;
+  font-family: 'Cabin'; // $clouds;
+  z-index: 100;
 
-    width:1000px;
-    margin-top: 60px;
+  width:1000px;
+  margin-top: 60px;
 	margin-left: auto;
 	margin-right: auto;
 	color: $dark;
 	text-align: center;
 	position: relative;
-	
+
 	.leftPane {
 		width: 180px;
+		position: absolute;
+		top: 0;
+		left: 0;
 		text-align: center;
-		display:inline-block;
-		margin-left: auto;
-		margin-right: auto;
+		display: inline-block;
 
 		.profIMG {
 			height: 180px;
-            width: 180px;
-            //margin: 2px;
-            border: 1px solid black;
-            -webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
+      width: 180px;
+      //margin: 2px;
+      border: 1px solid black;
+      -webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
 			-moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
 			box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
 			-moz-box-sizing: border-box;
@@ -32,7 +33,7 @@
 		}
 		.statusBar {
 			border: 1px solid dimgrey;
-            -webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
+      -webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
 			-moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
 			box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
 			margin-top: 4px;
@@ -40,7 +41,7 @@
 			height: 40px;
 			//font-weight: bold;
 			font-size: 12px;
-			text-align: left;	
+			text-align: left;
 			display:inline-block;
 
 			-moz-box-sizing: border-box;
@@ -72,7 +73,7 @@
 			}
 			.pCurrLobby{
 				margin-left: 3px;
-				display: inline-block;								
+				display: inline-block;
 			}
 
 		}
@@ -84,9 +85,9 @@
 			margin-top: 6px;
 			//font-weight: bold;
 			font-size: 12px;
-			text-align: left;	
+			text-align: left;
 			width: 180px;
-			height: 85px;  
+			height: 85px;
 			padding-top: 8px;
 			padding-left: 4px;
 			-moz-box-sizing: border-box;
@@ -134,25 +135,28 @@
 	.centerPane {
 		width: 640px;
 		text-align: center;
-		margin-left: auto;
-		margin-right: auto;
+		position: absolute;
+		top: 0;
+		left: 180px;
 		display:inline-block;
 
 	}
 	.rightPage {
 		width: 180px;
+		position: absolute;
+		top: 0;
+		left: 820px;
 		text-align: center;
-		margin-left: auto;
-		margin-right: auto;
-		display:inline-block;
+
+		display:inline-block; 
 		.friendsListPane {
 
-			text-align: right;	
+			text-align: right;
 			display: block;
 			-moz-box-sizing: border-box;
 			-webkit-box-sizing: border-box;
 			box-sizing: border-box;
-		
+
 			.friendsHeader{
 				border: 1px solid black;
             	-webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
