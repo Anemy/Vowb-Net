@@ -161,7 +161,8 @@ table {
   margin-left: auto;
   margin-right: auto;
   color: #290E03;
-  text-align: center; }
+  text-align: center;
+  position: relative; }
   .profilePage .leftPane {
     width: 180px;
     text-align: center;
@@ -172,7 +173,8 @@ table {
       height: 180px;
       width: 180px;
       border: 1px solid black;
-      box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.43); }
+      box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.43);
+      box-sizing: border-box; }
     .profilePage .leftPane .statusBar {
       border: 1px solid dimgrey;
       box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.43);
@@ -181,7 +183,9 @@ table {
       height: 40px;
       font-size: 12px;
       text-align: left;
-      display: inline-block; }
+      display: inline-block;
+      box-sizing: border-box;
+      padding-left: 4px; }
       .profilePage .leftPane .statusBar .statusIMG {
         padding-left: 4px;
         margin-top: 3px;
@@ -192,10 +196,12 @@ table {
         margin-top: 6px;
         display: inline-block;
         padding-left: 10px;
+        font-weight: bold;
         width: 140px;
         height: 16px; }
       .profilePage .leftPane .statusBar .p {
         margin-left: 3px;
+        font-weight: bold;
         display: inline-block; }
       .profilePage .leftPane .statusBar .pCurrLobby {
         margin-left: 3px;
@@ -203,11 +209,46 @@ table {
     .profilePage .leftPane .interactionBar {
       border: 1px solid dimgrey;
       box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.43);
-      margin-top: 4px;
+      margin-top: 6px;
       font-size: 12px;
       text-align: left;
       width: 180px;
-      height: 80px; }
+      height: 85px;
+      padding-top: 8px;
+      padding-left: 4px;
+      box-sizing: border-box; }
+      .profilePage .leftPane .interactionBar a.addFriend {
+        display: block;
+        width: 120px;
+        height: 18px;
+        background: url(/images/profile/add.png) no-repeat;
+        background-size: 10px 10px;
+        background-position: 2px 2px;
+        padding-left: 16px; }
+      .profilePage .leftPane .interactionBar a.msg {
+        display: block;
+        width: 120px;
+        height: 18px;
+        background: url(/images/profile/msg.png) no-repeat;
+        background-size: 10px 10px;
+        background-position: 2px 2px;
+        padding-left: 16px; }
+      .profilePage .leftPane .interactionBar a.posts {
+        display: block;
+        width: 120px;
+        height: 18px;
+        background: url(/images/profile/posts.png) no-repeat;
+        background-size: 10px 10px;
+        background-position: 2px 2px;
+        padding-left: 16px; }
+      .profilePage .leftPane .interactionBar a.threads {
+        display: block;
+        width: 120px;
+        height: 18px;
+        background: url(/images/profile/threads.png) no-repeat;
+        background-size: 10px 10px;
+        background-position: 2px 2px;
+        padding-left: 16px; }
   .profilePage .centerPane {
     width: 640px;
     text-align: center;
@@ -220,6 +261,37 @@ table {
     margin-left: auto;
     margin-right: auto;
     display: inline-block; }
+    .profilePage .rightPage .friendsListPane {
+      text-align: right;
+      display: block;
+      box-sizing: border-box; }
+      .profilePage .rightPage .friendsListPane .friendsHeader {
+        border: 1px solid black;
+        box-shadow: 3px 2px 3px 0px rgba(0, 0, 0, 0.43);
+        margin-top: 4px;
+        width: 180px;
+        font-size: 20px;
+        border-spacing: 0px;
+        position: relative;
+        z-index: -1;
+        display: block;
+        float: right; }
+      .profilePage .rightPage .friendsListPane .friendsList {
+        float: right;
+        border: 1px solid dimgrey;
+        box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.43);
+        width: 178px;
+        height: 200px;
+        font-size: 12px;
+        border-spacing: 0px;
+        position: relative;
+        z-index: 1;
+        display: block;
+        padding-top: 10px; }
+        .profilePage .rightPage .friendsListPane .friendsList .friend1StatusIMG {
+          display: inline-block; }
+        .profilePage .rightPage .friendsListPane .friendsList .friend1Name {
+          display: inline-block; }
 
 /* This is the style sheet for the main landing page of the website @author Rhys Howell*/
 .landingPage {
@@ -257,16 +329,11 @@ table {
       right: 45%;
       text-align: center;
       z-index: 1;
-      background: -webkit-linear-gradient(#FF474E, #DC2329);
-      /* For Safari 5.1 to 6.0 */
-      /* For Opera 11.1 to 12.0 */
-      /* For Firefox 3.6 to 15 */
-      background: linear-gradient(#FF474E, #DC2329);
-      /* Standard syntax */
-      box-shadow: inset 0px 0px 6px 6px rgba(255, 255, 255, 0.1);
-      color: white;
+      color: #290E03;
       font-size: 0.8em;
-      font-family: 'Cabin-Bold';
+      font-family: 'Cabin';
+      background-color: white;
+      border: 2px solid #FC4349;
       border-radius: 5px;
       padding-top: 0.5em;
       padding-bottom: 0.5em;
@@ -276,10 +343,12 @@ table {
       -webkit-transition: all .25s ease;
       transition: all .25s ease; }
     .landingPage .mainContent .signupButton:hover {
-      cursor: pointer; }
+      cursor: pointer;
+      color: white;
+      background-color: #FC4349; }
     .landingPage .mainContent .signupButton:active {
       cursor: pointer;
-      box-shadow: inset 0px 0px 10px 10px rgba(0, 0, 0, 0.1); }
+      background-color: #DC2329; }
     .landingPage .mainContent .macarena {
       position: absolute;
       top: 3.25em;

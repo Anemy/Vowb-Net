@@ -5,25 +5,30 @@ block content
 
 	.profilePage
 		.leftPane
-			img(class="profIMG" src="/images/M.jpg")
+			img(class="profIMG" src="/images/profile/M.jpg")
 			.statusBar
-				img(class="statusIMG" src="/images/online.png") 
+				img(class="statusIMG" src="/images/profile/online.png") 
 				.pStatus ONLINE
 				.p Current Lobby:  
 				.pCurrLobby CSGO MM
 			.interactionBar
-				a(href="/").
+				a(class="addFriend" href="#").
 					Add to Friends List <br>
-				a(href="/").
+				a(class="msg" href="#").
 					Send Message <br>
-				a(href="/").
+				a(class="posts" href="#").
 					All Posts <br>
-				a(href="/").
+				a(class="threads" href="#").
 					Threads Started <br>
 
 		.centerPane
 			.p profile page
 		.rightPage
-			.p profile page
+			.friendsListPane
+				.friendsHeader Friends List
+				.friendsList
+					.friend1
+						img(class="friend1StatusIMG" src="/images/profile/offline.png")
+						.friend1Name bob
+						.friend1Lobby OFFLINE
 
-	include copyright
