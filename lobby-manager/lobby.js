@@ -24,7 +24,7 @@ lobbyManager.startListening = function(http) {
     this.io.on('connection', function(socket) {
       //console.log("New socket io connection made.");
 
-      socket.emit('chat message', '  -- Welcome to the lobby chat room!  There are currently ' + that.numberOfClients + ' users connected. --  ');
+      socket.emit('server message', {text:'  -- Welcome to the lobby chat room!  There are currently ' + that.numberOfClients + ' users connected. --  ' ,type: 'join'});
       that.numberOfClients++;
 
   	  socket.on('chat message', function(msg){
@@ -32,11 +32,11 @@ lobbyManager.startListening = function(http) {
   	    that.io.emit('chat message', msg);
   	  });
 
-      that.io.emit('chat message', ' -- A user has connected. -- ');
+      that.io.emit('server message', {text:' -- A user has connected. -- ',type: 'disconnect'});
 
       socket.on('disconnect', function () {
         that.numberOfClients--;
-        that.io.emit('chat message', ' -- A user has disconnected. -- ');
+        that.io.emit('server message', {text:' -- A user has disconnected. -- ',type: 'join'});
       });
 
     });

@@ -1,13 +1,22 @@
 /* This is the styling page for the lobby page */
 
 .lobbyPage {
-    .experiment{
-        .createLobby{
-            //    position: absolute;
-            //    top: 3em;
-            //    right: 0;
-        }
-
+    .joinVoiceChat {
+        font-family: 'Cabin';
+        text-align: center;
+        width: 120px;
+        height: 30px;
+        padding-top: 8px;
+        font-size: 18px;
+        color: $dark;
+        border: 2px solid $accent;
+        border-radius: 5px;
+    }
+    .joinVoiceChat:hover {
+        cursor: pointer;
+    }
+    .joinVoiceChat:active {
+        color: $accent;
     }
     .chatArea {
         position: absolute;
@@ -19,7 +28,7 @@
         .lobbySideBar{
             position: absolute;
             right: 0%;
-            width: 15%;
+            width: 14%;
             height: 100%;
             bottom: 24px;
             font-family:tahoma;
@@ -46,6 +55,17 @@
 
             word-wrap: break-word;
             overflow-y: auto;
+
+            #messages {
+                li {
+                    padding-top: 3px;
+                    padding-bottom: 3px;
+                    padding-left: 6px;
+                }
+                .serverMessage {
+                    background-color: $light;
+                }
+            }
         }
 
         .controls{
