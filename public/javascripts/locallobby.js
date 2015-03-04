@@ -37,148 +37,63 @@ $(document).ready(function() {
 });
 
 
-var connectToVoiceChat = function() {
-    /*
-    THERE IS NO SERVER CODE.
-    This is the code which enables a user to create an RTC voice chat stream lobby
-    */
+/*
+THERE IS NO SERVER CODE.
+This is the code which enables a user to create an RTC voice chat stream lobby
+*/
+var connection = new RTCMultiConnection();
+connection.session = {
+    audio: true
+};
+connection.sdpConstraints.mandatory = {
+    OfferToReceiveAudio: true,
+    OfferToReceiveVideo: false
+};
+connection.onstream = function(e) {
+    audioContainer.insertBefore(e.mediaElement, audioContainer.firstChild);
+};
 
-    var audioContainer = document.getElementById('audios-container') || document.body;
-    var roomsList = document.getElementById('rooms-list');
 
-    var connection = new RTCMultiConnection();
-    connection.session = {
-        audio: true
+var inSession = false;
+//sessions manages the current lobbies in the sub lobby.
+var sessions = {};
+connection.onNewSession = function(session) {
+
+    console.log("Session: " + session.extra['session-name'] + " was created.");
+    inSession = true;
+    if (sessions[session.sessionid]) return;
+        sessions[session.sessionid] = session;
+        var tr = document.createElement('tr');
+        tr.innerHTML = '<td><strong>' + session.extra['session-name'] + '</strong></td>' +
+            '<td><button class="join">Join</button></td>';
+        roomsList.insertBefore(tr, roomsList.firstChild);
+        var joinRoomButton = tr.querySelector('.join');
+        joinRoomButton.setAttribute('data-sessionid', session.sessionid);
+        joinRoomButton.onclick = function() {
+            this.disabled = true;
+            var sessionid = this.getAttribute('data-sessionid');
+            session = sessions[sessionid];
+            if (!session) throw 'No such session exists.';
+            connection.join(session);
     };
-    connection.sdpConstraints.mandatory = {
-        OfferToReceiveAudio: true,
-        OfferToReceiveVideo: false
+};
+
+var audioContainer = document.getElementById('audios-container') || document.body;
+var roomsList = document.getElementById('rooms-list');
+document.getElementById('setup-new-conference').onclick = function() {
+    this.disabled = true;
+    connection.extra = {
+       'session-name': document.getElementById('conference-name').value || 'Anonymous'
     };
-    connection.onstream = function(e) {
-        audioContainer.insertBefore(e.mediaElement, audioContainer.firstChild);
-    };
+    connection.open();
+};
 
+// setup signaling to search existing sessions
+connection.connect();
 
-    var inSession = false;
-    //sessions manages the current lobbies in the sub lobby.
-    var sessions;
-    connection.onNewSession = function(session) {
-        console.log("@@@@ Session: " + session.extra['session-name'] + " found! Connecting..");
-        inSession = true;
-        // if (madeSession) {
-        //     return;
-        // }
-        // if (sessions[session.sessionid]) {
-        //     return;
-        // }
-        sessions = session;
-        connection.join(sessions);
-        // var tr = document.createElement('tr');
-        // tr.innerHTML = '<td><strong>' + session.extra['session-name'] + '</strong> lobby</td>' +
-        //     '<td><button class="join">Join</button></td>';
-        // roomsList.insertBefore(tr, roomsList.firstChild);
-        // var joinRoomButton = tr.querySelector('.join');
-        // joinRoomButton.setAttribute('data-sessionid', session.sessionid);
-        // joinRoomButton.onclick = function() {
-        //     this.disabled = true;
-        //     var sessionid = this.getAttribute('data-sessionid');
-        //     session = sessions[sessionid];
-        //     if (!session) throw 'No such session exists.';
-        //     connection.join(session);
-        // };
-    };
-
-    setTimeout(function() {
-        //this.disabled = true;
-        if(inSession == false) {
-            console.log("@@@@ Couldn't find any sessions... We're creating one.");
-            inSession = true;
-            connection.extra = {
-                'session-name': 'Public'
-            };
-            connection.open();
-        }
-    }, 1000);
-
-    // document.getElementById('setup-new-conference').onclick = function() {
-    //     this.disabled = true;
-    //     connection.extra = {
-    //         'session-name': document.getElementById('conference-name').value || 'Anonymous'
-    //     };
-    //     connection.open();
-    // };
-    // setup signaling to search existing sessions
-    connection.connect();
-}
-// /*
-// THERE IS NO SERVER CODE.
-// This is the code which enables a user to create an RTC voice chat stream lobby
-// */
-// var connection = new RTCMultiConnection();
-// connection.session = {
-//     audio: true
-// };
-// connection.sdpConstraints.mandatory = {
-//     OfferToReceiveAudio: true,
-//     OfferToReceiveVideo: false
-// };
-// connection.onstream = function(e) {
-//     audioContainer.insertBefore(e.mediaElement, audioContainer.firstChild);
-// };
-//
-//
-// var inSession = false;
-// //sessions manages the current lobbies in the sub lobby.
-// var sessions = {};
-// connection.onNewSession = function(session) {
-//
-//     console.log("Session: " + session.extra['session-name'] + " was created.");
-//     inSession = true;
-//     if (sessions[session.sessionid]) return;
-//         sessions[session.sessionid] = session;
-//         var tr = document.createElement('tr');
-//         tr.innerHTML = '<td><strong>' + session.extra['session-name'] + '</strong> is running a conference!</td>' +
-//             '<td><button class="join">Join</button></td>';
-//         roomsList.insertBefore(tr, roomsList.firstChild);
-//         var joinRoomButton = tr.querySelector('.join');
-//         joinRoomButton.setAttribute('data-sessionid', session.sessionid);
-//         joinRoomButton.onclick = function() {
-//             this.disabled = true;
-//             var sessionid = this.getAttribute('data-sessionid');
-//             session = sessions[sessionid];
-//             if (!session) throw 'No such session exists.';
-//             connection.join(session);
-//     };
-// };
-//
-// /*setTimeout(function() {
-//     //this.disabled = true;
-//     if(inSession == false) {
-//         console.log("Couldn't find any sessions... We're creating one.");
-//         inSession = true;
-//         connection.extra = {
-//             'session-name': document.getElementById('conference-name').value || 'Anonymous'
-//         };
-//         connection.open();
-//     }
-// }, 5000);*/
-//
-// var audioContainer = document.getElementById('audios-container') || document.body;
-// var roomsList = document.getElementById('rooms-list');
-// document.getElementById('setup-new-conference').onclick = function() {
-//     this.disabled = true;
-//     connection.extra = {
-//        'session-name': document.getElementById('conference-name').value || 'Anonymous'
-//     };
-//     connection.open();
-// };
-//
-// // setup signaling to search existing sessions
-// connection.connect();
-//
-//  (function() {
-//             var uniqueToken = document.getElementById('unique-token');
-//             if (uniqueToken)
-//                 if (location.hash.length > 2) uniqueToken.parentNode.parentNode.parentNode.innerHTML = '<h2 style="text-align:center;"><a href="' + location.href + '" target="_blank">Share this link</a></h2>';
-//                 else uniqueToken.innerHTML = uniqueToken.parentNode.parentNode.href = '#' + (Math.random() * new Date().getTime()).toString(36).toUpperCase().replace(/\./g, '-');
-//         })();
+ (function() {
+            var uniqueToken = document.getElementById('unique-token');
+            if (uniqueToken)
+                if (location.hash.length > 2) uniqueToken.parentNode.parentNode.parentNode.innerHTML = '<h2 style="text-align:center;"><a href="' + location.href + '" target="_blank">Share this link</a></h2>';
+                else uniqueToken.innerHTML = uniqueToken.parentNode.parentNode.href = '#' + (Math.random() * new Date().getTime()).toString(36).toUpperCase().replace(/\./g, '-');
+        })();
