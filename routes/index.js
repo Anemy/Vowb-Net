@@ -51,6 +51,8 @@ router.post('/signup', function(req, res) {
                 email_account: req.body.email,
                 password_hash: db.hashPassword(req.body.password)
             });
+
+            res.end("Success");
         } else {
             // Otherwise, complain -- the user already exists!
             // (In the future, warning message should be added here!)
@@ -64,6 +66,27 @@ router.post('/login', function(req, res) {
     console.log("Log in request from client! There's data!!!");
     // do something with the req data
     // is it a valid username?!
+
+    // Make a searchParams object for this
+    var searchParams = {
+        username: req.body.username,
+        password_hash: db.hashPassword(req.body.password)
+    };
+    
+    // Call search function using these parameters
+    db.search(db.userDB, searchParams, function(results) {
+        if( results.length == 0 ) {
+            // If there are no results when looking for a user of that name, then display error
+            console.log("Incorrect username or password");
+            
+            
+        } else {
+            // Otherwise, redirect user to homepage
+            console.log("Username and password verified.");
+            res.end("Success");
+        }
+    });
+
 });
 
 router.get('/about', function(req, res, next) {
