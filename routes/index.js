@@ -57,6 +57,7 @@ router.post('/signup', function(req, res) {
             // Otherwise, complain -- the user already exists!
             // (In the future, warning message should be added here!)
             console.log("Signup ERROR: User " + req.body.username + " already exists!");
+            res.end(error);
         }
     });
 });
@@ -78,7 +79,7 @@ router.post('/login', function(req, res) {
         if( results.length == 0 ) {
             // If there are no results when looking for a user of that name, then display error
             console.log("Incorrect username or password");
-            
+            res.end(error);
             
         } else {
             // Otherwise, redirect user to homepage

@@ -47,6 +47,7 @@ $('#signupForm').ready (function() {
                     //display "redirecting in 3 seconds"
                 },
                 error: function(data){
+                    alert("Username already exists!!");
                     console.log("Failure from server");
 
                 }

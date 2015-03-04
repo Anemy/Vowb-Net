@@ -26,8 +26,7 @@ var loginSubClicked = function() {
                 $('.loginPage').fadeOut(50);
             },
             error: function(data){
-                console.log("Failure from server");
-                 
+                alert("Username or password is incorrect.");                 
             }
     });
 }
