@@ -2,24 +2,28 @@ extends layout
 
 block content
 	script(defer="defer" src="/javascripts/editProfilePage.js")
+	script(defer="defer" type="text/javascript" src="//api.filepicker.io/v1/filepicker.js")
+	//- script(defer="defer" type="text/javascript" src="/javascripts/file.js")
 	include banner
 	.editProfPage
 		form#editProfileForm
 		.leftPane
-			img(class="profIMG" src="/images/profile/M.jpg")
+			img#profPic(class="profIMG" src="/images/profile/M.jpg")
 			.statusBar
+				.overlayStat
 				img(class="statusIMG" src="/images/profile/offline.png") 
 				.pStatus OFFLINE
 				.p Current Lobby:  
 				.pCurrLobby OFFLINE
 			.interactionBar
-				a(class="addFriend" href="#").
+				.overlayInt
+				.addFriend.
 					Add to Friends List <br>
-				a(class="msg" href="#").
+				.msg.
 					Send Message <br>
-				a(class="posts" href="#").
+				.posts.
 					All Posts <br>
-				a(class="threads" href="#").
+				.threads.
 					Threads Started <br>
 
 		.centerPane
@@ -31,7 +35,7 @@ block content
 				.userAboutL
 					.PERSONAL Personal
 					.userPersonal 
-						input.userFullName(type="text" id ="userFullName" placeholder="Name" required maxlength = 22)
+						input.userFullName(type="text" id ="userFullName" placeholder="Name" required maxlength = 24)
 						input.userAge(type="number" id="userAge" maxlength ="3" pattern="([1-9]|[0-9]|[0-9])" value = "19"  min = "0" max = "117")
 						.slash / 
 						select.userSex
@@ -92,6 +96,7 @@ block content
 							<option value="WV">WV</option>
 							<option value="WI">WI</option>
 							<option value="WY">WY</option>
+					.overlayAcc
 					.ACCOUNTSTATS Account Stats
 					.dateJoined Joined:
 						.userdateJoined 5/3/2014
@@ -116,10 +121,10 @@ block content
 
 		.rightPage
 			.friendsListPane
+				.overlayFL
 				.friendsHeader Friends List
 				.friendsList
 					.friend1
 						.friend1Name bob
 						img(class="friend1StatusIMG" src="/images/profile/online.png")
 						.friend1Lobby CSGO MM
-

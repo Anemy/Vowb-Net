@@ -46,7 +46,6 @@ table {
   src: url('/fonts/Blenda-Script.otf'); }
 
 .loginPage {
-  display: none;
   font-family: 'Cabin';
   z-index: 100;
   top: 0px;
@@ -61,7 +60,8 @@ table {
     height: 100%;
     width: 100%;
     pointer-events: none;
-    background-color: rgba(0, 0, 0, 0.8); }
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none; }
   .loginPage .loginPopup {
     position: absolute;
     width: 300px;
@@ -70,7 +70,8 @@ table {
     top: 150px;
     background: white;
     z-index: 102;
-    border-radius: 5px; }
+    border-radius: 5px;
+    display: none; }
   .loginPage .loginHeader {
     font-size: 16px;
     text-transform: uppercase;
@@ -502,6 +503,10 @@ table {
       border: 1px solid black;
       box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.43);
       box-sizing: border-box; }
+    .editProfPage .leftPane .profIMG:hover {
+      cursor: pointer;
+      padding: 4px;
+      background-color: #BDC3C7; }
     .editProfPage .leftPane .statusBar {
       border: 1px solid black;
       box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.43);
@@ -513,6 +518,14 @@ table {
       display: inline-block;
       box-sizing: border-box;
       padding-left: 4px; }
+      .editProfPage .leftPane .statusBar .overlayStat {
+        position: absolute;
+        top: 187px;
+        left: 0px;
+        width: 180px;
+        height: 40px;
+        z-index: 10;
+        background-color: rgba(255, 255, 255, 0.7); }
       .editProfPage .leftPane .statusBar .statusIMG {
         padding-left: 4px;
         margin-top: 3px;
@@ -543,16 +556,27 @@ table {
       height: 85px;
       padding-top: 8px;
       padding-left: 4px;
-      box-sizing: border-box; }
-      .editProfPage .leftPane .interactionBar a.addFriend {
+      box-sizing: border-box;
+      opacity: 0.4px; }
+      .editProfPage .leftPane .interactionBar .overlayInt {
+        position: absolute;
+        top: 233px;
+        left: 0px;
+        width: 180px;
+        height: 85px;
+        z-index: 10;
+        background-color: rgba(255, 255, 255, 0.7); }
+      .editProfPage .leftPane .interactionBar .addFriend {
         display: block;
+        z-index: 1;
         width: 120px;
         height: 18px;
         background: url(/images/profile/add.png) no-repeat;
         background-size: 10px 10px;
         background-position: 2px 2px;
-        padding-left: 16px; }
-      .editProfPage .leftPane .interactionBar a.msg {
+        padding-left: 16px;
+        opacity: 0.4px; }
+      .editProfPage .leftPane .interactionBar .msg {
         display: block;
         width: 120px;
         height: 18px;
@@ -560,7 +584,7 @@ table {
         background-size: 10px 10px;
         background-position: 2px 2px;
         padding-left: 16px; }
-      .editProfPage .leftPane .interactionBar a.posts {
+      .editProfPage .leftPane .interactionBar .posts {
         display: block;
         width: 120px;
         height: 18px;
@@ -568,7 +592,7 @@ table {
         background-size: 10px 10px;
         background-position: 2px 2px;
         padding-left: 16px; }
-      .editProfPage .leftPane .interactionBar a.threads {
+      .editProfPage .leftPane .interactionBar .threads {
         display: block;
         width: 120px;
         height: 18px;
@@ -635,7 +659,8 @@ table {
           padding-top: 3px;
           padding-left: 4px; }
           .editProfPage .centerPane .userAbout .userAboutL .userPersonal .userFullName {
-            margin-bottom: 3px; }
+            margin-bottom: 3px;
+            width: 180px; }
           .editProfPage .centerPane .userAbout .userAboutL .userPersonal .slash {
             display: inline-block;
             padding-left: 2px;
@@ -649,6 +674,14 @@ table {
             display: inline-block; }
           .editProfPage .centerPane .userAbout .userAboutL .userPersonal .userState {
             display: inline-block; }
+        .editProfPage .centerPane .userAbout .userAboutL .overlayAcc {
+          position: absolute;
+          top: 79px;
+          left: 8px;
+          width: 195px;
+          height: 85px;
+          z-index: 10;
+          background-color: rgba(255, 255, 255, 0.7); }
         .editProfPage .centerPane .userAbout .userAboutL .ACCOUNTSTATS {
           font-size: 13px;
           font-weight: bold;
@@ -786,6 +819,14 @@ table {
       text-align: right;
       display: block;
       box-sizing: border-box; }
+      .editProfPage .rightPage .friendsListPane .overlayFL {
+        position: absolute;
+        top: 0px;
+        left: -5px;
+        width: 185px;
+        height: 420px;
+        z-index: 10;
+        background-color: rgba(255, 255, 255, 0.7); }
       .editProfPage .rightPage .friendsListPane .friendsHeader {
         border: 1px solid black;
         background-color: white;
@@ -801,7 +842,7 @@ table {
         font-size: 20px;
         border-spacing: 0px;
         position: relative;
-        z-index: 20;
+        z-index: 2;
         display: block;
         float: right;
         box-sizing: border-box; }

@@ -1,10 +1,10 @@
 .editProfPage {
 	display: block;
-  font-family: 'Cabin'; // $clouds;
-  z-index: 100;
+  	font-family: 'Cabin'; // $clouds;
+  	z-index: 100;
 
-  width:1000px;
-  margin-top: 60px;
+  	width:1000px;
+  	margin-top: 60px;
 	margin-left: auto;
 	margin-right: auto;
 	color: $dark;
@@ -31,6 +31,11 @@
 			-webkit-box-sizing: border-box;
 			box-sizing: border-box;
 		}
+		.profIMG:hover {
+			cursor: pointer;
+			padding: 4px;
+			background-color: $medium;
+		}
 		.statusBar {
 			border: 1px solid black;
       		-webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
@@ -48,6 +53,15 @@
 			-webkit-box-sizing: border-box;
 			box-sizing: border-box;
 			padding-left: 4px;
+			.overlayStat {
+				position: absolute;
+ 				top: 187px;
+  				left: 0px;
+				width: 180px;
+				height: 40px;
+  				z-index: 10;
+  				background-color: rgba(255,255,255,0.7);
+			}
 
 			.statusIMG {
 				padding-left: 4px;
@@ -83,6 +97,7 @@
 			box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
 			margin-top: 6px;
 			//font-weight: bold;
+
 			font-size: 12px;
 			text-align: left;
 			width: 180px;
@@ -92,17 +107,31 @@
 			-moz-box-sizing: border-box;
 			-webkit-box-sizing: border-box;
 			box-sizing: border-box;
-			a.addFriend {
+			//color:grey;
+			opacity: 0.4px;
+			.overlayInt {
+				position: absolute;
+ 				top: 233px;
+  				left: 0px;
+				width: 180px;
+				height: 85px;
+  				z-index: 10;
+  				background-color: rgba(255,255,255,0.7);
+			}
+			.addFriend {
 				display:block;
+				z-index: 1;
 				width:120px;
 				height: 18px;
 				background: url(/images/profile/add.png) no-repeat;
 				background-size: 10px 10px;
 				background-position: 2px 2px;
 				padding-left: 16px;
+				opacity: 0.4px;
+
 
 			}
-			a.msg {
+			.msg {
 				display:block;
 				width: 120px;
 				height: 18px;
@@ -111,7 +140,7 @@
 				background-position: 2px 2px;
 				padding-left: 16px;
 			}
-			a.posts {
+			.posts {
 				display:block;
 				width: 120px;
 				height: 18px;
@@ -120,7 +149,7 @@
 				background-position: 2px 2px;
 				padding-left: 16px;
 			}
-			a.threads {
+			.threads {
 				display:block;
 				width: 120px;
 				height: 18px;
@@ -213,6 +242,7 @@
 					padding-left: 4px;
 					.userFullName {
 						margin-bottom: 3px;
+						width:180px
 					}
 					.slash {
 						display: inline-block;
@@ -232,6 +262,15 @@
 					.userState {
 						display: inline-block;
 					}
+				}
+				.overlayAcc {
+					position: absolute;
+	 				top: 79px;
+	  				left: 8px;
+					width: 195px;
+					height: 85px;
+	  				z-index: 10;
+	  				background-color: rgba(255,255,255,0.7);
 				}
 
 				.ACCOUNTSTATS{
@@ -277,7 +316,7 @@
 					}
 				}
 			}
-			
+
 			.userAboutR {
 				border-left: 1px solid black;
 				vertical-align: top;
@@ -302,7 +341,7 @@
 					border-bottom: 1px solid black;
 
 				}
-				.aboutMeDesc{	
+				.aboutMeDesc{
 					resize: none;
 					margin-top: 3px;
 					margin-bottom: 1px;
@@ -322,34 +361,34 @@
 					border-bottom: 1px solid black;
 
 				}
-				.favGames { 
+				.favGames {
 					padding-top: 3px;
 					padding-left: 4px;
 					font-weight: bold;
-					.userfavGames {	
-						width: 332px;					
+					.userfavGames {
+						width: 332px;
 						padding-left: 2px;
 						display: inline-block;
 						font-weight: normal;
 					}
 				}
-				.favShows { 
+				.favShows {
 					padding-top: 3px;
 					padding-left: 4px;
 					font-weight: bold;
 					.userfavShows {
-						width: 317px;					
+						width: 317px;
 						padding-left: 2px;
 						display: inline-block;
 						font-weight: normal;
 					}
 				}
-				.favFoods { 
+				.favFoods {
 					padding-top: 3px;
 					padding-left: 4px;
 					font-weight: bold;
-					.userfavFoods {	
-						width: 336px;				
+					.userfavFoods {
+						width: 336px;
 						padding-left: 2px;
 						display: inline-block;
 						font-weight: normal;
@@ -419,7 +458,7 @@
 		left: 820px;
 		text-align: center;
 
-		display:inline-block; 
+		display:inline-block;
 		.friendsListPane {
 			width: 180px;
 			height: 420px;
@@ -433,7 +472,15 @@
 			-moz-box-sizing: border-box;
 			-webkit-box-sizing: border-box;
 			box-sizing: border-box;
-
+			.overlayFL {
+				position: absolute;
+ 				top: 0px;
+  				left: -5px;
+				width: 185px;
+				height: 420px;
+  				z-index: 10;
+  				background-color: rgba(255,255,255,0.7);
+			}
 			.friendsHeader{
 				border: 1px solid black;
 				background-color: white;
@@ -452,7 +499,7 @@
 				font-size: 20px;
 				border-spacing: 0px;
 				position: relative;
-				z-index: 20;
+				z-index: 2;
 				display: block;
 				float: right;
 				-moz-box-sizing: border-box;
@@ -485,7 +532,7 @@
 						margin-right: 4px;
 						display:inline-block;
 						height: 12px;
-						width: 12px;						
+						width: 12px;
 					}
 					.friend1Lobby{
 						font-size: 11px;
