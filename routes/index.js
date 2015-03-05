@@ -5,10 +5,20 @@ var db = require("../database-manager/database");
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
     //console.log("HOME PAGE REQUESTED");
 
     res.render('index', { title: 'Vowb.net'});
+});
+//tmp page
+router.get('/profile', function(req, res, next) { //tmp
+    // tmp profile page
+    res.render('profile', { title: 'ProfilePage - Vowb.net'});
+});
+//tmp page
+router.get('/edit-profile', function(req, res, next) { //tmp
+    // tmp profile page
+    res.render('editProfPage', { title: 'EDIT ProfilePage - Vowb.net'});
 });
 
 /* INSERT MORE WEB PAGE ROUTES HERE (FOR EXAMPLE SIGN UP PAGE) */
@@ -16,11 +26,6 @@ router.get('/signup', function(req, res, next) {
     // sign up page request
 
     res.render('signup', { title: 'Signup - Vowb.net'});
-});
-//tmp page
-router.get('/profile', function(req, res, next) { //tmp
-    // tmp profile page
-    res.render('profile', { title: 'ProfilePage - Vowb.net'});
 });
 
 router.post('/signup', function(req, res) {

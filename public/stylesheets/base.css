@@ -251,13 +251,11 @@ table {
         background-position: 2px 2px;
         padding-left: 16px; }
   .profilePage .centerPane {
-
     width: 615px;
     margin-left: 12px;
     text-align: left;
     position: absolute;
     top: 1px;
-
     left: 180px;
     display: inline-block; }
     .profilePage .centerPane .userAboutHeader {
@@ -378,7 +376,8 @@ table {
           height: 30px;
           width: 375px;
           padding-top: 3px;
-          padding-left: 4px; }
+          padding-left: 4px;
+          word-wrap: break-word; }
         .profilePage .centerPane .userAbout .userAboutR .FAVORITES {
           font-size: 13px;
           font-weight: bold;
@@ -388,27 +387,27 @@ table {
           padding-left: 2px;
           border-top: 1px solid black;
           border-bottom: 1px solid black; }
-        .profilePage .centerPane .userAbout .userAboutR .favGame {
+        .profilePage .centerPane .userAbout .userAboutR .favGames {
           padding-top: 3px;
           padding-left: 4px;
           font-weight: bold; }
-          .profilePage .centerPane .userAbout .userAboutR .favGame .userfavGame {
+          .profilePage .centerPane .userAbout .userAboutR .favGames .userfavGames {
             padding-left: 2px;
             display: inline-block;
             font-weight: normal; }
-        .profilePage .centerPane .userAbout .userAboutR .favShow {
+        .profilePage .centerPane .userAbout .userAboutR .favShows {
           padding-top: 3px;
           padding-left: 4px;
           font-weight: bold; }
-          .profilePage .centerPane .userAbout .userAboutR .favShow .userfavShow {
+          .profilePage .centerPane .userAbout .userAboutR .favShows .userfavShows {
             padding-left: 2px;
             display: inline-block;
             font-weight: normal; }
-        .profilePage .centerPane .userAbout .userAboutR .favFood {
+        .profilePage .centerPane .userAbout .userAboutR .favFoods {
           padding-top: 3px;
           padding-left: 4px;
           font-weight: bold; }
-          .profilePage .centerPane .userAbout .userAboutR .favFood .userfavFood {
+          .profilePage .centerPane .userAbout .userAboutR .favFoods .userfavFoods {
             padding-left: 2px;
             display: inline-block;
             font-weight: normal; }
@@ -417,9 +416,369 @@ table {
     position: absolute;
     top: 0;
     left: 820px;
-    text-align: center;
+    text-align: left;
     display: inline-block; }
     .profilePage .rightPage .friendsListPane {
+      text-align: left;
+      width: 180px;
+      height: 420px;
+      border: 1px solid black;
+      box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.43);
+      text-align: left;
+      display: block;
+      box-sizing: border-box; }
+      .profilePage .rightPage .friendsListPane .friendsHeader {
+        text-align: left;
+        border: 1px solid black;
+        background-color: white;
+        border-left: 1px solid black;
+        box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.43);
+        padding-left: 4px;
+        padding-right: 4px;
+        padding-top: 4px;
+        padding-bottom: 5px;
+        width: 180px;
+        height: 30px;
+        top: 1px;
+        right: 1px;
+        font-size: 20px;
+        border-spacing: 0px;
+        position: relative;
+        z-index: 20;
+        display: block;
+        float: left;
+        box-sizing: border-box; }
+      .profilePage .rightPage .friendsListPane .friendsList {
+        float: left;
+        width: 180px;
+        height: 400px;
+        font-size: 16px;
+        border-spacing: 0px;
+        position: relative;
+        z-index: 1;
+        display: block;
+        padding-top: 10px;
+        text-align: left; }
+        .profilePage .rightPage .friendsListPane .friendsList .friend1 {
+          text-align: left;
+          padding-left: 6px;
+          float: left; }
+          .profilePage .rightPage .friendsListPane .friendsList .friend1 .friend1Name {
+            display: inline-block;
+            padding-bottom: 2px; }
+          .profilePage .rightPage .friendsListPane .friendsList .friend1 .friend1StatusIMG {
+            margin-left: 6px;
+            margin-right: 4px;
+            display: inline-block;
+            height: 12px;
+            width: 12px; }
+          .profilePage .rightPage .friendsListPane .friendsList .friend1 .friend1Lobby {
+            margin-left: 22px;
+            font-size: 11px;
+            font-weight: bold;
+            margin-right: 4px; }
+
+.editProfPage {
+  display: block;
+  font-family: 'Cabin';
+  z-index: 100;
+  width: 1000px;
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #290E03;
+  text-align: center;
+  position: relative; }
+  .editProfPage .leftPane {
+    width: 180px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    display: inline-block; }
+    .editProfPage .leftPane .profIMG {
+      height: 180px;
+      width: 180px;
+      border: 1px solid black;
+      box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.43);
+      box-sizing: border-box; }
+    .editProfPage .leftPane .statusBar {
+      border: 1px solid black;
+      box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.43);
+      margin-top: 4px;
+      width: 180px;
+      height: 40px;
+      font-size: 12px;
+      text-align: left;
+      display: inline-block;
+      box-sizing: border-box;
+      padding-left: 4px; }
+      .editProfPage .leftPane .statusBar .statusIMG {
+        padding-left: 4px;
+        margin-top: 3px;
+        display: inline-block;
+        height: 12px;
+        width: 12px; }
+      .editProfPage .leftPane .statusBar .pStatus {
+        margin-top: 6px;
+        display: inline-block;
+        padding-left: 10px;
+        font-weight: bold;
+        width: 140px;
+        height: 16px; }
+      .editProfPage .leftPane .statusBar .p {
+        margin-left: 3px;
+        font-weight: bold;
+        display: inline-block; }
+      .editProfPage .leftPane .statusBar .pCurrLobby {
+        margin-left: 3px;
+        display: inline-block; }
+    .editProfPage .leftPane .interactionBar {
+      border: 1px solid black;
+      box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.43);
+      margin-top: 6px;
+      font-size: 12px;
+      text-align: left;
+      width: 180px;
+      height: 85px;
+      padding-top: 8px;
+      padding-left: 4px;
+      box-sizing: border-box; }
+      .editProfPage .leftPane .interactionBar a.addFriend {
+        display: block;
+        width: 120px;
+        height: 18px;
+        background: url(/images/profile/add.png) no-repeat;
+        background-size: 10px 10px;
+        background-position: 2px 2px;
+        padding-left: 16px; }
+      .editProfPage .leftPane .interactionBar a.msg {
+        display: block;
+        width: 120px;
+        height: 18px;
+        background: url(/images/profile/msg.png) no-repeat;
+        background-size: 10px 10px;
+        background-position: 2px 2px;
+        padding-left: 16px; }
+      .editProfPage .leftPane .interactionBar a.posts {
+        display: block;
+        width: 120px;
+        height: 18px;
+        background: url(/images/profile/posts.png) no-repeat;
+        background-size: 10px 10px;
+        background-position: 2px 2px;
+        padding-left: 16px; }
+      .editProfPage .leftPane .interactionBar a.threads {
+        display: block;
+        width: 120px;
+        height: 18px;
+        background: url(/images/profile/threads.png) no-repeat;
+        background-size: 10px 10px;
+        background-position: 2px 2px;
+        padding-left: 16px; }
+  .editProfPage .centerPane {
+    width: 615px;
+    margin-left: 12px;
+    text-align: left;
+    position: absolute;
+    top: 1px;
+    left: 180px;
+    display: inline-block; }
+    .editProfPage .centerPane .userAboutHeader {
+      top: 10px;
+      display: block;
+      margin-bottom: 5px; }
+      .editProfPage .centerPane .userAboutHeader .userName {
+        display: inline-block;
+        font-weight: bold;
+        font-size: 36px; }
+      .editProfPage .centerPane .userAboutHeader .userRank {
+        padding-left: 10px;
+        height: 30px;
+        width: 30px;
+        display: inline-block; }
+      .editProfPage .centerPane .userAboutHeader .userStatus {
+        font-size: 10px;
+        display: inline-block; }
+    .editProfPage .centerPane .userAbout {
+      text-align: left;
+      position: absolute;
+      border: 1px solid black;
+      box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.43);
+      display: block;
+      border-spacing: 0px;
+      width: 615px;
+      height: 208px;
+      font-size: 0;
+      letter-spacing: 0;
+      word-spacing: 0;
+      box-sizing: border-box; }
+      .editProfPage .centerPane .userAbout .userAboutL {
+        width: 200px;
+        height: 206px;
+        font-size: 12px;
+        vertical-align: top;
+        display: inline-block;
+        padding-top: 8px;
+        padding-left: 10px; }
+        .editProfPage .centerPane .userAbout .userAboutL .PERSONAL {
+          font-size: 13px;
+          font-weight: bold;
+          width: 187px;
+          height: 15px;
+          padding-top: 2px;
+          padding-left: 2px;
+          border-top: 1px solid black;
+          border-bottom: 1px solid black; }
+        .editProfPage .centerPane .userAbout .userAboutL .userPersonal {
+          height: 50px;
+          padding-top: 3px;
+          padding-left: 4px; }
+          .editProfPage .centerPane .userAbout .userAboutL .userPersonal .userFullName {
+            margin-bottom: 3px; }
+          .editProfPage .centerPane .userAbout .userAboutL .userPersonal .slash {
+            display: inline-block;
+            padding-left: 2px;
+            padding-right: 2px; }
+          .editProfPage .centerPane .userAbout .userAboutL .userPersonal .userAge {
+            text-align: center;
+            width: 38px;
+            height: 14px;
+            display: inline-block; }
+          .editProfPage .centerPane .userAbout .userAboutL .userPersonal .userSex {
+            display: inline-block; }
+          .editProfPage .centerPane .userAbout .userAboutL .userPersonal .userState {
+            display: inline-block; }
+        .editProfPage .centerPane .userAbout .userAboutL .ACCOUNTSTATS {
+          font-size: 13px;
+          font-weight: bold;
+          width: 187px;
+          height: 15px;
+          padding-top: 2px;
+          padding-left: 2px;
+          border-top: 1px solid black;
+          border-bottom: 1px solid black; }
+        .editProfPage .centerPane .userAbout .userAboutL .dateJoined {
+          padding-top: 4px;
+          padding-left: 4px;
+          font-weight: bold; }
+          .editProfPage .centerPane .userAbout .userAboutL .dateJoined .userdateJoined {
+            padding-left: 2px;
+            display: inline-block;
+            font-weight: normal; }
+        .editProfPage .centerPane .userAbout .userAboutL .postCount {
+          padding-top: 3px;
+          padding-left: 4px;
+          font-weight: bold; }
+          .editProfPage .centerPane .userAbout .userAboutL .postCount .userpostCount {
+            padding-left: 2px;
+            display: inline-block;
+            font-weight: normal; }
+        .editProfPage .centerPane .userAbout .userAboutL .timeOnline {
+          padding-top: 3px;
+          padding-left: 4px;
+          font-weight: bold; }
+          .editProfPage .centerPane .userAbout .userAboutL .timeOnline .usertimeOnline {
+            padding-left: 2px;
+            display: inline-block;
+            font-weight: normal; }
+      .editProfPage .centerPane .userAbout .userAboutR {
+        border-left: 1px solid black;
+        vertical-align: top;
+        width: 400px;
+        height: 206px;
+        font-size: 12px;
+        display: inline-block;
+        padding-top: 8px;
+        padding-left: 10px;
+        box-sizing: border-box; }
+        .editProfPage .centerPane .userAbout .userAboutR .ABOUTME {
+          font-size: 13px;
+          font-weight: bold;
+          width: 380px;
+          height: 15px;
+          padding-top: 2px;
+          padding-left: 2px;
+          border-top: 1px solid black;
+          border-bottom: 1px solid black; }
+        .editProfPage .centerPane .userAbout .userAboutR .aboutMeDesc {
+          resize: none;
+          margin-top: 3px;
+          margin-bottom: 1px;
+          height: 30px;
+          width: 374px;
+          padding-left: 4px; }
+        .editProfPage .centerPane .userAbout .userAboutR .FAVORITES {
+          font-size: 13px;
+          font-weight: bold;
+          width: 380px;
+          height: 15px;
+          padding-top: 2px;
+          padding-left: 2px;
+          border-top: 1px solid black;
+          border-bottom: 1px solid black; }
+        .editProfPage .centerPane .userAbout .userAboutR .favGames {
+          padding-top: 3px;
+          padding-left: 4px;
+          font-weight: bold; }
+          .editProfPage .centerPane .userAbout .userAboutR .favGames .userfavGames {
+            width: 332px;
+            padding-left: 2px;
+            display: inline-block;
+            font-weight: normal; }
+        .editProfPage .centerPane .userAbout .userAboutR .favShows {
+          padding-top: 3px;
+          padding-left: 4px;
+          font-weight: bold; }
+          .editProfPage .centerPane .userAbout .userAboutR .favShows .userfavShows {
+            width: 317px;
+            padding-left: 2px;
+            display: inline-block;
+            font-weight: normal; }
+        .editProfPage .centerPane .userAbout .userAboutR .favFoods {
+          padding-top: 3px;
+          padding-left: 4px;
+          font-weight: bold; }
+          .editProfPage .centerPane .userAbout .userAboutR .favFoods .userfavFoods {
+            width: 336px;
+            padding-left: 2px;
+            display: inline-block;
+            font-weight: normal; }
+    .editProfPage .centerPane .saveButton {
+      margin-top: 1em;
+      right: 10px;
+      top: 196px;
+      text-align: center;
+      position: absolute;
+      z-index: 20;
+      color: #290E03;
+      font-size: 0.8em;
+      font-family: 'Cabin';
+      background-color: white;
+      border: 2px solid #FC4349;
+      border-radius: 5px;
+      padding-top: 0.5em;
+      padding-bottom: 0.5em;
+      padding-left: 1em;
+      padding-right: 1em;
+      display: inline-block;
+      -webkit-transition: all .25s ease;
+      transition: all .25s ease; }
+    .editProfPage .centerPane .saveButton:hover {
+      cursor: pointer;
+      color: white;
+      background-color: #FC4349; }
+    .editProfPage .centerPane .saveButton:active {
+      cursor: pointer;
+      background-color: #DC2329; }
+  .editProfPage .rightPage {
+    width: 180px;
+    position: absolute;
+    top: 0;
+    left: 820px;
+    text-align: center;
+    display: inline-block; }
+    .editProfPage .rightPage .friendsListPane {
       width: 180px;
       height: 420px;
       border: 1px solid black;
@@ -427,7 +786,7 @@ table {
       text-align: right;
       display: block;
       box-sizing: border-box; }
-      .profilePage .rightPage .friendsListPane .friendsHeader {
+      .editProfPage .rightPage .friendsListPane .friendsHeader {
         border: 1px solid black;
         background-color: white;
         border-left: 1px solid black;
@@ -446,7 +805,7 @@ table {
         display: block;
         float: right;
         box-sizing: border-box; }
-      .profilePage .rightPage .friendsListPane .friendsList {
+      .editProfPage .rightPage .friendsListPane .friendsList {
         float: right;
         width: 180px;
         height: 400px;
@@ -456,16 +815,16 @@ table {
         z-index: 1;
         display: block;
         padding-top: 10px; }
-        .profilePage .rightPage .friendsListPane .friendsList .friend1 .friend1Name {
+        .editProfPage .rightPage .friendsListPane .friendsList .friend1 .friend1Name {
           display: inline-block;
           padding-bottom: 2px; }
-        .profilePage .rightPage .friendsListPane .friendsList .friend1 .friend1StatusIMG {
+        .editProfPage .rightPage .friendsListPane .friendsList .friend1 .friend1StatusIMG {
           margin-left: 6px;
           margin-right: 4px;
           display: inline-block;
           height: 12px;
           width: 12px; }
-        .profilePage .rightPage .friendsListPane .friendsList .friend1 .friend1Lobby {
+        .editProfPage .rightPage .friendsListPane .friendsList .friend1 .friend1Lobby {
           font-size: 11px;
           font-weight: bold;
           margin-right: 4px; }

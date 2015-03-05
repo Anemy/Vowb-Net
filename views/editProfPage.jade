@@ -1,0 +1,125 @@
+extends layout
+
+block content
+	script(defer="defer" src="/javascripts/editProfilePage.js")
+	include banner
+	.editProfPage
+		form#editProfileForm
+		.leftPane
+			img(class="profIMG" src="/images/profile/M.jpg")
+			.statusBar
+				img(class="statusIMG" src="/images/profile/offline.png") 
+				.pStatus OFFLINE
+				.p Current Lobby:  
+				.pCurrLobby OFFLINE
+			.interactionBar
+				a(class="addFriend" href="#").
+					Add to Friends List <br>
+				a(class="msg" href="#").
+					Send Message <br>
+				a(class="posts" href="#").
+					All Posts <br>
+				a(class="threads" href="#").
+					Threads Started <br>
+
+		.centerPane
+			.userAboutHeader
+				.userName Mystxc
+				img(class="userRank" src="/images/profile/rank1.png") 
+				.userStatus / last online 7 seconds ago
+			.userAbout
+				.userAboutL
+					.PERSONAL Personal
+					.userPersonal 
+						input.userFullName(type="text" id ="userFullName" placeholder="Name" required maxlength = 22)
+						input.userAge(type="number" id="userAge" maxlength ="3" pattern="([1-9]|[0-9]|[0-9])" value = "19"  min = "0" max = "117")
+						.slash / 
+						select.userSex
+							<option value="male">Male</option>
+							<option value="female">Female</option>
+							<option value="other">Other</option>
+						.slash / 
+						select.userState 
+							<option value="N/A">N/A</option>
+							<option value="AL">AL</option>
+							<option value="AK">AK</option>
+							<option value="AZ">AZ</option>
+							<option value="AR">AR</option>
+							<option value="CA">CA</option>
+							<option value="CO">CO</option>
+							<option value="CT">CT</option>
+							<option value="DE">DE</option>
+							<option value="DC">DC</option>
+							<option value="FL">FL</option>
+							<option value="GA">GA</option>
+							<option value="HI">HI</option>
+							<option value="ID">ID</option>
+							<option value="IL">IL</option>
+							<option value="IN">IN</option>
+							<option value="IA">IA</option>
+							<option value="KS">KS</option>
+							<option value="KY">KY</option>
+							<option value="LA">LA</option>
+							<option value="ME">ME</option>
+							<option value="MD">MD</option>
+							<option value="MA">MA</option>
+							<option value="MI">MI</option>
+							<option value="MN">MN</option>
+							<option value="MS">MS</option>
+							<option value="MO">MO</option>
+							<option value="MT">MT</option>
+							<option value="NE">NE</option>
+							<option value="NV">NV</option>
+							<option value="NH">NH</option>
+							<option value="NJ">NJ</option>
+							<option value="NM">NM</option>
+							<option value="NY">NY</option>
+							<option value="NC">NC</option>
+							<option value="ND">ND</option>
+							<option value="OH">OH</option>
+							<option value="OK">OK</option>
+							<option value="OR">OR</option>
+							<option value="PA">PA</option>
+							<option value="RI">RI</option>
+							<option value="SC">SC</option>
+							<option value="SD">SD</option>
+							<option value="TN">TN</option>
+							<option value="TX">TX</option>
+							<option value="UT">UT</option>
+							<option value="VT">VT</option>
+							<option value="VA">VA</option>
+							<option value="WA">WA</option>
+							<option value="WV">WV</option>
+							<option value="WI">WI</option>
+							<option value="WY">WY</option>
+					.ACCOUNTSTATS Account Stats
+					.dateJoined Joined:
+						.userdateJoined 5/3/2014
+					.postCount Posts:
+						.userpostCount 2
+					.timeOnline Time Online:
+						.usertimeOnline 287 hrs
+				.userAboutR
+					.ABOUTME About Me
+					textarea.aboutMeDesc(rows = "2" placeholder="Write a bit about yourself" cols= "30" maxlength="150" resize = "none")
+					.FAVORITES Favorites
+					.favGames Games: 
+						input.userfavGames(type="text" id ="userfaveGames" placeholder="Counter Strike, WoW, RS" required maxlength = 40)
+					.favShows TV Shows: 
+						input.userfavShows(type="text" id ="userfavShows" placeholder="The News Room, GoT" required maxlength = 40)
+					.favFoods Foods: 
+						input.userfavFoods(type="text" id ="userfavFoods" placeholder="Peanut butter" required maxlength = 40)
+			input.saveButton(type="submit" value="Save") 
+
+
+            
+
+		.rightPage
+			.friendsListPane
+				.friendsHeader Friends List
+				.friendsList
+					.friend1
+						.friend1Name bob
+						img(class="friend1StatusIMG" src="/images/profile/online.png")
+						.friend1Lobby CSGO MM
+
