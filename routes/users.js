@@ -12,7 +12,9 @@ router.get('/*', function(req, res, next) {
     // Example:
     //res.render('userPage', { name: 'Mystxc'});
     db.search(db.userDB, { username: req.params[0] }, function(result) {
-        res.send("<pre>" + JSON.stringify(result[0], null, '\t') + "</pre>");
+        res.render('userPage', result[0]);
+        // for printing
+        // console.log("<pre>" + JSON.stringify(result[0], null, '\t') + "</pre>");
     });
 });
 
