@@ -1,16 +1,16 @@
-//var pg = require("pg");
+var pg = require("pg");
 
 var DUMMY_DATABASE = {};
 
 var db = module.exports = {
    query: function(text, values, cb) {
-       cb("No error",{rows:[{data:"empty returned data"}]});
-      /*pg.connect("pg://postgres:vowb-secure@localhost:5432/vowbnet", function(err, client, done) {
+       //cb("No error",{rows:[{data:"empty returned data"}]});
+      pg.connect("pg://postgres:vowb-secure@localhost:5432/vowbnet", function(err, client, done) {
         client.query(text, values, function(err, result) {
           done();
           cb(err, result);
         })
-      });*/
+      });
    }
 }
 
@@ -66,13 +66,13 @@ db.hashPassword = function(string) {
  *
  */
 db.add = function(tablename, data) {
-    console.log("dummy table (before): " + JSON.stringify(DUMMY_DATABASE[tablename]));
+    /*console.log("dummy table (before): " + JSON.stringify(DUMMY_DATABASE[tablename]));
     if( !DUMMY_DATABASE[tablename] )
         DUMMY_DATABASE[tablename] = [];
     console.log("dummy table thinking...");
     DUMMY_DATABASE[tablename].push(data);
     console.log("dummy table (after): " + JSON.stringify(DUMMY_DATABASE[tablename]));
-    return;
+    return;*/
     var queryString = "INSERT INTO "+tablename+"(";
     var i = 0;
     var itemIndex = 1;
@@ -129,7 +129,7 @@ db.add = function(tablename, data) {
  *
  */
 db.search = function(tablename, searchParams, callback) {
-    if( !DUMMY_DATABASE[tablename] )
+    /*if( !DUMMY_DATABASE[tablename] )
         DUMMY_DATABASE[tablename] = [];
     var dummyResults = [];
     for(var i = 0; i < DUMMY_DATABASE[tablename].length; i++ ) {
@@ -146,7 +146,7 @@ db.search = function(tablename, searchParams, callback) {
     }
     console.log("dummy results: " + JSON.stringify(dummyResults));
     callback(dummyResults);
-    return;
+    return;*/
     var queryString = "SELECT * FROM "+tablename+" WHERE ";
     var i = 0;
     var itemIndex = 1;
@@ -192,7 +192,7 @@ db.search = function(tablename, searchParams, callback) {
  */
 db.update = function(tablename, searchParams, data) {
     
-    if( !DUMMY_DATABASE[tablename] )
+    /*if( !DUMMY_DATABASE[tablename] )
         DUMMY_DATABASE[tablename] = [];
     for(var i = 0; i < DUMMY_DATABASE[tablename].length; i++ ) {
         var match = true;
@@ -211,7 +211,7 @@ db.update = function(tablename, searchParams, data) {
             }
         }
     }
-    return;
+    return;*/
     var queryString = "UPDATE "+tablename+" SET ";
     var i = 0;
     var itemIndex = 1;
