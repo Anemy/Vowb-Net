@@ -46,7 +46,6 @@ table {
   src: url('/fonts/Blenda-Script.otf'); }
 
 .loginPage {
-  display: none;
   font-family: 'Cabin';
   z-index: 100;
   top: 0px;
@@ -61,7 +60,8 @@ table {
     height: 100%;
     width: 100%;
     pointer-events: none;
-    background-color: rgba(0, 0, 0, 0.8); }
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none; }
   .loginPage .loginPopup {
     position: absolute;
     width: 300px;
@@ -70,7 +70,8 @@ table {
     top: 150px;
     background: white;
     z-index: 102;
-    border-radius: 5px; }
+    border-radius: 5px;
+    display: none; }
   .loginPage .loginHeader {
     font-size: 16px;
     text-transform: uppercase;
