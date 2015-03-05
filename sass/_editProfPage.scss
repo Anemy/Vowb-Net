@@ -20,6 +20,7 @@
 		display: inline-block;
 
 		.profIMG {
+
 			height: 180px;
      		width: 180px;
      		//margin: 2px;
@@ -30,6 +31,8 @@
 			-moz-box-sizing: border-box;
 			-webkit-box-sizing: border-box;
 			box-sizing: border-box;
+			border-radius: 5px;
+
 		}
 		.profIMG:hover {
 			cursor: pointer;
@@ -53,6 +56,8 @@
 			-webkit-box-sizing: border-box;
 			box-sizing: border-box;
 			padding-left: 4px;
+			border-radius: 5px;
+
 			.overlayStat {
 				position: absolute;
  				top: 187px;
@@ -96,6 +101,7 @@
 			-moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
 			box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
 			margin-top: 6px;
+			border-radius: 5px;
 			//font-weight: bold;
 
 			font-size: 12px;
@@ -169,6 +175,7 @@
 		left: 180px;
 		display:inline-block;
 		.userAboutHeader {
+
 			top: 10px;
 			display:block;
 			margin-bottom: 5px;
@@ -189,6 +196,7 @@
 			}
 		}
 		.userAbout {
+			border-radius: 5px;
 			text-align: left;
 			position: absolute;
 			border: 1px solid black;
@@ -460,6 +468,7 @@
 
 		display:inline-block;
 		.friendsListPane {
+			border-radius: 5px;
 			width: 180px;
 			height: 420px;
 			border: 1px solid black;
@@ -482,6 +491,7 @@
   				background-color: rgba(255,255,255,0.7);
 			}
 			.friendsHeader{
+				border-radius: 5px;
 				border: 1px solid black;
 				background-color: white;
 				border-left: 1px solid black;
