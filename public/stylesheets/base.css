@@ -1099,8 +1099,8 @@ table {
 
 /* This is the styling page for the lobby page */
 .lobbyPage .joinVoiceChat {
-  margin-left: 20px;
-  margin-top: 20px;
+  margin-left: 10px;
+  margin-top: 10px;
   text-align: center;
   color: #290E03;
   background: -webkit-linear-gradient(white, #ECF0F1);
@@ -1113,8 +1113,8 @@ table {
   border: 2px solid #BDC3C7;
   font-size: 14px;
   width: 140px;
-  height: 36px;
-  padding-top: 7px;
+  height: 2em;
+  padding-top: 3px;
   padding-bottom: 8px;
   -webkit-transition: all .25s ease;
   transition: all .25s ease;
@@ -1131,6 +1131,28 @@ table {
   color: #FC4349; }
 .lobbyPage .joinVoiceChat:active {
   box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.2); }
+.lobbyPage .inputBox {
+  height: 2em;
+  float: left;
+  width: 50%;
+  margin-left: 2%;
+  margin-top: 11px;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 2px #290E03;
+  font-size: 0.8em;
+  padding: 0px 6px;
+  border-radius: 5px;
+  font-size: 0.8em; }
+.lobbyPage .inputBox:focus {
+  background: -webkit-linear-gradient(white, #E4E8E8);
+  /* For Safari 5.1 to 6.0 */
+  /* For Opera 11.1 to 12.0 */
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(white, #E4E8E8);
+  /* Standard syntax */
+  border: 2px #2ECC71 #290E03;
+  color: #290E03; }
 .lobbyPage .chatArea {
   position: absolute;
   width: 100%;
