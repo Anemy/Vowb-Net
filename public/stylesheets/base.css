@@ -502,6 +502,10 @@ table {
       border: 1px solid black;
       box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.43);
       box-sizing: border-box; }
+    .editProfPage .leftPane .profIMG:hover {
+      cursor: pointer;
+      padding: 4px;
+      background-color: #BDC3C7; }
     .editProfPage .leftPane .statusBar {
       border: 1px solid black;
       box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.43);

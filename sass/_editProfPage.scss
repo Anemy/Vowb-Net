@@ -31,6 +31,11 @@
 			-webkit-box-sizing: border-box;
 			box-sizing: border-box;
 		}
+		.profIMG:hover {
+			cursor: pointer;
+			padding: 4px;
+			background-color: $medium;
+		}
 		.statusBar {
 			border: 1px solid black;
       		-webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
@@ -278,7 +283,7 @@
 					}
 				}
 			}
-			
+
 			.userAboutR {
 				border-left: 1px solid black;
 				vertical-align: top;
@@ -303,7 +308,7 @@
 					border-bottom: 1px solid black;
 
 				}
-				.aboutMeDesc{	
+				.aboutMeDesc{
 					resize: none;
 					margin-top: 3px;
 					margin-bottom: 1px;
@@ -323,34 +328,34 @@
 					border-bottom: 1px solid black;
 
 				}
-				.favGames { 
+				.favGames {
 					padding-top: 3px;
 					padding-left: 4px;
 					font-weight: bold;
-					.userfavGames {	
-						width: 332px;					
+					.userfavGames {
+						width: 332px;
 						padding-left: 2px;
 						display: inline-block;
 						font-weight: normal;
 					}
 				}
-				.favShows { 
+				.favShows {
 					padding-top: 3px;
 					padding-left: 4px;
 					font-weight: bold;
 					.userfavShows {
-						width: 317px;					
+						width: 317px;
 						padding-left: 2px;
 						display: inline-block;
 						font-weight: normal;
 					}
 				}
-				.favFoods { 
+				.favFoods {
 					padding-top: 3px;
 					padding-left: 4px;
 					font-weight: bold;
-					.userfavFoods {	
-						width: 336px;				
+					.userfavFoods {
+						width: 336px;
 						padding-left: 2px;
 						display: inline-block;
 						font-weight: normal;
@@ -420,7 +425,7 @@
 		left: 820px;
 		text-align: center;
 
-		display:inline-block; 
+		display:inline-block;
 		.friendsListPane {
 			width: 180px;
 			height: 420px;
@@ -486,7 +491,7 @@
 						margin-right: 4px;
 						display:inline-block;
 						height: 12px;
-						width: 12px;						
+						width: 12px;
 					}
 					.friend1Lobby{
 						font-size: 11px;
