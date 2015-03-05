@@ -34,8 +34,8 @@
       background: -o-linear-gradient(white, $light-dark); /* For Opera 11.1 to 12.0 */
       background: -moz-linear-gradient(white, $light-dark); /* For Firefox 3.6 to 15 */
       background: linear-gradient(white, $light-dark); /* Standard syntax */
-      border: 2px solid $accent;
-      color: $dark;
+      border: 2px solid $accent-light;
+      color: $accent;
   }
   .joinVoiceChat:active {
       box-shadow: inset 0px 0px 1px 1px rgba(0,0,0,0.2);
@@ -59,11 +59,11 @@
       padding-top: 3px;
       padding-bottom: 8px;
 
-      -webkit-transition: all .25s ease;
-      -moz-transition: all .25s ease;
-      -ms-transition: all .25s ease;
-      -o-transition: all .25s ease;
-      transition: all .25s ease;
+      -webkit-transition: all .35s ease;
+      -moz-transition: all .35s ease;
+      -ms-transition: all .35s ease;
+      -o-transition: all .35s ease;
+      transition: all .35s ease;
 
       outline: none;
   }
@@ -98,11 +98,11 @@
     }
     .inputBox:focus {
         //box-shadow: 0 0 6px $highlight;
-        background: -webkit-linear-gradient(white, $light-dark); /* For Safari 5.1 to 6.0 */
-        background: -o-linear-gradient(white, $light-dark); /* For Opera 11.1 to 12.0 */
-        background: -moz-linear-gradient(white, $light-dark); /* For Firefox 3.6 to 15 */
-        background: linear-gradient(white, $light-dark); /* Standard syntax */
-        border: 2px $highlight $dark;
+        background: -webkit-linear-gradient(white, $light-light); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(white, $light-light); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(white, $light-light); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(white, $light-light); /* Standard syntax */
+        border: 2px $dark $dark;
         color: $dark;
     }
     .chatArea {
@@ -127,7 +127,6 @@
         }
 
         .chatbox {
-            //font-family:tahoma;
             font-family: 'Cabin';
             font-size:12px;
             color:black;
