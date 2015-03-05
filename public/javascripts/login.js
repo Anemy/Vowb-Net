@@ -20,14 +20,13 @@ var loginSubClicked = function() {
                 password : $("#pw_id").val(),
             },
             success: function(data){
-                console.log("Success from server");
-                var delay = 3000; //Your delay in milliseconds
-                setTimeout(function(){ window.location = "/"; }, delay);
-                //display "redirecting in 3 seconds"
+                console.log("Login success!!");
+                $("#signup_id").text("log out");
+                $("#login_id").text($("#un_id").val());
+                $('.loginPage').fadeOut(50);
             },
             error: function(data){
-                console.log("Failure from server");
-                 
+                alert("Username or password is incorrect.");                 
             }
     });
 }

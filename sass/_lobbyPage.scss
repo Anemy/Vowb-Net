@@ -1,14 +1,47 @@
 /* This is the styling page for the lobby page */
 
 .lobbyPage {
-    .experiment{
-        .createLobby{
-            //    position: absolute;
-            //    top: 3em;
-            //    right: 0;
-        }
+    .joinVoiceChat {
+      margin-left: 20px;
+      margin-top: 20px;
+      text-align: center;
+      color: $dark;
+      // background-color: $accent;
+      // background-color: $light;
+      background: -webkit-linear-gradient(white, $light); /* For Safari 5.1 to 6.0 */
+      background: -o-linear-gradient(white, $light); /* For Opera 11.1 to 12.0 */
+      background: -moz-linear-gradient(white, $light); /* For Firefox 3.6 to 15 */
+      background: linear-gradient(white, $light); /* Standard syntax */
 
-    }
+      border-radius: 5px;
+      border: 2px solid $medium;
+
+      font-size: 14px;
+      width: 140px;
+      height: 36px;
+      padding-top: 7px;
+      padding-bottom: 8px;
+
+      -webkit-transition: all .25s ease;
+      -moz-transition: all .25s ease;
+      -ms-transition: all .25s ease;
+      -o-transition: all .25s ease;
+      transition: all .25s ease;
+
+      outline: none;
+  }
+  .joinVoiceChat:hover {
+      cursor: pointer;
+      background: -webkit-linear-gradient(white, $light-dark); /* For Safari 5.1 to 6.0 */
+      background: -o-linear-gradient(white, $light-dark); /* For Opera 11.1 to 12.0 */
+      background: -moz-linear-gradient(white, $light-dark); /* For Firefox 3.6 to 15 */
+      background: linear-gradient(white, $light-dark); /* Standard syntax */
+      border: 2px solid $accent;
+      color: $accent;
+  }
+  .joinVoiceChat:active {
+      box-shadow: inset 0px 0px 1px 1px rgba(0,0,0,0.2);
+  }
     .chatArea {
         position: absolute;
         width: 100%;
@@ -19,7 +52,7 @@
         .lobbySideBar{
             position: absolute;
             right: 0%;
-            width: 15%;
+            width: 14%;
             height: 100%;
             bottom: 24px;
             font-family:tahoma;
@@ -46,6 +79,17 @@
 
             word-wrap: break-word;
             overflow-y: auto;
+
+            #messages {
+                li {
+                    padding-top: 3px;
+                    padding-bottom: 3px;
+                    padding-left: 6px;
+                }
+                .serverMessage {
+                    background-color: $light;
+                }
+            }
         }
 
         .controls{

@@ -5,10 +5,20 @@ var db = require("../database-manager/database");
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
     //console.log("HOME PAGE REQUESTED");
 
     res.render('index', { title: 'Vowb.net'});
+});
+//tmp page
+router.get('/profile', function(req, res, next) { //tmp
+    // tmp profile page
+    res.render('profile', { title: 'ProfilePage - Vowb.net'});
+});
+//tmp page
+router.get('/edit-profile', function(req, res, next) { //tmp
+    // tmp profile page
+    res.render('editProfPage', { title: 'EDIT ProfilePage - Vowb.net'});
 });
 
 /* INSERT MORE WEB PAGE ROUTES HERE (FOR EXAMPLE SIGN UP PAGE) */
@@ -16,11 +26,6 @@ router.get('/signup', function(req, res, next) {
     // sign up page request
 
     res.render('signup', { title: 'Signup - Vowb.net'});
-});
-//tmp page
-router.get('/profile', function(req, res, next) { //tmp
-    // tmp profile page
-    res.render('profile', { title: 'ProfilePage - Vowb.net'});
 });
 
 router.post('/signup', function(req, res) {
@@ -51,10 +56,13 @@ router.post('/signup', function(req, res) {
                 email_account: req.body.email,
                 password_hash: db.hashPassword(req.body.password)
             });
+
+            res.end("Success");
         } else {
             // Otherwise, complain -- the user already exists!
             // (In the future, warning message should be added here!)
             console.log("Signup ERROR: User " + req.body.username + " already exists!");
+            res.end(error);
         }
     });
 });
@@ -64,6 +72,27 @@ router.post('/login', function(req, res) {
     console.log("Log in request from client! There's data!!!");
     // do something with the req data
     // is it a valid username?!
+
+    // Make a searchParams object for this
+    var searchParams = {
+        username: req.body.username,
+        password_hash: db.hashPassword(req.body.password)
+    };
+    
+    // Call search function using these parameters
+    db.search(db.userDB, searchParams, function(results) {
+        if( results.length == 0 ) {
+            // If there are no results when looking for a user of that name, then display error
+            console.log("Incorrect username or password");
+            res.end(error);
+            
+        } else {
+            // Otherwise, redirect user to homepage
+            console.log("Username and password verified.");
+            res.end("Success");
+        }
+    });
+
 });
 
 router.get('/about', function(req, res, next) {

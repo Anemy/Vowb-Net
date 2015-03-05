@@ -1,4 +1,4 @@
-.profilePage {
+.editProfPage {
 	display: block;
   font-family: 'Cabin'; // $clouds;
   z-index: 100;
@@ -75,7 +75,6 @@
 				margin-left: 3px;
 				display: inline-block;
 			}
-
 		}
 		.interactionBar {
 			border: 1px solid black;
@@ -170,7 +169,7 @@
 			display: block;
 			border-spacing: 0px;
 			width: 615px;
-			height: 138px;
+			height: 208px;
 			font-size: 0;
   			letter-spacing: 0;
  			word-spacing: 0;
@@ -185,7 +184,7 @@
 				//-moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
 				//box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
 				width: 200px;
-				height: 200px;
+				height: 206px;
 				font-size: 12px;
 				vertical-align: top;
 				//position: relative;
@@ -209,11 +208,11 @@
 				}
 
 				.userPersonal{
-					height: 30px;
+					height: 50px;
 					padding-top: 3px;
 					padding-left: 4px;
 					.userFullName {
-						padding-bottom: 3px;
+						margin-bottom: 3px;
 					}
 					.slash {
 						display: inline-block;
@@ -221,7 +220,11 @@
 						padding-right: 2px;
 					}
 					.userAge {
+						text-align: center;
+						width:38px;
+						height:14px;
 						display: inline-block;
+
 					}
 					.userSex {
 						display: inline-block;
@@ -279,7 +282,7 @@
 				border-left: 1px solid black;
 				vertical-align: top;
 				width: 400px;
-				height: 137px;
+				height: 206px;
 				font-size: 12px;
 				display: inline-block;
 				padding-top: 8px;
@@ -300,11 +303,13 @@
 
 				}
 				.aboutMeDesc{	
+					resize: none;
+					margin-top: 3px;
+					margin-bottom: 1px;
 					height: 30px;
-					width: 375px;
-					padding-top: 3px;
+					width: 374px;
+					//padding-top: 3px;
   					padding-left: 4px;
-  					word-wrap: break-word;
 				}
 				.FAVORITES{
 					font-size: 13px;
@@ -321,7 +326,8 @@
 					padding-top: 3px;
 					padding-left: 4px;
 					font-weight: bold;
-					.userfavGames {						
+					.userfavGames {	
+						width: 332px;					
 						padding-left: 2px;
 						display: inline-block;
 						font-weight: normal;
@@ -331,7 +337,8 @@
 					padding-top: 3px;
 					padding-left: 4px;
 					font-weight: bold;
-					.userfavShows {						
+					.userfavShows {
+						width: 317px;					
 						padding-left: 2px;
 						display: inline-block;
 						font-weight: normal;
@@ -341,7 +348,8 @@
 					padding-top: 3px;
 					padding-left: 4px;
 					font-weight: bold;
-					.userfavFoods {						
+					.userfavFoods {	
+						width: 336px;				
 						padding-left: 2px;
 						display: inline-block;
 						font-weight: normal;
@@ -349,39 +357,90 @@
 				}
 			}
 		}
+
+   		.saveButton {
+	            margin-top: 1em;
+	            //margin-right: 5%;
+
+	            right: 10px;
+	            top:196px;
+	            text-align:center;
+	            position: absolute;
+
+	            z-index: 20;
+
+	            // background: -webkit-linear-gradient($accent-light, $accent-dark); /* For Safari 5.1 to 6.0 */
+	            // background: -o-linear-gradient($accent-light, $accent-dark); /* For Opera 11.1 to 12.0 */
+	            // background: -moz-linear-gradient($accent-light, $accent-dark); /* For Firefox 3.6 to 15 */
+	            // background: linear-gradient($accent-light, $accent-dark); /* Standard syntax */
+
+	            // border: 2px solid $medium;
+	            // box-shadow: inset 0px 0px 6px 6px rgba(255,255,255, 0.1);
+
+	            color: $dark;
+	            font-size: 0.8em;
+	            font-family: 'Cabin';
+	            //text-spacing: 2em;
+
+	            background-color: white;
+	            border: 2px solid $accent;
+
+	            border-radius: 5px;
+	            padding-top: 0.5em;
+	            padding-bottom: 0.5em;
+	            padding-left: 1.0em;
+	            padding-right: 1.0em;
+	            display: inline-block;
+
+	            -webkit-transition: all .25s ease;
+	            -moz-transition: all .25s ease;
+	            -ms-transition: all .25s ease;
+	            -o-transition: all .25s ease;
+	            transition: all .25s ease;
+	    }
+	    .saveButton:hover {
+	            cursor: pointer;
+	            color: white;
+	            background-color: $accent;
+	    }
+	    .saveButton:active {
+	            cursor: pointer;
+	            // position: relative;
+	            // top: 2px;
+	            background-color: $accent-dark;
+	            // box-shadow: inset 0px 0px 10px 10px rgba(0,0,0, 0.1);
+	    }
 	}
+
 	.rightPage {
 		width: 180px;
 		position: absolute;
 		top: 0;
 		left: 820px;
-		text-align: left;
+		text-align: center;
 
 		display:inline-block; 
 		.friendsListPane {
-			text-align: left;
 			width: 180px;
 			height: 420px;
 			border: 1px solid black;
            	-webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
 			-moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
 			box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
-			//display:none;
-			text-align: left;
+
+			text-align: right;
 			display: block;
 			-moz-box-sizing: border-box;
 			-webkit-box-sizing: border-box;
 			box-sizing: border-box;
 
 			.friendsHeader{
-				text-align: left;
 				border: 1px solid black;
 				background-color: white;
 				border-left: 1px solid black;
             	-webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.43);
 				-moz-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.43);
 				box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.43);
-				padding-left: 4px;
 				padding-right: 4px;
 				padding-top: 4px;
 				padding-bottom: 5px;
@@ -395,13 +454,13 @@
 				position: relative;
 				z-index: 20;
 				display: block;
-				float: left;
+				float: right;
 				-moz-box-sizing: border-box;
 				-webkit-box-sizing: border-box;
 				box-sizing: border-box;
 			}
 			.friendsList{
-				float: left;
+				float: right;
 				//border: 1px solid black;
             	//-webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
 				//-moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
@@ -414,16 +473,9 @@
 				z-index: 1;
 				display: block;
 				padding-top: 10px;
-				text-align: left;
-
-
 
 				.friend1{
-					text-align: left;
-						padding-left: 6px;
-						float:left;
 					.friend1Name {
-
 						display:inline-block;
 						padding-bottom: 2px;
 					}
@@ -436,7 +488,6 @@
 						width: 12px;						
 					}
 					.friend1Lobby{
-						margin-left: 22px;
 						font-size: 11px;
 						font-weight: bold;
 						margin-right: 4px;

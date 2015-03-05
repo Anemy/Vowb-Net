@@ -7,10 +7,10 @@ block content
 		.leftPane
 			img(class="profIMG" src="/images/profile/M.jpg")
 			.statusBar
-				img(class="statusIMG" src="/images/profile/online.png") 
-				.pStatus ONLINE
+				img(class="statusIMG" src="/images/profile/offline.png") 
+				.pStatus OFFLINE
 				.p Current Lobby:  
-				.pCurrLobby CSGO MM
+				.pCurrLobby OFFLINE
 			.interactionBar
 				a(class="addFriend" href="#").
 					Add to Friends List <br>
@@ -22,13 +22,45 @@ block content
 					Threads Started <br>
 
 		.centerPane
-			.p profile page
+			.userAboutHeader
+				.userName Mystxc
+				img(class="userRank" src="/images/profile/rank1.png") 
+				.userStatus / last online 7 seconds ago
+			.userAbout
+				.userAboutL
+					.PERSONAL Personal
+					.userPersonal 
+						.userFullName Mason Everett 
+						.userAge 19 
+						.slash / 
+						.userSex Male 
+						.slash / 
+						.userState PA
+					.ACCOUNTSTATS Account Stats
+					.dateJoined Joined:
+						.userdateJoined 5/3/2014
+					.postCount Posts:
+						.userpostCount 2
+					.timeOnline Time Online:
+						.usertimeOnline 287 hrs
+				.userAboutR
+					.ABOUTME About Me
+					.aboutMeDesc.
+						I like to play CS, RS, and program side projects in my free time. I am the best top laner NA.
+					.FAVORITES Favorites
+					.favGames Games: 
+						.userfavGames Counter Strike
+					.favShows TV Shows: 
+						.userfavShows Doctor Who
+					.favFoods Foods: 
+						.userfavFoods Dumplings
 		.rightPage
 			.friendsListPane
 				.friendsHeader Friends List
 				.friendsList
 					.friend1
-						img(class="friend1StatusIMG" src="/images/profile/offline.png")
+						img(class="friend1StatusIMG" src="/images/profile/online.png")
 						.friend1Name bob
-						.friend1Lobby OFFLINE
+						
+						.friend1Lobby CSGO MM
 
