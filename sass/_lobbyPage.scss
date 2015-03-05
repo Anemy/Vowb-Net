@@ -98,11 +98,11 @@
     }
     .inputBox:focus {
         //box-shadow: 0 0 6px $highlight;
-        background: -webkit-linear-gradient(white, $light-dark); /* For Safari 5.1 to 6.0 */
-        background: -o-linear-gradient(white, $light-dark); /* For Opera 11.1 to 12.0 */
-        background: -moz-linear-gradient(white, $light-dark); /* For Firefox 3.6 to 15 */
-        background: linear-gradient(white, $light-dark); /* Standard syntax */
-        border: 2px $highlight $dark;
+        background: -webkit-linear-gradient(white, $light-light); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(white, $light-light); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(white, $light-light); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(white, $light-light); /* Standard syntax */
+        border: 2px $dark $dark;
         color: $dark;
     }
     .chatArea {
