@@ -12,7 +12,10 @@ router.get('/*', function(req, res, next) {
     // Example:
     //res.render('userPage', { name: 'Mystxc'});
     db.search(db.userDB, { username: req.params[0] }, function(result) {
-        res.render('userPage', result[0]);
+        if( result.length > 0 )
+            res.render('profile', result[0]);
+        else
+            res.render('404');
         // for printing
         // console.log("<pre>" + JSON.stringify(result[0], null, '\t') + "</pre>");
     });
