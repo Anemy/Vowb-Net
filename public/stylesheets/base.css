@@ -878,6 +878,8 @@ table {
   float: left;
   background-color: white;
   z-index: -2;
+  background: url('/images/headphones.jpg') no-repeat scroll center center transparent;
+  background: url('/images/headphones.jpg') no-repeat scroll center top/cover transparent;
   font-family: 'Cabin'; }
   .landingPage .blackBackground {
     display: none;
@@ -891,41 +893,61 @@ table {
   .landingPage .mainContent {
     text-align: center;
     font-size: 1.2em;
-    margin-top: 1em; }
+    margin-top: 8.6em; }
+    .landingPage .mainContent .mainContentBG {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 8em;
+      left: 0;
+      background-color: #290E03;
+      background: #290E03;
+      width: 100%;
+      height: 11em;
+      opacity: 0.6;
+      z-index: -1; }
     .landingPage .mainContent .accentText {
       color: #FC4349; }
+    .landingPage .mainContent .titleText {
+      font-size: 2em;
+      line-height: 1.5em;
+      color: white; }
     .landingPage .mainContent .bodyLine {
-      width: 80%;
+      width: 60%;
       margin-left: 15%;
       height: 1px;
-      background-color: #ECF0F1;
-      margin-top: 0.2em; }
+      background-color: #290E03;
+      margin-top: 0.2em;
+      display: none;
+      opacity: 0.1;
+      filter: alpha(opacity=10);
+      /* For IE8 and earlier */ }
     .landingPage .mainContent .signupButton {
-      margin-top: 1em;
-      margin-right: 5%;
+      margin: 1em;
       right: 45%;
       text-align: center;
       z-index: 1;
-      color: #290E03;
+      color: white;
       font-size: 0.8em;
       font-family: 'Cabin';
-      background-color: white;
+      background-color: #FC4349;
       border: 2px solid #FC4349;
       border-radius: 5px;
-      padding-top: 0.5em;
-      padding-bottom: 0.5em;
-      padding-left: 1em;
-      padding-right: 1em;
+      padding-top: 0.8em;
+      padding-bottom: 0.8em;
+      padding-left: 2.2em;
+      padding-right: 2.2em;
       display: inline-block;
       -webkit-transition: all .25s ease;
       transition: all .25s ease; }
     .landingPage .mainContent .signupButton:hover {
       cursor: pointer;
-      color: white;
-      background-color: #FC4349; }
+      background-color: #DC2329;
+      border: 2px solid #DC2329; }
     .landingPage .mainContent .signupButton:active {
       cursor: pointer;
-      background-color: #DC2329; }
+      background-color: #DC2329;
+      box-shadow: inset 0px 0px 2px 2px rgba(0, 0, 0, 0.2); }
     .landingPage .mainContent .macarena {
       position: absolute;
       top: 3.25em;
