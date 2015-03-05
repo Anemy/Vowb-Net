@@ -2,10 +2,12 @@
 
 var loginButtonClicked = function() {
   $('.signupButton').addClass('dontShowGradient');
-  $('.loginPage').fadeIn(50);
+  $('.loginPopup').fadeIn(50);
+  $('.overlay').fadeIn(50);
 }
 var exitButtonClicked = function() {
-	$('.loginPage').fadeOut(50);
+	$('.loginPopup').fadeOut(50);
+  $('.overlay').fadeOut(50);
   $('.signupButton').removeClass('dontShowGradient');
 }
 
@@ -26,7 +28,7 @@ var loginSubClicked = function() {
                 $('.loginPage').fadeOut(50);
             },
             error: function(data){
-                alert("Username or password is incorrect.");                 
+                alert("Username or password is incorrect.");
             }
     });
 }
