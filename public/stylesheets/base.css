@@ -115,7 +115,7 @@ table {
     -webkit-transition: all .25s ease;
     transition: all .25s ease; }
   .loginPage .loginForm input[type="username"]:focus, .loginPage .loginForm input[type="password"]:focus {
-    box-shadow: 0 0 6px #2ECC71; }
+    box-shadow: 0 0 6px #E67E22; }
   .loginPage .loginForm input[type="checkbox"] {
     float: left;
     margin-right: 5px; }
@@ -1074,7 +1074,7 @@ table {
         border-radius: 5px;
         font-size: 0.8em; }
       .signupPage .pageThings #signupForm .fields .inputBox:focus {
-        box-shadow: 0 0 6px #2ECC71; }
+        box-shadow: 0 0 6px #E67E22; }
       .signupPage .pageThings #signupForm .fields .signupButtonWrap {
         position: relative;
         float: left;
@@ -1168,7 +1168,7 @@ table {
   /* For Firefox 3.6 to 15 */
   background: linear-gradient(white, #E4E8E8);
   /* Standard syntax */
-  border: 2px solid #FC4349;
+  border: 2px solid #E67E22;
   color: #290E03; }
 .lobbyPage .joinVoiceChat:active {
   box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.2); }
@@ -1190,8 +1190,8 @@ table {
   height: 2em;
   padding-top: 3px;
   padding-bottom: 8px;
-  -webkit-transition: all .25s ease;
-  transition: all .25s ease;
+  -webkit-transition: all .35s ease;
+  transition: all .35s ease;
   outline: none; }
 .lobbyPage .joinPrivateVoiceChat:hover {
   cursor: pointer;
@@ -1201,7 +1201,7 @@ table {
   /* For Firefox 3.6 to 15 */
   background: linear-gradient(white, #E4E8E8);
   /* Standard syntax */
-  border: 2px #2ECC71 #290E03;
+  border: 2px #E67E22 #290E03;
   color: #290E03; }
 .lobbyPage .joinPrivateVoiceChat:active {
   box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.2); }
@@ -1225,7 +1225,7 @@ table {
   /* For Firefox 3.6 to 15 */
   background: linear-gradient(white, #E4E8E8);
   /* Standard syntax */
-  border: 2px #2ECC71 #290E03;
+  border: 2px #E67E22 #290E03;
   color: #290E03; }
 .lobbyPage .chatArea {
   position: absolute;
