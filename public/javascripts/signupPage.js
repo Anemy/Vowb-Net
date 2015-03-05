@@ -42,7 +42,7 @@ $('#signupForm').ready (function() {
                 success: function(data){
                     console.log("Success from server");
                     $("body").fadeOut(1000,function(){
-                    window.location.href = "/"
+                        window.location.href = "/";
                     })
                     //display "redirecting in 3 seconds"
                 },
