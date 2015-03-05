@@ -17,6 +17,9 @@ socket.on('server message', function(msg){
   }
   document.getElementById("msgBox").scrollTop = document.getElementById("msgBox").scrollHeight;
 });
+socket.on('username message', function(msg){
+
+});
 
 $(document).ready(function() {
     //submitting the chat form
@@ -29,6 +32,11 @@ $(document).ready(function() {
     //Hitting enter sends the message
     $("#m").keyup(function(e) {
         if(e.keyCode == 13) {
+          if($('#un_id').val() == ""){
+          }
+          else{
+            socket.emit('username message', $('#un_id').val());
+          }
           socket.emit('chat message', $('#m').val());
           $('#m').val('');
             return false;
