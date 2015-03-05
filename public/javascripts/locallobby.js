@@ -65,9 +65,9 @@ connection.onNewSession = function(session) {
         sessions[session.sessionid] = session;
         var tr = document.createElement('tr');
         tr.innerHTML = '<td><strong>' + session.extra['session-name'] + '</strong></td>' +
-            '<td><button class="join">Join</button></td>';
+            '<td><button class="joinPrivateVoiceChat">Join</button></td>';
         roomsList.insertBefore(tr, roomsList.firstChild);
-        var joinRoomButton = tr.querySelector('.join');
+        var joinRoomButton = tr.querySelector('.joinPrivateVoiceChat');
         joinRoomButton.setAttribute('data-sessionid', session.sessionid);
         joinRoomButton.onclick = function() {
             this.disabled = true;
