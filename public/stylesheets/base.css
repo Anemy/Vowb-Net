@@ -1168,8 +1168,8 @@ table {
   /* For Firefox 3.6 to 15 */
   background: linear-gradient(white, #E4E8E8);
   /* Standard syntax */
-  border: 2px solid #E67E22;
-  color: #290E03; }
+  border: 2px solid #FF474E;
+  color: #FC4349; }
 .lobbyPage .joinVoiceChat:active {
   box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.2); }
 .lobbyPage .joinPrivateVoiceChat {
