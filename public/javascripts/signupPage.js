@@ -41,11 +41,13 @@ $('#signupForm').ready (function() {
                 },
                 success: function(data){
                     console.log("Success from server");
-                    var delay = 3000; //Your delay in milliseconds
-                    setTimeout(function(){ window.location = "/"; }, delay);
+                    $("body").fadeOut(1000,function(){
+                    window.location.href = "/"
+                    })
                     //display "redirecting in 3 seconds"
                 },
                 error: function(data){
+                    alert("Username already exists!!");
                     console.log("Failure from server");
 
                 }
