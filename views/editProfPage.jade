@@ -2,11 +2,13 @@ extends layout
 
 block content
 	script(defer="defer" src="/javascripts/editProfilePage.js")
+	script(defer="defer" type="text/javascript" src="//api.filepicker.io/v1/filepicker.js")
+	//- script(defer="defer" type="text/javascript" src="/javascripts/file.js")
 	include banner
 	.editProfPage
 		form#editProfileForm
 		.leftPane
-			img(class="profIMG" src="/images/profile/M.jpg")
+			img#profPic(class="profIMG" src="/images/profile/M.jpg")
 			.statusBar
 				.overlayStat
 				img(class="statusIMG" src="/images/profile/offline.png") 
@@ -126,4 +128,3 @@ block content
 						.friend1Name bob
 						img(class="friend1StatusIMG" src="/images/profile/online.png")
 						.friend1Lobby CSGO MM
-
