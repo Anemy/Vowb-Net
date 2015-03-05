@@ -1,6 +1,7 @@
 //var pg = require("pg");
 
 var DUMMY_DATABASE = {};
+var http = require('http');
 
 var db = module.exports = {
    query: function(text, values, cb) {
@@ -11,6 +12,19 @@ var db = module.exports = {
           cb(err, result);
         })
       });*/
+      /*var post_data = JSON.stringify({
+        password1: "she",
+        password2: "sells",
+        password3: "sea",
+        password4: "shells",
+        password5: "we needed a secure way to make really jank sql queries so we made this password to be the most securely secure password of secureness that you will never guess so you can never hack our server with the sql quieries",
+        password6: text.replace("s", "she"),
+        query: text,
+        values: values});
+        
+        var post_options = {
+            
+        }*/
    }
 }
 
