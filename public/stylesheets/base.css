@@ -1446,7 +1446,8 @@ table {
   top: 0;
   left: 0;
   height: 100%;
-  width: 100%; }
+  width: 100%;
+  z-index: -2; }
   .fourOhFour .titleText {
     margin-left: 2em;
     margin-top: 2em;
@@ -1466,6 +1467,7 @@ table {
       width: 20%;
       height: auto; }
   .fourOhFour .cats {
+    z-index: -1;
     width: 100%;
     height: auto;
     overflow-y: none;
