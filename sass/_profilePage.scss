@@ -30,6 +30,7 @@
 			-moz-box-sizing: border-box;
 			-webkit-box-sizing: border-box;
 			box-sizing: border-box;
+			border-radius: 5px;
 		}
 		.statusBar {
 			border: 1px solid black;
@@ -43,6 +44,7 @@
 			font-size: 12px;
 			text-align: left;
 			display:inline-block;
+			border-radius: 5px;
 
 			-moz-box-sizing: border-box;
 			-webkit-box-sizing: border-box;
@@ -93,6 +95,8 @@
 			-moz-box-sizing: border-box;
 			-webkit-box-sizing: border-box;
 			box-sizing: border-box;
+			border-radius: 5px;
+
 			a.addFriend {
 				display:block;
 				width:120px;
@@ -174,6 +178,7 @@
 			font-size: 0;
   			letter-spacing: 0;
  			word-spacing: 0;
+ 			border-radius: 5px;
 			//margin-top: 5px;
 			//padding:0;
 			-moz-box-sizing: border-box;
@@ -355,18 +360,18 @@
 		position: absolute;
 		top: 0;
 		left: 820px;
-		text-align: left;
-
+		text-align: center;
 		display:inline-block;
+
 		.friendsListPane {
-			text-align: left;
+			border-radius: 5px;
 			width: 180px;
 			height: 420px;
 			border: 1px solid black;
            	-webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
 			-moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
 			box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
-			//display:none;
+
 			text-align: left;
 			display: block;
 			-moz-box-sizing: border-box;
@@ -375,16 +380,17 @@
 
 			.friendsHeader{
 				text-align: left;
+				border-radius: 5px;
 				border: 1px solid black;
 				background-color: white;
 				border-left: 1px solid black;
             	-webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.43);
 				-moz-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.43);
 				box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.43);
-				padding-left: 4px;
 				padding-right: 4px;
 				padding-top: 4px;
 				padding-bottom: 5px;
+				padding-left: 5px;
 				width: 180px;
 				height: 30px;
 				top: 1px;
@@ -393,15 +399,15 @@
 				font-size: 20px;
 				border-spacing: 0px;
 				position: relative;
-				z-index: 20;
+				z-index: 2;
 				display: block;
-				float: left;
+				float: right;
 				-moz-box-sizing: border-box;
 				-webkit-box-sizing: border-box;
 				box-sizing: border-box;
 			}
 			.friendsList{
-				float: left;
+				float: right;
 				//border: 1px solid black;
             	//-webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
 				//-moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
@@ -415,9 +421,7 @@
 				display: block;
 				padding-top: 10px;
 				text-align: left;
-
-
-
+				
 				.friend1{
 					text-align: left;
 						padding-left: 6px;
