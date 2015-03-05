@@ -2,12 +2,10 @@
 
 .lobbyPage {
     .joinVoiceChat {
-      margin-left: 20px;
-      margin-top: 20px;
+      margin-left: 10px;
+      margin-top: 10px;
       text-align: center;
       color: $dark;
-      // background-color: $accent;
-      // background-color: $light;
       background: -webkit-linear-gradient(white, $light); /* For Safari 5.1 to 6.0 */
       background: -o-linear-gradient(white, $light); /* For Opera 11.1 to 12.0 */
       background: -moz-linear-gradient(white, $light); /* For Firefox 3.6 to 15 */
@@ -18,8 +16,8 @@
 
       font-size: 14px;
       width: 140px;
-      height: 36px;
-      padding-top: 7px;
+      height: 2em;
+      padding-top: 3px;
       padding-bottom: 8px;
 
       -webkit-transition: all .25s ease;
@@ -36,12 +34,77 @@
       background: -o-linear-gradient(white, $light-dark); /* For Opera 11.1 to 12.0 */
       background: -moz-linear-gradient(white, $light-dark); /* For Firefox 3.6 to 15 */
       background: linear-gradient(white, $light-dark); /* Standard syntax */
-      border: 2px solid $accent;
+      border: 2px solid $accent-light;
       color: $accent;
   }
   .joinVoiceChat:active {
       box-shadow: inset 0px 0px 1px 1px rgba(0,0,0,0.2);
   }
+  .joinPrivateVoiceChat {
+      margin-left: 10px;
+      margin-top: 10px;
+      text-align: center;
+      color: $dark;
+      background: -webkit-linear-gradient(white, $light); /* For Safari 5.1 to 6.0 */
+      background: -o-linear-gradient(white, $light); /* For Opera 11.1 to 12.0 */
+      background: -moz-linear-gradient(white, $light); /* For Firefox 3.6 to 15 */
+      background: linear-gradient(white, $light); /* Standard syntax */
+
+      border-radius: 5px;
+      border: 2px solid $medium;
+
+      font-size: 14px;
+      width: 140px;
+      height: 2em;
+      padding-top: 3px;
+      padding-bottom: 8px;
+
+      -webkit-transition: all .35s ease;
+      -moz-transition: all .35s ease;
+      -ms-transition: all .35s ease;
+      -o-transition: all .35s ease;
+      transition: all .35s ease;
+
+      outline: none;
+  }
+  .joinPrivateVoiceChat:hover {
+      cursor: pointer;
+      background: -webkit-linear-gradient(white, $light-dark); /* For Safari 5.1 to 6.0 */
+      background: -o-linear-gradient(white, $light-dark); /* For Opera 11.1 to 12.0 */
+      background: -moz-linear-gradient(white, $light-dark); /* For Firefox 3.6 to 15 */
+      background: linear-gradient(white, $light-dark); /* Standard syntax */
+      border: 2px $highlight $dark;
+      color: $dark;
+  }
+  .joinPrivateVoiceChat:active {
+      box-shadow: inset 0px 0px 1px 1px rgba(0,0,0,0.2);
+  }
+  .inputBox {
+        height: 2em;
+        float: left;
+        width: 50%;
+        margin-left: 2%;
+        margin-top: 11px;
+
+        border: none;
+        outline: none;
+        box-shadow: 0 0 2px $dark;
+
+        font-size: 0.8em;
+        padding: 0px 6px;
+
+        border-radius: 5px;
+        font-size: 0.8em;
+    }
+    .inputBox:focus {
+        //box-shadow: 0 0 6px $highlight;
+        background: -webkit-linear-gradient(white, $light-dark); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(white, $light-dark); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(white, $light-dark); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(white, $light-dark); /* Standard syntax */
+        border: 2px $highlight $dark;
+        color: $dark;
+    }
     .chatArea {
         position: absolute;
         width: 100%;
@@ -64,7 +127,6 @@
         }
 
         .chatbox {
-            //font-family:tahoma;
             font-family: 'Cabin';
             font-size:12px;
             color:black;

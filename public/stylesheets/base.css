@@ -115,7 +115,7 @@ table {
     -webkit-transition: all .25s ease;
     transition: all .25s ease; }
   .loginPage .loginForm input[type="username"]:focus, .loginPage .loginForm input[type="password"]:focus {
-    box-shadow: 0 0 6px #2ECC71; }
+    box-shadow: 0 0 6px #E67E22; }
   .loginPage .loginForm input[type="checkbox"] {
     float: left;
     margin-right: 5px; }
@@ -176,7 +176,8 @@ table {
       width: 180px;
       border: 1px solid black;
       box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.43);
-      box-sizing: border-box; }
+      box-sizing: border-box;
+      border-radius: 5px; }
     .profilePage .leftPane .statusBar {
       border: 1px solid black;
       box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.43);
@@ -186,6 +187,7 @@ table {
       font-size: 12px;
       text-align: left;
       display: inline-block;
+      border-radius: 5px;
       box-sizing: border-box;
       padding-left: 4px; }
       .profilePage .leftPane .statusBar .statusIMG {
@@ -218,7 +220,8 @@ table {
       height: 85px;
       padding-top: 8px;
       padding-left: 4px;
-      box-sizing: border-box; }
+      box-sizing: border-box;
+      border-radius: 5px; }
       .profilePage .leftPane .interactionBar a.addFriend {
         display: block;
         width: 120px;
@@ -287,6 +290,7 @@ table {
       font-size: 0;
       letter-spacing: 0;
       word-spacing: 0;
+      border-radius: 5px;
       box-sizing: border-box; }
       .profilePage .centerPane .userAbout .userAboutL {
         width: 200px;
@@ -417,10 +421,10 @@ table {
     position: absolute;
     top: 0;
     left: 820px;
-    text-align: left;
+    text-align: center;
     display: inline-block; }
     .profilePage .rightPage .friendsListPane {
-      text-align: left;
+      border-radius: 5px;
       width: 180px;
       height: 420px;
       border: 1px solid black;
@@ -430,14 +434,15 @@ table {
       box-sizing: border-box; }
       .profilePage .rightPage .friendsListPane .friendsHeader {
         text-align: left;
+        border-radius: 5px;
         border: 1px solid black;
         background-color: white;
         border-left: 1px solid black;
         box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.43);
-        padding-left: 4px;
         padding-right: 4px;
         padding-top: 4px;
         padding-bottom: 5px;
+        padding-left: 5px;
         width: 180px;
         height: 30px;
         top: 1px;
@@ -445,12 +450,12 @@ table {
         font-size: 20px;
         border-spacing: 0px;
         position: relative;
-        z-index: 20;
+        z-index: 2;
         display: block;
-        float: left;
+        float: right;
         box-sizing: border-box; }
       .profilePage .rightPage .friendsListPane .friendsList {
-        float: left;
+        float: right;
         width: 180px;
         height: 400px;
         font-size: 16px;
@@ -502,7 +507,8 @@ table {
       width: 180px;
       border: 1px solid black;
       box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.43);
-      box-sizing: border-box; }
+      box-sizing: border-box;
+      border-radius: 5px; }
     .editProfPage .leftPane .profIMG:hover {
       cursor: pointer;
       padding: 4px;
@@ -517,7 +523,8 @@ table {
       text-align: left;
       display: inline-block;
       box-sizing: border-box;
-      padding-left: 4px; }
+      padding-left: 4px;
+      border-radius: 5px; }
       .editProfPage .leftPane .statusBar .overlayStat {
         position: absolute;
         top: 187px;
@@ -550,6 +557,7 @@ table {
       border: 1px solid black;
       box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.43);
       margin-top: 6px;
+      border-radius: 5px;
       font-size: 12px;
       text-align: left;
       width: 180px;
@@ -625,6 +633,7 @@ table {
         font-size: 10px;
         display: inline-block; }
     .editProfPage .centerPane .userAbout {
+      border-radius: 5px;
       text-align: left;
       position: absolute;
       border: 1px solid black;
@@ -812,11 +821,12 @@ table {
     text-align: center;
     display: inline-block; }
     .editProfPage .rightPage .friendsListPane {
+      border-radius: 5px;
       width: 180px;
       height: 420px;
       border: 1px solid black;
       box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.43);
-      text-align: right;
+      text-align: left;
       display: block;
       box-sizing: border-box; }
       .editProfPage .rightPage .friendsListPane .overlayFL {
@@ -828,6 +838,8 @@ table {
         z-index: 10;
         background-color: rgba(255, 255, 255, 0.7); }
       .editProfPage .rightPage .friendsListPane .friendsHeader {
+        text-align: left;
+        border-radius: 5px;
         border: 1px solid black;
         background-color: white;
         border-left: 1px solid black;
@@ -835,6 +847,7 @@ table {
         padding-right: 4px;
         padding-top: 4px;
         padding-bottom: 5px;
+        padding-left: 5px;
         width: 180px;
         height: 30px;
         top: 1px;
@@ -855,20 +868,26 @@ table {
         position: relative;
         z-index: 1;
         display: block;
-        padding-top: 10px; }
-        .editProfPage .rightPage .friendsListPane .friendsList .friend1 .friend1Name {
-          display: inline-block;
-          padding-bottom: 2px; }
-        .editProfPage .rightPage .friendsListPane .friendsList .friend1 .friend1StatusIMG {
-          margin-left: 6px;
-          margin-right: 4px;
-          display: inline-block;
-          height: 12px;
-          width: 12px; }
-        .editProfPage .rightPage .friendsListPane .friendsList .friend1 .friend1Lobby {
-          font-size: 11px;
-          font-weight: bold;
-          margin-right: 4px; }
+        padding-top: 10px;
+        text-align: left; }
+        .editProfPage .rightPage .friendsListPane .friendsList .friend1 {
+          text-align: left;
+          padding-left: 6px;
+          float: left; }
+          .editProfPage .rightPage .friendsListPane .friendsList .friend1 .friend1Name {
+            display: inline-block;
+            padding-bottom: 2px; }
+          .editProfPage .rightPage .friendsListPane .friendsList .friend1 .friend1StatusIMG {
+            margin-left: 6px;
+            margin-right: 4px;
+            display: inline-block;
+            height: 12px;
+            width: 12px; }
+          .editProfPage .rightPage .friendsListPane .friendsList .friend1 .friend1Lobby {
+            margin-left: 22px;
+            font-size: 11px;
+            font-weight: bold;
+            margin-right: 4px; }
 
 /* This is the style sheet for the main landing page of the website @author Rhys Howell*/
 .landingPage {
@@ -878,6 +897,8 @@ table {
   float: left;
   background-color: white;
   z-index: -2;
+  background: url('/images/headphones.jpg') no-repeat scroll center center transparent;
+  background: url('/images/headphones.jpg') no-repeat scroll center top/cover transparent;
   font-family: 'Cabin'; }
   .landingPage .blackBackground {
     display: none;
@@ -891,41 +912,61 @@ table {
   .landingPage .mainContent {
     text-align: center;
     font-size: 1.2em;
-    margin-top: 1em; }
+    margin-top: 8.6em; }
+    .landingPage .mainContent .mainContentBG {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 8em;
+      left: 0;
+      background-color: #290E03;
+      background: #290E03;
+      width: 100%;
+      height: 11em;
+      opacity: 0.6;
+      z-index: -1; }
     .landingPage .mainContent .accentText {
       color: #FC4349; }
+    .landingPage .mainContent .titleText {
+      font-size: 2em;
+      line-height: 1.5em;
+      color: white; }
     .landingPage .mainContent .bodyLine {
-      width: 80%;
+      width: 60%;
       margin-left: 15%;
       height: 1px;
-      background-color: #ECF0F1;
-      margin-top: 0.2em; }
+      background-color: #290E03;
+      margin-top: 0.2em;
+      display: none;
+      opacity: 0.1;
+      filter: alpha(opacity=10);
+      /* For IE8 and earlier */ }
     .landingPage .mainContent .signupButton {
-      margin-top: 1em;
-      margin-right: 5%;
+      margin: 1em;
       right: 45%;
       text-align: center;
       z-index: 1;
-      color: #290E03;
+      color: white;
       font-size: 0.8em;
       font-family: 'Cabin';
-      background-color: white;
+      background-color: #FC4349;
       border: 2px solid #FC4349;
       border-radius: 5px;
-      padding-top: 0.5em;
-      padding-bottom: 0.5em;
-      padding-left: 1em;
-      padding-right: 1em;
+      padding-top: 0.8em;
+      padding-bottom: 0.8em;
+      padding-left: 2.2em;
+      padding-right: 2.2em;
       display: inline-block;
       -webkit-transition: all .25s ease;
       transition: all .25s ease; }
     .landingPage .mainContent .signupButton:hover {
       cursor: pointer;
-      color: white;
-      background-color: #FC4349; }
+      background-color: #DC2329;
+      border: 2px solid #DC2329; }
     .landingPage .mainContent .signupButton:active {
       cursor: pointer;
-      background-color: #DC2329; }
+      background-color: #DC2329;
+      box-shadow: inset 0px 0px 2px 2px rgba(0, 0, 0, 0.2); }
     .landingPage .mainContent .macarena {
       position: absolute;
       top: 3.25em;
@@ -1033,7 +1074,7 @@ table {
         border-radius: 5px;
         font-size: 0.8em; }
       .signupPage .pageThings #signupForm .fields .inputBox:focus {
-        box-shadow: 0 0 6px #2ECC71; }
+        box-shadow: 0 0 6px #E67E22; }
       .signupPage .pageThings #signupForm .fields .signupButtonWrap {
         position: relative;
         float: left;
@@ -1099,8 +1140,8 @@ table {
 
 /* This is the styling page for the lobby page */
 .lobbyPage .joinVoiceChat {
-  margin-left: 20px;
-  margin-top: 20px;
+  margin-left: 10px;
+  margin-top: 10px;
   text-align: center;
   color: #290E03;
   background: -webkit-linear-gradient(white, #ECF0F1);
@@ -1113,8 +1154,8 @@ table {
   border: 2px solid #BDC3C7;
   font-size: 14px;
   width: 140px;
-  height: 36px;
-  padding-top: 7px;
+  height: 2em;
+  padding-top: 3px;
   padding-bottom: 8px;
   -webkit-transition: all .25s ease;
   transition: all .25s ease;
@@ -1127,10 +1168,65 @@ table {
   /* For Firefox 3.6 to 15 */
   background: linear-gradient(white, #E4E8E8);
   /* Standard syntax */
-  border: 2px solid #FC4349;
+  border: 2px solid #FF474E;
   color: #FC4349; }
 .lobbyPage .joinVoiceChat:active {
   box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.2); }
+.lobbyPage .joinPrivateVoiceChat {
+  margin-left: 10px;
+  margin-top: 10px;
+  text-align: center;
+  color: #290E03;
+  background: -webkit-linear-gradient(white, #ECF0F1);
+  /* For Safari 5.1 to 6.0 */
+  /* For Opera 11.1 to 12.0 */
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(white, #ECF0F1);
+  /* Standard syntax */
+  border-radius: 5px;
+  border: 2px solid #BDC3C7;
+  font-size: 14px;
+  width: 140px;
+  height: 2em;
+  padding-top: 3px;
+  padding-bottom: 8px;
+  -webkit-transition: all .35s ease;
+  transition: all .35s ease;
+  outline: none; }
+.lobbyPage .joinPrivateVoiceChat:hover {
+  cursor: pointer;
+  background: -webkit-linear-gradient(white, #E4E8E8);
+  /* For Safari 5.1 to 6.0 */
+  /* For Opera 11.1 to 12.0 */
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(white, #E4E8E8);
+  /* Standard syntax */
+  border: 2px #E67E22 #290E03;
+  color: #290E03; }
+.lobbyPage .joinPrivateVoiceChat:active {
+  box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.2); }
+.lobbyPage .inputBox {
+  height: 2em;
+  float: left;
+  width: 50%;
+  margin-left: 2%;
+  margin-top: 11px;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 2px #290E03;
+  font-size: 0.8em;
+  padding: 0px 6px;
+  border-radius: 5px;
+  font-size: 0.8em; }
+.lobbyPage .inputBox:focus {
+  background: -webkit-linear-gradient(white, #E4E8E8);
+  /* For Safari 5.1 to 6.0 */
+  /* For Opera 11.1 to 12.0 */
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(white, #E4E8E8);
+  /* Standard syntax */
+  border: 2px #E67E22 #290E03;
+  color: #290E03; }
 .lobbyPage .chatArea {
   position: absolute;
   width: 100%;
