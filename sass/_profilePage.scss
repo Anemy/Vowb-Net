@@ -21,10 +21,10 @@
 
 		.profIMG {
 			height: 180px;
-      width: 180px;
-      //margin: 2px;
-      border: 1px solid black;
-      -webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
+     		width: 180px;
+     		//margin: 2px;
+     		border: 1px solid black;
+      		-webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
 			-moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
 			box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
 			-moz-box-sizing: border-box;
@@ -32,8 +32,8 @@
 			box-sizing: border-box;
 		}
 		.statusBar {
-			border: 1px solid dimgrey;
-      -webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
+			border: 1px solid black;
+      		-webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
 			-moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
 			box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
 			margin-top: 4px;
@@ -53,8 +53,8 @@
 				padding-left: 4px;
 				margin-top: 3px;
 				display:inline-block;
-				height: 10px;
-				width: 10px;
+				height: 12px;
+				width: 12px;
 			}
 			.pStatus {
 				margin-top: 6px;
@@ -78,7 +78,7 @@
 
 		}
 		.interactionBar {
-			border: 1px solid dimgrey;
+			border: 1px solid black;
             -webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
 			-moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
 			box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
@@ -133,14 +133,221 @@
 		}
 	}
 	.centerPane {
-		width: 640px;
-		text-align: center;
+		width: 615px;
+		margin-left: 12px;
+		text-align: left;
 		position: absolute;
-		top: 0;
+		top: 1px;
 		left: 180px;
 		display:inline-block;
+		.userAboutHeader {
+			top: 10px;
+			display:block;
+			margin-bottom: 5px;
+			.userName {
+				display:inline-block;
+				font-weight: bold;
+				font-size: 36px;
+			}
+			.userRank {
+				padding-left: 10px;
+				height: 30px;
+				width: 30px;
+				display:inline-block;
+			}
+			.userStatus {
+				font-size: 10px;
+				display:inline-block;
+			}
+		}
+		.userAbout {
+			text-align: left;
+			position: absolute;
+			border: 1px solid black;
+       		-webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
+			-moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
+			box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
+			display: block;
+			border-spacing: 0px;
+			width: 615px;
+			height: 138px;
+			font-size: 0;
+  			letter-spacing: 0;
+ 			word-spacing: 0;
+			//margin-top: 5px;
+			//padding:0;
+			-moz-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+			.userAboutL {
+			//	border-right: 1px solid black;
+	            //-webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
+				//-moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
+				//box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
+				width: 200px;
+				height: 200px;
+				font-size: 12px;
+				vertical-align: top;
+				//position: relative;
+				display: inline-block;
+				//margin-top: 8px;
+				padding-top: 8px;
+				padding-left: 10px;
+				//-moz-box-sizing: border-box;
+				//-webkit-box-sizing: border-box;
+				//box-sizing: border-box;
+				.PERSONAL {
+					font-size: 13px;
+					font-weight: bold;
+					width: 187px;
+					height:15px;
+					padding-top: 2px;
+					padding-left: 2px;
+					// padding-left: 10px;
+					border-top: 1px solid black;
+					border-bottom: 1px solid black;
+				}
 
+				.userPersonal{
+					height: 30px;
+					padding-top: 3px;
+					padding-left: 4px;
+					.userFullName {
+						padding-bottom: 3px;
+					}
+					.slash {
+						display: inline-block;
+						padding-left: 2px;
+						padding-right: 2px;
+					}
+					.userAge {
+						display: inline-block;
+					}
+					.userSex {
+						display: inline-block;
+					}
+					.userState {
+						display: inline-block;
+					}
+				}
+
+				.ACCOUNTSTATS{
+					font-size: 13px;
+					font-weight: bold;
+					width: 187px;
+					height:15px;
+					padding-top: 2px;
+					padding-left: 2px;
+					// padding-left: 10px;
+					border-top: 1px solid black;
+					border-bottom: 1px solid black;
+				}
+				.dateJoined{
+					padding-top: 4px;
+					padding-left: 4px;
+					font-weight: bold;
+					.userdateJoined {
+						padding-left: 2px;
+						display: inline-block;
+						font-weight: normal;
+					}
+				}
+				.postCount{
+					padding-top: 3px;
+					padding-left: 4px;
+					font-weight: bold;
+					.userpostCount{
+						padding-left: 2px;
+						display: inline-block;
+						font-weight: normal;
+					}
+
+				}
+				.timeOnline{
+					padding-top: 3px;
+					padding-left: 4px;
+					font-weight: bold;
+					.usertimeOnline{
+						padding-left: 2px;
+						display: inline-block;
+						font-weight: normal;
+					}
+				}
+			}
+			
+			.userAboutR {
+				border-left: 1px solid black;
+				vertical-align: top;
+				width: 400px;
+				height: 137px;
+				font-size: 12px;
+				display: inline-block;
+				padding-top: 8px;
+				padding-left: 10px;
+				-moz-box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+				.ABOUTME {
+					font-size: 13px;
+					font-weight: bold;
+					width: 380px;
+					height:15px;
+					padding-top: 2px;
+					padding-left: 2px;
+
+					border-top: 1px solid black;
+					border-bottom: 1px solid black;
+
+				}
+				.aboutMeDesc{	
+					height: 30px;
+					width: 375px;
+					padding-top: 3px;
+  					padding-left: 4px;
+				}
+				.FAVORITES{
+					font-size: 13px;
+					font-weight: bold;
+					width: 380px;
+					height:15px;
+					padding-top: 2px;
+					padding-left: 2px;
+					border-top: 1px solid black;
+					border-bottom: 1px solid black;
+
+				}
+				.favGame { 
+					padding-top: 3px;
+					padding-left: 4px;
+					font-weight: bold;
+					.userfavGame {						padding-left: 2px;
+						display: inline-block;
+						font-weight: normal;
+					}
+				}
+				.favShow { 
+					padding-top: 3px;
+					padding-left: 4px;
+					font-weight: bold;
+					.userfavShow {						padding-left: 2px;
+						display: inline-block;
+						font-weight: normal;
+					}
+				}
+				.favFood { 
+					padding-top: 3px;
+					padding-left: 4px;
+					font-weight: bold;
+					.userfavFood {						padding-left: 2px;
+						display: inline-block;
+						font-weight: normal;
+					}
+				}
+			}
+		}
 	}
+
+
 	.rightPage {
 		width: 180px;
 		position: absolute;
@@ -150,6 +357,12 @@
 
 		display:inline-block; 
 		.friendsListPane {
+			width: 180px;
+			height: 420px;
+			border: 1px solid black;
+           	-webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
+			-moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
+			box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
 
 			text-align: right;
 			display: block;
@@ -159,42 +372,64 @@
 
 			.friendsHeader{
 				border: 1px solid black;
-            	-webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
-				-moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
-				box-shadow: 3px 2px 3px 0px rgba(0,0,0,0.43);
-				margin-top: 4px;
+				background-color: white;
+				border-left: 1px solid black;
+            	-webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.43);
+				-moz-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.43);
+				box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.43);
+				padding-right: 4px;
+				padding-top: 4px;
+				padding-bottom: 5px;
 				width: 180px;
+				height: 30px;
+				top: 1px;
+				right:1px;
 				//font-weight: bold;
 				font-size: 20px;
 				border-spacing: 0px;
 				position: relative;
-				z-index: -1;
+				z-index: 20;
 				display: block;
 				float: right;
+				-moz-box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
 			}
 			.friendsList{
 				float: right;
-				border: 1px solid dimgrey;
-            	-webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
-				-moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
-				box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
-				width: 178px;
-				height: 200px;
-				font-size: 12px;
+				//border: 1px solid black;
+            	//-webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
+				//-moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
+				//box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
+				width: 180px;
+				height: 400px;
+				font-size: 16px;
 				border-spacing: 0px;
 				position: relative;
 				z-index: 1;
 				display: block;
 				padding-top: 10px;
 
-				.friend1{}
-					.friend1StatusIMG{
-						display:inline-block;
-					}
+				.friend1{
 					.friend1Name {
 						display:inline-block;
+						padding-bottom: 2px;
 					}
-					.friend1Lobby{}
+					.friend1StatusIMG{
+						//margin-top: 3px;
+						margin-left: 6px;
+						margin-right: 4px;
+						display:inline-block;
+						height: 12px;
+						width: 12px;						
+					}
+					.friend1Lobby{
+						font-size: 11px;
+						font-weight: bold;
+						margin-right: 4px;
+
+					}
+				}
 			}
 		}
 	}
