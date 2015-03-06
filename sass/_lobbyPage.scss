@@ -171,6 +171,40 @@
                 .serverMessage {
                     background-color: $light;
                 }
+                .playerMessage {
+                    margin-left: 14px;
+                    margin-right: 24px;
+                    margin-top: 2px;
+                    margin-bottom: 2px;
+                    border: 1px solid $medium;
+                    border-radius: 5px;
+                }
+                .playerMessage::after {
+                    content: "";
+                    position: absolute;
+                    left: 5px;
+                    margin-top: 4px;
+                    border: 5px solid $medium;
+                    border-left-color: transparent;
+                    border-top-color: transparent;
+                }
+                .selfMessage {
+                    margin-right: 14px;
+                    margin-left: 24px;
+                    margin-top: 2px;
+                    margin-bottom: 2px;
+                    border: 1px solid $medium;
+                    border-radius: 5px;
+                }
+                .selfMessage::after {
+                    content: "";
+                    position: absolute;
+                    right: 5px;
+                    margin-top: 4px;
+                    border: 5px solid $medium;
+                    border-right-color: transparent;
+                    border-top-color: transparent;
+                }
             }
         }
         .controls{
