@@ -14,6 +14,33 @@ $('#editProfileForm').ready (function() {
     /* Do signup actions here */
     $('#editProfileForm').submit( function (event) {
         console.log ("editProfileForm form submitted");
+        
+        // Concept code by Eric 3/5/2015
+        $.ajax({
+                url: "/edit-profile",
+                type: "POST",
+                data: {
+                    // The user id commented out below should be added as an "int" variable
+                    //    to show whose data will be overwritten, this will probably
+                    //    be a input.hidden in JADE or something like that?
+                    secretProfileIdValue : $("secretProfileIdValue").val(),
+                    userFullName : $("#userFullName").val(),
+                    userAge : $("#userAge").val(),
+                    userSex : $("#userSex").val(),
+                    userState : $("#userState").val(),
+                    aboutMeDesc : $("#aboutMeDesc").val(),
+                    userfavGames : $("#userfavGames").val(),
+                    userfavShows : $("#userfavShows").val(),
+                    userfavFoods : $("#userfavFoods").val()
+                },
+                success: function(data){
+                    console.log("Profile edit success!!");
+                },
+                error: function(data){
+                    alert("Profile page edits failed to save.");
+                }
+        });
+        
         var errMsg = "";
         var err = 0;
 

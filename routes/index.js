@@ -20,6 +20,13 @@ router.get('/edit-profile', function(req, res, next) { //tmp
     // tmp profile page
     res.render('editProfPage', { title: 'EDIT ProfilePage - Vowb.net'});
 });
+router.post('/edit-profile', function(req, res, next) { //tmp
+    // tmp profile page
+    var data = req.body;
+    data.title = data.username + ' - EDIT ProfilePage - Vowb.net';
+    console.log(JSON.stringify(data));
+    res.render('editProfPage', { title: 'EDIT ProfilePage - Vowb.net'});
+});
 
 /* INSERT MORE WEB PAGE ROUTES HERE (FOR EXAMPLE SIGN UP PAGE) */
 router.get('/signup', function(req, res, next) {
