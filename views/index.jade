@@ -1,5 +1,6 @@
 extends layout
 block content
+    script(defer="defer" src="/javascripts/landingPage.js")
     include banner
     .landingPage
       .mainContent
@@ -8,11 +9,11 @@ block content
               Chat with your friends, teammates, and guild<br>for free with vowb<span class="accentText" href="/">.</span>net!
           .bodyLine
           // img(class="macarena" src="https://d13yacurqjgara.cloudfront.net/users/218750/screenshots/1933555/ey-macarena.gif")
-          .signupButton
-              a(href="/signup").
+          .signupButton(onclick="redirectToSignupClicked()")
+              a.
                   Sign Up
-          .signupButton
-              a(href="/lobby").
+          .signupButton(onclick="joinLobbyClicked()")
+              a.
                   Join a Lobby
           //- .rightPanel
           //-     .features

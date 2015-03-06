@@ -3,24 +3,22 @@
 var socket = io();
 
 socket.on('chat message', function(msg){
-  $('#messages').append($('<li>').text(msg));
+  $('#messages').append($('<li class="playerMessage">').text(msg));
   document.getElementById("msgBox").scrollTop = document.getElementById("msgBox").scrollHeight;
 });
 
 socket.on('server message', function(msg){
   $('#messages').append($('<li class="serverMessage">').text(msg.text));
-  if(msg.type == 'disconnect') {
-
-  }
-  else if(msg.type == 'connect') {
-
-  }
   document.getElementById("msgBox").scrollTop = document.getElementById("msgBox").scrollHeight;
+});
+socket.on('username message', function(msg){
+
 });
 
 $(document).ready(function() {
     //submitting the chat form
     $('form').submit(function(){
+
       socket.emit('chat message', $('#m').val());
       $('#m').val('');
       return false;
@@ -29,6 +27,15 @@ $(document).ready(function() {
     //Hitting enter sends the message
     $("#m").keyup(function(e) {
         if(e.keyCode == 13) {
+          if($('#un_id').val() == ""){
+            
+          }
+          else{
+            socket.emit('username message', $('#un_id').val());
+          }
+          $('#messages').append($('<li class="selfMessage">').text( $('#m').val() ));
+          document.getElementById("msgBox").scrollTop = document.getElementById("msgBox").scrollHeight;
+
           socket.emit('chat message', $('#m').val());
           $('#m').val('');
             return false;
@@ -64,7 +71,7 @@ connection.onNewSession = function(session) {
     if (sessions[session.sessionid]) return;
         sessions[session.sessionid] = session;
         var tr = document.createElement('tr');
-        tr.innerHTML = '<td><strong>' + session.extra['session-name'] + '</strong></td>' +
+        tr.innerHTML = '<td><span class="vertText">' + session.extra['session-name'] + '</span></td>' +
             '<td><button class="joinPrivateVoiceChat">Join</button></td>';
         roomsList.insertBefore(tr, roomsList.firstChild);
         var joinRoomButton = tr.querySelector('.joinPrivateVoiceChat');

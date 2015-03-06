@@ -5,14 +5,14 @@ var http = require('http');
 
 var db = module.exports = {
    query: function(text, values, cb) {
-       cb("No error",{rows:[{data:"empty returned data"}]});
+       //cb("No error",{rows:[{data:"empty returned data"}]});
       /*pg.connect("pg://postgres:vowb-secure@localhost:5432/vowbnet", function(err, client, done) {
         client.query(text, values, function(err, result) {
           done();
           cb(err, result);
         })
       });*/
-      /*var post_data = JSON.stringify({
+      var post_data = JSON.stringify({
         password1: "she",
         password2: "sells",
         password3: "sea",
@@ -23,8 +23,31 @@ var db = module.exports = {
         values: values});
         
         var post_options = {
-            
-        }*/
+            host: 'nodejs-retera.rhcloud.com',
+            port: '80',
+            path: '/securequery',
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Content-Length': post_data.length
+            }
+        };
+        
+        post_req = http.request(post_options, function(res) {
+            res.setEncoding('utf8');
+            res.on('data', function(chunk) {
+                console.log('Response: ' + chunk);
+                var jsonData = JSON.parse(chunk);
+                if( jsonData.error ) {
+                    cb(jsonData.error, { });
+                } else {
+                    cb(null, jsonData );
+                }
+            });
+        });
+        
+        post_req.write(post_data);
+        post_req.end();
    }
 }
 
@@ -37,13 +60,13 @@ db.threadDB = "threads";
 
 db.user = function(username, callback) {
     db.query("SELECT * FROM users WHERE username=$1 ORDER BY username, email_account", [username], function(err, result) {
-        callback(result.rows[0]);
+        callback(result[0]);
     });
 }
 
 db.userId = function(user_id) {
     db.query("SELECT * FROM users WHERE user_id=$1 ORDER BY username, email_account", [user_id], function(err, result) {
-        callback(result.rows[0]);
+        callback(result[0]);
     });
 }
 
@@ -80,13 +103,13 @@ db.hashPassword = function(string) {
  *
  */
 db.add = function(tablename, data) {
-    console.log("dummy table (before): " + JSON.stringify(DUMMY_DATABASE[tablename]));
+    /*console.log("dummy table (before): " + JSON.stringify(DUMMY_DATABASE[tablename]));
     if( !DUMMY_DATABASE[tablename] )
         DUMMY_DATABASE[tablename] = [];
     console.log("dummy table thinking...");
     DUMMY_DATABASE[tablename].push(data);
     console.log("dummy table (after): " + JSON.stringify(DUMMY_DATABASE[tablename]));
-    return;
+    return;*/
     var queryString = "INSERT INTO "+tablename+"(";
     var i = 0;
     var itemIndex = 1;
@@ -143,7 +166,7 @@ db.add = function(tablename, data) {
  *
  */
 db.search = function(tablename, searchParams, callback) {
-    if( !DUMMY_DATABASE[tablename] )
+    /*if( !DUMMY_DATABASE[tablename] )
         DUMMY_DATABASE[tablename] = [];
     var dummyResults = [];
     for(var i = 0; i < DUMMY_DATABASE[tablename].length; i++ ) {
@@ -160,7 +183,7 @@ db.search = function(tablename, searchParams, callback) {
     }
     console.log("dummy results: " + JSON.stringify(dummyResults));
     callback(dummyResults);
-    return;
+    return;*/
     var queryString = "SELECT * FROM "+tablename+" WHERE ";
     var i = 0;
     var itemIndex = 1;
@@ -181,7 +204,7 @@ db.search = function(tablename, searchParams, callback) {
             throw err;
         } else {
             console.log("Database .search: No error");
-            callback(result.rows);
+            callback(result);
         }
     });
 }
@@ -206,7 +229,7 @@ db.search = function(tablename, searchParams, callback) {
  */
 db.update = function(tablename, searchParams, data) {
     
-    if( !DUMMY_DATABASE[tablename] )
+    /*if( !DUMMY_DATABASE[tablename] )
         DUMMY_DATABASE[tablename] = [];
     for(var i = 0; i < DUMMY_DATABASE[tablename].length; i++ ) {
         var match = true;
@@ -225,7 +248,7 @@ db.update = function(tablename, searchParams, data) {
             }
         }
     }
-    return;
+    return;*/
     var queryString = "UPDATE "+tablename+" SET ";
     var i = 0;
     var itemIndex = 1;
