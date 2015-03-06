@@ -25,25 +25,6 @@ var loginSubClicked = function() {
 	console.log("loginsub clicked");
 	// Pascal adding post request for login button 03/02/15
 	$.ajax({
-            url: "/login",
-            type: "POST",
-            data: {
-                username : $("#un_id").val(),
-                password : $("#pw_id").val(),
-            },
-            success: function(data){
-                console.log("Login success!!");
-                user_name = $("#un_id").val();
-                $("#signup_id").text("log out");
-                $("#login_id").text($("#un_id").val());
-                $("#login_id").css("text-decoration", "underline");
-                $('.loginPage').fadeOut(50);
-                loggedin = true;
-            },
-            error: function(data){
-                alert("Username or password is incorrect.");
-            }
-
         url: "/login",
         type: "POST",
         data: {
@@ -55,9 +36,12 @@ var loginSubClicked = function() {
           //console.log("Value: " + data.value);
           if(data.value == "Success") {
               console.log("Login success!!");
+              user_name = $("#un_id").val();
               $("#signup_id").text("log out");
               $("#login_id").text($("#un_id").val());
+              $("#login_id").css("text-decoration", "underline");
               $('.loginPage').fadeOut(50);
+              loggedin = true;
           }
           else {
             alert("Username or password is incorrect.");
