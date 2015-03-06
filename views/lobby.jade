@@ -9,14 +9,13 @@ block content
     .lobbyPage
         .bodyLine
         .pageThings
-            .experiment
+            .voiceChatPanel
                 //- .joinVoiceChat(onClick="connectToVoiceChat()").
                 //-    Voice Chat
-                .createLobby
-                    input#conference-name.inputBox(type="text" placeHolder="Insert Lobby name")
-                    button#setup-new-conference.setup.joinVoiceChat Create Sublobby
+                input#conference-name.inputBox(type="text" placeHolder="Insert Lobby name")
+                button#setup-new-conference.setup.joinVoiceChat Create Sublobby
                 //- list of all available broadcasting rooms
-                table#rooms-list(style='width: 100%;')
+                table#rooms-list
                 //- local/remote videos container
                 #audios-container
 
@@ -30,7 +29,7 @@ block content
                 //- #audios-container
 
             .chatArea
-                .lobbySideBar
+                //- .lobbySideBar
                 #msgBox.chatbox
                     ul#messages
                 input#m.controls(type="text" placeHolder="Insert message...")

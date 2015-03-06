@@ -8,3 +8,9 @@ var redirectToSignupClicked = function() {
 var joinLobbyClicked = function() {
     window.location.href = "/lobby";
 }
+
+$(document).ready(function() {
+    //just making the footer not position absolute so the pic looks better
+    // $('.copyright').css('position','absolute');
+    // $('.copyright').css('bottom','-4em');
+});

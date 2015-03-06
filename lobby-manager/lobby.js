@@ -28,13 +28,13 @@ lobbyManager.startListening = function(http) {
       socket.on('username message', function(msg){
           socket.name = msg;
       });
-      
+
       socket.emit('server message', {text: '  -- Welcome to the lobby chat room!  You are User Number ' + that.numberOfClients + '. --  ' ,type: 'join'});
       that.numberOfClients++;
 
   	  socket.on('chat message', function(msg){
   	  	//console.log("Message Received");
-  	    that.io.emit('chat message', socket.name + ": " + msg);
+  	    socket.broadcast.emit('chat message', socket.name + ": " + msg);
   	  });
 
       that.io.emit('server message', {text:' -- A user has connected. -- ',type: 'disconnect'});

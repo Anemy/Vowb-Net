@@ -1,116 +1,136 @@
 /* This is the styling page for the lobby page */
 
 .lobbyPage {
-    .joinVoiceChat {
-      margin-left: 10px;
-      margin-top: 10px;
-      text-align: center;
-      color: $dark;
-      background: -webkit-linear-gradient(white, $light); /* For Safari 5.1 to 6.0 */
-      background: -o-linear-gradient(white, $light); /* For Opera 11.1 to 12.0 */
-      background: -moz-linear-gradient(white, $light); /* For Firefox 3.6 to 15 */
-      background: linear-gradient(white, $light); /* Standard syntax */
+      .voiceChatPanel {
+          margin-top: 2em;
+          text-align: center;
+          .joinVoiceChat {
+            margin-left: 1em;
+            text-align: center;
+            color: $dark;
+            background: -webkit-linear-gradient(white, $light); /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient(white, $light); /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient(white, $light); /* For Firefox 3.6 to 15 */
+            background: linear-gradient(white, $light); /* Standard syntax */
 
-      border-radius: 5px;
-      border: 2px solid $medium;
+            border-radius: 5px;
+            border: 2px solid $medium;
 
-      font-size: 14px;
-      width: 140px;
-      height: 2em;
-      padding-top: 3px;
-      padding-bottom: 8px;
+            font-size: 14px;
+            width: 140px;
+            height: 2em;
+            padding-top: 3px;
+            padding-bottom: 8px;
 
-      -webkit-transition: all .25s ease;
-      -moz-transition: all .25s ease;
-      -ms-transition: all .25s ease;
-      -o-transition: all .25s ease;
-      transition: all .25s ease;
+            -webkit-transition: all .25s ease;
+            -moz-transition: all .25s ease;
+            -ms-transition: all .25s ease;
+            -o-transition: all .25s ease;
+            transition: all .25s ease;
 
-      outline: none;
-  }
-  .joinVoiceChat:hover {
-      cursor: pointer;
-      background: -webkit-linear-gradient(white, $light-dark); /* For Safari 5.1 to 6.0 */
-      background: -o-linear-gradient(white, $light-dark); /* For Opera 11.1 to 12.0 */
-      background: -moz-linear-gradient(white, $light-dark); /* For Firefox 3.6 to 15 */
-      background: linear-gradient(white, $light-dark); /* Standard syntax */
-      border: 2px solid $accent-light;
-      color: $accent;
-  }
-  .joinVoiceChat:active {
-      box-shadow: inset 0px 0px 1px 1px rgba(0,0,0,0.2);
-  }
-  .joinPrivateVoiceChat {
-      margin-left: 10px;
-      margin-top: 10px;
-      text-align: center;
-      color: $dark;
-      background: -webkit-linear-gradient(white, $light); /* For Safari 5.1 to 6.0 */
-      background: -o-linear-gradient(white, $light); /* For Opera 11.1 to 12.0 */
-      background: -moz-linear-gradient(white, $light); /* For Firefox 3.6 to 15 */
-      background: linear-gradient(white, $light); /* Standard syntax */
+            outline: none;
+        }
+        .joinVoiceChat:hover {
+            cursor: pointer;
+            background: -webkit-linear-gradient(white, $light-dark); /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient(white, $light-dark); /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient(white, $light-dark); /* For Firefox 3.6 to 15 */
+            background: linear-gradient(white, $light-dark); /* Standard syntax */
+            border: 2px solid $accent-light;
+            color: $accent;
+        }
+        .joinVoiceChat:active {
+            box-shadow: inset 0px 0px 1px 1px rgba(0,0,0,0.2);
+        }
+        .joinPrivateVoiceChat {
+            text-align: center;
+            color: $dark;
+            background: -webkit-linear-gradient(white, $light); /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient(white, $light); /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient(white, $light); /* For Firefox 3.6 to 15 */
+            background: linear-gradient(white, $light); /* Standard syntax */
 
-      border-radius: 5px;
-      border: 2px solid $medium;
+            border-radius: 5px;
+            border: 2px solid $medium;
 
-      font-size: 14px;
-      width: 140px;
-      height: 2em;
-      padding-top: 3px;
-      padding-bottom: 8px;
+            font-size: 14px;
+            width: 140px;
+            height: 2em;
+            padding-top: 3px;
+            padding-bottom: 8px;
 
-      -webkit-transition: all .35s ease;
-      -moz-transition: all .35s ease;
-      -ms-transition: all .35s ease;
-      -o-transition: all .35s ease;
-      transition: all .35s ease;
+            -webkit-transition: all .35s ease;
+            -moz-transition: all .35s ease;
+            -ms-transition: all .35s ease;
+            -o-transition: all .35s ease;
+            transition: all .35s ease;
 
-      outline: none;
-  }
-  .joinPrivateVoiceChat:hover {
-      cursor: pointer;
-      background: -webkit-linear-gradient(white, $light-dark); /* For Safari 5.1 to 6.0 */
-      background: -o-linear-gradient(white, $light-dark); /* For Opera 11.1 to 12.0 */
-      background: -moz-linear-gradient(white, $light-dark); /* For Firefox 3.6 to 15 */
-      background: linear-gradient(white, $light-dark); /* Standard syntax */
-      border: 2px $highlight $dark;
-      color: $dark;
-  }
-  .joinPrivateVoiceChat:active {
-      box-shadow: inset 0px 0px 1px 1px rgba(0,0,0,0.2);
-  }
-  .inputBox {
-        height: 2em;
-        float: left;
-        width: 50%;
-        margin-left: 2%;
-        margin-top: 11px;
+            outline: none;
+        }
+        .joinPrivateVoiceChat:hover {
+            cursor: pointer;
+            background: -webkit-linear-gradient(white, $light-dark); /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient(white, $light-dark); /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient(white, $light-dark); /* For Firefox 3.6 to 15 */
+            background: linear-gradient(white, $light-dark); /* Standard syntax */
+            border: 2px $highlight $dark;
+            color: $dark;
+        }
+        .joinPrivateVoiceChat:active {
+            box-shadow: inset 0px 0px 1px 1px rgba(0,0,0,0.2);
+        }
+        .inputBox {
+            height: 2em;
+            width: 50%;
 
-        border: none;
-        outline: none;
-        box-shadow: 0 0 2px $dark;
+            border: none;
+            outline: none;
+            box-shadow: 0 0 2px $dark;
 
-        font-size: 0.8em;
-        padding: 0px 6px;
+            font-size: 0.8em;
+            padding: 0px 6px;
 
-        border-radius: 5px;
-        font-size: 0.8em;
-    }
-    .inputBox:focus {
-        //box-shadow: 0 0 6px $highlight;
-        background: -webkit-linear-gradient(white, $light-dark); /* For Safari 5.1 to 6.0 */
-        background: -o-linear-gradient(white, $light-dark); /* For Opera 11.1 to 12.0 */
-        background: -moz-linear-gradient(white, $light-dark); /* For Firefox 3.6 to 15 */
-        background: linear-gradient(white, $light-dark); /* Standard syntax */
-        border: 2px $highlight $dark;
-        color: $dark;
+            border-radius: 5px;
+            font-size: 0.8em;
+        }
+        .inputBox:focus {
+            //box-shadow: 0 0 6px $highlight;
+            background: -webkit-linear-gradient(white, $light-light); /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient(white, $light-light); /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient(white, $light-light); /* For Firefox 3.6 to 15 */
+            background: linear-gradient(white, $light-light); /* Standard syntax */
+            border: 2px $dark $dark;
+            color: $dark;
+        }
+        #rooms-list {
+            font-family: 'Cabin';
+            font-size: 1.1em;
+            margin-top: 1em;
+            margin-left: 35%;
+            width: 30%;
+
+            td {
+                height: 100%;
+                vertical-align: bottom;
+            }
+
+            tr {
+                border-bottom: 1px solid $light;
+                margin: 0.2em;
+            }
+        }
     }
     .chatArea {
         position: absolute;
-        width: 100%;
-        bottom: 3em;
-        height: 35%;
-        left: 0;
+        width: 98%;
+        margin-bottom: 1%;
+
+        bottom: 2em;
+        height: 30%;
+        left: 1%;
+
+        border-radius: 5px;
+        border: 2px solid $medium;
 
         .lobbySideBar{
             position: absolute;
@@ -131,13 +151,13 @@
             font-size:12px;
             color:black;
 
-            border: 1px black solid;
-
             position: absolute;
-            height: 100%;
-            width: 85%;
-            bottom: 24px;
+            height: 90%;
+            //width: 85%;
+            width: 100%;
+            top: 0;
             left: 0;
+            border-radius: 5px;
 
             word-wrap: break-word;
             overflow-y: auto;
@@ -151,14 +171,55 @@
                 .serverMessage {
                     background-color: $light;
                 }
+                .playerMessage {
+                    margin-left: 14px;
+                    margin-right: 24px;
+                    margin-top: 2px;
+                    margin-bottom: 2px;
+                    border: 1px solid $medium;
+                    border-radius: 5px;
+                }
+                .playerMessage::after {
+                    content: "";
+                    position: absolute;
+                    left: 5px;
+                    margin-top: 4px;
+                    border: 5px solid $medium;
+                    border-left-color: transparent;
+                    border-top-color: transparent;
+                }
+                .selfMessage {
+                    margin-right: 14px;
+                    margin-left: 24px;
+                    margin-top: 2px;
+                    margin-bottom: 2px;
+                    border: 1px solid $medium;
+                    border-radius: 5px;
+                }
+                .selfMessage::after {
+                    content: "";
+                    position: absolute;
+                    right: 5px;
+                    margin-top: 4px;
+                    border: 5px solid $medium;
+                    border-right-color: transparent;
+                    border-top-color: transparent;
+                }
             }
         }
-
         .controls{
           position: absolute;
           left: 0;
           width: 99%;
           bottom: 0;
+          padding: 6px 6px;
+          border-radius: 0 0 5px 5px; /* top left, top right, bottom right, bottom left */
+          outline: none;
+          border: none;
+          border-width: 0;
+          border-top-width: 1px;
+          border-style: solid;
+          border-color: $medium;
         }
     }
 
