@@ -1138,100 +1138,112 @@ table {
         line-height: 1.4em; }
 
 /* This is the styling page for the lobby page */
-.lobbyPage .joinVoiceChat {
-  margin-left: 10px;
-  margin-top: 10px;
-  text-align: center;
-  color: #290E03;
-  background: -webkit-linear-gradient(white, #ECF0F1);
-  /* For Safari 5.1 to 6.0 */
-  /* For Opera 11.1 to 12.0 */
-  /* For Firefox 3.6 to 15 */
-  background: linear-gradient(white, #ECF0F1);
-  /* Standard syntax */
-  border-radius: 5px;
-  border: 2px solid #BDC3C7;
-  font-size: 14px;
-  width: 140px;
-  height: 2em;
-  padding-top: 3px;
-  padding-bottom: 8px;
-  -webkit-transition: all .25s ease;
-  transition: all .25s ease;
-  outline: none; }
-.lobbyPage .joinVoiceChat:hover {
-  cursor: pointer;
-  background: -webkit-linear-gradient(white, #E4E8E8);
-  /* For Safari 5.1 to 6.0 */
-  /* For Opera 11.1 to 12.0 */
-  /* For Firefox 3.6 to 15 */
-  background: linear-gradient(white, #E4E8E8);
-  /* Standard syntax */
-  border: 2px solid #FF474E;
-  color: #FC4349; }
-.lobbyPage .joinVoiceChat:active {
-  box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.2); }
-.lobbyPage .joinPrivateVoiceChat {
-  margin-left: 10px;
-  margin-top: 10px;
-  text-align: center;
-  color: #290E03;
-  background: -webkit-linear-gradient(white, #ECF0F1);
-  /* For Safari 5.1 to 6.0 */
-  /* For Opera 11.1 to 12.0 */
-  /* For Firefox 3.6 to 15 */
-  background: linear-gradient(white, #ECF0F1);
-  /* Standard syntax */
-  border-radius: 5px;
-  border: 2px solid #BDC3C7;
-  font-size: 14px;
-  width: 140px;
-  height: 2em;
-  padding-top: 3px;
-  padding-bottom: 8px;
-  -webkit-transition: all .35s ease;
-  transition: all .35s ease;
-  outline: none; }
-.lobbyPage .joinPrivateVoiceChat:hover {
-  cursor: pointer;
-  background: -webkit-linear-gradient(white, #E4E8E8);
-  /* For Safari 5.1 to 6.0 */
-  /* For Opera 11.1 to 12.0 */
-  /* For Firefox 3.6 to 15 */
-  background: linear-gradient(white, #E4E8E8);
-  /* Standard syntax */
-  border: 2px #E67E22 #290E03;
-  color: #290E03; }
-.lobbyPage .joinPrivateVoiceChat:active {
-  box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.2); }
-.lobbyPage .inputBox {
-  height: 2em;
-  float: left;
-  width: 50%;
-  margin-left: 2%;
-  margin-top: 11px;
-  border: none;
-  outline: none;
-  box-shadow: 0 0 2px #290E03;
-  font-size: 0.8em;
-  padding: 0px 6px;
-  border-radius: 5px;
-  font-size: 0.8em; }
-.lobbyPage .inputBox:focus {
-  background: -webkit-linear-gradient(white, #F7FCFC);
-  /* For Safari 5.1 to 6.0 */
-  /* For Opera 11.1 to 12.0 */
-  /* For Firefox 3.6 to 15 */
-  background: linear-gradient(white, #F7FCFC);
-  /* Standard syntax */
-  border: 2px #290E03 #290E03;
-  color: #290E03; }
+.lobbyPage .voiceChatPanel {
+  margin-top: 2em;
+  text-align: center; }
+  .lobbyPage .voiceChatPanel .joinVoiceChat {
+    margin-left: 1em;
+    text-align: center;
+    color: #290E03;
+    background: -webkit-linear-gradient(white, #ECF0F1);
+    /* For Safari 5.1 to 6.0 */
+    /* For Opera 11.1 to 12.0 */
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(white, #ECF0F1);
+    /* Standard syntax */
+    border-radius: 5px;
+    border: 2px solid #BDC3C7;
+    font-size: 14px;
+    width: 140px;
+    height: 2em;
+    padding-top: 3px;
+    padding-bottom: 8px;
+    -webkit-transition: all .25s ease;
+    transition: all .25s ease;
+    outline: none; }
+  .lobbyPage .voiceChatPanel .joinVoiceChat:hover {
+    cursor: pointer;
+    background: -webkit-linear-gradient(white, #E4E8E8);
+    /* For Safari 5.1 to 6.0 */
+    /* For Opera 11.1 to 12.0 */
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(white, #E4E8E8);
+    /* Standard syntax */
+    border: 2px solid #FF474E;
+    color: #FC4349; }
+  .lobbyPage .voiceChatPanel .joinVoiceChat:active {
+    box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.2); }
+  .lobbyPage .voiceChatPanel .joinPrivateVoiceChat {
+    text-align: center;
+    color: #290E03;
+    background: -webkit-linear-gradient(white, #ECF0F1);
+    /* For Safari 5.1 to 6.0 */
+    /* For Opera 11.1 to 12.0 */
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(white, #ECF0F1);
+    /* Standard syntax */
+    border-radius: 5px;
+    border: 2px solid #BDC3C7;
+    font-size: 14px;
+    width: 140px;
+    height: 2em;
+    padding-top: 3px;
+    padding-bottom: 8px;
+    -webkit-transition: all .35s ease;
+    transition: all .35s ease;
+    outline: none; }
+  .lobbyPage .voiceChatPanel .joinPrivateVoiceChat:hover {
+    cursor: pointer;
+    background: -webkit-linear-gradient(white, #E4E8E8);
+    /* For Safari 5.1 to 6.0 */
+    /* For Opera 11.1 to 12.0 */
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(white, #E4E8E8);
+    /* Standard syntax */
+    border: 2px #E67E22 #290E03;
+    color: #290E03; }
+  .lobbyPage .voiceChatPanel .joinPrivateVoiceChat:active {
+    box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.2); }
+  .lobbyPage .voiceChatPanel .inputBox {
+    height: 2em;
+    width: 50%;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 2px #290E03;
+    font-size: 0.8em;
+    padding: 0px 6px;
+    border-radius: 5px;
+    font-size: 0.8em; }
+  .lobbyPage .voiceChatPanel .inputBox:focus {
+    background: -webkit-linear-gradient(white, #F7FCFC);
+    /* For Safari 5.1 to 6.0 */
+    /* For Opera 11.1 to 12.0 */
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(white, #F7FCFC);
+    /* Standard syntax */
+    border: 2px #290E03 #290E03;
+    color: #290E03; }
+  .lobbyPage .voiceChatPanel #rooms-list {
+    font-family: 'Cabin';
+    font-size: 1.1em;
+    margin-top: 1em;
+    margin-left: 35%;
+    width: 30%; }
+    .lobbyPage .voiceChatPanel #rooms-list td {
+      height: 100%;
+      vertical-align: bottom; }
+    .lobbyPage .voiceChatPanel #rooms-list tr {
+      border-bottom: 1px solid #ECF0F1;
+      margin: 0.2em; }
 .lobbyPage .chatArea {
   position: absolute;
-  width: 100%;
-  bottom: 3em;
-  height: 35%;
-  left: 0; }
+  width: 98%;
+  margin-bottom: 1%;
+  bottom: 2em;
+  height: 30%;
+  left: 1%;
+  border-radius: 5px;
+  border: 2px solid #BDC3C7; }
   .lobbyPage .chatArea .lobbySideBar {
     position: absolute;
     right: 0%;
@@ -1248,12 +1260,12 @@ table {
     font-family: 'Cabin';
     font-size: 12px;
     color: black;
-    border: 1px black solid;
     position: absolute;
-    height: 100%;
-    width: 85%;
-    bottom: 24px;
+    height: 90%;
+    width: 100%;
+    top: 0;
     left: 0;
+    border-radius: 5px;
     word-wrap: break-word;
     overflow-y: auto; }
     .lobbyPage .chatArea .chatbox #messages li {
@@ -1266,7 +1278,16 @@ table {
     position: absolute;
     left: 0;
     width: 99%;
-    bottom: 0; }
+    bottom: 0;
+    padding: 6px 6px;
+    border-radius: 0 0 5px 5px;
+    /* top left, top right, bottom right, bottom left */
+    outline: none;
+    border: none;
+    border-width: 0;
+    border-top-width: 1px;
+    border-style: solid;
+    border-color: #BDC3C7; }
 
 .banner {
   background: -webkit-linear-gradient(#F7FCFC, #ECF0F1);

@@ -72,7 +72,7 @@ connection.onNewSession = function(session) {
     if (sessions[session.sessionid]) return;
         sessions[session.sessionid] = session;
         var tr = document.createElement('tr');
-        tr.innerHTML = '<td><strong>' + session.extra['session-name'] + '</strong></td>' +
+        tr.innerHTML = '<td><span class="vertText">' + session.extra['session-name'] + '</span></td>' +
             '<td><button class="joinPrivateVoiceChat">Join</button></td>';
         roomsList.insertBefore(tr, roomsList.firstChild);
         var joinRoomButton = tr.querySelector('.joinPrivateVoiceChat');
