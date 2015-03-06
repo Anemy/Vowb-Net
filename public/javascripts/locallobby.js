@@ -28,6 +28,7 @@ $(document).ready(function() {
     $("#m").keyup(function(e) {
         if(e.keyCode == 13) {
           if($('#un_id').val() == ""){
+            
           }
           else{
             socket.emit('username message', $('#un_id').val());
