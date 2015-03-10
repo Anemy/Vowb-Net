@@ -1,11 +1,11 @@
 /* This script will open the log in dialogue and handle client side log in things */
 
-var loggedin = false;
+var loggedIn = false; 
 var user_name = "";
 
 
 var loginButtonClicked = function() {
-  if (!loggedin) {
+  if (!loggedIn) {
     $('.signupButton').addClass('dontShowGradient');
     $('.loginPopup').fadeIn(50);
     $('.overlay').fadeIn(50);
@@ -41,14 +41,14 @@ var loginSubClicked = function() {
               $("#login_id").text($("#un_id").val());
               $("#login_id").css("text-decoration", "underline");
               $('.loginPage').fadeOut(50);
-              loggedin = true;
+              loggedIn = true;
           }
           else {
-            alert("Username or password is incorrect.");
+            sweetAlert("Oops...", "Username or password is incorrect.", "error");
           }
         },
         error: function(data){
-            alert("Username or password is incorrect.");
+            sweetAlert("Oops...", "Username or password is incorrect.", "error");
         }
     });
 }

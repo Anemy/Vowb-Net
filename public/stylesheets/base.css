@@ -1271,14 +1271,14 @@ table {
     word-wrap: break-word;
     overflow-y: auto; }
     .lobbyPage .chatArea .chatbox #messages li {
-      padding-top: 3px;
-      padding-bottom: 3px;
+      padding-top: 6px;
+      padding-bottom: 6px;
       padding-left: 6px; }
     .lobbyPage .chatArea .chatbox #messages .serverMessage {
       background-color: #ECF0F1; }
     .lobbyPage .chatArea .chatbox #messages .playerMessage {
       margin-left: 14px;
-      margin-right: 24px;
+      margin-right: 40px;
       margin-top: 2px;
       margin-bottom: 2px;
       border: 1px solid #BDC3C7;
@@ -1293,7 +1293,7 @@ table {
       border-top-color: transparent; }
     .lobbyPage .chatArea .chatbox #messages .selfMessage {
       margin-right: 14px;
-      margin-left: 24px;
+      margin-left: 40px;
       margin-top: 2px;
       margin-bottom: 2px;
       border: 1px solid #BDC3C7;

@@ -13,12 +13,18 @@ router.get('/', function (req, res, next) {
 //tmp page
 router.get('/profile', function(req, res, next) { //tmp
     // tmp profile page
-    res.render('profile', { title: 'ProfilePage - Vowb.net'});
+    res.render('profile', { title: 'Profile Page - Vowb.net'});
 });
 //tmp page
 router.get('/edit-profile', function(req, res, next) { //tmp
     // tmp profile page
-    res.render('editProfPage', { title: 'EDIT ProfilePage - Vowb.net'});
+    res.render('editProfPage', { title: 'Edit Profile Page - Vowb.net'});
+});
+
+//retrieves the creating lobby page - maybe add redirect if not logged in?
+router.get('/create', function(req, res, next) { //tmp
+    // tmp profile page
+    res.render('createLobby', { title: 'Create a Lobby - Vowb.net'});
 });
 
 /* INSERT MORE WEB PAGE ROUTES HERE (FOR EXAMPLE SIGN UP PAGE) */
