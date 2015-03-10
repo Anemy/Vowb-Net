@@ -1077,34 +1077,35 @@ table {
         font-size: 0.8em; }
       .signupPage .pageThings #signupForm .fields .inputBox:focus {
         box-shadow: 0 0 6px #E67E22; }
-      .signupPage .pageThings #signupForm .fields .signupButton {
-        position: relative;
+      .signupPage .pageThings #signupForm .fields .signupWrapper {
         float: left;
-        text-align: center;
-        margin-left: 38%;
-        margin-top: 15px;
-        z-index: 1;
-        color: white;
-        font-size: 14px;
-        font-family: 'Cabin';
-        background-color: #FC4349;
-        border: 2px solid #FC4349;
-        border-radius: 5px;
-        padding-top: 0.6em;
-        padding-bottom: 0.6em;
-        padding-left: 1.8em;
-        padding-right: 1.8em;
-        display: inline-block;
-        -webkit-transition: all .25s ease;
-        transition: all .25s ease; }
-      .signupPage .pageThings #signupForm .fields .signupButton:hover {
-        cursor: pointer;
-        background-color: #DC2329;
-        border: 2px solid #DC2329; }
-      .signupPage .pageThings #signupForm .fields .signupButton:active {
-        cursor: pointer;
-        background-color: #DC2329;
-        box-shadow: inset 0px 0px 2px 2px rgba(0, 0, 0, 0.2); }
+        width: 100%;
+        margin-top: 20px; }
+        .signupPage .pageThings #signupForm .fields .signupWrapper .signupButton {
+          text-align: center;
+          z-index: 1;
+          outline: none;
+          color: white;
+          font-size: 14px;
+          font-family: 'Cabin';
+          background-color: #FC4349;
+          border: 2px solid #FC4349;
+          border-radius: 5px;
+          padding-top: 0.5em;
+          padding-bottom: 0.5em;
+          padding-left: 1.8em;
+          padding-right: 1.8em;
+          display: inline-block;
+          -webkit-transition: all .25s ease;
+          transition: all .25s ease; }
+        .signupPage .pageThings #signupForm .fields .signupWrapper .signupButton:hover {
+          cursor: pointer;
+          background-color: #DC2329;
+          border: 2px solid #DC2329; }
+        .signupPage .pageThings #signupForm .fields .signupWrapper .signupButton:active {
+          cursor: pointer;
+          background-color: #DC2329;
+          box-shadow: inset 0px 0px 2px 2px rgba(0, 0, 0, 0.2); }
   .signupPage .pageThings .rightPanel {
     position: absolute;
     margin-top: 1em;
