@@ -1142,7 +1142,8 @@ table {
 /* This is the styling page for the lobby page */
 .lobbyPage .voiceChatPanel {
   margin-top: 2em;
-  text-align: center; }
+  text-align: center;
+  width: 80%; }
   .lobbyPage .voiceChatPanel .joinVoiceChat {
     margin-left: 1em;
     text-align: center;
@@ -1239,13 +1240,16 @@ table {
       margin: 0.2em; }
 .lobbyPage .chatArea {
   position: absolute;
-  width: 98%;
-  margin-bottom: 1%;
-  bottom: 2em;
-  height: 30%;
-  left: 1%;
-  border-radius: 5px;
-  border: 2px solid #BDC3C7; }
+  width: 24%;
+  top: 3em;
+  bottom: 1.7em;
+  right: 0;
+  /* -moz-border-radius: 0px;
+        -webkit-border-radius: 3px 3px 0px 0px;
+        border-radius: 3px 3px 0px 0px; */
+  border-left: 2px solid #BDC3C7;
+  border-top: 2px solid #BDC3C7;
+  border-bottom: 2px solid #BDC3C7; }
   .lobbyPage .chatArea .lobbySideBar {
     position: absolute;
     right: 0%;
@@ -1255,7 +1259,6 @@ table {
     font-family: tahoma;
     font-size: 14;
     color: orange;
-    border: 1px black solid;
     overflow: scroll;
     margin-left: 1px; }
   .lobbyPage .chatArea .chatbox {
@@ -1267,59 +1270,59 @@ table {
     width: 100%;
     top: 0;
     left: 0;
-    border-radius: 5px;
     word-wrap: break-word;
     overflow-y: auto; }
-    .lobbyPage .chatArea .chatbox #messages li {
-      padding-top: 6px;
-      padding-bottom: 6px;
-      padding-left: 6px; }
-    .lobbyPage .chatArea .chatbox #messages .serverMessage {
-      background-color: #ECF0F1; }
-    .lobbyPage .chatArea .chatbox #messages .playerMessage {
-      margin-left: 14px;
-      margin-right: 40px;
-      margin-top: 2px;
-      margin-bottom: 2px;
-      border: 1px solid #BDC3C7;
-      border-radius: 5px; }
-    .lobbyPage .chatArea .chatbox #messages .playerMessage::after {
-      content: "";
-      position: absolute;
-      left: 5px;
-      margin-top: 4px;
-      border: 5px solid #BDC3C7;
-      border-left-color: transparent;
-      border-top-color: transparent; }
-    .lobbyPage .chatArea .chatbox #messages .selfMessage {
-      margin-right: 14px;
-      margin-left: 40px;
-      margin-top: 2px;
-      margin-bottom: 2px;
-      border: 1px solid #BDC3C7;
-      border-radius: 5px; }
-    .lobbyPage .chatArea .chatbox #messages .selfMessage::after {
-      content: "";
-      position: absolute;
-      right: 5px;
-      margin-top: 4px;
-      border: 5px solid #BDC3C7;
-      border-right-color: transparent;
-      border-top-color: transparent; }
+    .lobbyPage .chatArea .chatbox #messages {
+      /*.playerMessage::after {
+                    content: "";
+                    position: absolute;
+                    left: 5px;
+                    margin-top: 4px;
+                    border: 5px solid $medium;
+                    border-left-color: transparent;
+                    border-top-color: transparent;
+                }*/
+      /*                .selfMessage::after {
+                    content: "";
+                    position: absolute;
+                    right: 5px;
+                    margin-top: 4px;
+                    border: 5px solid $medium;
+                    border-right-color: transparent;
+                    border-top-color: transparent;
+                }*/ }
+      .lobbyPage .chatArea .chatbox #messages .messageSpacer {
+        width: 100%;
+        float: left;
+        margin: 4px; }
+        .lobbyPage .chatArea .chatbox #messages .messageSpacer .playerMessage {
+          float: left;
+          border: 1px solid #290E03;
+          border-radius: 5px; }
+        .lobbyPage .chatArea .chatbox #messages .messageSpacer .selfMessage {
+          margin-right: 8px;
+          float: right;
+          border: 1px solid #BDC3C7;
+          border-radius: 10px; }
+      .lobbyPage .chatArea .chatbox #messages li {
+        /*padding-top: 6px;
+                    padding-bottom: 6px;
+                    padding-left: 6px;*/
+        padding: 9px; }
+      .lobbyPage .chatArea .chatbox #messages .serverMessage {
+        margin: 0;
+        float: left;
+        width: 100%;
+        background-color: #ECF0F1; }
   .lobbyPage .chatArea .controls {
     position: absolute;
     left: 0;
-    width: 99%;
+    width: 100%;
     bottom: 0;
     padding: 6px 6px;
-    border-radius: 0 0 5px 5px;
-    /* top left, top right, bottom right, bottom left */
     outline: none;
     border: none;
-    border-width: 0;
-    border-top-width: 1px;
-    border-style: solid;
-    border-color: #BDC3C7; }
+    border-top: 1px solid #BDC3C7; }
 
 .banner {
   background: -webkit-linear-gradient(#F7FCFC, #ECF0F1);
