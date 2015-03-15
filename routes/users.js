@@ -16,8 +16,21 @@ router.get('/*', function(req, res, next) {
             res.render('profile', result[0]);
         else
             res.render('404');
-        // for printing
-        // console.log("<pre>" + JSON.stringify(result[0], null, '\t') + "</pre>");
+    });
+});
+
+/* GET EDIT users listing. */
+router.get('/edit/*', function(req, res, next) {
+
+    //DO VERIFICATION LATER LOL - OR MAYBE JUST WHEN THEY HIT SAVE?
+
+    // Example:
+    //res.render('userPage', { name: 'Mystxc'});
+    db.search(db.userDB, { username: req.params[0] }, function(result) {
+        if( result.length > 0 )
+            res.render('editProfPage', result[0]);
+        else
+            res.render('404');
     });
 });
 

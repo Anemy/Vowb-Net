@@ -1,6 +1,9 @@
 //- This jade files contains the html for the header of the vowb web page.
 //- Include it in your jade by putting include banner 
 .banner
+    script.
+        // gets the login data from the server (none if user doesn't exist)
+        var loginData = !{JSON.stringify(login)};
     .bannerLeftSide
         .vowbText(href="/")
             a(href="/").

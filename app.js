@@ -5,11 +5,25 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+// session storage
+var session     = require('express-session');
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var lobbies = require('./routes/lobby');
 
 var app = express();
+
+// app.use(express.cookieParser());
+// initialize the session
+week = 1000*60*60*24*7;
+app.use(session({
+    secret: 'HUGE SECRET 123 321 VOWB.NIZZLE!',
+    resave: true,
+    saveUninitialized: true,
+    cookie:{maxAge:week}
+}));
+// app.use(session({secret: 'HUGE SECRET 123 321 VOWB.NIZZLE'}));//express.
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

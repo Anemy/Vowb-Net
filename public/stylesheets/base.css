@@ -1305,10 +1305,11 @@ table {
           border: 1px solid #BDC3C7;
           border-radius: 10px; }
       .lobbyPage .chatArea .chatbox #messages li {
-        /*padding-top: 6px;
-                    padding-bottom: 6px;
-                    padding-left: 6px;*/
-        padding: 9px; }
+        padding-top: 4px;
+        padding-bottom: 4px;
+        padding-left: 10px;
+        padding-right: 10px;
+        line-height: 20px; }
       .lobbyPage .chatArea .chatbox #messages .serverMessage {
         margin: 0;
         float: left;
