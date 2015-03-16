@@ -38,7 +38,14 @@ router.get('/', function (req, res, next) {
 //retrieves the creating lobby page - maybe add redirect if not logged in?
 router.get('/create', function(req, res, next) { //tmp
     // tmp profile page
-    res.render('createLobby', { title: 'Create a Lobby - Vowb.net'});
+    var loginData = getLoginData(req);
+
+    if(loginData == "none") {
+        res.render('index', { title: 'Vowb.net', login: loginData});
+    }
+    else {
+        res.render('createLobby', { title: 'Create a Lobby - Vowb.net', login: loginData});
+    }
 });
 
 /* INSERT MORE WEB PAGE ROUTES HERE (FOR EXAMPLE SIGN UP PAGE) */
@@ -109,15 +116,15 @@ router.post('/login', function(req, res) {
 });
 
 router.get('/about', function(req, res, next) {
+    var loginData = getLoginData(req);
 
-
-    res.render('about', { title: 'About Vowb.net'});
+    res.render('about', { title: 'About Vowb.net', login: loginData});
 });
 
 router.get('/jobs', function(req, res, next) {
+    var loginData = getLoginData(req);
 
-
-    res.render('jobs', { title: 'Jobs Vowb.net'});
+    res.render('jobs', { title: 'Jobs Vowb.net', login: loginData});
 });
 
 module.exports = router;

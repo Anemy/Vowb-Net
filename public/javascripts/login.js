@@ -35,13 +35,9 @@ var loginSubClicked = function() {
           data = JSON.parse(data);
           //console.log("Value: " + data.value);
           if(data.value == "Success") {
-              console.log("Login success!!");
-              user_name = $("#un_id").val();
-              $("#signup_id").text("log out");
-              $("#login_id").text($("#un_id").val());
-              $("#login_id").css("text-decoration", "underline");
+              //console.log("Login success!!");
               $('.loginPage').fadeOut(50);
-              loggedIn = true;
+              showLoggedIn( $("#un_id").val() );
           }
           else {
             sweetAlert("Oops...", "Username or password is incorrect.", "error");
@@ -53,12 +49,21 @@ var loginSubClicked = function() {
     });
 }
 
+var showLoggedIn = function (username) {
+  loggedIn = true;
+  $("#signup_id").text("log out");
+  $("#login_id").text(username);
+  $("#login_id").css("text-decoration", "underline");
+  user_name = username;
+}
+
 // parsing login data from server for session storing
 // THE ACTUAL PARSING OF THE OBJECT FROM THE SERVER IS INLINED IN banner.jade
 $(document).ready(function() {
     if(loginData) {
         if(loginData != "none") {
             console.log("Has a session! " + loginData);
+            showLoggedIn( loginData );
         }
         else {
           console.log("No session :'(");

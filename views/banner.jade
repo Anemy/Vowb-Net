@@ -3,7 +3,16 @@
 .banner
     script.
         // gets the login data from the server (none if user doesn't exist)
-        var loginData = !{JSON.stringify(login)};
+        console.log("Trying to parse data from the server");
+        if(!{JSON.stringify(login)} != undefined) {
+            var loginData = !{JSON.stringify(login)};
+            console.log("Parse success: " + loginData);
+        }
+        else {
+            console.log("Parse failure");
+            loginData = false;
+        }
+
     .bannerLeftSide
         .vowbText(href="/")
             a(href="/").
