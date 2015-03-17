@@ -1,0 +1,148 @@
+/* Styling for the create lobby page */
+
+.createLobby {
+	height: 100%;
+	width: 100%;
+	float: left;
+	background-color: white;
+	position: absolute; 
+
+  	.mainContent {
+		text-align: center;
+		color: $dark;
+
+		font-family: 'Cabin';
+
+		.accentText {
+		    color: $accent;
+		}
+
+		.titleText {
+		    color: $dark;
+		    font-size: 2em;
+		    margin-top: 2em;
+		}
+		.titleText:hover {
+		    cursor: pointer;
+		}
+
+		.bodyLine {
+		    width: 60%;
+		    margin-left: 20%;
+		    height: 1px;
+		    background-color: $light;
+		    margin-top: 0.25em;
+		}
+
+		#createLobbyForm {
+		    width: 28%;
+		    margin-right: 2%;
+		    display: inline-block;
+		    height: 30em;
+		    position: absolute;
+		    margin-top: 1.0em;
+		    left: 21%;
+
+		    .createLobbyFormHeader {
+		        font-size: 1.4em;
+		        margin-top: 0.4em;
+
+		        .createLobbyFormLine {
+		            width: 80%;
+		            margin-left: 10%;
+		            height: 1px;
+		            background-color: $accent;
+		            margin-top: 0.2em;
+		        }
+		    }
+
+		    .fields {
+		        float: left;
+		        .aboutText {
+		            color: $dark;
+		            font-size: 1em;
+		            margin-top: 1em;
+		            float: left;
+		            margin-left: 12%;
+		        }
+		        .inText {
+		        	position: absolute;
+
+		        	padding-top: 1em;
+		        	left: 15%;
+		        	top: 10.3em;
+		        	font-size: 0.8em;
+
+		        	color: #B4B4B4;
+		        }
+		        .inText:hover {
+		        	cursor: default;
+		        }
+		        .inputBox {
+		            height: 2em;
+		            float: left;
+		            width: 80%;
+		            margin-left: 10%;
+		            margin-top: 6px;
+
+		            border: none;
+		            outline: none;
+		            box-shadow: 0 0 2px $dark;
+
+		            padding: 0px 6px;
+
+		            border-radius: 5px;
+		            font-size: 0.8em;
+		        }
+		        .inputBox:focus {
+		            box-shadow: 0 0 6px $highlight;
+		        }
+
+		        .createLobbyWrapper {
+		            float: left;
+		            width: 100%;
+		            margin-top: 20px;
+
+		            .createLobbyButton {
+
+		                text-align:center;
+		                z-index: 1;
+		                outline: none;
+
+		                color: white;
+		                font-size: 14px;
+		                font-family: 'Cabin';
+
+		                background-color: $accent;
+		                border: 2px solid $accent;
+
+		                border-radius: 5px;
+		                padding-top: 0.5em;
+		                padding-bottom: 0.5em;
+		                padding-left: 1.8em;
+		                padding-right: 1.8em;
+		                display: inline-block;
+
+		                -webkit-transition: all .25s ease;
+		                -moz-transition: all .25s ease;
+		                -ms-transition: all .25s ease;
+		                -o-transition: all .25s ease;
+		                transition: all .25s ease;
+		            }
+		            .createLobbyButton:hover {
+		                cursor: pointer;
+		                background-color: $accent-dark;
+		                border: 2px solid $accent-dark;
+		            }
+		            .createLobbyButton:active {
+		                cursor: pointer;
+		                background-color: $accent-dark;
+		                box-shadow: inset 0px 0px 2px 2px rgba(0,0,0, 0.2);
+		            }
+		        }
+		    }
+		}
+  	}
+
+}
+ 

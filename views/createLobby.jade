@@ -2,9 +2,33 @@
 
 extends layout
 block content
-    script(defer="defer" src="/javascripts/createLobby.js")
+    script(defer="defer" src="/javascripts/createLobbyPage.js")
     include banner
-    .createLobbyPade
+    .createLobby
       .mainContent
-          Create lobby page.
+        .titleText
+            a(href="/").
+              vowb<span class="accentText">.</span>net
+        .bodyLine
+        form#createLobbyForm
+            .createLobbyFormHeader create a lobby
+                .createLobbyFormLine
+            .fields
+                .aboutText.
+                    lobby name
+                input.inputBox(type="text" id="lobbyname_id" placeholder="2-16 characters, numbers, and spaces" required maxlength = 16)
+                .aboutText.
+                    private lobby
+                .inText.
+                    have a password on your lobby?
+                input.inputBox(type="checkbox" id="private_id")
+                .passwordFields(style="display: none;")
+                    .aboutText.
+                        lobby password
+                    input.inputBox(type="password" id="password_id" placeholder="4-16 characters, keep it original plz" maxlength = 16)
+                    .aboutText.
+                        re-enter your lobby password
+                    input.inputBox(type="password" id="reenterpw_id" placeholder="same as up there ^^" maxlength = 16)
+                .createLobbyWrapper
+                    input.createLobbyButton(type="submit" value="Create Lobby")
     include copyright

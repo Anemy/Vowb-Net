@@ -2,15 +2,15 @@
 
 .signupPage {
     text-align: center;
-    background-color: white;
+    background-color: white; 
 
     font-family: 'Cabin';
 
-    width: 100%;
-    height: 100%;
+    width: 100%; 
+    height: 100%; 
 
     position: absolute;
-    top: 0;
+    top: 0; 
     left: 0;
 
     .accentText {
@@ -46,7 +46,7 @@
             .signupFormHeader {
                 font-size: 1.4em;
                 margin-top: 0.4em;
-
+ 
                 .signupFormLine {
                     width: 80%;
                     margin-left: 10%;
@@ -98,27 +98,13 @@
                     margin-top: 20px;
 
                     .signupButton {
-
-                        // position: relative;
-                        // float: left;
                         text-align:center;
-                        // margin-left: 38%;
                         z-index: 1;
                         outline: none;
 
-                        // background: -webkit-linear-gradient($accent-light, $accent-dark); /* For Safari 5.1 to 6.0 */
-                        // background: -o-linear-gradient($accent-light, $accent-dark); /* For Opera 11.1 to 12.0 */
-                        // background: -moz-linear-gradient($accent-light, $accent-dark); /* For Firefox 3.6 to 15 */
-                        // background: linear-gradient($accent-light, $accent-dark); /* Standard syntax */
-
-                        // border: 2px solid $medium;
-                        // box-shadow: inset 0px 0px 6px 6px rgba(255,255,255, 0.1);
-
                         color: white;
-                        // color: $dark;
                         font-size: 14px;
                         font-family: 'Cabin';
-                        // text-spacing: 2em;
 
                         background-color: $accent;
                         // background-color: white;

@@ -11,13 +11,13 @@ $peter-river: #3498DB;
 $belize-hole: #2980B9;
 $wet-asphalt: #34495E;
 $midnight-blue: #2C3E50;
-
+ 
 // Purples
 $amethyst: #9B59B6;
 $wisteria: #8E44AD;
 
-// Yellows
-$sunflower: #F1C40F;
+// Yellows 
+$sunflower: #F1C40F; 
 
 // Oranges
 $orange: #F39C12;
@@ -33,7 +33,7 @@ $clouds: #ECF0F1;
 $silver: #BDC3C7;
 $concrete: #95A5A6;
 $asbestos: #7F8C8D;
-
+ 
 /* Pallete currently in use */
 $light-light: #F7FCFC;
 $light: #ECF0F1; // light whitish color for text in the header
@@ -49,8 +49,9 @@ $highlight: #E67E22;
 @import "reset";
 @import "fonts";
 @import "loginPage";
-@import "profilePage";
+@import "profilePage";  
 @import "editProfPage";
+@import "createLobbyPage";
 @import "landingPage";
 @import "signupPage";
 @import "lobbyPage";
