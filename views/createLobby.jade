@@ -21,7 +21,8 @@ block content
                     private lobby
                 .inText.
                     have a password on your lobby?
-                input.inputBox(type="checkbox" id="private_id")
+                .boxCheckWrap
+                    input.inputCheck(type="checkbox" id="private_id")
                 .passwordFields(style="display: none;")
                     .aboutText.
                         lobby password
@@ -32,3 +33,4 @@ block content
                 .createLobbyWrapper
                     input.createLobbyButton(type="submit" value="Create Lobby")
     include copyright
+ 

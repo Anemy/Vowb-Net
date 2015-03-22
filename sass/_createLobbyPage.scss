@@ -29,19 +29,18 @@
 		.bodyLine {
 		    width: 60%;
 		    margin-left: 20%;
-		    height: 1px;
+		    height: 1px; 
 		    background-color: $light;
 		    margin-top: 0.25em;
 		}
 
 		#createLobbyForm {
-		    width: 28%;
-		    margin-right: 2%;
+		    width: 40%;
 		    display: inline-block;
 		    height: 30em;
 		    position: absolute;
 		    margin-top: 1.0em;
-		    left: 21%;
+		    left: 20%;
 
 		    .createLobbyFormHeader {
 		        font-size: 1.4em;
@@ -97,10 +96,38 @@
 		        .inputBox:focus {
 		            box-shadow: 0 0 6px $highlight;
 		        }
+		        .boxCheckWrap {
+		        	float: left;
+		        	margin-left: 10%;
+
+		        	width: 80%;
+		        	height: 2em;
+
+			        .inputCheck {
+			        	float: left;
+
+			        	margin-left: 0%;
+			        	width: 2em;
+			        	height: 100%;
+
+			            border-radius: 5px;
+		            	font-size: 0.8em;
+
+			            border: none;
+			            outline: none;
+			            // box-shadow: 0 0 2px $dark;
+			        }
+    		        .inputCheck:focus {
+			            // box-shadow: 0 0 6px $highlight;
+			        }
+			    }
 
 		        .createLobbyWrapper {
+		        	// display: none;
+
 		            float: left;
-		            width: 100%;
+		            margin-left: 10%;
+		            width: 80%;
 		            margin-top: 20px;
 
 		            .createLobbyButton {

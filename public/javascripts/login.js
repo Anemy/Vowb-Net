@@ -5,7 +5,7 @@ var user_name = "";
 
 
 var loginButtonClicked = function() {
-  if (!loggedIn) {
+  if (!loggedIn) { 
     $('.signupButton').addClass('dontShowGradient');
     $('.loginPopup').fadeIn(50);
     $('.overlay').fadeIn(50);
@@ -19,6 +19,22 @@ var exitButtonClicked = function() {
 	$('.loginPopup').fadeOut(50);
   $('.overlay').fadeOut(50);
   $('.signupButton').removeClass('dontShowGradient');
+}
+
+//method calls when user hits the sign up or logout button depending
+var signupLogOutClicked = function () {
+    if(loggedIn) {
+        showLoggedOut();
+
+
+        $.ajax({
+          url: "/logout",
+          type: "POST"
+      });
+    }
+    else {
+        window.location = "/signup";
+    }
 }
 
 var loginSubClicked = function() {
@@ -55,6 +71,14 @@ var showLoggedIn = function (username) {
   $("#login_id").text(username);
   $("#login_id").css("text-decoration", "underline");
   user_name = username;
+}
+
+var showLoggedOut = function () {
+    loggedIn = false;
+    $("#signup_id").text("sign up");
+    $("#login_id").text("log in");
+    $("#login_id").css("text-decoration", "none");
+    user_name = "";
 }
 
 // parsing login data from server for session storing

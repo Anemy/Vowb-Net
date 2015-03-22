@@ -14,7 +14,7 @@ var getLoginData = function (req) {
         return req.session.username;
     }
     else {
-        return "none";
+        return "none"; 
     }
 }
 

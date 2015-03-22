@@ -16,8 +16,8 @@ var getLoginData = function (req) {
     }
     else {
         return "none";
-    }
-}
+    } 
+} 
 
 /* GET users listing. */
 router.get('/*', function(req, res, next) {
@@ -28,8 +28,9 @@ router.get('/*', function(req, res, next) {
     db.search(db.userDB, { username: req.params[0] }, function(result) {
         if( result.length > 0 )
             res.render('profile', {result: result[0], login: loginData });
-        else
-            res.render('404');
+        else {
+            res.render('404', { title: "404: Vowb.net page not found", url: "/users" + req.url });
+        }
     });
 });
 
@@ -47,8 +48,9 @@ router.get('/edit/*', function(req, res, next) {
         if( result.length > 0 ) {
             res.render('editProfPage', {result: result[0], login: loginData });
         }
-        else
-            res.render('404');
+        else {
+            res.render('404', { title: "404: Vowb.net page not found", url: "/users" + req.url });
+        }
     });
 });
 

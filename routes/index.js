@@ -112,7 +112,13 @@ router.post('/login', function(req, res) {
             res.end(JSON.stringify({value: "Success"}));
         }
     });
+});
 
+router.post('/logout', function(req, res) {
+    // VV This ends the user's login session if there is one.
+    if(req.session != undefined) {
+        req.session.destroy();
+    }
 });
 
 router.get('/about', function(req, res, next) {

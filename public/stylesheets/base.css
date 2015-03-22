@@ -916,13 +916,12 @@ table {
       background-color: #ECF0F1;
       margin-top: 0.25em; }
     .createLobby .mainContent #createLobbyForm {
-      width: 28%;
-      margin-right: 2%;
+      width: 40%;
       display: inline-block;
       height: 30em;
       position: absolute;
       margin-top: 1em;
-      left: 21%; }
+      left: 20%; }
       .createLobby .mainContent #createLobbyForm .createLobbyFormHeader {
         font-size: 1.4em;
         margin-top: 0.4em; }
@@ -963,9 +962,24 @@ table {
           font-size: 0.8em; }
         .createLobby .mainContent #createLobbyForm .fields .inputBox:focus {
           box-shadow: 0 0 6px #E67E22; }
+        .createLobby .mainContent #createLobbyForm .fields .boxCheckWrap {
+          float: left;
+          margin-left: 10%;
+          width: 80%;
+          height: 2em; }
+          .createLobby .mainContent #createLobbyForm .fields .boxCheckWrap .inputCheck {
+            float: left;
+            margin-left: 0%;
+            width: 2em;
+            height: 100%;
+            border-radius: 5px;
+            font-size: 0.8em;
+            border: none;
+            outline: none; }
         .createLobby .mainContent #createLobbyForm .fields .createLobbyWrapper {
           float: left;
-          width: 100%;
+          margin-left: 10%;
+          width: 80%;
           margin-top: 20px; }
           .createLobby .mainContent #createLobbyForm .fields .createLobbyWrapper .createLobbyButton {
             text-align: center;
