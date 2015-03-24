@@ -890,6 +890,123 @@ table {
             font-weight: bold;
             margin-right: 4px; }
 
+/* Styling for the create lobby page */
+.createLobby {
+  height: 100%;
+  width: 100%;
+  float: left;
+  background-color: white;
+  position: absolute; }
+  .createLobby .mainContent {
+    text-align: center;
+    color: #290E03;
+    font-family: 'Cabin'; }
+    .createLobby .mainContent .accentText {
+      color: #FC4349; }
+    .createLobby .mainContent .titleText {
+      color: #290E03;
+      font-size: 2em;
+      margin-top: 2em; }
+    .createLobby .mainContent .titleText:hover {
+      cursor: pointer; }
+    .createLobby .mainContent .bodyLine {
+      width: 60%;
+      margin-left: 20%;
+      height: 1px;
+      background-color: #ECF0F1;
+      margin-top: 0.25em; }
+    .createLobby .mainContent #createLobbyForm {
+      width: 40%;
+      display: inline-block;
+      height: 30em;
+      position: absolute;
+      margin-top: 1em;
+      left: 20%; }
+      .createLobby .mainContent #createLobbyForm .createLobbyFormHeader {
+        font-size: 1.4em;
+        margin-top: 0.4em; }
+        .createLobby .mainContent #createLobbyForm .createLobbyFormHeader .createLobbyFormLine {
+          width: 80%;
+          margin-left: 10%;
+          height: 1px;
+          background-color: #FC4349;
+          margin-top: 0.2em; }
+      .createLobby .mainContent #createLobbyForm .fields {
+        float: left; }
+        .createLobby .mainContent #createLobbyForm .fields .aboutText {
+          color: #290E03;
+          font-size: 1em;
+          margin-top: 1em;
+          float: left;
+          margin-left: 12%; }
+        .createLobby .mainContent #createLobbyForm .fields .inText {
+          position: absolute;
+          padding-top: 1em;
+          left: 15%;
+          top: 10.3em;
+          font-size: 0.8em;
+          color: #B4B4B4; }
+        .createLobby .mainContent #createLobbyForm .fields .inText:hover {
+          cursor: default; }
+        .createLobby .mainContent #createLobbyForm .fields .inputBox {
+          height: 2em;
+          float: left;
+          width: 80%;
+          margin-left: 10%;
+          margin-top: 6px;
+          border: none;
+          outline: none;
+          box-shadow: 0 0 2px #290E03;
+          padding: 0px 6px;
+          border-radius: 5px;
+          font-size: 0.8em; }
+        .createLobby .mainContent #createLobbyForm .fields .inputBox:focus {
+          box-shadow: 0 0 6px #E67E22; }
+        .createLobby .mainContent #createLobbyForm .fields .boxCheckWrap {
+          float: left;
+          margin-left: 10%;
+          width: 80%;
+          height: 2em; }
+          .createLobby .mainContent #createLobbyForm .fields .boxCheckWrap .inputCheck {
+            float: left;
+            margin-left: 0%;
+            width: 2em;
+            height: 100%;
+            border-radius: 5px;
+            font-size: 0.8em;
+            border: none;
+            outline: none; }
+        .createLobby .mainContent #createLobbyForm .fields .createLobbyWrapper {
+          float: left;
+          margin-left: 10%;
+          width: 80%;
+          margin-top: 20px; }
+          .createLobby .mainContent #createLobbyForm .fields .createLobbyWrapper .createLobbyButton {
+            text-align: center;
+            z-index: 1;
+            outline: none;
+            color: white;
+            font-size: 14px;
+            font-family: 'Cabin';
+            background-color: #FC4349;
+            border: 2px solid #FC4349;
+            border-radius: 5px;
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
+            padding-left: 1.8em;
+            padding-right: 1.8em;
+            display: inline-block;
+            -webkit-transition: all .25s ease;
+            transition: all .25s ease; }
+          .createLobby .mainContent #createLobbyForm .fields .createLobbyWrapper .createLobbyButton:hover {
+            cursor: pointer;
+            background-color: #DC2329;
+            border: 2px solid #DC2329; }
+          .createLobby .mainContent #createLobbyForm .fields .createLobbyWrapper .createLobbyButton:active {
+            cursor: pointer;
+            background-color: #DC2329;
+            box-shadow: inset 0px 0px 2px 2px rgba(0, 0, 0, 0.2); }
+
 /* This is the style sheet for the main landing page of the website @author Rhys Howell*/
 .landingPage {
   width: 100%;
@@ -1077,34 +1194,35 @@ table {
         font-size: 0.8em; }
       .signupPage .pageThings #signupForm .fields .inputBox:focus {
         box-shadow: 0 0 6px #E67E22; }
-      .signupPage .pageThings #signupForm .fields .signupButton {
-        position: relative;
+      .signupPage .pageThings #signupForm .fields .signupWrapper {
         float: left;
-        text-align: center;
-        margin-left: 145px;
-        margin-top: 15px;
-        z-index: 1;
-        color: white;
-        font-size: 14px;
-        font-family: 'Cabin';
-        background-color: #FC4349;
-        border: 2px solid #FC4349;
-        border-radius: 5px;
-        padding-top: 0.6em;
-        padding-bottom: 0.6em;
-        padding-left: 1.8em;
-        padding-right: 1.8em;
-        display: inline-block;
-        -webkit-transition: all .25s ease;
-        transition: all .25s ease; }
-      .signupPage .pageThings #signupForm .fields .signupButton:hover {
-        cursor: pointer;
-        background-color: #DC2329;
-        border: 2px solid #DC2329; }
-      .signupPage .pageThings #signupForm .fields .signupButton:active {
-        cursor: pointer;
-        background-color: #DC2329;
-        box-shadow: inset 0px 0px 2px 2px rgba(0, 0, 0, 0.2); }
+        width: 100%;
+        margin-top: 20px; }
+        .signupPage .pageThings #signupForm .fields .signupWrapper .signupButton {
+          text-align: center;
+          z-index: 1;
+          outline: none;
+          color: white;
+          font-size: 14px;
+          font-family: 'Cabin';
+          background-color: #FC4349;
+          border: 2px solid #FC4349;
+          border-radius: 5px;
+          padding-top: 0.5em;
+          padding-bottom: 0.5em;
+          padding-left: 1.8em;
+          padding-right: 1.8em;
+          display: inline-block;
+          -webkit-transition: all .25s ease;
+          transition: all .25s ease; }
+        .signupPage .pageThings #signupForm .fields .signupWrapper .signupButton:hover {
+          cursor: pointer;
+          background-color: #DC2329;
+          border: 2px solid #DC2329; }
+        .signupPage .pageThings #signupForm .fields .signupWrapper .signupButton:active {
+          cursor: pointer;
+          background-color: #DC2329;
+          box-shadow: inset 0px 0px 2px 2px rgba(0, 0, 0, 0.2); }
   .signupPage .pageThings .rightPanel {
     position: absolute;
     margin-top: 1em;
@@ -1141,7 +1259,8 @@ table {
 /* This is the styling page for the lobby page */
 .lobbyPage .voiceChatPanel {
   margin-top: 2em;
-  text-align: center; }
+  text-align: center;
+  width: 80%; }
   .lobbyPage .voiceChatPanel .joinVoiceChat {
     margin-left: 1em;
     text-align: center;
@@ -1238,13 +1357,16 @@ table {
       margin: 0.2em; }
 .lobbyPage .chatArea {
   position: absolute;
-  width: 98%;
-  margin-bottom: 1%;
-  bottom: 2em;
-  height: 30%;
-  left: 1%;
-  border-radius: 5px;
-  border: 2px solid #BDC3C7; }
+  width: 24%;
+  top: 3em;
+  bottom: 1.7em;
+  right: 0;
+  /* -moz-border-radius: 0px;
+        -webkit-border-radius: 3px 3px 0px 0px;
+        border-radius: 3px 3px 0px 0px; */
+  border-left: 2px solid #BDC3C7;
+  border-top: 2px solid #BDC3C7;
+  border-bottom: 2px solid #BDC3C7; }
   .lobbyPage .chatArea .lobbySideBar {
     position: absolute;
     right: 0%;
@@ -1254,71 +1376,71 @@ table {
     font-family: tahoma;
     font-size: 14;
     color: orange;
-    border: 1px black solid;
     overflow: scroll;
     margin-left: 1px; }
-  .lobbyPage .chatArea .chatbox {
-    font-family: 'Cabin';
-    font-size: 12px;
-    color: black;
+  .lobbyPage .chatArea .chatboxWrapper {
     position: absolute;
-    height: 90%;
-    width: 100%;
-    top: 0;
     left: 0;
-    border-radius: 5px;
-    word-wrap: break-word;
-    overflow-y: auto; }
-    .lobbyPage .chatArea .chatbox #messages li {
-      padding-top: 3px;
-      padding-bottom: 3px;
-      padding-left: 6px; }
-    .lobbyPage .chatArea .chatbox #messages .serverMessage {
-      background-color: #ECF0F1; }
-    .lobbyPage .chatArea .chatbox #messages .playerMessage {
-      margin-left: 14px;
-      margin-right: 24px;
-      margin-top: 2px;
-      margin-bottom: 2px;
-      border: 1px solid #BDC3C7;
-      border-radius: 5px; }
-    .lobbyPage .chatArea .chatbox #messages .playerMessage::after {
-      content: "";
+    bottom: 24px;
+    height: 100%;
+    width: 100%; }
+    .lobbyPage .chatArea .chatboxWrapper .chatbox {
+      font-family: 'Cabin';
+      font-size: 12px;
+      color: black;
       position: absolute;
-      left: 5px;
-      margin-top: 4px;
-      border: 5px solid #BDC3C7;
-      border-left-color: transparent;
-      border-top-color: transparent; }
-    .lobbyPage .chatArea .chatbox #messages .selfMessage {
-      margin-right: 14px;
-      margin-left: 24px;
-      margin-top: 2px;
-      margin-bottom: 2px;
-      border: 1px solid #BDC3C7;
-      border-radius: 5px; }
-    .lobbyPage .chatArea .chatbox #messages .selfMessage::after {
-      content: "";
-      position: absolute;
-      right: 5px;
-      margin-top: 4px;
-      border: 5px solid #BDC3C7;
-      border-right-color: transparent;
-      border-top-color: transparent; }
+      height: 100%;
+      width: 100%;
+      top: 24px;
+      left: 0;
+      background-color: #FBFBFB;
+      word-wrap: break-word;
+      overflow-y: auto; }
+      .lobbyPage .chatArea .chatboxWrapper .chatbox #messages {
+        /*.playerMessage::after {
+                        content: "";
+                        position: absolute;
+                        left: 5px;
+                        margin-top: 4px;
+                        border: 5px solid $medium;
+                        border-left-color: transparent;
+                        border-top-color: transparent;
+                    }*/ }
+        .lobbyPage .chatArea .chatboxWrapper .chatbox #messages .messageSpacer {
+          width: 100%;
+          float: left;
+          margin: 4px; }
+          .lobbyPage .chatArea .chatboxWrapper .chatbox #messages .messageSpacer .playerMessage {
+            float: left;
+            border: 1px solid #290E03;
+            border-radius: 5px; }
+          .lobbyPage .chatArea .chatboxWrapper .chatbox #messages .messageSpacer .selfMessage {
+            margin-right: 8px;
+            float: right;
+            border: 1px solid #BDC3C7;
+            border-radius: 10px; }
+        .lobbyPage .chatArea .chatboxWrapper .chatbox #messages li {
+          padding-top: 4px;
+          padding-bottom: 4px;
+          padding-left: 10px;
+          padding-right: 10px;
+          line-height: 20px;
+          background-color: white; }
+        .lobbyPage .chatArea .chatboxWrapper .chatbox #messages .serverMessage {
+          margin: 0;
+          float: left;
+          width: 100%;
+          background-color: #FBFBFB; }
   .lobbyPage .chatArea .controls {
     position: absolute;
     left: 0;
-    width: 99%;
+    width: 100%;
     bottom: 0;
+    font-size: 12px;
     padding: 6px 6px;
-    border-radius: 0 0 5px 5px;
-    /* top left, top right, bottom right, bottom left */
     outline: none;
     border: none;
-    border-width: 0;
-    border-top-width: 1px;
-    border-style: solid;
-    border-color: #BDC3C7; }
+    border-top: 1px solid #BDC3C7; }
 
 .banner {
   background: -webkit-linear-gradient(#F7FCFC, #ECF0F1);

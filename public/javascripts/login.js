@@ -1,11 +1,11 @@
 /* This script will open the log in dialogue and handle client side log in things */
 
-var loggedin = false;
+var loggedIn = false; 
 var user_name = "";
 
 
 var loginButtonClicked = function() {
-  if (!loggedin) {
+  if (!loggedIn) { 
     $('.signupButton').addClass('dontShowGradient');
     $('.loginPopup').fadeIn(50);
     $('.overlay').fadeIn(50);
@@ -19,6 +19,22 @@ var exitButtonClicked = function() {
 	$('.loginPopup').fadeOut(50);
   $('.overlay').fadeOut(50);
   $('.signupButton').removeClass('dontShowGradient');
+}
+
+//method calls when user hits the sign up or logout button depending
+var signupLogOutClicked = function () {
+    if(loggedIn) {
+        showLoggedOut();
+
+
+        $.ajax({
+          url: "/logout",
+          type: "POST"
+      });
+    }
+    else {
+        window.location = "/signup";
+    }
 }
 
 var loginSubClicked = function() {
@@ -35,20 +51,46 @@ var loginSubClicked = function() {
           data = JSON.parse(data);
           //console.log("Value: " + data.value);
           if(data.value == "Success") {
-              console.log("Login success!!");
-              user_name = $("#un_id").val();
-              $("#signup_id").text("log out");
-              $("#login_id").text($("#un_id").val());
-              $("#login_id").css("text-decoration", "underline");
+              //console.log("Login success!!");
               $('.loginPage').fadeOut(50);
-              loggedin = true;
+              showLoggedIn( $("#un_id").val() );
           }
           else {
-            alert("Username or password is incorrect.");
+            sweetAlert("Oops...", "Username or password is incorrect.", "error");
           }
         },
         error: function(data){
-            alert("Username or password is incorrect.");
+            sweetAlert("Oops...", "Username or password is incorrect.", "error");
         }
     });
 }
+
+var showLoggedIn = function (username) {
+  loggedIn = true;
+  $("#signup_id").text("log out");
+  $("#login_id").text(username);
+  $("#login_id").css("text-decoration", "underline");
+  user_name = username;
+}
+
+var showLoggedOut = function () {
+    loggedIn = false;
+    $("#signup_id").text("sign up");
+    $("#login_id").text("log in");
+    $("#login_id").css("text-decoration", "none");
+    user_name = "";
+}
+
+// parsing login data from server for session storing
+// THE ACTUAL PARSING OF THE OBJECT FROM THE SERVER IS INLINED IN banner.jade
+$(document).ready(function() {
+    if(loginData) {
+        if(loginData != "none") {
+            console.log("Has a session! " + loginData);
+            showLoggedIn( loginData );
+        }
+        else {
+          console.log("No session :'(");
+        }
+    }
+});

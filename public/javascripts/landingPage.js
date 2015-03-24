@@ -5,8 +5,14 @@ var redirectToSignupClicked = function() {
     window.location.href = "/signup";
 }
 
-var joinLobbyClicked = function() {
-    window.location.href = "/lobby";
+var createLobbyClicked = function() {
+
+	if(loggedIn == false) {
+		sweetAlert("Oops...", "You need to be signed in to create a lobby.", "error");
+	}
+    else {
+    	window.location.href = "/create";
+    }
 }
 
 $(document).ready(function() {

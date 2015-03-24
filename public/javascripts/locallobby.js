@@ -3,24 +3,31 @@
 var socket = io();
 
 socket.on('chat message', function(msg){
-  $('#messages').append($('<li class="playerMessage">').text(msg));
+  //$('#messages').append($('<div class="messageSpacer"/>'));
+  var html = '';
+  html += '<div class="messageSpacer">';
+  html +=   '<li class="playerMessage">' + msg + '</li>';
+  html += '</div>';
+  $('#messages').append( html ); // $('<div class="messageSpacer"><li class="playerMessage"></div>').text(msg));
   document.getElementById("msgBox").scrollTop = document.getElementById("msgBox").scrollHeight;
 });
 
 socket.on('server message', function(msg){
+  //$('#messages').append($('<div class="messageSpacer"/>'));
   $('#messages').append($('<li class="serverMessage">').text(msg.text));
   document.getElementById("msgBox").scrollTop = document.getElementById("msgBox").scrollHeight;
 });
 socket.on('username message', function(msg){
 
-});
+}); 
 
 $(document).ready(function() {
     //submitting the chat form
     $('form').submit(function(){
-
-      socket.emit('chat message', $('#m').val());
-      $('#m').val('');
+      if($('#m').val().length > 0) {
+        socket.emit('chat message', $('#m').val());
+        $('#m').val('');
+      }
       return false;
     });
 
@@ -33,12 +40,24 @@ $(document).ready(function() {
           else{
             socket.emit('username message', $('#un_id').val());
           }
-          $('#messages').append($('<li class="selfMessage">').text( $('#m').val() ));
-          document.getElementById("msgBox").scrollTop = document.getElementById("msgBox").scrollHeight;
 
-          socket.emit('chat message', $('#m').val());
-          $('#m').val('');
-            return false;
+          if($('#m').val().length > 0) {
+            //$('#messages').append($('<div class="messageSpacer"/>'));
+            //$('#messages').append($('<div class="messageSpacer"><li class="selfMessage"> </div>').text( $('#m').val()));
+
+            var html = '';
+            html += '<div class="messageSpacer">';
+            html +=   '<li class="selfMessage">' + $('#m').val() + '</li>';
+            html += '</div>';
+            $('#messages').append( html );
+
+            document.getElementById("msgBox").scrollTop = document.getElementById("msgBox").scrollHeight;
+
+            socket.emit('chat message', $('#m').val());
+            $('#m').val('');
+          }
+
+          return false;
         }
     });
 });

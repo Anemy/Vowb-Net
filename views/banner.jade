@@ -1,6 +1,18 @@
 //- This jade files contains the html for the header of the vowb web page.
 //- Include it in your jade by putting include banner 
 .banner
+    script.
+        // gets the login data from the server (none if user doesn't exist)
+        console.log("Trying to parse data from the server");
+        if(!{JSON.stringify(login)} != undefined) {
+            var loginData = !{JSON.stringify(login)};
+            console.log("Parse success: " + loginData);
+        }
+        else {
+            console.log("Parse failure");
+            loginData = false;
+        }
+
     .bannerLeftSide
         .vowbText(href="/")
             a(href="/").
@@ -12,8 +24,8 @@
             .forumsButton(href="/forums")
                 a(href="/forums").
                     forums
-    .button
-        a(class="signupButton" href="/signup" id="signup_id").
+    .button(class="signupButton" onclick="signupLogOutClicked()" id="signup_id")
+        a.
               sign up
     .loginButton(onclick="loginButtonClicked()" id="login_id")
         a.

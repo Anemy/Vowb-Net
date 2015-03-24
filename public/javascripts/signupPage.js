@@ -11,7 +11,7 @@ $('#signupForm').ready (function() {
         //verify username is correct length
         if($("#username_id").val().length < 2 || $("#username_id").val().length > 16){
             errMsg = errMsg.concat("Error username must be between 2 and 16 characters.\n");
-            err++;
+            err++; 
 
         }
 
@@ -58,11 +58,11 @@ $('#signupForm').ready (function() {
                 error: function(data){
                     alert("Username already exists!!");
                     console.log("Failure from server");
-
                 }
             });
         } else {
-            alert(errMsg);
+            sweetAlert("Oops...", errMsg, "error");
+            //alert(errMsg);
             console.log(errMsg);
         }
 

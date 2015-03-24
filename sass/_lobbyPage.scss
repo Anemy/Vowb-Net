@@ -4,6 +4,9 @@
       .voiceChatPanel {
           margin-top: 2em;
           text-align: center;
+
+          width:80%;
+
           .joinVoiceChat {
             margin-left: 1em;
             text-align: center;
@@ -81,7 +84,7 @@
         }
         .inputBox {
             height: 2em;
-            width: 50%;
+            width: 50%; 
 
             border: none;
             outline: none;
@@ -122,15 +125,20 @@
     }
     .chatArea {
         position: absolute;
-        width: 98%;
-        margin-bottom: 1%;
+        width: 24%;
 
-        bottom: 2em;
-        height: 30%;
-        left: 1%;
+        // margin-bottom: 5.6em;
+        top: 3em;
+        bottom: 1.7em;
+        // height: 100%;
+        right: 0;
 
-        border-radius: 5px;
-        border: 2px solid $medium;
+       /* -moz-border-radius: 0px;
+        -webkit-border-radius: 3px 3px 0px 0px;
+        border-radius: 3px 3px 0px 0px; */
+        border-left: 2px solid $medium;
+        border-top: 2px solid $medium;
+        border-bottom: 2px solid $medium;
 
         .lobbySideBar{
             position: absolute;
@@ -141,85 +149,98 @@
             font-family:tahoma;
             font-size:14;
             color:orange;
-            border:1px black solid;
+            // border:1px black solid;
             overflow:scroll;
             margin-left:1px;
         }
 
-        .chatbox {
-            font-family: 'Cabin';
-            font-size:12px;
-            color:black;
-
+        .chatboxWrapper {
             position: absolute;
-            height: 90%;
-            //width: 85%;
-            width: 100%;
-            top: 0;
             left: 0;
-            border-radius: 5px;
+            bottom: 24px;
+            height: 100%;
+            width: 100%;
 
-            word-wrap: break-word;
-            overflow-y: auto;
+            .chatbox {
+                font-family: 'Cabin';
+                font-size:12px;
+                color:black;
 
-            #messages {
-                li {
-                    padding-top: 3px;
-                    padding-bottom: 3px;
-                    padding-left: 6px;
-                }
-                .serverMessage {
-                    background-color: $light;
-                }
-                .playerMessage {
-                    margin-left: 14px;
-                    margin-right: 24px;
-                    margin-top: 2px;
-                    margin-bottom: 2px;
-                    border: 1px solid $medium;
-                    border-radius: 5px;
-                }
-                .playerMessage::after {
-                    content: "";
-                    position: absolute;
-                    left: 5px;
-                    margin-top: 4px;
-                    border: 5px solid $medium;
-                    border-left-color: transparent;
-                    border-top-color: transparent;
-                }
-                .selfMessage {
-                    margin-right: 14px;
-                    margin-left: 24px;
-                    margin-top: 2px;
-                    margin-bottom: 2px;
-                    border: 1px solid $medium;
-                    border-radius: 5px;
-                }
-                .selfMessage::after {
-                    content: "";
-                    position: absolute;
-                    right: 5px;
-                    margin-top: 4px;
-                    border: 5px solid $medium;
-                    border-right-color: transparent;
-                    border-top-color: transparent;
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                top: 24px;
+                left: 0;
+                //border-radius: 5px;
+                background-color: #FBFBFB;
+
+                word-wrap: break-word;
+                overflow-y: auto;
+
+                #messages {
+                    .messageSpacer {
+                        width: 100%;
+                        float:left;
+                        // height:2px;
+                        // background-color: $accent;
+
+                        margin: 4px;
+
+                        .playerMessage {
+                            //margin: 2px;
+                            float: left;
+                            border: 1px solid $dark;
+                            border-radius: 5px;
+                        }
+
+                        .selfMessage {
+                            margin-right: 8px;
+                            //right: 4px;
+                            float: right;
+                            border: 1px solid $medium;
+                            border-radius: 10px;
+                        }
+                    }
+                    li {
+                        padding-top: 4px;
+                        padding-bottom: 4px;
+                        padding-left: 10px;
+                        padding-right: 10px;
+                        // padding: 9px;
+                        line-height: 20px;
+                        background-color:white;
+                    }
+                    .serverMessage {
+                        margin: 0;
+                        float: left;
+                        width: 100%;
+                        background-color: #FBFBFB;
+                    }
+
+                    /*.playerMessage::after {
+                        content: "";
+                        position: absolute;
+                        left: 5px;
+                        margin-top: 4px;
+                        border: 5px solid $medium;
+                        border-left-color: transparent;
+                        border-top-color: transparent;
+                    }*/
+
                 }
             }
         }
         .controls{
           position: absolute;
           left: 0;
-          width: 99%;
+          width: 100%;
           bottom: 0;
+          font-size: 12px;
           padding: 6px 6px;
-          border-radius: 0 0 5px 5px; /* top left, top right, bottom right, bottom left */
+          //border-radius: 0 0 5px 5px; /* top left, top right, bottom right, bottom left */
           outline: none;
           border: none;
-          border-width: 0;
-          border-top-width: 1px;
-          border-style: solid;
-          border-color: $medium;
+          border-top: 1px solid $medium;
         }
     }
 
