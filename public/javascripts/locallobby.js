@@ -1,6 +1,7 @@
 /*this script will handle lobby creation and management*/
 //makes local client connection
 var socket = io();
+var intialName = loggedIn;
 
 socket.on('chat message', function(msg){
   //$('#messages').append($('<div class="messageSpacer"/>'));
@@ -31,16 +32,17 @@ $(document).ready(function() {
       return false;
     });
 
+    //this is for first time someone joins
+    socket.emit('username message', user_name);
+
+
+
     //Hitting enter sends the message
     $("#m").keyup(function(e) {
+        if(intialName != loggedIn){
+          socket.emit('username message', user_name);
+        }
         if(e.keyCode == 13) {
-          if($("#login_id").text() == "log in"){
-
-          }
-          else{
-            socket.emit('username message', $('#login_id').text());
-          }
-
           if($('#m').val().length > 0) {
             //$('#messages').append($('<div class="messageSpacer"/>'));
             //$('#messages').append($('<div class="messageSpacer"><li class="selfMessage"> </div>').text( $('#m').val()));
@@ -76,22 +78,22 @@ document.querySelector('#setup').onclick = function() {
     this.disabled = true;
 };
 //Start Password Code
-    document.querySelector('#setup').onclick = function () { 
+    document.querySelector('#setup').onclick = function () {
       console.log("Ask for Password");
-      // room password has been set before calling "open" method 
-      connection.extra.password = prompt('Setup password for your room!'); 
-      connection.open(); 
-    }; 
+      // room password has been set before calling "open" method
+      connection.extra.password = prompt('Setup password for your room!');
+      connection.open();
+    };
     connection.onNewSession = function (session) {
-      // set password for person who is trying to join the room 
-      connection.extra.password = prompt('Enter password to join this room.'); 
-      connection.join(session); 
-    }; 
-    connection.onRequest = function (userid, extra) { 
-      // validating password in "onRequest" 
+      // set password for person who is trying to join the room
+      connection.extra.password = prompt('Enter password to join this room.');
+      connection.join(session);
+    };
+    connection.onRequest = function (userid, extra) {
+      // validating password in "onRequest"
       if (extra.password != connection.extra.password)
         return alert('password: ' + extra.password + ' !== ' + connection.extra.password);
-      connection.accept(userid, extra); 
+      connection.accept(userid, extra);
     };
 //End Password Code
 //End Password Code

@@ -1,11 +1,11 @@
 /* This script will open the log in dialogue and handle client side log in things */
 
-var loggedIn = false; 
+var loggedIn = false;
 var user_name = "";
 var loginpop = false;
 
 var loginButtonClicked = function() {
-  if (!loggedIn) { 
+  if (!loggedIn) {
     $('.signupButton').addClass('dontShowGradient');
     $('.loginPopup').fadeIn(50);
     $('.overlay').fadeIn(50);
@@ -77,6 +77,7 @@ var showLoggedIn = function (username) {
   $("#login_id").text(username);
   $("#login_id").css("text-decoration", "underline");
   user_name = username;
+  socket.emit('username message', user_name);
 }
 
 var showLoggedOut = function () {
@@ -90,7 +91,7 @@ var showLoggedOut = function () {
 // parsing login data from server for session storing
 // THE ACTUAL PARSING OF THE OBJECT FROM THE SERVER IS INLINED IN banner.jade
 $(document).ready(function() {
-   
+
     if(loginData == undefined) {
         return;
     }
