@@ -19,7 +19,7 @@ socket.on('server message', function(msg){
 });
 socket.on('username message', function(msg){
 
-}); 
+});
 
 $(document).ready(function() {
     //submitting the chat form
@@ -34,11 +34,11 @@ $(document).ready(function() {
     //Hitting enter sends the message
     $("#m").keyup(function(e) {
         if(e.keyCode == 13) {
-          if($('#un_id').val() == ""){
-            
+          if($("#login_id").text() == "log in"){
+
           }
           else{
-            socket.emit('username message', $('#un_id').val());
+            socket.emit('username message', $('#login_id').text());
           }
 
           if($('#m').val().length > 0) {
@@ -51,8 +51,8 @@ $(document).ready(function() {
             html += '</div>';
             $('#messages').append( html );
 
-            document.getElementById("msgBox").scrollTop = document.getElementById("msgBox").scrollHeight;
 
+            document.getElementById("msgBox").scrollTop = document.getElementById("msgBox").scrollHeight;
             socket.emit('chat message', $('#m').val());
             $('#m').val('');
           }
