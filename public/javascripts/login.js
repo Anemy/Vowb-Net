@@ -2,13 +2,14 @@
 
 var loggedIn = false; 
 var user_name = "";
-
+var loginpop = false;
 
 var loginButtonClicked = function() {
   if (!loggedIn) { 
     $('.signupButton').addClass('dontShowGradient');
     $('.loginPopup').fadeIn(50);
     $('.overlay').fadeIn(50);
+    loginpop = true;
   } else {
     var url = "/users/";
     url = url.concat(user_name);
@@ -16,6 +17,7 @@ var loginButtonClicked = function() {
   }
 }
 var exitButtonClicked = function() {
+  loginpop = false;
 	$('.loginPopup').fadeOut(50);
   $('.overlay').fadeOut(50);
   $('.signupButton').removeClass('dontShowGradient');
@@ -29,8 +31,12 @@ var signupLogOutClicked = function () {
 
         $.ajax({
           url: "/logout",
-          type: "POST"
+          type: "POST",
       });
+       //$("body").fadeOut(100,function(){
+         window.location.href = "/";
+      //})
+
     }
     else {
         window.location = "/signup";
@@ -97,4 +103,12 @@ $(document).ready(function() {
           console.log("No session :'(");
         }
     }
+    $(document).keypress(function(e) {
+        if(e.which == 13) {
+         console.log("enter hit");
+          if(loginpop == true){
+            loginSubClicked();
+          }
+        }
+    });
 });
