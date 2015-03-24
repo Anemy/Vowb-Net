@@ -84,7 +84,11 @@ var showLoggedOut = function () {
 // parsing login data from server for session storing
 // THE ACTUAL PARSING OF THE OBJECT FROM THE SERVER IS INLINED IN banner.jade
 $(document).ready(function() {
-    if(loginData) {
+   
+    if(loginData == undefined) {
+        return;
+    }
+    else if(loginData) {
         if(loginData != "none") {
             console.log("Has a session! " + loginData);
             showLoggedIn( loginData );

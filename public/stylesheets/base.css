@@ -1383,7 +1383,8 @@ table {
     left: 0;
     bottom: 24px;
     height: 100%;
-    width: 100%; }
+    width: 100%;
+    z-index: -1; }
     .lobbyPage .chatArea .chatboxWrapper .chatbox {
       font-family: 'Cabin';
       font-size: 12px;

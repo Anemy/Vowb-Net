@@ -32,7 +32,7 @@
             transition: all .25s ease;
 
             outline: none;
-        }
+        } 
         .joinVoiceChat:hover {
             cursor: pointer;
             background: -webkit-linear-gradient(white, $light-dark); /* For Safari 5.1 to 6.0 */
@@ -160,6 +160,8 @@
             bottom: 24px;
             height: 100%;
             width: 100%;
+
+            z-index: -1;
 
             .chatbox {
                 font-family: 'Cabin';
