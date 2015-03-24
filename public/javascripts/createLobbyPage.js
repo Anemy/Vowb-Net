@@ -8,7 +8,7 @@ $(document).ready(function() {
 	//When image is clicked it loads and image a user chooses, uploads it then saves the URL
 	$('#private_id').click(function(){
  		hasPassword = !hasPassword;
- 		//console.log("Password choice clicket.");
+ 		//console.log("Password choice clicked.");
  		if(hasPassword) {
  			$('.passwordFields').fadeIn(0);
  			// $('#private_id').css('display','block');
@@ -20,14 +20,14 @@ $(document).ready(function() {
 	});
 
 	$('.inText').click(function() {
-		$("#private_id").click();//attr  "checked", this.checked
+		$("#private_id").click();//attr "checked", this.checked
 	});
 
     $('#createLobbyForm').submit( function (event) {
         console.log ("Create lobby form submitted");
 
-        var err = 1;
-        var errMsg = "Haven't done backend yet.";
+        var err = 0;
+        var errMsg = "Haven't done backend yet.\n";
 
         if(hasPassword) {
         	//do password checking here

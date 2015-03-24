@@ -29,7 +29,7 @@ lobbyManager.startListening = function(http) {
           socket.name = msg;
       });
 
-      socket.emit('server message', {text: '  -- Welcome to the lobby chat room!  You are User Number ' + that.numberOfClients + '. --  ' ,type: 'join'});
+      socket.emit('server message', {text: '  -- Welcome to the lobby chat room! You are User Number ' + that.numberOfClients + '. --  ' ,type: 'join'});
       that.numberOfClients++;
 
   	  socket.on('chat message', function(msg){
