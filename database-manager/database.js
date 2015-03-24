@@ -2,6 +2,7 @@
 
 var DUMMY_DATABASE = {};
 var http = require('http');
+var sha1 = require('sha1');
 
 var db = module.exports = {
    query: function(text, values, cb) {
@@ -83,7 +84,7 @@ db.addUser = function(username, email, password) {
 }
 
 db.hashPassword = function(string) {
-    return "DUMMY_HASH!!"+string+"!!DUMMY_HASH";
+    return sha1(string);//"DUMMY_HASH!!"+string+"!!DUMMY_HASH";
 }
 
 /*
