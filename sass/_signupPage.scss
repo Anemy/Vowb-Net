@@ -80,7 +80,7 @@
 
                     border: none;
                     outline: none;
-                    box-shadow: 0 0 2px $dark;
+                    box-shadow: 0 0 1px $dark;
 
                     font-size: 0.8em;
                     padding: 0px 6px;
@@ -89,7 +89,7 @@
                     font-size: 0.8em;
                 }
                 .inputBox:focus {
-                    box-shadow: 0 0 6px $highlight;
+                    box-shadow: 0 0 4px $highlight;
                 }
 
                 .signupWrapper {

@@ -41,6 +41,8 @@ lobbyManager.startListening = function(http) {
 
     //creates a listening socket io connection
     that.io.on('connection', function(socket) {
+      var session = socket.handshake.session;
+
       socket.inChat = false;
       socket.chatNumber = -1;
 

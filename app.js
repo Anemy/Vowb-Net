@@ -13,6 +13,8 @@ var users = require('./routes/users');
 var lobbies = require('./routes/lobby');
 
 var app = express();
+// we need to use the same secret for Socket.IO and Express
+// var parseCookie = express.cookieParser(secret); 
 
 // app.use(express.cookieParser());
 // initialize the session

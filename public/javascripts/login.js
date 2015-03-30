@@ -60,6 +60,7 @@ var loginSubClicked = function() {
               //console.log("Login success!!");
               $('.loginPage').fadeOut(50);
               showLoggedIn( $("#un_id").val() );
+              swal("Logged in!", null, "success")
           }
           else {
             sweetAlert("Oops...", "Username or password is incorrect.", "error");
@@ -77,7 +78,7 @@ var showLoggedIn = function (username) {
   $("#login_id").text(username);
   $("#login_id").css("text-decoration", "underline");
   user_name = username;
-  socket.emit('username message', user_name);
+  // socket.emit('username message', user_name);
 }
 
 var showLoggedOut = function () {

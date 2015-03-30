@@ -11,25 +11,35 @@ block content
               vowb<span class="accentText">.</span>net
         .bodyLine
         form#createLobbyForm
-            .createLobbyFormHeader create a lobby
-                .createLobbyFormLine
+            .createLobbyFormHeader Create a Lobby
+            //-    .createLobbyFormLine
             .fields
-                .aboutText.
-                    lobby name
-                input.inputBox(type="text" id="lobbyname_id" placeholder="2-16 characters, numbers, and spaces" required maxlength = 16)
-                .aboutText.
-                    private lobby
-                .inText.
-                    have a password on your lobby?
+                //- .aboutText.
+                //-     lobby name
+                input.inputBox(type="text" id="lobbyname_id" placeholder="Lobby Name" required maxlength = 16)
+                //- .aboutText.
+                //-     private lobby
+                .packageText.
+                    Select a Lobby Package
+                .lobbyChoice.focus(id="basic").
+                    <span class="packageName">Basic</span><br>Free<br>15 person max
+                .lobbyChoice(id="premium").
+                    <span class="packageName">Premium</span><br>$10/Month<br>50 person max
+                .lobbyChoice(id="grand").
+                    <span class="packageName">Grand</span><br>$50/Month<br>500 person max
                 .boxCheckWrap
                     input.inputCheck(type="checkbox" id="private_id")
+                    //- .inText.
+                    //-     Private Lobby
+                    input.checkText(type="text" placeholder="Private Lobby" readonly)
+                    //- readonly
                 .passwordFields(style="display: none;")
-                    .aboutText.
-                        lobby password
-                    input.inputBox(type="password" id="password_id" placeholder="4-16 characters, keep it original plz" maxlength = 16)
-                    .aboutText.
-                        re-enter your lobby password
-                    input.inputBox(type="password" id="reenterpw_id" placeholder="same as up there ^^" maxlength = 16)
+                    //- .aboutText.
+                    //-     lobby password
+                    input.inputBox(type="password" id="password_id" placeholder="Lobby Password" maxlength = 16)
+                    //- .aboutText.
+                    //-     re-enter your lobby password
+                    input.inputBox(type="password" id="reenterpw_id" placeholder="Lobby Password Re-Enter" maxlength = 16)
                 .createLobbyWrapper
                     input.createLobbyButton(type="submit" value="Create Lobby")
     include copyright

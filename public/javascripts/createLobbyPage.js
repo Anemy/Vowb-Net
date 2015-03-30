@@ -2,23 +2,56 @@
 
 var hasPassword = false;
 
-//When image is clicked it loads and image a user chooses, uploads it then saves the URL
-$('#private_id').click(function(){
+const BASIC = 1;
+const PREMIUM = 2;
+const GRAND = 3;
 
+var selectedLobbyPackage = BASIC;
+
+$('#basic').click(function() {
+    selectedLobbyPackage = BASIC;
+    $('#basic, #premium, #grand').removeClass('focus');
+    $('#basic').addClass('focus');
+});
+$('#premium').click(function() {
+    selectedLobbyPackage = PREMIUM;
+    $('#basic, #premium, #grand').removeClass('focus');
+    $('#premium').addClass('focus');
+});
+$('#grand').click(function() {
+    selectedLobbyPackage = GRAND;
+    $('#basic, #premium, #grand').removeClass('focus');
+    $('#grand').addClass('focus');
+});
+
+//When image is clicked it loads and image a user chooses, uploads it then saves the URL
+// $('#private_id').click(function(){
+var passwordClick = function() {
 		hasPassword = !hasPassword;
 		//console.log("Password choice clicked.");
 		if(hasPassword) {
-			$('.passwordFields').fadeIn(0);
+			//$('.passwordFields').fadeIn(0);
+      //$('.passwordFields').css('display','block');
+      $( '.passwordFields' ).slideDown(150);
+      $('.boxCheckWrap').addClass('selected');
 			// $('#private_id').css('display','block');
+      $('#private_id').prop('checked', true);
 		}
 		else {
-			$('.passwordFields').fadeOut(0);
-			// $('#private_id').css('display','none');
+			//$('.passwordFields').fadeOut(0);
+      $( '.passwordFields' ).slideUp(150);
+      $('.boxCheckWrap').removeClass('selected');
+			$('#private_id').prop('checked', false);
 		}
-});
+}
+// });
 
-$('.inText').click(function() {
-	$("#private_id").click();//attr "checked", this.checked
+// $('.inText').click(function() {
+// 	$("#private_id").click();//attr "checked", this.checked
+// });
+
+$('.boxCheckWrap').click(function() {
+  passwordClick();//$("#private_id").click();//attr "checked", this.checked
 });
 
 $('#createLobbyForm').submit( function (event) {
