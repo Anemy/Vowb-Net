@@ -69,7 +69,7 @@
 
 		        	padding-top: 1em;
 		        	left: 15%;
-		        	top: 10.3em;
+		        	top: 10.1em;
 		        	font-size: 0.8em;
 
 		        	color: #B4B4B4;
@@ -103,22 +103,25 @@
 		        	width: 80%;
 		        	height: 2em;
 
+		        	padding: 0px 6px;
+
 			        .inputCheck {
 			        	float: left;
 
-			        	margin-left: 0%;
-			        	width: 2em;
-			        	height: 100%;
+			        	//margin-left: 0%;
+			        	width: 100%; // was 2em
+
+			        	height: 2em;
 
 			            border-radius: 5px;
 		            	font-size: 0.8em;
 
 			            border: none;
 			            outline: none;
-			            // box-shadow: 0 0 2px $dark;
+			            box-shadow: 0 0 2px $dark;
 			        }
     		        .inputCheck:focus {
-			            // box-shadow: 0 0 6px $highlight;
+			            box-shadow: 0 0 6px $highlight;
 			        }
 			    }
 

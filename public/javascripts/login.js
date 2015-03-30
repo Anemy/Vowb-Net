@@ -92,18 +92,13 @@ var showLoggedOut = function () {
 // THE ACTUAL PARSING OF THE OBJECT FROM THE SERVER IS INLINED IN banner.jade
 $(document).ready(function() {
 
-    if(loginData == undefined) {
-        return;
-    }
-    else if(loginData) {
-        if(loginData != "none") {
-            console.log("Has a session! " + loginData);
-            showLoggedIn( loginData );
-        }
-        else {
-          console.log("No session :'(");
-        }
-    }
+      if(loginData != "none") {
+          console.log("Has a session! " + loginData);
+          showLoggedIn( loginData );
+      }
+      else {
+        console.log("No session :'(");
+      }
     $(document).keypress(function(e) {
         if(e.which == 13) {
          console.log("enter hit");

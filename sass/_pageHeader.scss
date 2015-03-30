@@ -6,7 +6,7 @@
     background: linear-gradient($light-light, $light); /* Standard syntax */
 
     font-family: 'Cabin';
-    box-shadow: 0px 2px 2px $medium;
+    // box-shadow: 0px 2px 2px $medium;
 
     top: 0;
     left: 0;
@@ -23,7 +23,7 @@
             position: absolute;
             margin-top:.25em;
             margin-left: .25em;
-            font-size: 2em;
+            font-size: 2em; 
             color: $dark;
             .vowbAccentText {
                 color: $accent;
@@ -75,7 +75,7 @@
         background: linear-gradient(white, $light); /* Standard syntax */
 
         border-radius: 5px;
-        border: 2px solid $medium;
+        border: 1px solid $medium;
 
         padding-top: 0.4em;
         top: .5em;
@@ -85,19 +85,19 @@
         height: 1.5em;
         width: 4.5em;
 
-        -webkit-transition: all .25s ease;
-        -moz-transition: all .25s ease;
-        -ms-transition: all .25s ease;
-        -o-transition: all .25s ease;
-        transition: all .25s ease;
+        // -webkit-transition: all .25s ease;
+        // -moz-transition: all .25s ease;
+        // -ms-transition: all .25s ease;
+        // -o-transition: all .25s ease;
+        // transition: all .25s ease;
     }
     .signupButton:hover {
         cursor: pointer;
-        background: -webkit-linear-gradient(white, $light-dark); /* For Safari 5.1 to 6.0 */
-        background: -o-linear-gradient(white, $light-dark); /* For Opera 11.1 to 12.0 */
-        background: -moz-linear-gradient(white, $light-dark); /* For Firefox 3.6 to 15 */
-        background: linear-gradient(white, $light-dark); /* Standard syntax */
-        border: 2px solid $accent;
+        // background: -webkit-linear-gradient(white, $light-dark); /* For Safari 5.1 to 6.0 */
+        // background: -o-linear-gradient(white, $light-dark); /* For Opera 11.1 to 12.0 */
+        // background: -moz-linear-gradient(white, $light-dark); /* For Firefox 3.6 to 15 */
+        // background: linear-gradient(white, $light-dark); /* Standard syntax */
+        border: 1px solid $accent;
         color: $accent;
     }
     .signupButton:active {

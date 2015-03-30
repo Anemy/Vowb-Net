@@ -22,46 +22,55 @@ socket.on('username message', function(msg){
 
 });
 
-$(document).ready(function() {
-    //submitting the chat form
-    $('form').submit(function(){
+// submitting the chat form
+$('form').submit(function(){
+  if($('#m').val().length > 0) {
+    socket.emit('chat message', $('#m').val());
+    $('#m').val('');
+  }
+  return false;
+});
+
+// Gets the lobby name and transfers that to the server as to connect to that specific chat socket io
+var url = window.location.pathname;
+var to = url.lastIndexOf('/') +1;
+
+var chatToConnect =  url.substring(to,url.length);
+// alert(chatToConnect);
+console.log("Trying to connect to chat: " + chatToConnect);
+socket.emit('connect to chat', chatToConnect);
+
+setTimeout(function() {
+  // insecurely transfers a user's username
+  socket.emit('username message', user_name);
+}, 50);
+
+
+
+//Hitting enter sends the message
+$("#m").keyup(function(e) {
+    if(intialName != loggedIn){
+      socket.emit('username message', user_name);
+    }
+    if(e.keyCode == 13) {
       if($('#m').val().length > 0) {
+        //$('#messages').append($('<div class="messageSpacer"/>'));
+        //$('#messages').append($('<div class="messageSpacer"><li class="selfMessage"> </div>').text( $('#m').val()));
+
+        var html = '';
+        html += '<div class="messageSpacer">';
+        html +=   '<li class="selfMessage">' + $('#m').val() + '</li>';
+        html += '</div>';
+        $('#messages').append( html );
+
+
+        document.getElementById("msgBox").scrollTop = document.getElementById("msgBox").scrollHeight;
         socket.emit('chat message', $('#m').val());
         $('#m').val('');
       }
+
       return false;
-    });
-
-    //this is for first time someone joins
-    socket.emit('username message', user_name);
-
-
-
-    //Hitting enter sends the message
-    $("#m").keyup(function(e) {
-        if(intialName != loggedIn){
-          socket.emit('username message', user_name);
-        }
-        if(e.keyCode == 13) {
-          if($('#m').val().length > 0) {
-            //$('#messages').append($('<div class="messageSpacer"/>'));
-            //$('#messages').append($('<div class="messageSpacer"><li class="selfMessage"> </div>').text( $('#m').val()));
-
-            var html = '';
-            html += '<div class="messageSpacer">';
-            html +=   '<li class="selfMessage">' + $('#m').val() + '</li>';
-            html += '</div>';
-            $('#messages').append( html );
-
-
-            document.getElementById("msgBox").scrollTop = document.getElementById("msgBox").scrollHeight;
-            socket.emit('chat message', $('#m').val());
-            $('#m').val('');
-          }
-
-          return false;
-        }
-    });
+    }
 });
 
 
