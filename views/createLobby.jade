@@ -22,11 +22,11 @@ block content
                 .packageText.
                     Select a Lobby Package
                 .lobbyChoice.focus(id="basic").
-                    <span class="packageName">Basic</span><br>Free<br>15 person max
+                    <span style="color:#777777;" class="packageName">Basic</span><br>Free<br>10 person max
                 .lobbyChoice(id="premium").
-                    <span class="packageName">Premium</span><br>$10/Month<br>50 person max
+                    <span style="color:#02A676;" class="packageName">Premium</span><br>$10/Month<br>50 person max
                 .lobbyChoice(id="grand").
-                    <span class="packageName">Grand</span><br>$50/Month<br>500 person max
+                    <span style="color:#EB9330;" class="packageName">Grand</span><br>$50/Month<br>500 person max
                 .boxCheckWrap
                     input.inputCheck(type="checkbox" id="private_id")
                     //- .inText.
@@ -42,5 +42,10 @@ block content
                     input.inputBox(type="password" id="reenterpw_id" placeholder="Lobby Password Re-Enter" maxlength = 16)
                 .createLobbyWrapper
                     input.createLobbyButton(type="submit" value="Create Lobby")
+        .rightSide
+            img.micImage(src="/images/hdmic.jpg")
+            //- .featuresText.
+            //-     Voice & Text Chat
+
     include copyright
  

@@ -896,7 +896,8 @@ table {
   width: 100%;
   float: left;
   background-color: white;
-  position: absolute; }
+  position: absolute;
+  z-index: -2; }
   .createLobby .mainContent {
     text-align: center;
     color: #290E03;
@@ -921,7 +922,7 @@ table {
       height: 30em;
       position: absolute;
       margin-top: 1em;
-      left: 20%; }
+      left: 10%; }
       .createLobby .mainContent #createLobbyForm .createLobbyFormHeader {
         font-size: 1.4em;
         margin-top: 0.4em; }
@@ -945,9 +946,9 @@ table {
           font-size: 14px; }
         .createLobby .mainContent #createLobbyForm .fields .lobbyChoice {
           display: inline-block;
-          width: 27%;
-          margin-left: 3%;
-          margin-right: 3%;
+          width: 29%;
+          margin-left: 2%;
+          margin-right: 2%;
           box-shadow: 0 0 1px #290E03;
           border-radius: 4px;
           font-size: 14px;
@@ -1037,6 +1038,12 @@ table {
             cursor: pointer;
             background-color: #DC2329;
             box-shadow: inset 0px 0px 2px 2px rgba(0, 0, 0, 0.2); }
+    .createLobby .mainContent .micImage {
+      position: absolute;
+      z-index: -1;
+      right: 4%;
+      bottom: 4em;
+      width: 50%; }
 
 /* This is the style sheet for the main landing page of the website @author Rhys Howell*/
 .landingPage {

@@ -6,6 +6,10 @@
 	float: left;
 	background-color: white;
 	position: absolute; 
+	z-index: -2;
+
+    // background: url('/images/hdmic.jpg') no-repeat scroll center center transparent;
+    // background: url('/images/hdmic.jpg') no-repeat scroll center top/cover transparent;
 
   	.mainContent {
 		text-align: center;
@@ -40,7 +44,7 @@
 		    height: 30em;
 		    position: absolute;
 		    margin-top: 1.0em;
-		    left: 20%;
+		    left: 10%;
 
 		    .createLobbyFormHeader {
 		        font-size: 1.4em;
@@ -77,9 +81,9 @@
 		        .lobbyChoice {
 		        	display: inline-block;
 
-		        	width: 27%;
-		        	margin-left: 3%;
-		        	margin-right: 3%;
+		        	width: 29%;
+		        	margin-left: 2%;
+		        	margin-right: 2%;
 
 		            box-shadow: 0 0 1px $dark;
 
@@ -221,6 +225,14 @@
 		            }
 		        }
 		    }
+		}
+		.micImage {
+			position:absolute;
+			// display:inline-block;
+			z-index: -1;
+			right: 4%;
+			bottom: 4em;
+			width: 50%;
 		}
   	}
 

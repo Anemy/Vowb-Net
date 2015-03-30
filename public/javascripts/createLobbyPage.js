@@ -58,7 +58,7 @@ $('#createLobbyForm').submit( function (event) {
     console.log ("Create lobby form submitted");
 
     var err = 0;
-    var errMsg = "Haven't done backend yet.\n";
+    var errMsg = "";//"Haven't done backend yet.\n";
 
     if(hasPassword) {
     	//do password checking here
