@@ -49,7 +49,7 @@ $(document).ready(function() {
                     // The user id commented out below should be added as an "int" variable
                     //    to show whose data will be overwritten, this will probably
                     //    be a input.hidden in JADE or something like that?
-                    secretProfileIdValue : $("secretProfileIdValue").val(),
+                    secretProfileIdValue : $("#secretProfileIdValue").value,
                     userFullName : $("#userFullName").val(),
                     userAge : $("#userAge").val(),
                     userSex : $("#userSex").val(),
