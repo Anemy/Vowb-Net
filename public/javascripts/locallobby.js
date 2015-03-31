@@ -49,9 +49,6 @@ setTimeout(function() {
 
 //Hitting enter sends the message
 $("#m").keyup(function(e) {
-    if(intialName != loggedIn){
-      socket.emit('username message', user_name);
-    }
     if(e.keyCode == 13) {
       if($('#m').val().length > 0) {
         //$('#messages').append($('<div class="messageSpacer"/>'));

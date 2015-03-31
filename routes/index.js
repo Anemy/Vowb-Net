@@ -22,7 +22,7 @@ var getLoginData = function (req) {
 router.get('/', function (req, res, next) {
     var loginData = getLoginData(req);
 
-    res.render('index', { title: 'Vowb.net', login: loginData});
+    res.render('index', { title: 'Vowb.net', login: loginData });
 });
 //tmp page
 // router.get('/profile', function(req, res, next) { //tmp
@@ -77,6 +77,18 @@ router.post('/signup', function(req, res) {
                 username: req.body.username,
                 email_account: req.body.email,
                 password_hash: db.hashPassword(req.body.password)
+            },
+            function(userCreated) {
+                // This is the onCreate callback, called when it finishes
+                // adding user to DB
+                
+                //console.log("USER CREATED: " + JSON.stringify(userCreated));
+                
+                // db.add(db.profileDB, {
+                    // username: req.body.username,
+                    // email_account: req.body.email,
+                    // password_hash: db.hashPassword(req.body.password)
+                // });
             });
             req.session.loggedIn = true; 
             req.session.username = req.body.username;
