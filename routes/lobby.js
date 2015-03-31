@@ -20,7 +20,10 @@ var getLoginData = function (req) {
 
 /* GET lobby listing. */
 router.get('/*', function(req, res, next) {
-    //res.send('respond with a resource');
+    // res.send('respond with a resource');
+
+    // TODO: 
+    // Check if the lobby is real. Respond with lobby data or 404 depending. 
 
     var loginData = getLoginData(req);
 

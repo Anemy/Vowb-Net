@@ -897,10 +897,14 @@ table {
   float: left;
   background-color: white;
   position: absolute;
-  z-index: -2; }
+  z-index: -2;
+  top: 0;
+  bottom: 2em;
+  overflow: none; }
   .createLobby .mainContent {
     text-align: center;
     color: #290E03;
+    overflow: none;
     font-family: 'Cabin'; }
     .createLobby .mainContent .accentText {
       color: #FC4349; }
@@ -944,23 +948,27 @@ table {
           margin-top: 10px;
           margin-bottom: 6px;
           font-size: 14px; }
-        .createLobby .mainContent #createLobbyForm .fields .lobbyChoice {
-          display: inline-block;
-          width: 29%;
-          margin-left: 2%;
-          margin-right: 2%;
-          box-shadow: 0 0 1px #290E03;
-          border-radius: 4px;
-          font-size: 14px;
-          padding-top: 8px;
-          padding-bottom: 8px; }
-          .createLobby .mainContent #createLobbyForm .fields .lobbyChoice .packageName {
-            font-size: 18px;
-            text-decoration: underline; }
-        .createLobby .mainContent #createLobbyForm .fields .lobbyChoice:hover {
-          cursor: pointer; }
-        .createLobby .mainContent #createLobbyForm .fields .lobbyChoice.focus {
-          box-shadow: 0 0 4px #0B486B; }
+        .createLobby .mainContent #createLobbyForm .fields .lobbyPackages {
+          margin-left: 10%;
+          margin-right: 10%;
+          width: 80%;
+          float: left; }
+          .createLobby .mainContent #createLobbyForm .fields .lobbyPackages .lobbyChoice {
+            display: inline-block;
+            width: 29%;
+            box-shadow: 0 0 1px #290E03;
+            border-radius: 4px;
+            font-size: 14px;
+            line-height: 16px;
+            padding-top: 10px;
+            padding-bottom: 10px; }
+            .createLobby .mainContent #createLobbyForm .fields .lobbyPackages .lobbyChoice .packageName {
+              font-size: 18px;
+              text-decoration: underline; }
+          .createLobby .mainContent #createLobbyForm .fields .lobbyPackages .lobbyChoice:hover {
+            cursor: pointer; }
+          .createLobby .mainContent #createLobbyForm .fields .lobbyPackages .lobbyChoice.focus {
+            box-shadow: 0 0 4px #0B486B; }
         .createLobby .mainContent #createLobbyForm .fields .aboutText {
           color: #290E03;
           margin-top: 1em;
@@ -1042,8 +1050,9 @@ table {
       position: absolute;
       z-index: -1;
       right: 4%;
-      bottom: 4em;
-      width: 50%; }
+      bottom: 1.5em;
+      width: 50%;
+      overflow: none; }
 
 /* This is the style sheet for the main landing page of the website @author Rhys Howell*/
 .landingPage {

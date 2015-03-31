@@ -3,10 +3,17 @@
 .createLobby {
 	height: 100%;
 	width: 100%;
+
 	float: left;
 	background-color: white;
 	position: absolute; 
 	z-index: -2;
+
+	top: 0;
+	bottom: 2em;
+
+	// scroll: none;
+	overflow: none;
 
     // background: url('/images/hdmic.jpg') no-repeat scroll center center transparent;
     // background: url('/images/hdmic.jpg') no-repeat scroll center top/cover transparent;
@@ -14,6 +21,8 @@
   	.mainContent {
 		text-align: center;
 		color: $dark;
+
+		overflow: none;
 
 		font-family: 'Cabin';
 
@@ -78,33 +87,42 @@
 		        	font-size: 14px;
 		        }
 
-		        .lobbyChoice {
-		        	display: inline-block;
+		        .lobbyPackages {
+		        	margin-left: 10%;
+		        	margin-right: 10%;
+		        	width: 80%;
+		        	float: left;
 
-		        	width: 29%;
-		        	margin-left: 2%;
-		        	margin-right: 2%;
+			        .lobbyChoice {
+			        	display: inline-block;
 
-		            box-shadow: 0 0 1px $dark;
+			        	width: 29%;
+			        	//margin-left: %;
+			        	
 
-		            border-radius: 4px;
+			            box-shadow: 0 0 1px $dark;
 
-		            font-size: 14px;
-		            padding-top: 8px;
-		            padding-bottom: 8px;
+			            border-radius: 4px;
 
-		            .packageName {
-		            	font-size: 18px;
-		            	text-decoration: underline;
-		            }
-		        }
-		        .lobbyChoice:hover {
-		        	// pointer: cursor;
-		        	cursor: pointer;
-		        }
-		        .lobbyChoice.focus {
-		        	box-shadow: 0 0 4px $highlight;
-		        }
+			            font-size: 14px;
+    		        	line-height: 16px;
+
+			            padding-top: 10px;
+			            padding-bottom: 10px;
+
+			            .packageName {
+			            	font-size: 18px;
+			            	text-decoration: underline;
+			            }
+			        }
+			        .lobbyChoice:hover {
+			        	// pointer: cursor;
+			        	cursor: pointer;
+			        }
+			        .lobbyChoice.focus {
+			        	box-shadow: 0 0 4px $highlight;
+			        }
+			    }
 
 		        .aboutText {
 		            color: $dark;
@@ -231,8 +249,9 @@
 			// display:inline-block;
 			z-index: -1;
 			right: 4%;
-			bottom: 4em;
+			bottom: 1.5em;
 			width: 50%;
+			overflow: none;
 		}
   	}
 

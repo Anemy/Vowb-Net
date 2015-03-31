@@ -19,21 +19,6 @@ var getLoginData = function (req) {
     } 
 } 
 
-/* GET users listing. */
-router.get('/*', function(req, res, next) {
-    //res.send('respond with a resource');
-    var loginData = getLoginData(req);
-    // Example:
-    //res.render('userPage', { name: 'Mystxc'});
-    db.search(db.userDB, { username: req.params[0] }, function(result) {
-        if( result.length > 0 )
-            res.render('profile', {result: result[0], login: loginData });
-        else {
-            res.render('404', { title: "404: Vowb.net page not found", url: "/users" + req.url });
-        }
-    });
-});
-
 /* GET EDIT users listing. */
 router.get('/edit/*', function(req, res, next) {
 
@@ -46,8 +31,24 @@ router.get('/edit/*', function(req, res, next) {
     //res.render('userPage', { name: 'Mystxc'});
     db.search(db.userDB, { username: req.params[0] }, function(result) {
         if( result.length > 0 ) {
-            res.render('editProfPage', {result: result[0], login: loginData });
+            res.render('editProfPage', {result: result[0], login: loginData, title: "Vowb.net - Edit Profile"});
         }
+        else {
+            res.render('404', { title: "404: Vowb.net page not found", url: "/users" + req.url });
+        }
+    });
+});
+
+
+/* GET users listing. */
+router.get('/*', function(req, res, next) {
+    //res.send('respond with a resource');
+    var loginData = getLoginData(req);
+    // Example:
+    //res.render('userPage', { name: 'Mystxc'});
+    db.search(db.userDB, { username: req.params[0] }, function(result) {
+        if( result.length > 0 )
+            res.render('profile', {result: result[0], login: loginData, title: "Vowb.net - Profile"});
         else {
             res.render('404', { title: "404: Vowb.net page not found", url: "/users" + req.url });
         }

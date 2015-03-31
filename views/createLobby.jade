@@ -21,17 +21,18 @@ block content
                 //-     private lobby
                 .packageText.
                     Select a Lobby Package
-                .lobbyChoice.focus(id="basic").
-                    <span style="color:#777777;" class="packageName">Basic</span><br>Free<br>10 person max
-                .lobbyChoice(id="premium").
-                    <span style="color:#02A676;" class="packageName">Premium</span><br>$10/Month<br>50 person max
-                .lobbyChoice(id="grand").
-                    <span style="color:#EB9330;" class="packageName">Grand</span><br>$50/Month<br>500 person max
+                .lobbyPackages
+                    .lobbyChoice.focus(id="basic" style="margin-right: 2%;").
+                        <span style="color:#777777;" class="packageName">Basic</span><br>Free<br>10 person max
+                    .lobbyChoice(id="premium").
+                        <span style="color:#02A676;" class="packageName">Premium</span><br>$10/Month<br>50 person max
+                    .lobbyChoice(id="grand" style="margin-left: 2%;").
+                        <span style="color:#EB9330;" class="packageName">Grand</span><br>$50/Month<br>500 person max
                 .boxCheckWrap
                     input.inputCheck(type="checkbox" id="private_id")
                     //- .inText.
                     //-     Private Lobby
-                    input.checkText(type="text" placeholder="Private Lobby" readonly)
+                    input.checkText(type="text" value="Private Lobby" readonly)
                     //- readonly
                 .passwordFields(style="display: none;")
                     //- .aboutText.
