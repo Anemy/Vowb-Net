@@ -45,58 +45,58 @@ block content
                             <option value="other">Other</option>
                         .slash / 
                         select.userState(value='#{state}')
-                            <option value="N/A">N/A</option>
-                            <option value="AL">AL</option>
-                            <option value="AK">AK</option>
-                            <option value="AZ">AZ</option>
-                            <option value="AR">AR</option>
-                            <option value="CA">CA</option>
-                            <option value="CO">CO</option>
-                            <option value="CT">CT</option>
-                            <option value="DE">DE</option>
-                            <option value="DC">DC</option>
-                            <option value="FL">FL</option>
-                            <option value="GA">GA</option>
-                            <option value="HI">HI</option>
-                            <option value="ID">ID</option>
-                            <option value="IL">IL</option>
-                            <option value="IN">IN</option>
-                            <option value="IA">IA</option>
-                            <option value="KS">KS</option>
-                            <option value="KY">KY</option>
-                            <option value="LA">LA</option>
-                            <option value="ME">ME</option>
-                            <option value="MD">MD</option>
-                            <option value="MA">MA</option>
-                            <option value="MI">MI</option>
-                            <option value="MN">MN</option>
-                            <option value="MS">MS</option>
-                            <option value="MO">MO</option>
-                            <option value="MT">MT</option>
-                            <option value="NE">NE</option>
-                            <option value="NV">NV</option>
-                            <option value="NH">NH</option>
-                            <option value="NJ">NJ</option>
-                            <option value="NM">NM</option>
-                            <option value="NY">NY</option>
-                            <option value="NC">NC</option>
-                            <option value="ND">ND</option>
-                            <option value="OH">OH</option>
-                            <option value="OK">OK</option>
-                            <option value="OR">OR</option>
-                            <option value="PA">PA</option>
-                            <option value="RI">RI</option>
-                            <option value="SC">SC</option>
-                            <option value="SD">SD</option>
-                            <option value="TN">TN</option>
-                            <option value="TX">TX</option>
-                            <option value="UT">UT</option>
-                            <option value="VT">VT</option>
-                            <option value="VA">VA</option>
-                            <option value="WA">WA</option>
-                            <option value="WV">WV</option>
-                            <option value="WI">WI</option>
-                            <option value="WY">WY</option>
+                            <option value="N/A" #{state==="--"?"selected":""}>N/A</option>
+                            <option value="AL" #{state==="AL"?"selected":""}>AL</option>
+                            <option value="AK" #{state==="AK"?"selected":""}>AK</option>
+                            <option value="AZ" #{state==="AZ"?"selected":""}>AZ</option>
+                            <option value="AR" #{state==="AR"?"selected":""}>AR</option>
+                            <option value="CA" #{state==="CA"?"selected":""}>CA</option>
+                            <option value="CO" #{state==="CO"?"selected":""}>CO</option>
+                            <option value="CT" #{state==="CT"?"selected":""}>CT</option>
+                            <option value="DE" #{state==="DE"?"selected":""}>DE</option>
+                            <option value="DC" #{state==="DC"?"selected":""}>DC</option>
+                            <option value="FL" #{state==="FL"?"selected":""}>FL</option>
+                            <option value="GA" #{state==="GA"?"selected":""}>GA</option>
+                            <option value="HI" #{state==="HI"?"selected":""}>HI</option>
+                            <option value="ID" #{state==="ID"?"selected":""}>ID</option>
+                            <option value="IL" #{state==="IL"?"selected":""}>IL</option>
+                            <option value="IN" #{state==="IN"?"selected":""}>IN</option>
+                            <option value="IA" #{state==="IA"?"selected":""}>IA</option>
+                            <option value="KS" #{state==="KS"?"selected":""}>KS</option>
+                            <option value="KY" #{state==="KY"?"selected":""}>KY</option>
+                            <option value="LA" #{state==="LA"?"selected":""}>LA</option>
+                            <option value="ME" #{state==="ME"?"selected":""}>ME</option>
+                            <option value="MD" #{state==="MD"?"selected":""}>MD</option>
+                            <option value="MA" #{state==="MA"?"selected":""}>MA</option>
+                            <option value="MI" #{state==="MI"?"selected":""}>MI</option>
+                            <option value="MN" #{state==="MN"?"selected":""}>MN</option>
+                            <option value="MS" #{state==="MS"?"selected":""}>MS</option>
+                            <option value="MO" #{state==="MO"?"selected":""}>MO</option>
+                            <option value="MT" #{state==="MT"?"selected":""}>MT</option>
+                            <option value="NE" #{state==="NE"?"selected":""}>NE</option>
+                            <option value="NV" #{state==="NV"?"selected":""}>NV</option>
+                            <option value="NH" #{state==="NH"?"selected":""}>NH</option>
+                            <option value="NJ" #{state==="NJ"?"selected":""}>NJ</option>
+                            <option value="NM" #{state==="NM"?"selected":""}>NM</option>
+                            <option value="NY" #{state==="NY"?"selected":""}>NY</option>
+                            <option value="NC" #{state==="NC"?"selected":""}>NC</option>
+                            <option value="ND" #{state==="ND"?"selected":""}>ND</option>
+                            <option value="OH" #{state==="OH"?"selected":""}>OH</option>
+                            <option value="OK" #{state==="OK"?"selected":""}>OK</option>
+                            <option value="OR" #{state==="OR"?"selected":""}>OR</option>
+                            <option value="PA" #{state==="PA"?"selected":""}>PA</option>
+                            <option value="RI" #{state==="RI"?"selected":""}>RI</option>
+                            <option value="SC" #{state==="SC"?"selected":""}>SC</option>
+                            <option value="SD" #{state==="SD"?"selected":""}>SD</option>
+                            <option value="TN" #{state==="TN"?"selected":""}>TN</option>
+                            <option value="TX" #{state==="TX"?"selected":""}>TX</option>
+                            <option value="UT" #{state==="UT"?"selected":""}>UT</option>
+                            <option value="VT" #{state==="VT"?"selected":""}>VT</option>
+                            <option value="VA" #{state==="VA"?"selected":""}>VA</option>
+                            <option value="WA" #{state==="WA"?"selected":""}>WA</option>
+                            <option value="WV" #{state==="WV"?"selected":""}>WV</option>
+                            <option value="WI" #{state==="WI"?"selected":""}>WI</option>
+                            <option value="WY" #{state==="WY"?"selected":""}>WY</option>
                     .overlayAcc
                     .ACCOUNTSTATS Account Stats
                     .dateJoined Joined:
