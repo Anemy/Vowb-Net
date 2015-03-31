@@ -35,16 +35,16 @@ block content
                 .userAboutL
                     .PERSONAL Personal
                     .userPersonal 
-                        input(type="hidden" id="secretProfileIdValue" value="!{profile_id}")
-                        input.userFullName(type="text",id ="userFullName",placeholder="Name",value='#{login}',required maxlength = 24)
-                        input.userAge(type="number" id="userAge" maxlength ="3" pattern="([1-9]|[0-9]|[0-9])" value = "!{user_age}"  min = "0" max = "117")
+                        input(type="hidden" id="secretProfileIdValue" value='#{profile_id}')
+                        input.userFullName(type="text",id ="userFullName",placeholder="Name",value='#{full_name}',required maxlength = 24)
+                        input.userAge(type="number" id="userAge" maxlength ="3" pattern="([1-9]|[0-9]|[0-9])" value = '#{user_age}'  min = "0" max = "117")
                         .slash / 
-                        select.userSex(value="!{gender}")
+                        select.userSex(value='#{gender}')
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                             <option value="other">Other</option>
                         .slash / 
-                        select.userState(value="!{state}")
+                        select.userState(value='#{state}')
                             <option value="N/A">N/A</option>
                             <option value="AL">AL</option>
                             <option value="AK">AK</option>
@@ -107,7 +107,7 @@ block content
                         .usertimeOnline 287 hrs
                 .userAboutR
                     .ABOUTME About Me
-                    textarea.aboutMeDesc(rows = "2" placeholder="Write a bit about yourself" cols= "30" maxlength="150" resize = "none")
+                    textarea.aboutMeDesc(rows = "2",placeholder="Write a bit about yourself",cols= "30",maxlength="150",resize = "none") !{description}
                     .FAVORITES Favorites
                     .favGames Games: 
                         input.userfavGames(type="text" id ="userfaveGames" placeholder="Counter Strike, WoW, RS" required maxlength = 40)
@@ -115,7 +115,7 @@ block content
                         input.userfavShows(type="text" id ="userfavShows" placeholder="The News Room, GoT" required maxlength = 40)
                     .favFoods Foods: 
                         input.userfavFoods(type="text" id ="userfavFoods" placeholder="Peanut butter" required maxlength = 40)
-            input.saveButton(type="submit" value="Save") 
+            input.saveButton(type="submit" value="Save" onclick="saveButtonClicked();") 
             
 
         .rightPage

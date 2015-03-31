@@ -35,6 +35,47 @@ router.get('/', function (req, res, next) {
 //     res.render('editProfPage', { title: 'Edit Profile Page - Vowb.net'});
 // });
 
+// allows users to save edits to provile
+router.post('/edit-profile', function(req, res, next) {
+    
+    // secretProfileIdValue : $("secretProfileIdValue").val(),
+    // userFullName : $("#userFullName").val(),
+    // userAge : $("#userAge").val(),
+    // userSex : $("#userSex").val(),
+    // userState : $("#userState").val(),
+    // aboutMeDesc : $("#aboutMeDesc").val(),
+    // userfavGames : $("#userfavGames").val(),
+    // userfavShows : $("#userfavShows").val(),
+    // userfavFoods : $("#userfavFoods").val()
+    var loginData = getLoginData(req);
+    
+    var searchParams = {
+        username: loginData,
+        profile_pointer: req.body.secretProfileIdValue
+    };
+    
+    db.search(db.userDB, searchParams, function(result) {
+        if( result[0] ) {
+            db.update(db.profileDB, { profile_id: req.body.secretProfileIdValue }, {
+                full_name: req.body.userFullName,
+                //birth_date: now() - req.body.userAge,
+                gender: req.body.userSex,
+                state: req.body.userState,
+                description: req.body.aboutMeDesc,
+                favorite_game: req.body.userfavGames,
+                favorite_tv_show: req.body.userfavShows,
+                favorite_food: req.body.userfavFoods
+            }, function() {
+                console.log("Profile update success!");
+                res.end(JSON.stringify({value: "Success"}));
+            });
+        } else {
+            console.log("Error: credentials and profile edits did not match: "+JSON.stringify(searchParams)+".");
+            res.end(JSON.stringify({ value: "Error" }));
+        }
+    });
+});
+
 //retrieves the creating lobby page - maybe add redirect if not logged in?
 router.get('/create', function(req, res, next) { //tmp
     // tmp profile page
@@ -84,11 +125,19 @@ router.post('/signup', function(req, res) {
                 
                 //console.log("USER CREATED: " + JSON.stringify(userCreated));
                 
-                // db.add(db.profileDB, {
-                    // username: req.body.username,
-                    // email_account: req.body.email,
-                    // password_hash: db.hashPassword(req.body.password)
-                // });
+                db.search(db.userDB, { username: req.body.username }, function(results) {
+                    if( results.length ) {
+                        db.addProfile({
+                            description: "Welcome to Vowb.net, "+req.body.username+"! This is where you can write a description of yourself and your personal interests. :)",
+                            full_name: req.body.username
+                        }, function(result) {
+                            console.log("!! created profile with ID: " + JSON.stringify(result));
+                            db.update(db.userDB, { username: req.body.username }, { profile_pointer: result[0].profile_id });
+                        });
+                    } else {
+                        console.log("Database error - tell Eric: You signed up as an new user, then afterwards your user did not exist.");
+                    }
+                });
             });
             req.session.loggedIn = true; 
             req.session.username = req.body.username;
