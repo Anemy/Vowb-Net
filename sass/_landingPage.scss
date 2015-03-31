@@ -7,7 +7,7 @@
     float: left;
     bottom: 0;
     background-color: white; // $clouds;
-    z-index: -2;
+    z-index: -2; 
     background: url('/images/headphones.jpg') no-repeat scroll center center transparent;
     background: url('/images/headphones.jpg') no-repeat scroll center top/cover transparent;
     // overflow-y: none;
@@ -33,7 +33,7 @@
     .mainContent {
         text-align: center;
         font-size: 1.2em;
-        margin-top: 9.6em;
+        margin-top: 14.6em; //was 9.6
         //background-color: $dark;
 
         // opacity: 0.3;
@@ -43,7 +43,7 @@
           content : "";
           display: block;
           position: absolute;
-          top: 9.0em;
+          top: 14.0em;
           left: 0;
           background-color: $dark;
           background: $dark;

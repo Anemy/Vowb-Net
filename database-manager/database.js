@@ -37,7 +37,7 @@ var db = module.exports = {
         post_req = http.request(post_options, function(res) {
             res.setEncoding('utf8');
             res.on('data', function(chunk) {
-                console.log('Response: ' + chunk);
+                //console.log('Response: ' + chunk);
                 var jsonData = JSON.parse(chunk);
                 if( jsonData.error ) {
                     cb(jsonData.error, { });
@@ -103,7 +103,7 @@ db.hashPassword = function(string) {
  *  });
  *
  */
-db.add = function(tablename, data) {
+db.add = function(tablename, data, onCreate) {
     /*console.log("dummy table (before): " + JSON.stringify(DUMMY_DATABASE[tablename]));
     if( !DUMMY_DATABASE[tablename] )
         DUMMY_DATABASE[tablename] = [];
@@ -137,13 +137,16 @@ db.add = function(tablename, data) {
         }
     }
     queryString += ")";
-    console.log("search: " + queryString);
+    //console.log("search: " + queryString);
     db.query(queryString, values, function(err, result) {
         if( err ) {
-            console.log("Database .add ERROR: " + err.toString());
+            //console.log("Database .add ERROR: " + err.toString());
             throw err;
-        } else
-            console.log("Database .add: No error");
+        } else {
+            //console.log("Database .add: No error");
+            if( onCreate )
+                onCreate(result);
+        }
     });
 }
 
@@ -198,13 +201,13 @@ db.search = function(tablename, searchParams, callback) {
             i++;
         }
     }
-    console.log("search: " + queryString);
+    //console.log("search: " + queryString);
     db.query(queryString, values, function(err, result) {
         if( err ) {
-            console.log("Database .search ERROR: " + err.toString());
+            //console.log("Database .search ERROR: " + err.toString());
             throw err;
         } else {
-            console.log("Database .search: No error");
+            //console.log("Database .search: No error");
             callback(result);
         }
     });
@@ -228,7 +231,7 @@ db.search = function(tablename, searchParams, callback) {
  *  to the phrase shown above.
  *
  */
-db.update = function(tablename, searchParams, data) {
+db.update = function(tablename, searchParams, data, onUpdate) {
     
     /*if( !DUMMY_DATABASE[tablename] )
         DUMMY_DATABASE[tablename] = [];
@@ -275,13 +278,15 @@ db.update = function(tablename, searchParams, data) {
         }
     }
     queryString += ";";
-    console.log("update: " + queryString +"; " + JSON.stringify(values));
+    //console.log("update: " + queryString +"; " + JSON.stringify(values));
     db.query(queryString, values, function(err, result) {
         if( err ) {
-            console.log("Database .update ERROR: " + err.toString());
+            //console.log("Database .update ERROR: " + err.toString());
             throw err;
         } else {
-            console.log("Database .update: No error");
+            //console.log("Database .update: No error");
+            if( onUpdate )
+                onUpdate(result);
         }
     });
 }

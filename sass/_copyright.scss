@@ -11,12 +11,12 @@
   padding-left: 4%;
   height: 2em;
 
-  // border-top-width: 2px;
+  border-top: 1px solid $medium;
   // border-style: solid;
   // border-color: $light;
-  -moz-box-shadow: 0 -2px 2px $medium; 
-  -webkit-box-shadow: 0 -2px 2px $medium;
-  box-shadow: 0 -2px 2px $medium;
+  // -moz-box-shadow: 0 -2px 2px $medium; 
+  // -webkit-box-shadow: 0 -2px 2px $medium;
+  // box-shadow: 0 -2px 2px $medium;
 
   font-family: 'Cabin';
 

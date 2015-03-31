@@ -3,13 +3,26 @@
 .createLobby {
 	height: 100%;
 	width: 100%;
+
 	float: left;
 	background-color: white;
 	position: absolute; 
+	z-index: -2;
+
+	top: 0;
+	bottom: 2em;
+
+	// scroll: none;
+	overflow: none;
+
+    // background: url('/images/hdmic.jpg') no-repeat scroll center center transparent;
+    // background: url('/images/hdmic.jpg') no-repeat scroll center top/cover transparent;
 
   	.mainContent {
 		text-align: center;
 		color: $dark;
+
+		overflow: none;
 
 		font-family: 'Cabin';
 
@@ -40,7 +53,7 @@
 		    height: 30em;
 		    position: absolute;
 		    margin-top: 1.0em;
-		    left: 20%;
+		    left: 10%;
 
 		    .createLobbyFormHeader {
 		        font-size: 1.4em;
@@ -56,71 +69,133 @@
 		    }
 
 		    .fields {
+		    	margin-top: 3px;
+		    	font-size: 16px;
+		    	text-align:center;
+
+		    	width: 100%;
+
 		        float: left;
+
+		        .packageText {
+		        	float: left;
+		        	width: 100%;
+
+		        	margin-top: 10px;
+		        	margin-bottom: 6px;
+
+		        	font-size: 14px;
+		        }
+
+		        .lobbyPackages {
+		        	margin-left: 10%;
+		        	margin-right: 10%;
+		        	width: 80%;
+		        	float: left;
+
+			        .lobbyChoice {
+			        	display: inline-block;
+
+			        	width: 29%;
+			        	//margin-left: %;
+			        	
+
+			            box-shadow: 0 0 1px $dark;
+
+			            border-radius: 4px;
+
+			            font-size: 14px;
+    		        	line-height: 16px;
+
+			            padding-top: 10px;
+			            padding-bottom: 10px;
+
+			            .packageName {
+			            	font-size: 18px;
+			            	text-decoration: underline;
+			            }
+			        }
+			        .lobbyChoice:hover {
+			        	// pointer: cursor;
+			        	cursor: pointer;
+			        }
+			        .lobbyChoice.focus {
+			        	box-shadow: 0 0 4px $highlight;
+			        }
+			    }
+
 		        .aboutText {
 		            color: $dark;
-		            font-size: 1em;
+		            // font-size: 1em; 
 		            margin-top: 1em;
 		            float: left;
 		            margin-left: 12%;
 		        }
-		        .inText {
-		        	position: absolute;
 
-		        	padding-top: 1em;
-		        	left: 15%;
-		        	top: 10.3em;
-		        	font-size: 0.8em;
-
-		        	color: #B4B4B4;
-		        }
-		        .inText:hover {
-		        	cursor: default;
-		        }
 		        .inputBox {
-		            height: 2em;
 		            float: left;
+
 		            width: 80%;
+		            height: 30px;
+
 		            margin-left: 10%;
-		            margin-top: 6px;
+		            margin-right: 10%;
+		            margin-top: 10px;
 
 		            border: none;
 		            outline: none;
-		            box-shadow: 0 0 2px $dark;
+		            box-shadow: 0 0 1px $dark;
 
 		            padding: 0px 6px;
 
-		            border-radius: 5px;
-		            font-size: 0.8em;
+		            border-radius: 4px;
 		        }
 		        .inputBox:focus {
-		            box-shadow: 0 0 6px $highlight;
+		            box-shadow: 0 0 4px $highlight;
 		        }
 		        .boxCheckWrap {
 		        	float: left;
+
 		        	margin-left: 10%;
+		        	margin-right: 10%;
+		        	margin-top: 14px;
 
 		        	width: 80%;
-		        	height: 2em;
+		        	height: 23px;
+
+		        	padding: 0px 6px;
+		        	padding-top: 7px;
+
+		            border-radius: 4px;
+
+		            border: none;
+		            outline: none;
+		            box-shadow: 0 0 1px $dark;
 
 			        .inputCheck {
+			        	display: inline-block;
+			        	float:left;
+
+			        	margin-left: 4px;
+			        }
+			        .checkText {
+			        	display: inline-block;
 			        	float: left;
 
-			        	margin-left: 0%;
-			        	width: 2em;
-			        	height: 100%;
-
-			            border-radius: 5px;
-		            	font-size: 0.8em;
-
-			            border: none;
-			            outline: none;
-			            // box-shadow: 0 0 2px $dark;
-			        }
-    		        .inputCheck:focus {
-			            // box-shadow: 0 0 6px $highlight;
+			        	outline: none;
+			        	border: none;
+			        	margin-left: 4px
 			        }
 			    }
+			    .boxCheckWrap.selected {
+ 					box-shadow: 0 0 4px $highlight;
+			    }
+
+
+		        .passwordFields {
+		        	width: 100%;
+		        	float: left;
+		        }
 
 		        .createLobbyWrapper {
 		        	// display: none;
@@ -168,6 +243,15 @@
 		            }
 		        }
 		    }
+		}
+		.micImage {
+			position:absolute;
+			// display:inline-block;
+			z-index: -1;
+			right: 4%;
+			bottom: 1.5em;
+			width: 50%;
+			overflow: none;
 		}
   	}
 

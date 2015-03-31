@@ -55,12 +55,12 @@ $('#signupForm').submit( function (event) {
                   })
               }
               else {
-                alert("Username already exists!!");
+                sweetAlert("Oops...", "Username already exists!!", "error");
                 console.log("Failure from server");
               }
             },
             error: function(data){
-                alert("Username already exists!!");
+                sweetAlert("Oops...", "Username already exists!!", "error");
                 console.log("Failure from server");
             }
         });

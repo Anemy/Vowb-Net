@@ -1,6 +1,7 @@
 /*this script will handle lobby creation and management*/
 //makes local client connection
 var socket = io();
+var intialName = loggedIn;
 
 socket.on('chat message', function(msg){
   //$('#messages').append($('<div class="messageSpacer"/>'));
@@ -19,47 +20,57 @@ socket.on('server message', function(msg){
 });
 socket.on('username message', function(msg){
 
-}); 
+});
 
-$(document).ready(function() {
-    //submitting the chat form
-    $('form').submit(function(){
+// submitting the chat form
+$('form').submit(function(){
+  if($('#m').val().length > 0) {
+    socket.emit('chat message', $('#m').val());
+    $('#m').val('');
+  }
+  return false;
+});
+
+// Gets the lobby name and transfers that to the server as to connect to that specific chat socket io
+var url = window.location.pathname;
+var to = url.lastIndexOf('/') +1;
+
+var chatToConnect =  url.substring(to,url.length);
+// alert(chatToConnect);
+console.log("Trying to connect to chat: " + chatToConnect);
+socket.emit('connect to chat', chatToConnect);
+
+setTimeout(function() {
+  // insecurely transfers a user's username
+  socket.emit('username message', user_name);
+}, 50);
+
+
+
+//Hitting enter sends the message
+$("#m").keyup(function(e) {
+    if(intialName != loggedIn){
+      socket.emit('username message', user_name);
+    }
+    if(e.keyCode == 13) {
       if($('#m').val().length > 0) {
+        //$('#messages').append($('<div class="messageSpacer"/>'));
+        //$('#messages').append($('<div class="messageSpacer"><li class="selfMessage"> </div>').text( $('#m').val()));
+
+        var html = '';
+        html += '<div class="messageSpacer">';
+        html +=   '<li class="selfMessage">' + $('#m').val() + '</li>';
+        html += '</div>';
+        $('#messages').append( html );
+
+
+        document.getElementById("msgBox").scrollTop = document.getElementById("msgBox").scrollHeight;
         socket.emit('chat message', $('#m').val());
         $('#m').val('');
       }
+
       return false;
-    });
-
-    //Hitting enter sends the message
-    $("#m").keyup(function(e) {
-        if(e.keyCode == 13) {
-          if($('#un_id').val() == ""){
-            
-          }
-          else{
-            socket.emit('username message', $('#un_id').val());
-          }
-
-          if($('#m').val().length > 0) {
-            //$('#messages').append($('<div class="messageSpacer"/>'));
-            //$('#messages').append($('<div class="messageSpacer"><li class="selfMessage"> </div>').text( $('#m').val()));
-
-            var html = '';
-            html += '<div class="messageSpacer">';
-            html +=   '<li class="selfMessage">' + $('#m').val() + '</li>';
-            html += '</div>';
-            $('#messages').append( html );
-
-            document.getElementById("msgBox").scrollTop = document.getElementById("msgBox").scrollHeight;
-
-            socket.emit('chat message', $('#m').val());
-            $('#m').val('');
-          }
-
-          return false;
-        }
-    });
+    }
 });
 
 
@@ -67,7 +78,34 @@ $(document).ready(function() {
 THERE IS NO SERVER CODE.
 This is the code which enables a user to create an RTC voice chat stream lobby
 */
+//Start Password code
 var connection = new RTCMultiConnection();
+document.querySelector('#setup').onclick = function() {
+    // room password has been set before calling "open" method
+    connection.extra.password = prompt('Setup password for your room!');
+    connection.open();
+    this.disabled = true;
+};
+//Start Password Code
+    document.querySelector('#setup').onclick = function () {
+      console.log("Ask for Password");
+      // room password has been set before calling "open" method
+      connection.extra.password = prompt('Setup password for your room!');
+      connection.open();
+    };
+    connection.onNewSession = function (session) {
+      // set password for person who is trying to join the room
+      connection.extra.password = prompt('Enter password to join this room.');
+      connection.join(session);
+    };
+    connection.onRequest = function (userid, extra) {
+      // validating password in "onRequest"
+      if (extra.password != connection.extra.password)
+        return alert('password: ' + extra.password + ' !== ' + connection.extra.password);
+      connection.accept(userid, extra);
+    };
+//End Password Code
+//End Password Code
 connection.session = {
     audio: true
 };
@@ -81,7 +119,7 @@ connection.onstream = function(e) {
 
 
 var inSession = false;
-//sessions manages the current lobbies in the sub lobby.
+//sessions manages the current lobbies in the sub-lobby.
 var sessions = {};
 connection.onNewSession = function(session) {
 
@@ -100,9 +138,24 @@ connection.onNewSession = function(session) {
             var sessionid = this.getAttribute('data-sessionid');
             session = sessions[sessionid];
             if (!session) throw 'No such session exists.';
+
+            // set password for person who is trying to join the room
+            connection.extra.password = prompt('Enter password to join this room.');
+
             connection.join(session);
     };
 };
+//Start Password Code
+connection.onRequest = function(e) {
+    // validating password in "onRequest"
+    if (e.extra.password != connection.extra.password)
+        return alert('password: ' + e.extra.password + ' !== ' + connection.extra.password);
+    connection.accept(e);
+};
+connection.onstream = function(e) {
+    document.body.appendChild(e.mediaElement);
+};
+//End Password Code
 
 var audioContainer = document.getElementById('audios-container') || document.body;
 var roomsList = document.getElementById('rooms-list');
