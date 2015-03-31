@@ -110,11 +110,11 @@ block content
                     textarea.aboutMeDesc(rows = "2",placeholder="Write a bit about yourself",cols= "30",maxlength="150",resize = "none") !{description}
                     .FAVORITES Favorites
                     .favGames Games: 
-                        input.userfavGames(type="text" id ="userfavGames" placeholder="Counter Strike, WoW, RS" required maxlength = 40)
+                        input.userfavGames(type="text" id ="userfavGames" placeholder="Counter Strike, WoW, RS" required maxlength = 40 value='#{favorite_game}')
                     .favShows TV Shows: 
-                        input.userfavShows(type="text" id ="userfavShows" placeholder="The News Room, GoT" required maxlength = 40)
+                        input.userfavShows(type="text" id ="userfavShows" placeholder="The News Room, GoT" required maxlength = 40 value='#{favorite_tv_show}')
                     .favFoods Foods: 
-                        input.userfavFoods(type="text" id ="userfavFoods" placeholder="Peanut butter" required maxlength = 40)
+                        input.userfavFoods(type="text" id ="userfavFoods" placeholder="Peanut butter" required maxlength = 40 value='#{favorite_food}')
             input.saveButton(type="submit" value="Save" onclick="saveButtonClicked();") 
             
 

@@ -78,7 +78,8 @@ router.get('/*', function(req, res, next) {
                 dataObject.login = loginData;
                 dataObject.title = "Vowb.net - Edit Profile";
                 dataObject.username = req.params[0];
-                dataObject.description = "No profile? That's OK. This guy has yet to make one.";
+                if( !dataObject.description )
+                    dataObject.description = "No profile? That's OK. This guy has yet to make one.";
             res.render('profile', dataObject);
             });
         } else {
