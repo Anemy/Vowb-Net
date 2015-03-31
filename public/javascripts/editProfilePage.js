@@ -2,41 +2,6 @@
 
 var saveButtonClicked;
 
- $(document).ready (function() {
- 	saveButtonClicked = function(){
- 		//save shit
-
-        // Concept code by Eric 3/5/2015
-        $.ajax({
-                url: "/edit-profile",
-                type: "POST",
-                data: {
-                    // The user id commented out below should be added as an "int" variable
-                    //    to show whose data will be overwritten, this will probably
-                    //    be a input.hidden in JADE or something like that?
-                    secretProfileIdValue : $("secretProfileIdValue").val(),
-                    userFullName : $("#userFullName").val(),
-                    userAge : $("#userAge").val(),
-                    userSex : $("#userSex").val(),
-                    userState : $("#userState").val(),
-                    aboutMeDesc : $("#aboutMeDesc").val(),
-                    userfavGames : $("#userfavGames").val(),
-                    userfavShows : $("#userfavShows").val(),
-                    userfavFoods : $("#userfavFoods").val()
-                },
-                success: function(data){
-                    console.log("Profile edit success!!");
-                    alert("Saved the edits you just made.");
-                },
-                error: function(data){
-                    alert("Profile page edits failed to save.");
-                }
-        });
-        var url = "/users/";
-        url = url.concat(user_name);
-        window.location.href = url;
- 	}
- });
 /* This javascript manages the sign up page's client side interactions */
 
 $('#editProfileForm').ready (function() {
@@ -77,4 +42,39 @@ $(document).ready(function() {
         //DO CODE TO SAVE THE URL HERE! So that it then uses the saved url from the user on the db to load the image
     });
   });
+  
+  
+ 	saveButtonClicked = function(){
+ 		//save shit
+
+        // Concept code by Eric 3/5/2015
+        $.ajax({
+                url: "/edit-profile",
+                type: "POST",
+                data: {
+                    // The user id commented out below should be added as an "int" variable
+                    //    to show whose data will be overwritten, this will probably
+                    //    be a input.hidden in JADE or something like that?
+                    secretProfileIdValue : $("secretProfileIdValue").val(),
+                    userFullName : $("#userFullName").val(),
+                    userAge : $("#userAge").val(),
+                    userSex : $("#userSex").val(),
+                    userState : $("#userState").val(),
+                    aboutMeDesc : $("#aboutMeDesc").val(),
+                    userfavGames : $("#userfavGames").val(),
+                    userfavShows : $("#userfavShows").val(),
+                    userfavFoods : $("#userfavFoods").val()
+                },
+                success: function(data){
+                    console.log("Profile edit success!!");
+                    alert("Saved the edits you just made.");
+                },
+                error: function(data){
+                    alert("Profile page edits failed to save.");
+                }
+        });
+        var url = "/users/";
+        url = url.concat(user_name);
+        window.location.href = url;
+ 	}
 });
