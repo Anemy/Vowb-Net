@@ -60,6 +60,9 @@ var loginSubClicked = function() {
               //console.log("Login success!!");
               $('.loginPage').fadeOut(50);
               showLoggedIn( $("#un_id").val() );
+              if(intialName != loggedIn){
+                socket.emit('username message', user_name);
+              }
               swal("Logged in!", null, "success")
           }
           else {
@@ -105,6 +108,7 @@ $(document).ready(function() {
          console.log("enter hit");
           if(loginpop == true){
             loginSubClicked();
+            loginpop = false;
           }
         }
     });
