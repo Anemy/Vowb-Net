@@ -52,6 +52,7 @@ router.get('/edit/*', function(req, res, next) {
                 } else {
                     dataObject.login = loginData;
                     dataObject.title = "Vowb.net - Edit Profile";
+                    dataObject.username = loginData;
                     res.render('editProfPage', dataObject);
                 }
             });
@@ -78,9 +79,8 @@ router.get('/*', function(req, res, next) {
                 dataObject.title = "Vowb.net - Edit Profile";
                 dataObject.username = req.params[0];
                 dataObject.description = "No profile? That's OK. This guy has yet to make one.";
-                res.render('editProfPage', dataObject);
+            res.render('profile', dataObject);
             });
-            res.render('profile', {result: result[0], login: loginData, title: "Vowb.net - Profile"});
         } else {
             res.render('404', { title: "404: Vowb.net page not found", url: "/users" + req.url });
         }
