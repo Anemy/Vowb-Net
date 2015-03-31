@@ -29,7 +29,7 @@ router.get('/edit/*', function(req, res, next) {
 
     // Example:
     //res.render('userPage', { name: 'Mystxc'});
-    db.search(db.userDB, { username: req.params[0] }, function(result) {
+    db.search(db.userDB, { username: loginData }, function(result) {
         if( result.length > 0 ) {
             user = result[0];
             db.search(db.profileDB, { profile_id: user.profile_pointer }, function(presult) {

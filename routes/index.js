@@ -47,6 +47,8 @@ router.post('/edit-profile', function(req, res, next) {
     // userfavGames : $("#userfavGames").val(),
     // userfavShows : $("#userfavShows").val(),
     // userfavFoods : $("#userfavFoods").val()
+    console.log(JSON.stringify(req.body));
+    
     var loginData = getLoginData(req);
     
     var searchParams = {
