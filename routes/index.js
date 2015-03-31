@@ -89,7 +89,6 @@ router.post('/signup', function(req, res) {
                     // email_account: req.body.email,
                     // password_hash: db.hashPassword(req.body.password)
                 // });
-            },
             });
             req.session.loggedIn = true; 
             req.session.username = req.body.username;
