@@ -105,6 +105,7 @@ $(document).ready(function() {
          console.log("enter hit");
           if(loginpop == true){
             loginSubClicked();
+            loginpop = false;
           }
         }
     });

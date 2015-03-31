@@ -294,7 +294,7 @@ table {
       box-sizing: border-box; }
       .profilePage .centerPane .userAbout .userAboutL {
         width: 200px;
-        height: 200px;
+        height: 138px;
         font-size: 12px;
         vertical-align: top;
         display: inline-block;
@@ -416,6 +416,34 @@ table {
             padding-left: 2px;
             display: inline-block;
             font-weight: normal; }
+    .profilePage .centerPane .editProfButton {
+      margin-top: 1em;
+      right: 6px;
+      top: 175px;
+      text-align: center;
+      position: absolute;
+      z-index: 20;
+      font-size: 0.8em;
+      font-family: 'Cabin';
+      color: white;
+      background-color: #FC4349;
+      border: 2px solid #FC4349;
+      border-radius: 5px;
+      padding-top: 0.5em;
+      padding-bottom: 0.5em;
+      padding-left: 1em;
+      padding-right: 1em;
+      display: inline-block;
+      -webkit-transition: all .25s ease;
+      transition: all .25s ease; }
+    .profilePage .centerPane .editProfButton:hover {
+      cursor: pointer;
+      cursor: pointer;
+      background-color: #DC2329;
+      border: 2px solid #DC2329; }
+    .profilePage .centerPane .editProfButton:active {
+      cursor: pointer;
+      background-color: #DC2329; }
   .profilePage .rightPage {
     width: 180px;
     position: absolute;
