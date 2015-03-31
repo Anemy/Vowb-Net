@@ -68,13 +68,14 @@ $(document).ready(function() {
                 success: function(data){
                     console.log("Profile edit success!!");
                     alert("Saved the edits you just made.");
+                        var url = "/users/";
+                        url = url.concat(user_name);
+                        window.location.href = url;
                 },
                 error: function(data){
                     alert("Profile page edits failed to save.");
                 }
         });
-        var url = "/users/";
-        url = url.concat(user_name);
-        window.location.href = url;
+
  	}
 });
