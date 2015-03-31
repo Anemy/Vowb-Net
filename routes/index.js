@@ -35,6 +35,47 @@ router.get('/', function (req, res, next) {
 //     res.render('editProfPage', { title: 'Edit Profile Page - Vowb.net'});
 // });
 
+// allows users to save edits to provile
+router.post('/edit-profile', function(req, res, next) {
+    
+    // secretProfileIdValue : $("secretProfileIdValue").val(),
+    // userFullName : $("#userFullName").val(),
+    // userAge : $("#userAge").val(),
+    // userSex : $("#userSex").val(),
+    // userState : $("#userState").val(),
+    // aboutMeDesc : $("#aboutMeDesc").val(),
+    // userfavGames : $("#userfavGames").val(),
+    // userfavShows : $("#userfavShows").val(),
+    // userfavFoods : $("#userfavFoods").val()
+    var loginData = getLoginData(req);
+    
+    var searchParams = {
+        username: loginData,
+        profile_pointer: req.body.secretProfileIdValue
+    };
+    
+    db.search(db.userDB, searchParams, function(result) {
+        if( result[0] ) {
+            db.update(db.profileDB, { profile_id: req.body.secretProfileIdValue }, {
+                full_name: req.body.userFullName,
+                //birth_date: now() - req.body.userAge,
+                gender: req.body.userSex,
+                state: req.body.userState,
+                description: req.body.aboutMeDesc,
+                favorite_game: req.body.userfavGames,
+                favorite_tv_show: req.body.userfavShows,
+                favorite_food: req.body.userfavFoods
+            }, function() {
+                console.log("Profile update success!");
+                res.end(JSON.stringify({value: "Success"}));
+            });
+        } else {
+            console.log("Error: credentials and profile edits did not match: "+JSON.stringify(searchParams)+".");
+            res.end(JSON.stringify({ value: "Error" }));
+        }
+    });
+});
+
 //retrieves the creating lobby page - maybe add redirect if not logged in?
 router.get('/create', function(req, res, next) { //tmp
     // tmp profile page

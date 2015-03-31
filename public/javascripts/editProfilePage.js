@@ -1,20 +1,11 @@
 /* Edit Profile Page Javascript*/
 
-// $(document).ready (function() {
-// 	var saveButtonClicked = function(){
-// 		//save shit
+var saveButtonClicked;
 
-// 	}
-// });
-/* This javascript manages the sign up page's client side interactions */
+ $(document).ready (function() {
+ 	saveButtonClicked = function(){
+ 		//save shit
 
-$('#editProfileForm').ready (function() {
-
-
-    /* Do signup actions here */
-    $('#editProfileForm').submit( function (event) {
-        console.log ("editProfileForm form submitted");
-        
         // Concept code by Eric 3/5/2015
         $.ajax({
                 url: "/edit-profile",
@@ -35,11 +26,23 @@ $('#editProfileForm').ready (function() {
                 },
                 success: function(data){
                     console.log("Profile edit success!!");
+                    alert("Saved the edits you just made.");
                 },
                 error: function(data){
                     alert("Profile page edits failed to save.");
                 }
         });
+ 	}
+ });
+/* This javascript manages the sign up page's client side interactions */
+
+$('#editProfileForm').ready (function() {
+
+
+    /* Do signup actions here */
+    $('#editProfileForm').submit( function (event) {
+        console.log ("editProfileForm form submitted");
+        
         
         var errMsg = "";
         var err = 0;
