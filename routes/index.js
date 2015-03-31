@@ -56,14 +56,23 @@ router.post('/edit-profile', function(req, res, next) {
         profile_pointer: req.body.secretProfileIdValue
     };
     
+    //Other database fields not currently saved in profile:
+    // friends
+    // posts
+    // threads
+    // mods_for
+    // profile_id
+    // join_date
+    // 
+    
     db.search(db.userDB, searchParams, function(result) {
         if( result[0] ) {
             db.update(db.profileDB, { profile_id: req.body.secretProfileIdValue }, {
                 full_name: req.body.userFullName,
-                //birth_date: now() - req.body.userAge,
+                //birth_date: req.body.userAge,
                 gender: req.body.userSex,
                 state: req.body.userState === "N/A" ? "--" : req.body.userState,
-                description: req.body.aboutMeDesc,
+                description: req.body.userAge + "------xAGE_SPLITx------" + req.body.aboutMeDesc,
                 favorite_game: req.body.userfavGames,
                 favorite_tv_show: req.body.userfavShows,
                 favorite_food: req.body.userfavFoods
