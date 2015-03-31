@@ -45,6 +45,7 @@ router.get('/edit/*', function(req, res, next) {
                             dataObject = presult[0];
                             dataObject.login = loginData;
                             dataObject.title = "Vowb.net - Edit Profile";
+                            dataObject.username = loginData;
                             res.render('editProfPage', dataObject);
                         });
                     });
@@ -75,6 +76,7 @@ router.get('/*', function(req, res, next) {
                     dataObject = {};
                 dataObject.login = loginData;
                 dataObject.title = "Vowb.net - Edit Profile";
+                dataObject.username = req.params[0];
                 dataObject.description = "No profile? That's OK. This guy has yet to make one.";
                 res.render('editProfPage', dataObject);
             });
