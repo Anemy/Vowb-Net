@@ -2,7 +2,7 @@ extends layout
 
 block content
 	include banner
-
+	script(defer="defer" src="/javascripts/profile.js")
 	.profilePage
 		.leftPane
 			img(class="profIMG" src="/images/profile/M.jpg")
@@ -54,8 +54,8 @@ block content
 						.userfavShows Doctor Who
 					.favFoods Foods: 
 						.userfavFoods Dumplings
-			.editProfButton(type="submit" value="Edit Profile") 
-				a(href= "/users/edit/me").
+			.editProfButton 
+				a(onclick="editProfButtonClicked()").
 					Edit Profile
 		.rightPage
 			.friendsListPane
