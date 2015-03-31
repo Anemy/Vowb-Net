@@ -150,6 +150,48 @@ db.add = function(tablename, data, onCreate) {
     });
 }
 
+db.addProfile = function( data, onCreate ) {
+    //profiles_profile_id_seq
+    var queryString = "INSERT INTO "+db.profileDB+"(";
+    var i = 0;
+    var itemIndex = 1;
+    var values = [];//tablename];
+    for (var column in data) {
+        if (data.hasOwnProperty(column)) {
+            if( i > 0 )
+                queryString += ", ";
+            //queryString += "$" + (itemIndex++);
+            //values.push(column);
+            queryString += column;
+            i++;
+        }
+    }
+    queryString += ") values(";
+    i = 0;
+    for (var column in data) {
+        if (data.hasOwnProperty(column)) {
+            if( i > 0 )
+                queryString += ", ";
+            queryString += "$" + (itemIndex++);
+            values.push(data[column]);
+            i++;
+        }
+    }
+    queryString += ")";
+    queryString += " RETURNING profile_id;";
+    //console.log("search: " + queryString);
+    db.query(queryString, values, function(err, result) {
+        if( err ) {
+            //console.log("Database .add ERROR: " + err.toString());
+            throw err;
+        } else {
+            //console.log("Database .add: No error");
+            if( onCreate )
+                onCreate(result);
+        }
+    });
+}
+
 /*
  *  Another generic database usage function.
  *  Vulnerable to SQL injection via the tablename

@@ -84,11 +84,19 @@ router.post('/signup', function(req, res) {
                 
                 //console.log("USER CREATED: " + JSON.stringify(userCreated));
                 
-                // db.add(db.profileDB, {
-                    // username: req.body.username,
-                    // email_account: req.body.email,
-                    // password_hash: db.hashPassword(req.body.password)
-                // });
+                db.search(db.userDB, { username: req.body.username }, function(results) {
+                    if( results.length ) {
+                        db.addProfile({
+                            description: "Welcome to Vowb.net, "+req.body.username+"! This is where you can write a description of yourself and your personal interests. :)",
+                            full_name: req.body.username
+                        }, function(result) {
+                            console.log("!! created profile with ID: " + JSON.stringify(result));
+                            db.update(db.userDB, { username: req.body.username }, { profile_pointer: result[0].profile_id });
+                        });
+                    } else {
+                        console.log("Database error - tell Eric: You signed up as an new user, then afterwards your user did not exist.");
+                    }
+                });
             });
             req.session.loggedIn = true; 
             req.session.username = req.body.username;

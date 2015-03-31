@@ -31,7 +31,11 @@ router.get('/edit/*', function(req, res, next) {
     //res.render('userPage', { name: 'Mystxc'});
     db.search(db.userDB, { username: req.params[0] }, function(result) {
         if( result.length > 0 ) {
-            res.render('editProfPage', {result: result[0], login: loginData, title: "Vowb.net - Edit Profile"});
+            db.search(db.profileDB, { profile_id: result[0].profile_pointer }, function(result) {
+            result[0].login = loginData;
+            result[0].title = "Vowb.net - Edit Profile";
+                res.render('editProfPage', result[0]);
+            });
         }
         else {
             res.render('404', { title: "404: Vowb.net page not found", url: "/users" + req.url });
