@@ -48,6 +48,8 @@ router.get('/create', function(req, res, next) { //tmp
     }
 });
 
+
+
 /* INSERT MORE WEB PAGE ROUTES HERE (FOR EXAMPLE SIGN UP PAGE) */
 router.get('/signup', function(req, res, next) {
     // sign up page request
@@ -127,6 +129,13 @@ router.post('/login', function(req, res) {
             res.end(JSON.stringify({value: "Success"}));
         }
     });
+});
+
+//Pascal 03/31/2015 routing for createlobby
+router.post('/createlobby', function(req, res) {
+    req.session.loggedIn = true; 
+    req.session.username = req.body.username;
+    res.end(JSON.stringify({value: "Success"}));
 });
 
 router.post('/logout', function(req, res) {
