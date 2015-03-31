@@ -22,7 +22,7 @@ var getLoginData = function (req) {
 router.get('/', function (req, res, next) {
     var loginData = getLoginData(req);
 
-    res.render('index', { title: 'Vowb.net', login: loginData});
+    res.render('index', { title: 'Vowb.net', login: loginData });
 });
 //tmp page
 // router.get('/profile', function(req, res, next) { //tmp
