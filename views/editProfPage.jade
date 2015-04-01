@@ -40,9 +40,9 @@ block content
                         input.userAge(type="number" id="userAge" maxlength ="3" pattern="([1-9]|[0-9]|[0-9])" value = '#{user_age}'  min = "0" max = "117")
                         .slash / 
                         select.userSex(value='#{gender}')
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                            <option value="other">Other</option>
+                            <option value="other"#{gender==="other"?"selected":""}>Other</option>
+                            <option value="female"#{gender==="female"?"selected":""}>Female</option>
+                            <option value="male"#{gender==="male"?"selected":""}>Male</option>
                         .slash / 
                         select.userState(value='#{state}')
                             <option value="N/A" #{state==="--"?"selected":""}>N/A</option>

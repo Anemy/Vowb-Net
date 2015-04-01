@@ -3,7 +3,6 @@
 var loggedIn = false;
 var user_name = "";
 var loginpop = false;
-var count = 0;
 
 
 var loginButtonClicked = function() {
@@ -11,6 +10,7 @@ var loginButtonClicked = function() {
     $('.signupButton').addClass('dontShowGradient');
     $('.loginPopup').fadeIn(50);
     $('.overlay').fadeIn(50);
+    $('#un_id').focus();
     loginpop = true;
   } else {
     var url = "/users/";
@@ -62,11 +62,20 @@ var loginSubClicked = function() {
               //console.log("Login success!!");
               $('.loginPage').fadeOut(50);
               showLoggedIn( $("#un_id").val() );
+
+              swal("Logged in!", null, "success")
+              var checkurl = "/users/";
+              checkurl = checkurl.concat(user_name)
+              console.log(window.location.pathname);
+              console.log(checkurl);
+              if(window.location.pathname == checkurl) {
+                console.log("derp");
+                //$('.profilePage').show();
+                window.location.reload();
+              }              
               if(intialName != loggedIn){
                 socket.emit('username message', user_name);
               }
-              swal("Logged in!", null, "success")
-              count = 0;
           }
           else {
             sweetAlert("Oops...", "Username or password is incorrect.", "error");
@@ -84,14 +93,7 @@ var showLoggedIn = function (username) {
   $("#login_id").text(username);
   $("#login_id").css("text-decoration", "underline");
   user_name = username;
-  // var checkurl = "/users/";
-  // checkurl = checkurl.concat(user_name)
-  // console.log(window.location.pathname);
-  // console.log(checkurl);
-  // if((window.location.pathname == checkurl) && count == 0) {
-  //   //$('.profilePage').show();
-  //   //window.location.reload();
-  // }
+
   // socket.emit('username message', user_name);
 }
 
