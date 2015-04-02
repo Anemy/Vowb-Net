@@ -29,9 +29,42 @@ router.get('/edit/*', function(req, res, next) {
 
     // Example:
     //res.render('userPage', { name: 'Mystxc'});
-    db.search(db.userDB, { username: req.params[0] }, function(result) {
+    db.search(db.userDB, { username: loginData }, function(result) {
         if( result.length > 0 ) {
-            res.render('editProfPage', {result: result[0], login: loginData, title: "Vowb.net - Edit Profile"});
+            user = result[0];
+            db.search(db.profileDB, { profile_id: user.profile_pointer }, function(presult) {
+                dataObject = presult[0];
+                if( !dataObject ) {
+                    db.addProfile({
+                        description: "Welcome to Vowb.net, "+user.username+"! Your profile got generated late.",
+                        full_name: user.username
+                    }, function(pcresult) {
+                        console.log("!! created profile with ID: " + JSON.stringify(pcresult));
+                        db.update(db.userDB, { username: user.username }, { profile_pointer: pcresult[0].profile_id });
+                        db.search(db.profileDB, { profile_id: pcresult[0].profile_id }, function(presult) {
+                            dataObject = presult[0];
+                            dataObject.login = loginData;
+                            dataObject.title = "Vowb.net - Edit Profile";
+                            dataObject.username = loginData;
+                            
+                            var split = dataObject.description.split("------xAGE_SPLITx------");
+                            dataObject.description = split.length > 1 ? split[1] : split[0];//"No profile? That's OK. This guy has yet to make one.";
+                            dataObject.user_age = split[0];//dataObject.birth_date;
+                            //dataObject.user_age = dataObject.birth_date;
+                            res.render('editProfPage', dataObject);
+                        });
+                    });
+                } else {
+                    dataObject.login = loginData;
+                    dataObject.title = "Vowb.net - Edit Profile";
+                    dataObject.username = loginData;
+                    var split = dataObject.description.split("------xAGE_SPLITx------");
+                    dataObject.description = split.length > 1 ? split[1] : split[0];//"No profile? That's OK. This guy has yet to make one.";
+                    dataObject.user_age = split[0];//dataObject.birth_date;
+                    //dataObject.user_age = dataObject.birth_date;
+                    res.render('editProfPage', dataObject);
+                }
+            });
         }
         else {
             res.render('404', { title: "404: Vowb.net page not found", url: "/users" + req.url });
@@ -46,9 +79,25 @@ router.get('/*', function(req, res, next) {
     // Example:
     //res.render('userPage', { name: 'Mystxc'});
     db.search(db.userDB, { username: req.params[0] }, function(result) {
-        if( result.length > 0 )
-            res.render('profile', {result: result[0], login: loginData, title: "Vowb.net - Profile"});
-        else {
+        if( result.length > 0 ) {
+            db.search(db.profileDB, { profile_id: result[0].profile_pointer }, function(result) {
+                dataObject = result[0];
+                if( !dataObject )
+                    dataObject = {};
+                dataObject.login = loginData;
+                dataObject.title = "Vowb.net - Edit Profile";
+                dataObject.username = req.params[0];
+                dataObject.user_age = dataObject.birth_date;
+                if( !dataObject.description )
+                    dataObject.description = "No profile? That's OK. This guy has yet to make one.";
+                else {
+                    var split = dataObject.description.split("------xAGE_SPLITx------");
+                    dataObject.description = split.length > 1 ? split[1] : split[0];//"No profile? That's OK. This guy has yet to make one.";
+                    dataObject.user_age = split[0];//dataObject.birth_date;
+                }
+                res.render('profile', dataObject);
+            });
+        } else {
             res.render('404', { title: "404: Vowb.net page not found", url: "/users" + req.url });
         }
     });
