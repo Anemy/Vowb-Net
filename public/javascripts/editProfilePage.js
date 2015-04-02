@@ -46,7 +46,7 @@ $(document).ready(function() {
   
  	saveButtonClicked = function(){
  		//save shit
-
+        console.log("These!: " + $("#security_level_all").val() + "," + $("#security_level_friends").val() + "," + $("#security_level_self").val());
         // Concept code by Eric 3/5/2015
         $.ajax({
                 url: "/edit-profile",
@@ -63,7 +63,10 @@ $(document).ready(function() {
                     aboutMeDesc : $(".aboutMeDesc").val(),
                     userfavGames : $("#userfavGames").val(),
                     userfavShows : $("#userfavShows").val(),
-                    userfavFoods : $("#userfavFoods").val()
+                    userfavFoods : $("#userfavFoods").val(),
+                    security_level_all: $("#security_level_all").val(),
+                    security_level_friends: $("#security_level_friends").val(),
+                    security_level_self: $("#security_level_self").val(),
                 },
                 success: function(data){
                     console.log("Profile edit success!!");

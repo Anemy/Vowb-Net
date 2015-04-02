@@ -117,11 +117,11 @@ block content
                     .favFoods Foods: 
                         input.userfavFoods(type="text" id ="userfavFoods" placeholder="Peanut butter" required maxlength = 40 value='#{favorite_food}')
                     .userProfSecurity I would like my profile to be visable to 
-                        input.userProfSecEveryone(type="radio" name = "profSec" value = "#{security_level_all}" checked = value == "#{security_level_all}")
+                        input.security_level_all(type="radio" id = "security_level_all" name = "profSec" value = "#{security_level_all}" #{"#{security_level_all}"?"checked":""})
                         | Everyone <br>
-                        input.userProfSecFriends(type="radio" name = "profSec" value = "#{security_level_friends}" checked = value == "#{security_level_friends}")
+                        input.security_level_friends(type="radio" id = "security_level_friends" name = "profSec" value = "#{security_level_friends}" #{"#{security_level_friends}"?"checked":""})
                         | Friends <br>
-                        input.userProfSecMyself(type="radio" name = "profSec" value = "#{security_level_self}" checked = value == "#{security_level_self}")
+                        input.security_level_self(type="radio" id = "security_level_self" name = "profSec" value = "#{security_level_self}" #{"#{security_level_self}"?"checked":""})
                         | Myself
             input.saveButton(type="submit" value="Save" onclick="saveButtonClicked();") 
             

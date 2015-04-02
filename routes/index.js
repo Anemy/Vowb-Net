@@ -68,6 +68,9 @@ router.post('/edit-profile', function(req, res, next) {
     db.search(db.userDB, searchParams, function(result) {
         if( result[0] ) {
             var security_level_integer = 0;
+            console.log(req.body.security_level_all);
+            console.log(req.body.security_level_friends);
+            console.log(req.body.security_level_self);
             if( req.body.securityLevelAll || req.body.security_level_all )
                 security_level_integer = 0;
             else if( req.body.securityLevelFriends || req.body.security_level_friends )
@@ -84,7 +87,7 @@ router.post('/edit-profile', function(req, res, next) {
                 favorite_game: req.body.userfavGames,
                 favorite_tv_show: req.body.userfavShows,
                 favorite_food: req.body.userfavFoods,
-                security_level: req.body.
+                security_level: security_level_integer
             }, function() {
                 console.log("Profile update success!");
                 res.end(JSON.stringify({value: "Success"}));
