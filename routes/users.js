@@ -46,6 +46,9 @@ router.get('/edit/*', function(req, res, next) {
                             dataObject.login = loginData;
                             dataObject.title = "Vowb.net - Edit Profile";
                             dataObject.username = loginData;
+                            dataObject.security_level_all       = (dataObject.security_level === 0 || (!dataObject.security_level));
+                            dataObject.security_level_friends   = (dataObject.security_level === 1);
+                            dataObject.security_level_self      = (dataObject.security_level === 2);
                             
                             //var split = dataObject.description.split("------xAGE_SPLITx------");
                             //dataObject.description = split.length > 1 ? split[1] : split[0];//"No profile? That's OK. This guy has yet to make one.";
@@ -58,6 +61,9 @@ router.get('/edit/*', function(req, res, next) {
                     dataObject.login = loginData;
                     dataObject.title = "Vowb.net - Edit Profile";
                     dataObject.username = loginData;
+                    dataObject.security_level_all       = (dataObject.security_level === 0 || (!dataObject.security_level));
+                    dataObject.security_level_friends   = (dataObject.security_level === 1);
+                    dataObject.security_level_self      = (dataObject.security_level === 2);
                     //var split = dataObject.description.split("------xAGE_SPLITx------");
                     //dataObject.description = split.length > 1 ? split[1] : split[0];//"No profile? That's OK. This guy has yet to make one.";
                     //dataObject.user_age = split[0];//dataObject.birth_date;
@@ -87,6 +93,9 @@ router.get('/*', function(req, res, next) {
                 dataObject.login = loginData;
                 dataObject.title = "Vowb.net - Edit Profile";
                 dataObject.username = req.params[0];
+                dataObject.security_level_all       = (dataObject.security_level === 0 || (!dataObject.security_level));
+                dataObject.security_level_friends   = (dataObject.security_level === 1);
+                dataObject.security_level_self      = (dataObject.security_level === 2);
                 //dataObject.user_age = dataObject.birth_date;
                 if( !dataObject.description )
                     dataObject.description = "No profile? That's OK. This guy has yet to make one.";
