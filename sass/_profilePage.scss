@@ -190,7 +190,7 @@
 				//-moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
 				//box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
 				width: 200px;
-				height: 200px;
+				height: 138px;
 				font-size: 12px;
 				vertical-align: top;
 				//position: relative;
@@ -354,6 +354,62 @@
 				}
 			}
 		}
+		.editProfButton {
+	            margin-top: 1em;
+	            //margin-right: 5%;
+
+	            right: 6px;
+	            top:175px;
+	            text-align:center;
+	            position: absolute;
+
+	            z-index: 20;
+
+	            // background: -webkit-linear-gradient($accent-light, $accent-dark); /* For Safari 5.1 to 6.0 */
+	            // background: -o-linear-gradient($accent-light, $accent-dark); /* For Opera 11.1 to 12.0 */
+	            // background: -moz-linear-gradient($accent-light, $accent-dark); /* For Firefox 3.6 to 15 */
+	            // background: linear-gradient($accent-light, $accent-dark); /* Standard syntax */
+
+	            // border: 2px solid $medium;
+	            // box-shadow: inset 0px 0px 6px 6px rgba(255,255,255, 0.1);
+
+	            font-size: 0.8em;
+	            font-family: 'Cabin';
+	            //text-spacing: 2em;
+	            color:white;
+	            background-color: $accent;
+
+	            border: 2px solid $accent;
+
+	            border-radius: 5px;
+	            padding-top: 0.5em;
+	            padding-bottom: 0.5em;
+	            padding-left: 1.0em;
+	            padding-right: 1.0em;
+	            display: inline-block;
+
+	            -webkit-transition: all .25s ease;
+	            -moz-transition: all .25s ease;
+	            -ms-transition: all .25s ease;
+	            -o-transition: all .25s ease;
+	            transition: all .25s ease;
+	    }
+	    .editProfButton:hover {
+	            cursor: pointer;
+	                cursor: pointer;
+                    //color: white;
+                    background-color: $accent-dark;
+                    border: 2px solid $accent-dark;
+
+	    }
+	    .editProfButton:active {
+	            cursor: pointer;
+	            // position: relative;
+	            // top: 2px;
+	            background-color: $accent-dark;
+	            // box-shadow: inset 0px 0px 10px 10px rgba(0,0,0, 0.1);
+	    } 
+
 	}
 	.rightPage {
 		width: 180px;

@@ -37,14 +37,11 @@ lobbyManager.startListening = function(http) {
     var that = this;
 
     that.numberOfClients = 0;
-
     //creates a listening socket io connection
     that.io.on('connection', function(socket) {
       var session = socket.handshake.session;
-
       socket.inChat = false;
       socket.chatNumber = -1;
-
       // this is used to connect a user to a dedication chat
       // managed by the array lobbies (in each lobby is an array of the people in it)
       socket.on('connect to chat', function(chatCode) {
@@ -58,7 +55,7 @@ lobbyManager.startListening = function(http) {
               }
           }
           socket.inChat = true;
-          
+
           if(that.lobbies[chatCode] == undefined) {
               // console.log("New voice lobby created");
               // create the new lobby
@@ -80,10 +77,6 @@ lobbyManager.startListening = function(http) {
           if(socket.chatNumber !=  -1 && that.lobbies[socket.chatNumber] != undefined) {
             if(msg == ""){
               socket.name = "User " + socket.chatID;//that.numberOfClients;
-              // this way of assigning names is bad. When two anon users,
-              // user 0 and user 1, are in lobby and user 0 leaves, numClients
-              // becomes 1, so if user 0 rejoins he is renamed user 1, which is
-              // already taken.  need to fix
             }
             else{
               socket.name = msg;

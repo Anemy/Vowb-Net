@@ -22,7 +22,7 @@ var getLoginData = function (req) {
 router.get('/', function (req, res, next) {
     var loginData = getLoginData(req);
 
-    res.render('index', { title: 'Vowb.net', login: loginData});
+    res.render('index', { title: 'Vowb.net', login: loginData });
 });
 //tmp page
 // router.get('/profile', function(req, res, next) { //tmp
@@ -34,6 +34,67 @@ router.get('/', function (req, res, next) {
 //     // tmp profile page
 //     res.render('editProfPage', { title: 'Edit Profile Page - Vowb.net'});
 // });
+
+// allows users to save edits to provile
+router.post('/edit-profile', function(req, res, next) {
+    
+    // secretProfileIdValue : $("secretProfileIdValue").val(),
+    // userFullName : $("#userFullName").val(),
+    // userAge : $("#userAge").val(),
+    // userSex : $("#userSex").val(),
+    // userState : $("#userState").val(),
+    // aboutMeDesc : $("#aboutMeDesc").val(),
+    // userfavGames : $("#userfavGames").val(),
+    // userfavShows : $("#userfavShows").val(),
+    // userfavFoods : $("#userfavFoods").val()
+    console.log(JSON.stringify(req.body));
+    
+    var loginData = getLoginData(req);
+    
+    var searchParams = {
+        username: loginData,
+        profile_pointer: req.body.secretProfileIdValue
+    };
+    
+    //Other database fields not currently saved in profile:
+    // friends
+    // posts
+    // threads
+    // mods_for
+    // profile_id
+    // join_date
+    // 
+    
+    db.search(db.userDB, searchParams, function(result) {
+        if( result[0] ) {
+            var security_level_integer = 0;
+            if( req.body.securityLevelAll || req.body.security_level_all )
+                security_level_integer = 0;
+            else if( req.body.securityLevelFriends || req.body.security_level_friends )
+                security_level_integer = 1;
+            else if( req.body.securityLevelSelf || req.body.security_level_self )
+                security_level_integer = 2;
+            db.update(db.profileDB, { profile_id: req.body.secretProfileIdValue }, {
+                full_name: req.body.userFullName,
+                //birth_date: req.body.userAge,
+                gender: req.body.userSex,
+                state: req.body.userState === "N/A" ? "--" : req.body.userState,
+                description: /*req.body.userAge + "------xAGE_SPLITx------" + */req.body.aboutMeDesc,
+                user_age: req.body.userAge,
+                favorite_game: req.body.userfavGames,
+                favorite_tv_show: req.body.userfavShows,
+                favorite_food: req.body.userfavFoods,
+                security_level: security_level_integer
+            }, function() {
+                console.log("Profile update success!");
+                res.end(JSON.stringify({value: "Success"}));
+            });
+        } else {
+            console.log("Error: credentials and profile edits did not match: "+JSON.stringify(searchParams)+".");
+            res.end(JSON.stringify({ value: "Error" }));
+        }
+    });
+});
 
 //retrieves the creating lobby page - maybe add redirect if not logged in?
 router.get('/create', function(req, res, next) { //tmp
@@ -47,6 +108,8 @@ router.get('/create', function(req, res, next) { //tmp
         res.render('createLobby', { title: 'Create a Lobby - Vowb.net', login: loginData});
     }
 });
+
+
 
 /* INSERT MORE WEB PAGE ROUTES HERE (FOR EXAMPLE SIGN UP PAGE) */
 router.get('/signup', function(req, res, next) {
@@ -77,6 +140,26 @@ router.post('/signup', function(req, res) {
                 username: req.body.username,
                 email_account: req.body.email,
                 password_hash: db.hashPassword(req.body.password)
+            },
+            function(userCreated) {
+                // This is the onCreate callback, called when it finishes
+                // adding user to DB
+                
+                //console.log("USER CREATED: " + JSON.stringify(userCreated));
+                
+                db.search(db.userDB, { username: req.body.username }, function(results) {
+                    if( results.length ) {
+                        db.addProfile({
+                            description: "Welcome to Vowb.net, "+req.body.username+"! This is where you can write a description of yourself and your personal interests. :)",
+                            full_name: req.body.username
+                        }, function(result) {
+                            console.log("!! created profile with ID: " + JSON.stringify(result));
+                            db.update(db.userDB, { username: req.body.username }, { profile_pointer: result[0].profile_id });
+                        });
+                    } else {
+                        console.log("Database error - tell Eric: You signed up as an new user, then afterwards your user did not exist.");
+                    }
+                });
             });
             req.session.loggedIn = true; 
             req.session.username = req.body.username;
@@ -115,6 +198,13 @@ router.post('/login', function(req, res) {
             res.end(JSON.stringify({value: "Success"}));
         }
     });
+});
+
+//Pascal 03/31/2015 routing for createlobby
+router.post('/createlobby', function(req, res) {
+    req.session.loggedIn = true; 
+    req.session.username = getLoginData;
+    res.end(JSON.stringify({value: "Success"}));
 });
 
 router.post('/logout', function(req, res) {

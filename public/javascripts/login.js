@@ -4,11 +4,13 @@ var loggedIn = false;
 var user_name = "";
 var loginpop = false;
 
+
 var loginButtonClicked = function() {
   if (!loggedIn) {
     $('.signupButton').addClass('dontShowGradient');
     $('.loginPopup').fadeIn(50);
     $('.overlay').fadeIn(50);
+    $('#un_id').focus();
     loginpop = true;
   } else {
     var url = "/users/";
@@ -60,7 +62,20 @@ var loginSubClicked = function() {
               //console.log("Login success!!");
               $('.loginPage').fadeOut(50);
               showLoggedIn( $("#un_id").val() );
+
               swal("Logged in!", null, "success")
+              var checkurl = "/users/";
+              checkurl = checkurl.concat(user_name)
+              console.log(window.location.pathname);
+              console.log(checkurl);
+              if(window.location.pathname == checkurl) {
+                console.log("derp");
+                //$('.profilePage').show();
+                window.location.reload();
+              }              
+              if(intialName != loggedIn){
+                socket.emit('username message', user_name);
+              }
           }
           else {
             sweetAlert("Oops...", "Username or password is incorrect.", "error");
@@ -78,6 +93,7 @@ var showLoggedIn = function (username) {
   $("#login_id").text(username);
   $("#login_id").css("text-decoration", "underline");
   user_name = username;
+
   // socket.emit('username message', user_name);
 }
 
@@ -105,6 +121,7 @@ $(document).ready(function() {
          console.log("enter hit");
           if(loginpop == true){
             loginSubClicked();
+            loginpop = false;
           }
         }
     });

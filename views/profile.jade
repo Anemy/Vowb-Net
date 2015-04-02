@@ -2,8 +2,8 @@ extends layout
 
 block content
 	include banner
-
 	.profilePage
+		script(defer="defer" src="/javascripts/profile.js")
 		.leftPane
 			img(class="profIMG" src="/images/profile/M.jpg")
 			.statusBar
@@ -23,19 +23,19 @@ block content
 
 		.centerPane
 			.userAboutHeader
-				.userName Mystxc
+				.userName !{username}
 				img(class="userRank" src="/images/profile/rank1.png") 
 				.userStatus / last online 7 seconds ago
 			.userAbout
 				.userAboutL
 					.PERSONAL Personal
 					.userPersonal 
-						.userFullName Mason Everett 
-						.userAge 19 
+						.userFullName #{full_name} 
+						.userAge #{user_age}
 						.slash / 
-						.userSex Male 
+						.userSex #{gender} 
 						.slash / 
-						.userState PA
+						.userState #{state}
 					.ACCOUNTSTATS Account Stats
 					.dateJoined Joined:
 						.userdateJoined 5/3/2014
@@ -46,14 +46,17 @@ block content
 				.userAboutR
 					.ABOUTME About Me
 					.aboutMeDesc.
-						I like to play CS, RS, and program side projects in my free time. I am the best top laner NA.
+						#{description}			
 					.FAVORITES Favorites
 					.favGames Games: 
-						.userfavGames Counter Strike
+						.userfavGames #{favorite_game}
 					.favShows TV Shows: 
-						.userfavShows Doctor Who
+						.userfavShows #{favorite_tv_show}
 					.favFoods Foods: 
-						.userfavFoods Dumplings
+						.userfavFoods #{favorite_food}
+			.editProfButton 
+				a(onclick="editProfButtonClicked()").
+					Edit Profile
 		.rightPage
 			.friendsListPane
 				.friendsHeader Friends List
