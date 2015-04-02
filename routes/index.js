@@ -84,7 +84,7 @@ router.post('/edit-profile', function(req, res, next) {
                 favorite_game: req.body.userfavGames,
                 favorite_tv_show: req.body.userfavShows,
                 favorite_food: req.body.userfavFoods,
-                security_level: req.body.
+                security_level: security_level_integer
             }, function() {
                 console.log("Profile update success!");
                 res.end(JSON.stringify({value: "Success"}));
