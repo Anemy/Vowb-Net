@@ -64,9 +64,9 @@ $(document).ready(function() {
                     userfavGames : $("#userfavGames").val(),
                     userfavShows : $("#userfavShows").val(),
                     userfavFoods : $("#userfavFoods").val(),
-                    security_level_all: $("#security_level_all").val(),
-                    security_level_friends: $("#security_level_friends").val(),
-                    security_level_self: $("#security_level_self").val(),
+                    security_level_all: $(".security_level_all").prop("checked"),
+                    security_level_friends: $(".security_level_friends").prop("checked"),
+                    security_level_self: $(".security_level_self").prop("checked")
                 },
                 success: function(data){
                     console.log("Profile edit success!!");
@@ -79,6 +79,7 @@ $(document).ready(function() {
                     alert("Profile page edits failed to save.");
                 }
         });
+
 
  	}
 });
