@@ -68,14 +68,15 @@ router.post('/edit-profile', function(req, res, next) {
     db.search(db.userDB, searchParams, function(result) {
         if( result[0] ) {
             var security_level_integer = 0;
+
             console.log(req.body.security_level_all);
             console.log(req.body.security_level_friends);
             console.log(req.body.security_level_self);
-            if( req.body.securityLevelAll || req.body.security_level_all )
+            if( (req.body.securityLevelAll || req.body.security_level_all) && !(req.body.security_level_self === "false") )
                 security_level_integer = 0;
-            else if( req.body.securityLevelFriends || req.body.security_level_friends )
+            else if( (req.body.securityLevelFriends || req.body.security_level_friends) && !(req.body.security_level_self === "false") )
                 security_level_integer = 1;
-            else if( req.body.securityLevelSelf || req.body.security_level_self )
+            else if( (req.body.securityLevelSelf || req.body.security_level_self) && !(req.body.security_level_self === "false") )
                 security_level_integer = 2;
             db.update(db.profileDB, { profile_id: req.body.secretProfileIdValue }, {
                 full_name: req.body.userFullName,
