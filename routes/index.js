@@ -67,15 +67,24 @@ router.post('/edit-profile', function(req, res, next) {
     
     db.search(db.userDB, searchParams, function(result) {
         if( result[0] ) {
+            var security_level_integer = 0;
+            if( req.body.securityLevelAll || req.body.security_level_all )
+                security_level_integer = 0;
+            else if( req.body.securityLevelFriends || req.body.security_level_friends )
+                security_level_integer = 1;
+            else if( req.body.securityLevelSelf || req.body.security_level_self )
+                security_level_integer = 2;
             db.update(db.profileDB, { profile_id: req.body.secretProfileIdValue }, {
                 full_name: req.body.userFullName,
                 //birth_date: req.body.userAge,
                 gender: req.body.userSex,
                 state: req.body.userState === "N/A" ? "--" : req.body.userState,
-                description: req.body.userAge + "------xAGE_SPLITx------" + req.body.aboutMeDesc,
+                description: /*req.body.userAge + "------xAGE_SPLITx------" + */req.body.aboutMeDesc,
+                user_age: req.body.userAge,
                 favorite_game: req.body.userfavGames,
                 favorite_tv_show: req.body.userfavShows,
-                favorite_food: req.body.userfavFoods
+                favorite_food: req.body.userfavFoods,
+                security_level: req.body.
             }, function() {
                 console.log("Profile update success!");
                 res.end(JSON.stringify({value: "Success"}));
@@ -99,6 +108,8 @@ router.get('/create', function(req, res, next) { //tmp
         res.render('createLobby', { title: 'Create a Lobby - Vowb.net', login: loginData});
     }
 });
+
+
 
 /* INSERT MORE WEB PAGE ROUTES HERE (FOR EXAMPLE SIGN UP PAGE) */
 router.get('/signup', function(req, res, next) {
@@ -187,6 +198,13 @@ router.post('/login', function(req, res) {
             res.end(JSON.stringify({value: "Success"}));
         }
     });
+});
+
+//Pascal 03/31/2015 routing for createlobby
+router.post('/createlobby', function(req, res) {
+    req.session.loggedIn = true; 
+    req.session.username = getLoginData;
+    res.end(JSON.stringify({value: "Success"}));
 });
 
 router.post('/logout', function(req, res) {
