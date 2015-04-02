@@ -68,10 +68,6 @@ router.post('/edit-profile', function(req, res, next) {
     db.search(db.userDB, searchParams, function(result) {
         if( result[0] ) {
             var security_level_integer = 0;
-
-            console.log(req.body.security_level_all);
-            console.log(req.body.security_level_friends);
-            console.log(req.body.security_level_self);
             if( (req.body.securityLevelAll || req.body.security_level_all) && !(req.body.security_level_all === "false") )
                 security_level_integer = 0;
             else if( (req.body.securityLevelFriends || req.body.security_level_friends) && !(req.body.security_level_friends === "false") )
