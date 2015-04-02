@@ -47,9 +47,9 @@ router.get('/edit/*', function(req, res, next) {
                             dataObject.title = "Vowb.net - Edit Profile";
                             dataObject.username = loginData;
                             
-                            var split = dataObject.description.split("------xAGE_SPLITx------");
-                            dataObject.description = split.length > 1 ? split[1] : split[0];//"No profile? That's OK. This guy has yet to make one.";
-                            dataObject.user_age = split[0];//dataObject.birth_date;
+                            //var split = dataObject.description.split("------xAGE_SPLITx------");
+                            //dataObject.description = split.length > 1 ? split[1] : split[0];//"No profile? That's OK. This guy has yet to make one.";
+                            //dataObject.user_age = split[0];//dataObject.birth_date;
                             //dataObject.user_age = dataObject.birth_date;
                             res.render('editProfPage', dataObject);
                         });
@@ -58,9 +58,9 @@ router.get('/edit/*', function(req, res, next) {
                     dataObject.login = loginData;
                     dataObject.title = "Vowb.net - Edit Profile";
                     dataObject.username = loginData;
-                    var split = dataObject.description.split("------xAGE_SPLITx------");
-                    dataObject.description = split.length > 1 ? split[1] : split[0];//"No profile? That's OK. This guy has yet to make one.";
-                    dataObject.user_age = split[0];//dataObject.birth_date;
+                    //var split = dataObject.description.split("------xAGE_SPLITx------");
+                    //dataObject.description = split.length > 1 ? split[1] : split[0];//"No profile? That's OK. This guy has yet to make one.";
+                    //dataObject.user_age = split[0];//dataObject.birth_date;
                     //dataObject.user_age = dataObject.birth_date;
                     res.render('editProfPage', dataObject);
                 }
@@ -87,13 +87,13 @@ router.get('/*', function(req, res, next) {
                 dataObject.login = loginData;
                 dataObject.title = "Vowb.net - Edit Profile";
                 dataObject.username = req.params[0];
-                dataObject.user_age = dataObject.birth_date;
+                //dataObject.user_age = dataObject.birth_date;
                 if( !dataObject.description )
                     dataObject.description = "No profile? That's OK. This guy has yet to make one.";
                 else {
-                    var split = dataObject.description.split("------xAGE_SPLITx------");
-                    dataObject.description = split.length > 1 ? split[1] : split[0];//"No profile? That's OK. This guy has yet to make one.";
-                    dataObject.user_age = split[0];//dataObject.birth_date;
+                    //var split = dataObject.description.split("------xAGE_SPLITx------");
+                    //dataObject.description = split.length > 1 ? split[1] : split[0];//"No profile? That's OK. This guy has yet to make one.";
+                    //dataObject.user_age = split[0];//dataObject.birth_date;
                 }
                 res.render('profile', dataObject);
             });

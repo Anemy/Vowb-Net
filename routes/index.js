@@ -72,7 +72,8 @@ router.post('/edit-profile', function(req, res, next) {
                 //birth_date: req.body.userAge,
                 gender: req.body.userSex,
                 state: req.body.userState === "N/A" ? "--" : req.body.userState,
-                description: req.body.userAge + "------xAGE_SPLITx------" + req.body.aboutMeDesc,
+                description: /*req.body.userAge + "------xAGE_SPLITx------" + */req.body.aboutMeDesc,
+                user_age: req.body.userAge,
                 favorite_game: req.body.userfavGames,
                 favorite_tv_show: req.body.userfavShows,
                 favorite_food: req.body.userfavFoods
