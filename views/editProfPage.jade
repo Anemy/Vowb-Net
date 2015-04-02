@@ -37,12 +37,13 @@ block content
                     .userPersonal 
                         input(type="hidden" id="secretProfileIdValue" value='#{profile_id}')
                         input.userFullName(type="text",id ="userFullName",placeholder="Name",value='#{full_name}',required maxlength = 24)
-                        input.userAge(type="number" id="userAge" maxlength ="3" pattern="([1-9]|[0-9]|[0-9])" value = '#{user_age}'  min = "0" max = "117")
+                        input.userAge(type="number" id="userAge" placeholder= "-1" maxlength ="3" pattern="([1-9]|[0-9]|[0-9])" value = '#{user_age}'  min = "-1" max = "117" )
                         .slash / 
                         select.userSex(value='#{gender}')
-                            <option value="other"#{gender==="other"?"selected":""}>Other</option>
+                            <option value="-----"#{gender==="-----"?"selected":""}>-----</option>
                             <option value="female"#{gender==="female"?"selected":""}>Female</option>
                             <option value="male"#{gender==="male"?"selected":""}>Male</option>
+                            <option value="other"#{gender==="other"?"selected":""}>Other</option>                           
                         .slash / 
                         select.userState(value='#{state}')
                             <option value="N/A" #{state==="--"?"selected":""}>N/A</option>
@@ -115,6 +116,13 @@ block content
                         input.userfavShows(type="text" id ="userfavShows" placeholder="The News Room, GoT" required maxlength = 40 value='#{favorite_tv_show}')
                     .favFoods Foods: 
                         input.userfavFoods(type="text" id ="userfavFoods" placeholder="Peanut butter" required maxlength = 40 value='#{favorite_food}')
+                    .userProfSecurity I would like my profile to be visable to 
+                        input.userProfSecEveryone(type="radio" name = "profSec" value = "#{security_level_all}" checked = value == "#{security_level_all}")
+                        | Everyone <br>
+                        input.userProfSecFriends(type="radio" name = "profSec" value = "#{security_level_friends}" checked = value == "#{security_level_friends}")
+                        | Friends <br>
+                        input.userProfSecMyself(type="radio" name = "profSec" value = "#{security_level_self}" checked = value == "#{security_level_self}")
+                        | Myself
             input.saveButton(type="submit" value="Save" onclick="saveButtonClicked();") 
             
 
