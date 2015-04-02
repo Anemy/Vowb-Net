@@ -134,7 +134,7 @@ router.post('/login', function(req, res) {
 //Pascal 03/31/2015 routing for createlobby
 router.post('/createlobby', function(req, res) {
     req.session.loggedIn = true; 
-    req.session.username = req.body.username;
+    req.session.username = getLoginData;
     res.end(JSON.stringify({value: "Success"}));
 });
 
