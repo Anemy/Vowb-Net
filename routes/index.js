@@ -193,9 +193,17 @@ router.post('/login', function(req, res) {
 
 //Pascal 03/31/2015 routing for createlobby
 router.post('/createlobby', function(req, res) {
-    req.session.loggedIn = true; 
-    req.session.username = getLoginData;
-    res.end(JSON.stringify({value: "Success"}));
+
+    // req.session.loggedIn = true;
+   
+    // req.session.username = req.body.username;
+    if (req.session.username == null) {
+        console.log("Not logged in");
+        res.end(JSON.stringify({value: "Error"}));
+    } else {
+        console.log("Successful!")
+        res.end(JSON.stringify({value: "Success"}));
+    }
 });
 
 router.post('/logout', function(req, res) {
