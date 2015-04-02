@@ -32,7 +32,6 @@ lobbyManager.sendMessageToAllExceptClient = function (messageType, messageData, 
 
 lobbyManager.startListening = function(http) {
     this.io = require('socket.io')(http);
-    //require('http').Server(app);
 
     //hacky fix for stuff
     var that = this;
