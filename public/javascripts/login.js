@@ -69,7 +69,6 @@ var loginSubClicked = function() {
               console.log(window.location.pathname);
               console.log(checkurl);
               if(window.location.pathname == checkurl) {
-                console.log("derp");
                 //$('.profilePage').show();
                 window.location.reload();
               }              

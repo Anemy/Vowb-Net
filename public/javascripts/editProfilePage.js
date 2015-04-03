@@ -28,7 +28,7 @@ $(document).ready(function() {
     }
 
   //When image is clicked it loads and image a user chooses, uploads it then saves the URL
-  $('.profIMG').click(function(){
+  $('.imgContainerOverlay').click(function(){
     filepicker.setKey("AxXSSg71vQROpwHyvp1Iaz");
     filepicker.pickAndStore({mimetype:"image/*"},{},
       function(InkBlobs){
@@ -70,13 +70,16 @@ $(document).ready(function() {
                 },
                 success: function(data){
                     console.log("Profile edit success!!");
-                    alert("Saved the edits you just made.");
-                        var url = "/users/";
-                        url = url.concat(user_name);
-                        window.location.href = url;
+                    swal({title:"Your profile has been updated!", type:"success"},
+                        function(){
+                            var url = "/users/";
+                            url = url.concat(user_name);
+                            window.location.href = url;
+                        }
+                    );
                 },
                 error: function(data){
-                    alert("Profile page edits failed to save.");
+                    sweetAlert("Oops...", "Failed to save profile changes.", "error");
                 }
         });
 

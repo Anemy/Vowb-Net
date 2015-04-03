@@ -8,7 +8,10 @@ block content
     .editProfPage
         form#editProfileForm
         .leftPane
-            img#profPic(class="profIMG" src="/images/profile/M.jpg")
+            .imgContainer
+                .imgContainerOverlay
+                img(class="camIMG" src="/images/profile/cameraW.png")
+                img#profPic(class="profIMG" src="/images/profile/M.jpg")
             .statusBar
                 .overlayStat
                 img(class="statusIMG" src="/images/profile/offline.png") 
@@ -116,13 +119,15 @@ block content
                         input.userfavShows(type="text" id ="userfavShows" placeholder="The News Room, GoT" required maxlength = 40 value='#{favorite_tv_show}')
                     .favFoods Foods: 
                         input.userfavFoods(type="text" id ="userfavFoods" placeholder="Peanut butter" required maxlength = 40 value='#{favorite_food}')
-                    .userProfSecurity I would like my profile to be visable to 
+                    .userProfSecurity I would like my profile to be visable to
                         input.security_level_all(type="radio" id = "security_level_all" name = "profSec" value = "#{security_level_all}" checked="true"=="#{security_level_all}")
                         | everyone <br>
-                        input.security_level_friends(type="radio" id = "security_level_friends" name = "profSec" value = "#{security_level_friends}" checked="true"=="#{security_level_friends}")
-                        | friends <br>
-                        input.security_level_self(type="radio" id = "security_level_self" name = "profSec" value = "#{security_level_self}" checked="true"=="#{security_level_self}")
-                        | myself
+                        .sec1contain
+                            input.security_level_friends(type="radio" id = "security_level_friends" name = "profSec" value = "#{security_level_friends}" checked="true"=="#{security_level_friends}")
+                            | friends
+                        .sec2contain
+                            input.security_level_self(type="radio" id = "security_level_self" name = "profSec" value = "#{security_level_self}" checked="true"=="#{security_level_self}")
+                            | myself
             input.saveButton(type="submit" value="Save" onclick="saveButtonClicked();") 
             
 
