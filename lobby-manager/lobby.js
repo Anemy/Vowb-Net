@@ -36,7 +36,8 @@ lobbyManager.startListening = function(http) {
 
     //hacky fix for stuff
     var that = this;
-
+    that.chatIDcount = 0;
+    that.usersInLobby = [];
     that.numberOfClients = 0;
     //creates a listening socket io connection
     that.io.on('connection', function(socket) {
@@ -63,21 +64,24 @@ lobbyManager.startListening = function(http) {
               that.lobbies[chatCode] = [];
               that.lobbies[chatCode].push(socket);
               socket.chatNumber = chatCode;
-              socket.chatID = 0;
+              //socket.chatID = 0;
           }
-          else {
+          else{
               // join existing lobby
-              socket.chatID = that.lobbies[chatCode].length;
+              //socket.chatID = that.lobbies[chatCode].length;
               that.lobbies[chatCode].push(socket);
               socket.chatNumber = chatCode;
           }
+          socket.chatID = that.chatIDcount;
+          that.chatIDcount++;
       });
 
 
       socket.on('username message', function(msg){
           if(socket.chatNumber !=  -1 && that.lobbies[socket.chatNumber] != undefined) {
-            if(msg == ""){
+            if(msg == "log in"){
               socket.name = "User " + socket.chatID;//that.numberOfClients;
+              that.numberOfClients++;
             }
             else{
               socket.name = msg;
@@ -85,8 +89,9 @@ lobbyManager.startListening = function(http) {
             socket.emit('server message', {text: '  -- Hi ' + socket.name + '! Welcome to the lobby chat room! --  ' ,type: 'join'});
             that.sendMessageToAllClients('server message', {text:' -- ' + socket.name + ' has connected. -- ',type: 'disconnect'}, that.lobbies[socket.chatNumber]);
             //that.io.emit('server message', {text:' -- ' + socket.name + ' has connected. -- ',type: 'disconnect'});
+            that.usersInLobby[socket.chatID]  = socket.name;
+            that.sendMessageToAllClients('user join', {text:that.usersInLobby, num:that.chatIDcount}, that.lobbies[socket.chatNumber]);
 
-            that.numberOfClients++;
           }
       });
 
@@ -99,13 +104,17 @@ lobbyManager.startListening = function(http) {
 
 
       socket.on('disconnect', function () {
-        that.numberOfClients--;
+
         // that.io.emit('server message', {text:' -- ' + socket.name + ' has disconnected. -- ',type: 'join'});
         if(socket.inChat) {
-          for(var i = socket.chatID; i < that.lobbies[socket.chatNumber].length; i++) {
-              that.lobbies[socket.chatNumber][i].chatID --;
-          }
-          that.sendMessageToAllClients('server message', {text:' -- ' + socket.name + ' has disconnected. -- ',type: 'join'}, that.lobbies[socket.chatNumber]);
+            var index = that.usersInLobby.indexOf(socket.name);
+            that.usersInLobby[index] = "";
+            that.numberOfClients--;
+            that.sendMessageToAllClients('user join', {text:that.usersInLobby, num:that.chatIDcount}, that.lobbies[socket.chatNumber]);
+            for(var i = socket.chatID; i < that.lobbies[socket.chatNumber].length; i++) {
+                that.lobbies[socket.chatNumber][i].chatID --;
+            }
+            that.sendMessageToAllClients('server message', {text:' -- ' + socket.name + ' has disconnected. -- ',type: 'join'}, that.lobbies[socket.chatNumber]);
         }
       });
 
