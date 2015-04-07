@@ -109,14 +109,14 @@ db.addFriend = function(user,friend) {
                             console.log("Did not add friend because friend is already on list.");
                             return false;
                         } else {
-                            db.update(db.profileDB, { profile_id: profile_result[0].profile_pointer }, {
+                            db.update(db.profileDB, { profile_id: profile_result[0].profile_id }, {
                                 friends: profile_result[0].friends.push(friend)
                             });
                             console.log("Did add friend, there was already friends on the list.");
                             return true;
                         }
                     } else {
-                            db.update(db.profileDB, { profile_id: profile_result[0].profile_pointer }, {
+                            db.update(db.profileDB, { profile_id: profile_result[0].profile_id }, {
                                 friends: [ friend ]
                             });
                             console.log("Did add friend, there were not already friends on the list.");
