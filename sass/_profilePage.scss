@@ -98,7 +98,7 @@
 			box-sizing: border-box;
 			border-radius: 5px;
 
-			a.addFriend {
+			a.addEditFriend {
 				display:block;
 				width:120px;
 				height: 18px;
@@ -106,9 +106,8 @@
 				background-size: 10px 10px;
 				background-position: 2px 2px;
 				padding-left: 16px;
-
 			}
-			a.msg {
+			a.sendViewMSG {
 				display:block;
 				width: 120px;
 				height: 18px;

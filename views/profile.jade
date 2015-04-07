@@ -3,6 +3,8 @@ extends layout
 block content
 	include banner
 	.profilePage
+		script.
+			var username = "!{username}";
 		script(defer="defer" src="/javascripts/profile.js")
 		.leftPane
 			img(class="profIMG" src="/images/profile/M.jpg")
@@ -12,9 +14,9 @@ block content
 				.p Current Lobby:  
 				.pCurrLobby OFFLINE
 			.interactionBar
-				a(class="addFriend" href="#").
+				a(id="addEditFriend" class ="addEditFriend" onclick="friendButtonClicked()" href="#").
 					Add to Friends List <br>
-				a(class="msg" href="#").
+				a(id="sendViewMSG" class ="sendViewMSG" onclick="msgButtonClicked()" href="#").
 					Send Message <br>
 				a(class="posts" href="#").
 					All Posts <br>

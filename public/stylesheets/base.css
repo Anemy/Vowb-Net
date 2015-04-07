@@ -223,7 +223,7 @@ table {
       padding-left: 4px;
       box-sizing: border-box;
       border-radius: 5px; }
-      .profilePage .leftPane .interactionBar a.addFriend {
+      .profilePage .leftPane .interactionBar a.addEditFriend {
         display: block;
         width: 120px;
         height: 18px;
@@ -231,7 +231,7 @@ table {
         background-size: 10px 10px;
         background-position: 2px 2px;
         padding-left: 16px; }
-      .profilePage .leftPane .interactionBar a.msg {
+      .profilePage .leftPane .interactionBar a.sendViewMSG {
         display: block;
         width: 120px;
         height: 18px;
