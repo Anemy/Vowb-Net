@@ -155,8 +155,8 @@ router.get('/*', function(req, res, next) {
 router.post('/addFriend', function(req, res, next) {
     var loginData = getLoginData(req);
     console.log("Adding " + req.body.addFriend + " as a friend of " + loginData);
-    if( db.addFriend(loginData,req.body.addFriend) ) {
-        res.status(200).send("Added friend OK");
+    if( db.addFriend(loginData,req.body.addFriend) == true ) {
+        res..send("Added friend OK");
     } else {
         res.status(400).send("Did not add");
     }
