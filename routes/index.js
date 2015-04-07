@@ -67,15 +67,24 @@ router.post('/edit-profile', function(req, res, next) {
     
     db.search(db.userDB, searchParams, function(result) {
         if( result[0] ) {
+            var security_level_integer = 0;
+            if( (req.body.securityLevelAll || req.body.security_level_all) && !(req.body.security_level_all === "false") )
+                security_level_integer = 0;
+            else if( (req.body.securityLevelFriends || req.body.security_level_friends) && !(req.body.security_level_friends === "false") )
+                security_level_integer = 1;
+            else if( (req.body.securityLevelSelf || req.body.security_level_self) && !(req.body.security_level_self === "false") )
+                security_level_integer = 2;
             db.update(db.profileDB, { profile_id: req.body.secretProfileIdValue }, {
                 full_name: req.body.userFullName,
                 //birth_date: req.body.userAge,
                 gender: req.body.userSex,
                 state: req.body.userState === "N/A" ? "--" : req.body.userState,
-                description: req.body.userAge + "------xAGE_SPLITx------" + req.body.aboutMeDesc,
+                description: /*req.body.userAge + "------xAGE_SPLITx------" + */req.body.aboutMeDesc,
+                user_age: req.body.userAge,
                 favorite_game: req.body.userfavGames,
                 favorite_tv_show: req.body.userfavShows,
-                favorite_food: req.body.userfavFoods
+                favorite_food: req.body.userfavFoods,
+                security_level: security_level_integer
             }, function() {
                 console.log("Profile update success!");
                 res.end(JSON.stringify({value: "Success"}));

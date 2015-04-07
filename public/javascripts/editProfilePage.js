@@ -28,7 +28,7 @@ $(document).ready(function() {
     }
 
   //When image is clicked it loads and image a user chooses, uploads it then saves the URL
-  $('.profIMG').click(function(){
+  $('.imgContainerOverlay').click(function(){
     filepicker.setKey("AxXSSg71vQROpwHyvp1Iaz");
     filepicker.pickAndStore({mimetype:"image/*"},{},
       function(InkBlobs){
@@ -46,7 +46,7 @@ $(document).ready(function() {
   
  	saveButtonClicked = function(){
  		//save shit
-
+        console.log("These!: " + $("#security_level_all").val() + "," + $("#security_level_friends").val() + "," + $("#security_level_self").val());
         // Concept code by Eric 3/5/2015
         $.ajax({
                 url: "/edit-profile",
@@ -63,19 +63,26 @@ $(document).ready(function() {
                     aboutMeDesc : $(".aboutMeDesc").val(),
                     userfavGames : $("#userfavGames").val(),
                     userfavShows : $("#userfavShows").val(),
-                    userfavFoods : $("#userfavFoods").val()
+                    userfavFoods : $("#userfavFoods").val(),
+                    security_level_all: $(".security_level_all").prop("checked"),
+                    security_level_friends: $(".security_level_friends").prop("checked"),
+                    security_level_self: $(".security_level_self").prop("checked")
                 },
                 success: function(data){
                     console.log("Profile edit success!!");
-                    alert("Saved the edits you just made.");
-                        var url = "/users/";
-                        url = url.concat(user_name);
-                        window.location.href = url;
+                    swal({title:"Your profile has been updated!", type:"success"},
+                        function(){
+                            var url = "/users/";
+                            url = url.concat(user_name);
+                            window.location.href = url;
+                        }
+                    );
                 },
                 error: function(data){
-                    alert("Profile page edits failed to save.");
+                    sweetAlert("Oops...", "Failed to save profile changes.", "error");
                 }
         });
+
 
  	}
 });
