@@ -46,7 +46,8 @@ router.post('/edit-profile', function(req, res, next) {
     // aboutMeDesc : $("#aboutMeDesc").val(),
     // userfavGames : $("#userfavGames").val(),
     // userfavShows : $("#userfavShows").val(),
-    // userfavFoods : $("#userfavFoods").val()
+    // userfavFoods : $("#userfavFoods").val(),
+    // profileURL
     console.log(JSON.stringify(req.body));
     
     var loginData = getLoginData(req);
@@ -67,18 +68,30 @@ router.post('/edit-profile', function(req, res, next) {
     
     db.search(db.userDB, searchParams, function(result) {
         if( result[0] ) {
+            var security_level_integer = 0;
+            if( (req.body.securityLevelAll || req.body.security_level_all) && !(req.body.security_level_all === "false") )
+                security_level_integer = 0;
+            else if( (req.body.securityLevelFriends || req.body.security_level_friends) && !(req.body.security_level_friends === "false") )
+                security_level_integer = 1;
+            else if( (req.body.securityLevelSelf || req.body.security_level_self) && !(req.body.security_level_self === "false") )
+                security_level_integer = 2;
             db.update(db.profileDB, { profile_id: req.body.secretProfileIdValue }, {
                 full_name: req.body.userFullName,
                 //birth_date: req.body.userAge,
                 gender: req.body.userSex,
                 state: req.body.userState === "N/A" ? "--" : req.body.userState,
-                description: req.body.userAge + "------xAGE_SPLITx------" + req.body.aboutMeDesc,
+                description: /*req.body.userAge + "------xAGE_SPLITx------" + */req.body.aboutMeDesc,
+                user_age: req.body.userAge,
                 favorite_game: req.body.userfavGames,
                 favorite_tv_show: req.body.userfavShows,
-                favorite_food: req.body.userfavFoods
+                favorite_food: req.body.userfavFoods,
+                security_level: security_level_integer
             }, function() {
                 console.log("Profile update success!");
                 res.end(JSON.stringify({value: "Success"}));
+            });
+            db.update(db.userDB, { profile_pointer: req.body.secretProfileIdValue }, {
+                avatar_URL: req.body.profileURL
             });
         } else {
             console.log("Error: credentials and profile edits did not match: "+JSON.stringify(searchParams)+".");
@@ -99,6 +112,8 @@ router.get('/create', function(req, res, next) { //tmp
         res.render('createLobby', { title: 'Create a Lobby - Vowb.net', login: loginData});
     }
 });
+
+
 
 /* INSERT MORE WEB PAGE ROUTES HERE (FOR EXAMPLE SIGN UP PAGE) */
 router.get('/signup', function(req, res, next) {
@@ -187,6 +202,46 @@ router.post('/login', function(req, res) {
             res.end(JSON.stringify({value: "Success"}));
         }
     });
+});
+
+//Pascal 03/31/2015 routing for createlobby
+router.post('/createlobby', function(req, res) {
+
+    // req.session.loggedIn = true;
+   
+    // req.session.username = req.body.username;
+
+
+    var searchParams = {
+        lobby_title: req.body.lobbyName
+    };
+
+    db.search(db.lobbyDB, searchParams, function(results) {
+        if (results.length == 0) {
+            console.log("Ready to add new lobby");
+            console.log("username is " + req.session.username);
+            db.add(db.lobbyDB, {
+                lobby_title: req.body.lobbyName,
+                password: db.hashPassword(req.body.password),
+                owner: req.session.username
+            });
+            console.log("Successful!")
+            res.end(JSON.stringify({value: "Success"}));
+        } else {
+            console.log("Lobby already exists");
+            res.end(JSON.stringify({value: "Error"}));
+        }
+        
+    });
+    // if (req.session.username == null) {
+    //     console.log("Not logged in");
+    //     res.end(JSON.stringify({value: "Error"}));
+    // } else {
+    //     console.log("Successful!")
+    //     res.end(JSON.stringify({value: "Success"}));
+    // }
+
+    
 });
 
 router.post('/logout', function(req, res) {

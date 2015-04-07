@@ -79,7 +79,9 @@ $('#createLobbyForm').submit( function (event) {
     //do connection to server/db here
     if (err==0) {
         $.ajax({
-            url: "/signup",
+
+            //Pascal 03/31/15 changing url from signup to createlobby
+            url: "/createlobby",
             type: "POST",
             data: {
                 lobbyName : $("#lobbyname_id").val(),
@@ -98,7 +100,7 @@ $('#createLobbyForm').submit( function (event) {
                   })
               }
               else {
-                alert("Lobby already exists!!");
+                alert("Lobby already exists!");
                 console.log("Failure from server");
               }
             },

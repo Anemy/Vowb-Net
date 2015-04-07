@@ -83,6 +83,38 @@ db.addUser = function(username, email, password) {
     console.log(qq);
 }
 
+/*
+ * For security's sake, only call it when we know we're logged
+ * in as "user".
+ */
+db.addFriend = function(user,friend) {
+    db.search(db.userDB, {username: user}, function(user_result) {
+        if( user_result.length > 0 ) {
+            db.search(db.profileDB, { profile_id: user_result[0].profile_pointer }, function(profile_result) {
+                if( profile_result.length == 0 ) {
+                    db.addProfile({
+                        description: "Welcome to Vowb.net, "+user+"! Your profile got generated late.",
+                        full_name: user,
+                        friends: [ friend ]
+                    });
+                    return true;
+                } else {
+                    if( profile_result[0].friends.indexOf(friend) != -1 )  {
+                        // friend already added
+                        return false;
+                    } else {
+                        db.update(db.profileDB, { profile_id: profile_result[0].profile_pointer }, {
+                            friends: profile_result[0].friends.push(friend)
+                        });
+                        return true;
+                    }
+                }
+            });
+        } else
+            return false;
+    });
+}
+
 db.hashPassword = function(string) {
     return sha1(string);//"DUMMY_HASH!!"+string+"!!DUMMY_HASH";
 }
@@ -303,7 +335,7 @@ db.update = function(tablename, searchParams, data, onUpdate) {
         if (data.hasOwnProperty(column)) {
             if( i > 0 )
                 queryString += ", ";
-            queryString += column + "=$" + (itemIndex++);
+            queryString += "\"" + column + "\"=$" + (itemIndex++);
             values.push(data[column]);
             i++;
         }
@@ -314,7 +346,7 @@ db.update = function(tablename, searchParams, data, onUpdate) {
         if (searchParams.hasOwnProperty(column)) {
             if( i > 0 )
                 queryString += " AND ";
-            queryString += column + "=$" + (itemIndex++);
+            queryString += "\"" + column + "\"=$" + (itemIndex++);
             values.push(searchParams[column]);
             i++;
         }

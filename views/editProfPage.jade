@@ -8,7 +8,12 @@ block content
     .editProfPage
         form#editProfileForm
         .leftPane
-            img#profPic(class="profIMG" src="/images/profile/M.jpg")
+            .imgContainer
+                .imgContainerOverlay
+                img(class="camIMG" src="/images/profile/cameraW.png")
+                //
+                img#profPic(class="profIMG" src='#{profileURL?profileURL:"/images/profile/M.jpg"}')
+                //"/images/profile/M.jpg"
             .statusBar
                 .overlayStat
                 img(class="statusIMG" src="/images/profile/offline.png") 
@@ -37,12 +42,13 @@ block content
                     .userPersonal 
                         input(type="hidden" id="secretProfileIdValue" value='#{profile_id}')
                         input.userFullName(type="text",id ="userFullName",placeholder="Name",value='#{full_name}',required maxlength = 24)
-                        input.userAge(type="number" id="userAge" maxlength ="3" pattern="([1-9]|[0-9]|[0-9])" value = '#{user_age}'  min = "0" max = "117")
+                        input.userAge(type="number" id="userAge" placeholder= "-1" maxlength ="3" pattern="([1-9]|[0-9]|[0-9])" value = '#{user_age}'  min = "-1" max = "117" )
                         .slash / 
                         select.userSex(value='#{gender}')
-                            <option value="other"#{gender==="other"?"selected":""}>Other</option>
+                            <option value="-----"#{gender==="-----"?"selected":""}>-----</option>
                             <option value="female"#{gender==="female"?"selected":""}>Female</option>
                             <option value="male"#{gender==="male"?"selected":""}>Male</option>
+                            <option value="other"#{gender==="other"?"selected":""}>Other</option>                           
                         .slash / 
                         select.userState(value='#{state}')
                             <option value="N/A" #{state==="--"?"selected":""}>N/A</option>
@@ -115,6 +121,15 @@ block content
                         input.userfavShows(type="text" id ="userfavShows" placeholder="The News Room, GoT" required maxlength = 40 value='#{favorite_tv_show}')
                     .favFoods Foods: 
                         input.userfavFoods(type="text" id ="userfavFoods" placeholder="Peanut butter" required maxlength = 40 value='#{favorite_food}')
+                    .userProfSecurity I would like my profile to be visable to
+                        input.security_level_all(type="radio" id = "security_level_all" name = "profSec" value = "#{security_level_all}" checked="true"=="#{security_level_all}")
+                        | everyone <br>
+                        .sec1contain
+                            input.security_level_friends(type="radio" id = "security_level_friends" name = "profSec" value = "#{security_level_friends}" checked="true"=="#{security_level_friends}")
+                            | friends
+                        .sec2contain
+                            input.security_level_self(type="radio" id = "security_level_self" name = "profSec" value = "#{security_level_self}" checked="true"=="#{security_level_self}")
+                            | myself
             input.saveButton(type="submit" value="Save" onclick="saveButtonClicked();") 
             
 

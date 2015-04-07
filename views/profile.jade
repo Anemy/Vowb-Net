@@ -5,7 +5,7 @@ block content
 	.profilePage
 		script(defer="defer" src="/javascripts/profile.js")
 		.leftPane
-			img(class="profIMG" src="/images/profile/M.jpg")
+			img(class="profIMG" src='#{profileURL?profileURL:"/images/profile/M.jpg"}')
 			.statusBar
 				img(class="statusIMG" src="/images/profile/offline.png") 
 				.pStatus OFFLINE
@@ -38,7 +38,7 @@ block content
 						.userState #{state}
 					.ACCOUNTSTATS Account Stats
 					.dateJoined Joined:
-						.userdateJoined 5/3/2014
+						.userdateJoined 4/10/2015
 					.postCount Posts:
 						.userpostCount 2
 					.timeOnline Time Online:
