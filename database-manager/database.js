@@ -99,14 +99,21 @@ db.addFriend = function(user,friend) {
                     });
                     return true;
                 } else {
-                    if( profile_result[0].friends.indexOf(friend) != -1 )  {
-                        // friend already added
-                        return false;
+                    if( profile_result[0].friends ) {
+                        if( profile_result[0].friends.indexOf(friend) != -1 )  {
+                            // friend already added
+                            return false;
+                        } else {
+                            db.update(db.profileDB, { profile_id: profile_result[0].profile_pointer }, {
+                                friends: profile_result[0].friends.push(friend)
+                            });
+                            return true;
+                        }
                     } else {
-                        db.update(db.profileDB, { profile_id: profile_result[0].profile_pointer }, {
-                            friends: profile_result[0].friends.push(friend)
-                        });
-                        return true;
+                            db.update(db.profileDB, { profile_id: profile_result[0].profile_pointer }, {
+                                friends: [ friend ]
+                            });
+                            return true;
                     }
                 }
             });
