@@ -206,13 +206,38 @@ router.post('/createlobby', function(req, res) {
     // req.session.loggedIn = true;
    
     // req.session.username = req.body.username;
-    if (req.session.username == null) {
-        console.log("Not logged in");
-        res.end(JSON.stringify({value: "Error"}));
-    } else {
-        console.log("Successful!")
-        res.end(JSON.stringify({value: "Success"}));
-    }
+
+
+    var searchParams = {
+        lobby_title: req.body.lobbyName
+    };
+
+    db.search(db.lobbyDB, searchParams, function(results) {
+        if (results.length == 0) {
+            console.log("Ready to add new lobby");
+            console.log("username is " + req.session.username);
+            db.add(db.lobbyDB, {
+                lobby_title: req.body.lobbyName,
+                password: db.hashPassword(req.body.password),
+                owner: req.session.username
+            });
+            console.log("Successful!")
+            res.end(JSON.stringify({value: "Success"}));
+        } else {
+            console.log("Lobby already exists");
+            res.end(JSON.stringify({value: "Error"}));
+        }
+        
+    });
+    // if (req.session.username == null) {
+    //     console.log("Not logged in");
+    //     res.end(JSON.stringify({value: "Error"}));
+    // } else {
+    //     console.log("Successful!")
+    //     res.end(JSON.stringify({value: "Success"}));
+    // }
+
+    
 });
 
 router.post('/logout', function(req, res) {
