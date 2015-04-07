@@ -54,7 +54,6 @@ router.get('/edit/*', function(req, res, next) {
                             //dataObject.description = split.length > 1 ? split[1] : split[0];//"No profile? That's OK. This guy has yet to make one.";
                             //dataObject.user_age = split[0];//dataObject.birth_date;
                             //dataObject.user_age = dataObject.birth_date;
-                            res.render('editProfPage', dataObject);
                         });
                     });
                 } else {
@@ -68,8 +67,9 @@ router.get('/edit/*', function(req, res, next) {
                     //dataObject.description = split.length > 1 ? split[1] : split[0];//"No profile? That's OK. This guy has yet to make one.";
                     //dataObject.user_age = split[0];//dataObject.birth_date;
                     //dataObject.user_age = dataObject.birth_date;
-                    res.render('editProfPage', dataObject);
                 }
+                dataObject.profileURL = user.avatar_URL;
+                res.render('editProfPage', dataObject);
             });
         }
         else {
@@ -84,9 +84,9 @@ router.get('/*', function(req, res, next) {
     var loginData = getLoginData(req);
     // Example:
     //res.render('userPage', { name: 'Mystxc'});
-    db.search(db.userDB, { username: req.params[0] }, function(result) {
-        if( result.length > 0 ) {
-            db.search(db.profileDB, { profile_id: result[0].profile_pointer }, function(result) {
+    db.search(db.userDB, { username: req.params[0] }, function(user_result) {
+        if( user_result.length > 0 ) {
+            db.search(db.profileDB, { profile_id: user_result[0].profile_pointer }, function(result) {
                 dataObject = result[0];
                 if( !dataObject )
                     dataObject = {};
@@ -105,7 +105,7 @@ router.get('/*', function(req, res, next) {
                         security_level_self: true
                     };
                 } else if ( dataObject.security_level_friends ) {
-                    if( dataObject.friends.indexOf(loginData) == -1 && req.params[0] != loginData ) {
+                    if( !dataObject.friends || (dataObject.friends.indexOf(loginData) == -1 && req.params[0] != loginData) ) {
                         dataObject = {
                             description: "User information not visible.",
                             full_name: "Not available",
@@ -128,6 +128,7 @@ router.get('/*', function(req, res, next) {
                     //dataObject.description = split.length > 1 ? split[1] : split[0];//"No profile? That's OK. This guy has yet to make one.";
                     //dataObject.user_age = split[0];//dataObject.birth_date;
                 }
+                dataObject.profileURL = user_result[0].avatar_URL;
                 res.render('profile', dataObject);
             });
         } else {
