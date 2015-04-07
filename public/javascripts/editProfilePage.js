@@ -66,7 +66,8 @@ $(document).ready(function() {
                     userfavFoods : $("#userfavFoods").val(),
                     security_level_all: $(".security_level_all").prop("checked"),
                     security_level_friends: $(".security_level_friends").prop("checked"),
-                    security_level_self: $(".security_level_self").prop("checked")
+                    security_level_self: $(".security_level_self").prop("checked"),
+                    profileURL: $('.profIMG').attr('src')
                 },
                 success: function(data){
                     console.log("Profile edit success!!");

@@ -46,7 +46,8 @@ router.post('/edit-profile', function(req, res, next) {
     // aboutMeDesc : $("#aboutMeDesc").val(),
     // userfavGames : $("#userfavGames").val(),
     // userfavShows : $("#userfavShows").val(),
-    // userfavFoods : $("#userfavFoods").val()
+    // userfavFoods : $("#userfavFoods").val(),
+    // profileURL
     console.log(JSON.stringify(req.body));
     
     var loginData = getLoginData(req);
@@ -88,6 +89,9 @@ router.post('/edit-profile', function(req, res, next) {
             }, function() {
                 console.log("Profile update success!");
                 res.end(JSON.stringify({value: "Success"}));
+            });
+            db.update(db.userDB, { profile_pointer: req.body.secretProfileIdValue }, {
+                avatar_URL: req.body.profileURL
             });
         } else {
             console.log("Error: credentials and profile edits did not match: "+JSON.stringify(searchParams)+".");
