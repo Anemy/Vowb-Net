@@ -39,4 +39,25 @@ block content
                         ul#messages
                 input#m.controls(type="text" placeHolder="Enter a message...")
 
-    include copyright
+.loginPage
+    .overlay
+    .loginPopup
+        header.loginHeader
+          span.headerTitle Log in
+          span.loginClose(onclick = "exitButtonClicked()") X  
+        .loginBody
+          .loginForm      
+            label username
+            input(type='username' id = "un_id")
+            br
+            label password
+            input(type='password' id = "pw_id")
+            br
+            .checkbox
+              input#remember(type='checkbox') 
+              label(for='remember') remember me on this computer
+            .action_btns
+              a.btn.btn_red(onclick="loginSubClicked()") log in 
+
+
+            include copyright

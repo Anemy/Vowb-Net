@@ -3,6 +3,25 @@
 var socket = io();
 var intialName = loggedIn;
 
+setTimeout( function() {
+  swal({   
+      title: "An input!",
+      text: "Write something interesting:",
+      type: "input",   showCancelButton: true,
+      closeOnConfirm: false
+      // animation: "slide-from-top"
+    },
+    function(inputValue){
+      if (inputValue === false)
+        return false;
+      if (inputValue === "") { 
+        swal.showInputError("You need to write something!");
+        return false ;
+      }
+      swal("Nice!", "You wrote: " + inputValue, "success");
+  });
+}, 2000);
+
 socket.on('chat message', function(msg){
   //$('#messages').append($('<div class="messageSpacer"/>'));
   var html = '';
@@ -90,19 +109,19 @@ var connection = new RTCMultiConnection();
     //   // connection.extra.password = prompt('Setup password for your room!');
     //   connection.open();
     // };
-    connection.onNewSession = function (session) {
-      // set password for person who is trying to join the room
-      // connection.extra.password = prompt('Enter password to join this room.');
-      connection.join(session);
-    };
-    connection.onRequest = function (userid, extra) {
-      // validating password in "onRequest"
-      // if (extra.password != connection.extra.password)
-      //   return alert('password: ' + extra.password + ' !== ' + connection.extra.password);
-      connection.accept(userid, extra);
-    };
+connection.onNewSession = function (session) {
+  // set password for person who is trying to join the room
+  // connection.extra.password = prompt('Enter password to join this room.');
+  connection.join(session);
+};
+connection.onRequest = function (userid, extra) {
+  // validating password in "onRequest"
+  // if (extra.password != connection.extra.password)
+  //   return alert('password: ' + extra.password + ' !== ' + connection.extra.password);
+  connection.accept(userid, extra);
+};
 //End Password Code
-//End Password Code
+
 connection.session = {
     audio: true
 };
@@ -207,4 +226,3 @@ setTimeout(function() {
         connection.join(session);
     }
 }, 1000);
->>>>>>> 4e02df18cf060db31d0888ffa5a4204b87aa8711
