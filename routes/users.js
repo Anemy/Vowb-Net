@@ -90,12 +90,36 @@ router.get('/*', function(req, res, next) {
                 dataObject = result[0];
                 if( !dataObject )
                     dataObject = {};
-                dataObject.login = loginData;
-                dataObject.title = "Vowb.net - Edit Profile";
-                dataObject.username = req.params[0];
+                
+                
                 dataObject.security_level_all       = (dataObject.security_level === 0 || (!dataObject.security_level));
                 dataObject.security_level_friends   = (dataObject.security_level === 1);
                 dataObject.security_level_self      = (dataObject.security_level === 2);
+                
+                if( dataObject.security_level_self && req.params[0] != loginData ) {
+                    dataObject = {
+                        description: "User information not visible.",
+                        full_name: "Not available",
+                        security_level_all: false,
+                        security_level_friends: false,
+                        security_level_self: true
+                    };
+                } else if ( dataObject.security_level_friends ) {
+                    if( dataObject.friends.indexOf(loginData) == -1 && req.params[0] != loginData ) {
+                        dataObject = {
+                            description: "User information not visible.",
+                            full_name: "Not available",
+                            security_level_all: false,
+                            security_level_friends: true,
+                            security_level_self: false
+                        };
+                    }
+                }
+                    
+                dataObject.login = loginData;
+                dataObject.title = "Vowb.net - Edit Profile";
+                dataObject.username = req.params[0];
+                
                 //dataObject.user_age = dataObject.birth_date;
                 if( !dataObject.description )
                     dataObject.description = "No profile? That's OK. This guy has yet to make one.";
