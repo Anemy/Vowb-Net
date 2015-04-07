@@ -77,19 +77,19 @@ This is the code which enables a user to create an RTC voice chat stream lobby
 */
 //Start Password code
 var connection = new RTCMultiConnection();
-document.querySelector('#setup').onclick = function() {
-    // room password has been set before calling "open" method
-    // connection.extra.password = prompt('Setup password for your room!');
-    connection.open();
-    this.disabled = true;
-};
+// document.querySelector('#setup').onclick = function() {
+//     // room password has been set before calling "open" method
+//     // connection.extra.password = prompt('Setup password for your room!');
+//     connection.open();
+//     this.disabled = true;
+// };
 //Start Password Code
-    document.querySelector('#setup').onclick = function () {
-      console.log("Ask for Password");
-      // room password has been set before calling "open" method
-      // connection.extra.password = prompt('Setup password for your room!');
-      connection.open();
-    };
+    // document.querySelector('#setup').onclick = function () {
+    //   console.log("Ask for Password");
+    //   // room password has been set before calling "open" method
+    //   // connection.extra.password = prompt('Setup password for your room!');
+    //   connection.open();
+    // };
     connection.onNewSession = function (session) {
       // set password for person who is trying to join the room
       // connection.extra.password = prompt('Enter password to join this room.');
@@ -120,27 +120,29 @@ var inSession = false;
 var sessions = {};
 connection.onNewSession = function(session) {
 
-    console.log("Session: " + session.extra['session-name'] + " was created.");
-    inSession = true;
-    if (sessions[session.sessionid]) return;
-        sessions[session.sessionid] = session;
-        var tr = document.createElement('tr');
-        tr.innerHTML = '<td><span class="vertText">' + session.extra['session-name'] + '</span></td>' +
-            '<td><button class="joinPrivateVoiceChat">Join</button></td>';
-        roomsList.insertBefore(tr, roomsList.firstChild);
-        var joinRoomButton = tr.querySelector('.joinPrivateVoiceChat');
-        joinRoomButton.setAttribute('data-sessionid', session.sessionid);
-        joinRoomButton.onclick = function() {
-            this.disabled = true;
-            var sessionid = this.getAttribute('data-sessionid');
-            session = sessions[sessionid];
-            if (!session) throw 'No such session exists.';
+    // console.log("Session: " + session.extra['session-name'] + " was created.");
+    // inSession = true;
+    if (sessions[session.sessionid]) {
+      return;
+    }
+    sessions[session.sessionid] = session;
+        // var tr = document.createElement('tr');
+        // tr.innerHTML = '<td><span class="vertText">' + session.extra['session-name'] + '</span></td>' +
+        //     '<td><button class="joinPrivateVoiceChat">Join</button></td>';
+        // roomsList.insertBefore(tr, roomsList.firstChild);
+        // var joinRoomButton = tr.querySelector('.joinPrivateVoiceChat');
+        // joinRoomButton.setAttribute('data-sessionid', session.sessionid);
+        // joinRoomButton.onclick = function() {
+        //     this.disabled = true;
+        //     var sessionid = this.getAttribute('data-sessionid');
+        //     session = sessions[sessionid];
+        //     if (!session) throw 'No such session exists.';
 
-            // set password for person who is trying to join the room
-            // connection.extra.password = prompt('Enter password to join this room.');
+        //     // set password for person who is trying to join the room
+        //     // connection.extra.password = prompt('Enter password to join this room.');
 
-            connection.join(session);
-    };
+        //     connection.join(session);
+    //};
 };
 //Start Password Code
 connection.onRequest = function(e) {
@@ -156,13 +158,13 @@ connection.onstream = function(e) {
 
 var audioContainer = document.getElementById('audios-container') || document.body;
 var roomsList = document.getElementById('rooms-list');
-document.getElementById('setup-new-conference').onclick = function() {
-    this.disabled = true;
-    connection.extra = {
-       'session-name': document.getElementById('conference-name').value || 'Anonymous'
-    };
-    connection.open();
-};
+// document.getElementById('setup-new-conference').onclick = function() {
+//     this.disabled = true;
+//     connection.extra = {
+//        'session-name': document.getElementById('conference-name').value || 'Anonymous'
+//     };
+//     connection.open();
+// };
 
 // setup signaling to search existing sessions
 connection.connect();
@@ -173,3 +175,35 @@ connection.connect();
                 if (location.hash.length > 2) uniqueToken.parentNode.parentNode.parentNode.innerHTML = '<h2 style="text-align:center;"><a href="' + location.href + '" target="_blank">Share this link</a></h2>';
                 else uniqueToken.innerHTML = uniqueToken.parentNode.parentNode.href = '#' + (Math.random() * new Date().getTime()).toString(36).toUpperCase().replace(/\./g, '-');
         })();
+
+setTimeout(function() {
+    if(jQuery.isEmptyObject(sessions)) {
+        console.log("\n \n WE MAKE OUR OWN!!! \n \n ");
+        // Make the voice chat
+            // this.disabled = true;
+        connection.extra = {
+           'session-name': '0'//document.getElementById('conference-name').value || 'Anonymous'
+        };
+        connection.open();
+    }
+    else {
+        console.log("\n \n THERE IS ONE ALREADY!!!! \n \n ");
+
+        //console.log("This many sessions made: " + sessions.length);
+        for(sessionID in sessions) {
+          break;
+            //console.log("Session name: " + sessionName);
+        }
+
+        // Auto connect to the voice chat
+        this.disabled = true;
+        //var sessionid = '0'; // this.getAttribute('data-sessionid');
+        session = sessions[sessionID]; //was sessionid
+        if (!session) throw 'No such session exists.';
+
+        // set password for person who is trying to join the room
+        // connection.extra.password = prompt('Enter password to join this room.');
+
+        connection.join(session);
+    }
+}, 1000);

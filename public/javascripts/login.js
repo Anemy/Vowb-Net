@@ -72,8 +72,8 @@ var loginSubClicked = function() {
               swal("Logged in!", null, "success")
               var checkurl = "/users/";
               checkurl = checkurl.concat(user_name)
-              console.log(window.location.pathname);
-              console.log(checkurl);
+              // console.log(window.location.pathname);
+              // console.log(checkurl);
               if(window.location.pathname == checkurl) {
                 //$('.profilePage').show();
                 window.location.reload();

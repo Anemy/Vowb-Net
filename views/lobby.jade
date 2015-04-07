@@ -12,10 +12,10 @@ block content
             .voiceChatPanel
                 //- .joinVoiceChat(onClick="connectToVoiceChat()").
                 //-    Voice Chat
-                input#conference-name.inputBox(type="text" placeHolder="Insert Lobby name")
-                button#setup-new-conference.setup.joinVoiceChat Create Sublobby
+                //- input#conference-name.inputBox(type="text" placeHolder="Insert Lobby name")
+                //- button#setup-new-conference.setup.joinVoiceChat Create Sublobby
                 //- list of all available broadcasting rooms
-                table#rooms-list
+                //- table#rooms-list
                 //- local/remote videos container
                 #audios-container
 
@@ -27,13 +27,15 @@ block content
                 //- table#rooms-list(style='width: 100%;')
                 //- // local/remote videos container
                 //- #audios-container
-                //make password
-                input#setup(type="button" value="Enter Password")
+                //- make password
+                //- input#setup(type="button" value="Enter Password")
+                .someText.
+                    You are now in General Chat.
 
             .chatArea
                 //- .lobbySideBar
                 .chatboxWrapper
-                    #msgBox.chatbox
+                    #msgBox.chatbox 
                         ul#messages
                 input#m.controls(type="text" placeHolder="Enter a message...")
 
