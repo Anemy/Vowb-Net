@@ -87,7 +87,7 @@ db.addUser = function(username, email, password) {
  * For security's sake, only call it when we know we're logged
  * in as "user".
  */
-db.addFriend = function(user,friend) {
+db.addFriend = function(user,friend, res) {
     db.search(db.userDB, {username: user}, function(user_result) {
         if( user_result.length > 0 ) {
             db.search(db.profileDB, { profile_id: user_result[0].profile_pointer }, function(profile_result) {
@@ -101,33 +101,38 @@ db.addFriend = function(user,friend) {
                         db.update(db.userDB, { username: user.username }, { profile_pointer: pcresult[0].profile_id });
                     });
                     console.log("Did add friend, also made a profile because user did not have one.");
-                    return true;
+                    if( res )
+                        res.send("OK");
                 } else {
                     if( profile_result[0].friends ) {
                         if( profile_result[0].friends.indexOf(friend) != -1 )  {
                             // friend already added
                             console.log("Did not add friend because friend is already on list.");
-                            return false;
+                            if( res )
+                                res.status(400).send("not OK");
                         } else {
                             profile_result[0].friends.push(friend);
                             db.update(db.profileDB, { profile_id: profile_result[0].profile_id }, {
                                 friends: profile_result[0].friends
                             });
                             console.log("Did add friend, there was already friends on the list.");
-                            return true;
+                            if( res )
+                                res.send("OK");
                         }
                     } else {
                             db.update(db.profileDB, { profile_id: profile_result[0].profile_id }, {
                                 friends: [ friend ]
                             });
                             console.log("Did add friend, there were not already friends on the list.");
-                            return true;
+                            if( res )
+                                res.send("OK");
                     }
                 }
             });
         } else {
             console.log("Did not add friend, user not found.");
-            return false;
+            if( res )
+                res.status(400).send("not OK");
         }
     });
 }
