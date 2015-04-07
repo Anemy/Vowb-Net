@@ -8,7 +8,7 @@ setTimeout( function() {
   swal({   
       title: "An input!",
       text: "Write something interesting:",
-      type: "input",   showCancelButton: true,
+      type: "warning",   showCancelButton: true,
       closeOnConfirm: false
       // animation: "slide-from-top"
     },
@@ -23,7 +23,7 @@ setTimeout( function() {
   
   });
 }, 2000);
-swal("Sweet Alert, brah!", null, "success");
+
 socket.on('chat message', function(msg){
   //$('#messages').append($('<div class="messageSpacer"/>'));
   var html = '';
