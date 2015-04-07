@@ -13,14 +13,15 @@ var friendButtonClicked = function() {
             sweetAlert("Opps...", "We don't have a edit friends yet", "error");
         }
         else{
+            console.log("before ajax");
             $.ajax({
-                url:"users/addFriend",
+                url:"/users/addFriend",
                 type: "POST",
                 data: {
                     addFriend : username
                 },
                 success: function(data){
-                    console.log("successfully logged in");
+                    console.log("Successfully added friend");
                     var alertTitle = "Successfully added ";
                     alertTitle = alertTitle.concat();
                     swal({title:"Added Friend", type:"success"},
@@ -32,6 +33,7 @@ var friendButtonClicked = function() {
                     );
                 },
                 error: function(data){
+                    console.log("Failed to added friend");
                     swal({title: "Error",text:"Failed to add friend", type:"error"}, 
                         function(){
                             var url = "/users/";
