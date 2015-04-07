@@ -14,7 +14,7 @@ var friendButtonClicked = function() {
         }
         else{
             $.ajax({
-                url:"/addFriend",
+                url:"users/addFriend",
                 type: "POST",
                 data: {
                     addFriend : username
