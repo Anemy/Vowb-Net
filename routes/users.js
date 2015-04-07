@@ -152,5 +152,10 @@ router.get('/*', function(req, res, next) {
     });
 });
 
+router.post('/addFriend', function(req, res, next) {
+    var loginData = getLoginData(req);
+    db.addFriend(loginData,req.body.addFriend);
+});
+
 
 module.exports = router;
