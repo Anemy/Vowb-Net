@@ -18,11 +18,11 @@ socket.on('server message', function(msg){
   $('#messages').append($('<li class="serverMessage">').text(msg.text));
   document.getElementById("msgBox").scrollTop = document.getElementById("msgBox").scrollHeight;
 });
-socket.on('username message', function(msg){
+socket.on('username message', function(msg){ 
 
 });
 
-// submitting the chat form
+// submitting the chat form 
 $('form').submit(function(){
   if($('#m').val().length > 0) {
     socket.emit('chat message', $('#m').val());
@@ -79,7 +79,7 @@ This is the code which enables a user to create an RTC voice chat stream lobby
 var connection = new RTCMultiConnection();
 document.querySelector('#setup').onclick = function() {
     // room password has been set before calling "open" method
-    connection.extra.password = prompt('Setup password for your room!');
+    // connection.extra.password = prompt('Setup password for your room!');
     connection.open();
     this.disabled = true;
 };
@@ -87,18 +87,18 @@ document.querySelector('#setup').onclick = function() {
     document.querySelector('#setup').onclick = function () {
       console.log("Ask for Password");
       // room password has been set before calling "open" method
-      connection.extra.password = prompt('Setup password for your room!');
+      // connection.extra.password = prompt('Setup password for your room!');
       connection.open();
     };
     connection.onNewSession = function (session) {
       // set password for person who is trying to join the room
-      connection.extra.password = prompt('Enter password to join this room.');
+      // connection.extra.password = prompt('Enter password to join this room.');
       connection.join(session);
     };
     connection.onRequest = function (userid, extra) {
       // validating password in "onRequest"
-      if (extra.password != connection.extra.password)
-        return alert('password: ' + extra.password + ' !== ' + connection.extra.password);
+      // if (extra.password != connection.extra.password)
+      //   return alert('password: ' + extra.password + ' !== ' + connection.extra.password);
       connection.accept(userid, extra);
     };
 //End Password Code
@@ -137,7 +137,7 @@ connection.onNewSession = function(session) {
             if (!session) throw 'No such session exists.';
 
             // set password for person who is trying to join the room
-            connection.extra.password = prompt('Enter password to join this room.');
+            // connection.extra.password = prompt('Enter password to join this room.');
 
             connection.join(session);
     };
@@ -145,8 +145,8 @@ connection.onNewSession = function(session) {
 //Start Password Code
 connection.onRequest = function(e) {
     // validating password in "onRequest"
-    if (e.extra.password != connection.extra.password)
-        return alert('password: ' + e.extra.password + ' !== ' + connection.extra.password);
+    // if (e.extra.password != connection.extra.password)
+    //     return alert('password: ' + e.extra.password + ' !== ' + connection.extra.password);
     connection.accept(e);
 };
 connection.onstream = function(e) {
