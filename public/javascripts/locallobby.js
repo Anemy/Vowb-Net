@@ -4,6 +4,7 @@ var socket = io();
 var intialName = loggedIn;
 
 setTimeout( function() {
+  //var sAlert = function() {
   swal({   
       title: "An input!",
       text: "Write something interesting:",
@@ -19,9 +20,10 @@ setTimeout( function() {
         return false ;
       }
       swal("Nice!", "You wrote: " + inputValue, "success");
+  
   });
 }, 2000);
-
+swal("Sweet Alert, brah!", null, "success");
 socket.on('chat message', function(msg){
   //$('#messages').append($('<div class="messageSpacer"/>'));
   var html = '';
