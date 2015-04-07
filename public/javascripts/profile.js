@@ -27,7 +27,7 @@ var friendButtonClicked = function() {
                     swal({title:"Added Friend", type:"success"},
                         function(){
                             var url = "/users/";
-                            url = url.concat(user_name);
+                            url = url.concat(username);
                             window.location.href = url;
                         }
                     );
@@ -37,7 +37,7 @@ var friendButtonClicked = function() {
                     swal({title: "Error",text:"Failed to add friend", type:"error"}, 
                         function(){
                             var url = "/users/";
-                            url = url.concat(user_name);
+                            url = url.concat(username);
                             window.location.href = url;
                         }
                     );
