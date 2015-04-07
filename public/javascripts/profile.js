@@ -24,7 +24,7 @@ var friendButtonClicked = function() {
                     console.log("Successfully added friend");
                     // var alertTitle = "Successfully added ";
                     // alertTitle = alertTitle.concat(user);
-                    swal({title:"Added Friend", type:"success"},
+                    swal({title:"Woot!", text: "Added Friend to your Friends List", type:"success"},
                         function(){
                             var url = "/users/";
                             url = url.concat(username);
@@ -33,8 +33,8 @@ var friendButtonClicked = function() {
                     );
                 },
                 error: function(data){
-                    console.log("Failed to added friend");
-                    swal({title: "Error",text:"Failed to add friend", type:"error"}, 
+                    console.log(data.responseText);
+                    swal({title: "Error",text: data.responseText , type:"error"}, 
                         function(){
                             var url = "/users/";
                             url = url.concat(username);
