@@ -160,7 +160,7 @@ router.post('/addFriend', function(req, res, next) {
             res.send(text);
         else
             res.status(400).send(text);
-    });
+    }); 
 });
 
 

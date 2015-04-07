@@ -22,9 +22,10 @@ var friendButtonClicked = function() {
                 },
                 success: function(data){
                     console.log("Successfully added friend");
-                    // var alertTitle = "Successfully added ";
-                    // alertTitle = alertTitle.concat(user);
-                    swal({title:"Woot!", text: "Added Friend to your Friends List", type:"success"},
+                    var alertTitle = "Added ";
+                    alertTitle = alertTitle.concat(username);
+                    alertTitle = alertTitle.concat(" to your Friends List");
+                    swal({title:"Woot!", text: alertTitle, type:"success"},
                         function(){
                             var url = "/users/";
                             url = url.concat(username);
