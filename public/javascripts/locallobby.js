@@ -207,4 +207,3 @@ setTimeout(function() {
         connection.join(session);
     }
 }, 1000);
->>>>>>> 4e02df18cf060db31d0888ffa5a4204b87aa8711
