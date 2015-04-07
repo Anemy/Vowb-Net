@@ -169,7 +169,7 @@ var roomsList = document.getElementById('rooms-list');
 // setup signaling to search existing sessions
 connection.connect();
 
- (function() {
+(function() {
             var uniqueToken = document.getElementById('unique-token');
             if (uniqueToken)
                 if (location.hash.length > 2) uniqueToken.parentNode.parentNode.parentNode.innerHTML = '<h2 style="text-align:center;"><a href="' + location.href + '" target="_blank">Share this link</a></h2>';
@@ -207,3 +207,4 @@ setTimeout(function() {
         connection.join(session);
     }
 }, 1000);
+>>>>>>> 4e02df18cf060db31d0888ffa5a4204b87aa8711
