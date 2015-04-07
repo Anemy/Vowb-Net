@@ -18,7 +18,7 @@ socket.on('server message', function(msg){
   $('#messages').append($('<li class="serverMessage">').text(msg.text));
   document.getElementById("msgBox").scrollTop = document.getElementById("msgBox").scrollHeight;
 });
-socket.on('username message', function(msg){
+socket.on('username message', function(msg){ 
 
 });
 

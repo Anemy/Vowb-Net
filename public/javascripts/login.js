@@ -4,6 +4,8 @@ var loggedIn = false;
 var user_name = "";
 var loginpop = false;
 
+var loginRecentlyClicked = false;
+
 
 var loginButtonClicked = function() {
   if (!loggedIn) {
@@ -30,7 +32,6 @@ var signupLogOutClicked = function () {
     if(loggedIn) {
         showLoggedOut();
 
-
         $.ajax({
           url: "/logout",
           type: "POST",
@@ -46,7 +47,11 @@ var signupLogOutClicked = function () {
 }
 
 var loginSubClicked = function() {
-	console.log("loginsub clicked");
+  if(loginRecentlyClicked) {
+      return;
+  }
+
+  loginRecentlyClicked = true;
 	// Pascal adding post request for login button 03/02/15
 	$.ajax({
         url: "/login",
@@ -62,6 +67,7 @@ var loginSubClicked = function() {
               //console.log("Login success!!");
               $('.loginPage').fadeOut(50);
               showLoggedIn( $("#un_id").val() );
+              loginRecentlyClicked = false;
 
               swal("Logged in!", null, "success")
               var checkurl = "/users/";
@@ -77,11 +83,13 @@ var loginSubClicked = function() {
               }
           }
           else {
+            loginRecentlyClicked = false;
             sweetAlert("Oops...", "Username or password is incorrect.", "error");
           }
         },
         error: function(data){
             sweetAlert("Oops...", "Username or password is incorrect.", "error");
+            loginRecentlyClicked = false;
         }
     });
 }
