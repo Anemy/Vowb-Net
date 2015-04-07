@@ -70,14 +70,22 @@ var loginSubClicked = function() {
               loginRecentlyClicked = false;
 
               swal("Logged in!", null, "success")
+<<<<<<< HEAD
               var checkurl = "/users/";
               checkurl = checkurl.concat(user_name)
-              console.log(window.location.pathname);
-              console.log(checkurl);
+              // console.log(window.location.pathname);
+              // console.log(checkurl);
               if(window.location.pathname == checkurl) {
+=======
+              // var checkurl = "/users/";
+              // checkurl = checkurl.concat(user_name)
+              // console.log(window.location.pathname);
+              // console.log(checkurl);
+              // if(window.location.pathname == checkurl) {
+>>>>>>> 21ac103ca7837f031b5d300b4d0e78b1844328f0
                 //$('.profilePage').show();
                 window.location.reload();
-              }              
+              //}              
               if(intialName != loggedIn){
                 socket.emit('username message', user_name);
               }
