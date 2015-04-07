@@ -100,7 +100,7 @@ $('#createLobbyForm').submit( function (event) {
                   })
               }
               else {
-                alert("Lobby already exists!!");
+                alert("Lobby already exists!");
                 console.log("Failure from server");
               }
             },

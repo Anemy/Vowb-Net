@@ -11,7 +11,9 @@ block content
             .imgContainer
                 .imgContainerOverlay
                 img(class="camIMG" src="/images/profile/cameraW.png")
-                img#profPic(class="profIMG" src="/images/profile/M.jpg")
+                //
+                img#profPic(class="profIMG" src='#{profileURL?profileURL:"/images/profile/M.jpg"}')
+                //"/images/profile/M.jpg"
             .statusBar
                 .overlayStat
                 img(class="statusIMG" src="/images/profile/offline.png") 

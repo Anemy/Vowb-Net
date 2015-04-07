@@ -12,24 +12,28 @@ block content
             .voiceChatPanel
                 //- .joinVoiceChat(onClick="connectToVoiceChat()").
                 //-    Voice Chat
-                input#conference-name.inputBox(type="text" placeHolder="Insert Lobby name")
-                button#setup-new-conference.setup.joinVoiceChat Create Sublobby
+                //- input#conference-name.inputBox(type="text" placeHolder="Insert Lobby name")
+                //- button#setup-new-conference.setup.joinVoiceChat Create Sublobby
                 //- list of all available broadcasting rooms
-                table#rooms-list
+                //- table#rooms-list
                 //- local/remote videos container
                 #audios-container
 
                 //- .createLobby
                 //-     input#conference-name(type="text" placeHolder="Insert Lobby name")
                 //-     button#setup-new-conference.setup Create lobby
-                //- 
+                //-
                 //- // list of all available broadcasting rooms
                 //- table#rooms-list(style='width: 100%;')
                 //- // local/remote videos container
                 //- #audios-container
                 //make password
                 input#setup(type="button" value="Enter Password")
-
+            .usernameArea
+                .userTitle
+                    Users in current chat
+                #userBox.chatbox
+                    ul#userList
             .chatArea
                 //- .lobbySideBar
                 .chatboxWrapper
@@ -37,4 +41,25 @@ block content
                         ul#messages
                 input#m.controls(type="text" placeHolder="Enter a message...")
 
-    include copyright
+.loginPage
+    .overlay
+    .loginPopup
+        header.loginHeader
+          span.headerTitle Log in
+          span.loginClose(onclick = "exitButtonClicked()") X
+        .loginBody
+          .loginForm
+            label username
+            input(type='username' id = "un_id")
+            br
+            label password
+            input(type='password' id = "pw_id")
+            br
+            .checkbox
+              input#remember(type='checkbox')
+              label(for='remember') remember me on this computer
+            .action_btns
+              a.btn.btn_red(onclick="loginSubClicked()") log in
+
+
+            include copyright

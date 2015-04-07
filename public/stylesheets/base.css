@@ -1388,6 +1388,11 @@ table {
   margin-top: 2em;
   text-align: center;
   width: 80%; }
+  .lobbyPage .voiceChatPanel audio {
+    -webkit-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+    box-shadow: 2px 2px 4px 0px #006773;
+    border-radius: 7px 7px 7px 7px; }
   .lobbyPage .voiceChatPanel .joinVoiceChat {
     margin-left: 1em;
     text-align: center;
@@ -1482,6 +1487,47 @@ table {
     .lobbyPage .voiceChatPanel #rooms-list tr {
       border-bottom: 1px solid #ECF0F1;
       margin: 0.2em; }
+.lobbyPage .userArea {
+  position: absolute;
+  left: 0;
+  bottom: 24px;
+  height: 100%;
+  width: 100%;
+  z-index: -1; }
+  .lobbyPage .userArea .userText {
+    text-align: center; }
+  .lobbyPage .userArea .chatbox {
+    font-family: 'Cabin';
+    font-size: 12px;
+    color: black;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 24px;
+    left: 200;
+    background-color: #FBFBFB;
+    word-wrap: break-word;
+    overflow-y: auto; }
+    .lobbyPage .userArea .chatbox #userList {
+      height: 50%;
+      width: 23%;
+      top: 33px; }
+      .lobbyPage .userArea .chatbox #userList .messageSpacer {
+        width: 100%;
+        float: left;
+        margin: 4px; }
+        .lobbyPage .userArea .chatbox #userList .messageSpacer li {
+          padding-top: 4px;
+          padding-bottom: 4px;
+          padding-left: 10px;
+          padding-right: 10px;
+          line-height: 20px;
+          background-color: white; }
+        .lobbyPage .userArea .chatbox #userList .messageSpacer .userMessage {
+          margin: 0;
+          float: left;
+          width: 100%;
+          background-color: #FBFBFB; }
 .lobbyPage .chatArea {
   position: absolute;
   width: 24%;

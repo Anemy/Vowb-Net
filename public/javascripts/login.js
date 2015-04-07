@@ -78,7 +78,8 @@ var loginSubClicked = function() {
               // if(window.location.pathname == checkurl) {
                 //$('.profilePage').show();
                 window.location.reload();
-              // }              
+
+              //}              
               if(intialName != loggedIn){
                 socket.emit('username message', user_name);
               }

@@ -54,7 +54,6 @@ router.get('/edit/*', function(req, res, next) {
                             //dataObject.description = split.length > 1 ? split[1] : split[0];//"No profile? That's OK. This guy has yet to make one.";
                             //dataObject.user_age = split[0];//dataObject.birth_date;
                             //dataObject.user_age = dataObject.birth_date;
-                            res.render('editProfPage', dataObject);
                         });
                     });
                 } else {
@@ -68,8 +67,9 @@ router.get('/edit/*', function(req, res, next) {
                     //dataObject.description = split.length > 1 ? split[1] : split[0];//"No profile? That's OK. This guy has yet to make one.";
                     //dataObject.user_age = split[0];//dataObject.birth_date;
                     //dataObject.user_age = dataObject.birth_date;
-                    res.render('editProfPage', dataObject);
                 }
+                dataObject.profileURL = user.avatar_URL;
+                res.render('editProfPage', dataObject);
             });
         }
         else {
@@ -84,18 +84,42 @@ router.get('/*', function(req, res, next) {
     var loginData = getLoginData(req);
     // Example:
     //res.render('userPage', { name: 'Mystxc'});
-    db.search(db.userDB, { username: req.params[0] }, function(result) {
-        if( result.length > 0 ) {
-            db.search(db.profileDB, { profile_id: result[0].profile_pointer }, function(result) {
+    db.search(db.userDB, { username: req.params[0] }, function(user_result) {
+        if( user_result.length > 0 ) {
+            db.search(db.profileDB, { profile_id: user_result[0].profile_pointer }, function(result) {
                 dataObject = result[0];
                 if( !dataObject )
                     dataObject = {};
-                dataObject.login = loginData;
-                dataObject.title = "Vowb.net - Edit Profile";
-                dataObject.username = req.params[0];
+                
+                
                 dataObject.security_level_all       = (dataObject.security_level === 0 || (!dataObject.security_level));
                 dataObject.security_level_friends   = (dataObject.security_level === 1);
                 dataObject.security_level_self      = (dataObject.security_level === 2);
+                
+                if( dataObject.security_level_self && req.params[0] != loginData ) {
+                    dataObject = {
+                        description: "User information not visible.",
+                        full_name: "Not available",
+                        security_level_all: false,
+                        security_level_friends: false,
+                        security_level_self: true
+                    };
+                } else if ( dataObject.security_level_friends ) {
+                    if( !dataObject.friends || (dataObject.friends.indexOf(loginData) == -1 && req.params[0] != loginData) ) {
+                        dataObject = {
+                            description: "User information not visible.",
+                            full_name: "Not available",
+                            security_level_all: false,
+                            security_level_friends: true,
+                            security_level_self: false
+                        };
+                    }
+                }
+                    
+                dataObject.login = loginData;
+                dataObject.title = "Vowb.net - Edit Profile";
+                dataObject.username = req.params[0];
+                
                 //dataObject.user_age = dataObject.birth_date;
                 if( !dataObject.description )
                     dataObject.description = "No profile? That's OK. This guy has yet to make one.";
@@ -104,6 +128,7 @@ router.get('/*', function(req, res, next) {
                     //dataObject.description = split.length > 1 ? split[1] : split[0];//"No profile? That's OK. This guy has yet to make one.";
                     //dataObject.user_age = split[0];//dataObject.birth_date;
                 }
+                dataObject.profileURL = user_result[0].avatar_URL;
                 res.render('profile', dataObject);
             });
         } else {
@@ -125,6 +150,11 @@ router.get('/*', function(req, res, next) {
             res.render('404', { title: "404: Vowb.net page not found", url: "/users" + req.url });
         }
     });
+});
+
+router.post('/addFriend', function(req, res, next) {
+    var loginData = getLoginData(req);
+    db.addFriend(loginData,req.body.addFriend);
 });
 
 

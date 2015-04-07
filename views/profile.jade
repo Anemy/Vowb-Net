@@ -7,7 +7,7 @@ block content
 			var username = "!{username}";
 		script(defer="defer" src="/javascripts/profile.js")
 		.leftPane
-			img(class="profIMG" src="/images/profile/M.jpg")
+			img(class="profIMG" src='#{profileURL?profileURL:"/images/profile/M.jpg"}')
 			.statusBar
 				img(class="statusIMG" src="/images/profile/offline.png") 
 				.pStatus OFFLINE
