@@ -96,29 +96,38 @@ db.addFriend = function(user,friend) {
                         description: "Welcome to Vowb.net, "+user+"! Your profile got generated late.",
                         full_name: user,
                         friends: [ friend ]
+                    }, function(pcresult) {
+                        console.log("!! created profile with ID: " + JSON.stringify(pcresult));
+                        db.update(db.userDB, { username: user.username }, { profile_pointer: pcresult[0].profile_id });
                     });
+                    console.log("Did add friend, also made a profile because user did not have one.");
                     return true;
                 } else {
                     if( profile_result[0].friends ) {
                         if( profile_result[0].friends.indexOf(friend) != -1 )  {
                             // friend already added
+                            console.log("Did not add friend because friend is already on list.");
                             return false;
                         } else {
                             db.update(db.profileDB, { profile_id: profile_result[0].profile_pointer }, {
                                 friends: profile_result[0].friends.push(friend)
                             });
+                            console.log("Did add friend, there was already friends on the list.");
                             return true;
                         }
                     } else {
                             db.update(db.profileDB, { profile_id: profile_result[0].profile_pointer }, {
                                 friends: [ friend ]
                             });
+                            console.log("Did add friend, there were not already friends on the list.");
                             return true;
                     }
                 }
             });
-        } else
+        } else {
+            console.log("Did not add friend, user not found.");
             return false;
+        }
     });
 }
 
