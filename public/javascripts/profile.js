@@ -24,7 +24,7 @@ var friendButtonClicked = function() {
                     console.log("Successfully added friend");
                     // var alertTitle = "Successfully added ";
                     // alertTitle = alertTitle.concat(user);
-                    swal({title:"Added Friend" + username + "as a friend", type:"success"},
+                    swal({title:"Added Friend", type:"success"},
                         function(){
                             var url = "/users/";
                             url = url.concat(username);
