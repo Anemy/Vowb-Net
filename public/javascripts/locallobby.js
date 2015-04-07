@@ -36,7 +36,7 @@ var url = window.location.pathname;
 var to = url.lastIndexOf('/') +1;
 
 var chatToConnect =  url.substring(to,url.length);
-// alert(chatToConnect);
+//alert(chatToConnect);
 console.log("Trying to connect to chat: " + chatToConnect);
 socket.emit('connect to chat', chatToConnect);
 
