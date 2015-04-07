@@ -87,7 +87,7 @@ db.addUser = function(username, email, password) {
  * For security's sake, only call it when we know we're logged
  * in as "user".
  */
-db.addFriend = function(user,friend, res) {
+db.addFriend = function(user,friend,callback) {
     db.search(db.userDB, {username: user}, function(user_result) {
         if( user_result.length > 0 ) {
             db.search(db.profileDB, { profile_id: user_result[0].profile_pointer }, function(profile_result) {
@@ -101,38 +101,38 @@ db.addFriend = function(user,friend, res) {
                         db.update(db.userDB, { username: user.username }, { profile_pointer: pcresult[0].profile_id });
                     });
                     console.log("Did add friend, also made a profile because user did not have one.");
-                    if( res )
-                        res.send("OK");
+                    if( callback )
+                        callback(true,"Friend added successfully");
                 } else {
                     if( profile_result[0].friends ) {
                         if( profile_result[0].friends.indexOf(friend) != -1 )  {
                             // friend already added
                             console.log("Did not add friend because friend is already on list.");
-                            if( res )
-                                res.status(400).send("not OK");
+                            if( callback )
+                                callback(false,"That user is already your friend.");
                         } else {
                             profile_result[0].friends.push(friend);
                             db.update(db.profileDB, { profile_id: profile_result[0].profile_id }, {
                                 friends: profile_result[0].friends
                             });
-                            console.log("Did add friend, there was already friends on the list.");
-                            if( res )
-                                res.send("OK");
+                            console.log("Did add friend, there were already friends on the list.");
+                            if( callback )
+                                callback(true,"Friend added successfully.");
                         }
                     } else {
                             db.update(db.profileDB, { profile_id: profile_result[0].profile_id }, {
                                 friends: [ friend ]
                             });
                             console.log("Did add friend, there were not already friends on the list.");
-                            if( res )
-                                res.send("OK");
+                            if( callback )
+                                callback(true,"Friend added successfully.");
                     }
                 }
             });
         } else {
             console.log("Did not add friend, user not found.");
-            if( res )
-                res.status(400).send("not OK");
+            if( callback )
+                callback(false,"You need to be logged in on a Vowb.net account for that to work!");
         }
     });
 }
