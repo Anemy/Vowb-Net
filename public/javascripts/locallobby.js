@@ -90,19 +90,19 @@ var connection = new RTCMultiConnection();
     //   // connection.extra.password = prompt('Setup password for your room!');
     //   connection.open();
     // };
-    connection.onNewSession = function (session) {
-      // set password for person who is trying to join the room
-      // connection.extra.password = prompt('Enter password to join this room.');
-      connection.join(session);
-    };
-    connection.onRequest = function (userid, extra) {
-      // validating password in "onRequest"
-      // if (extra.password != connection.extra.password)
-      //   return alert('password: ' + extra.password + ' !== ' + connection.extra.password);
-      connection.accept(userid, extra);
-    };
+connection.onNewSession = function (session) {
+  // set password for person who is trying to join the room
+  // connection.extra.password = prompt('Enter password to join this room.');
+  connection.join(session);
+};
+connection.onRequest = function (userid, extra) {
+  // validating password in "onRequest"
+  // if (extra.password != connection.extra.password)
+  //   return alert('password: ' + extra.password + ' !== ' + connection.extra.password);
+  connection.accept(userid, extra);
+};
 //End Password Code
-//End Password Code
+
 connection.session = {
     audio: true
 };
