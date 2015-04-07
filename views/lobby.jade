@@ -22,20 +22,22 @@ block content
                 //- .createLobby
                 //-     input#conference-name(type="text" placeHolder="Insert Lobby name")
                 //-     button#setup-new-conference.setup Create lobby
-                //- 
+                //-
                 //- // list of all available broadcasting rooms
                 //- table#rooms-list(style='width: 100%;')
                 //- // local/remote videos container
                 //- #audios-container
-                //- make password
-                //- input#setup(type="button" value="Enter Password")
-                .someText.
-                    You are now in General Chat.
-
+                //make password
+                input#setup(type="button" value="Enter Password")
+            .usernameArea
+                .userTitle
+                    Users in current chat
+                #userBox.chatbox
+                    ul#userList
             .chatArea
                 //- .lobbySideBar
                 .chatboxWrapper
-                    #msgBox.chatbox 
+                    #msgBox.chatbox
                         ul#messages
                 input#m.controls(type="text" placeHolder="Enter a message...")
 
@@ -44,9 +46,9 @@ block content
     .loginPopup
         header.loginHeader
           span.headerTitle Log in
-          span.loginClose(onclick = "exitButtonClicked()") X  
+          span.loginClose(onclick = "exitButtonClicked()") X
         .loginBody
-          .loginForm      
+          .loginForm
             label username
             input(type='username' id = "un_id")
             br
@@ -54,10 +56,10 @@ block content
             input(type='password' id = "pw_id")
             br
             .checkbox
-              input#remember(type='checkbox') 
+              input#remember(type='checkbox')
               label(for='remember') remember me on this computer
             .action_btns
-              a.btn.btn_red(onclick="loginSubClicked()") log in 
+              a.btn.btn_red(onclick="loginSubClicked()") log in
 
 
             include copyright

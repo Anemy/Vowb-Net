@@ -4,6 +4,7 @@ var socket = io();
 var intialName = loggedIn;
 
 setTimeout( function() {
+  //var sAlert = function() {
   swal({   
       title: "An input!",
       text: "Write something interesting:",
@@ -19,9 +20,10 @@ setTimeout( function() {
         return false ;
       }
       swal("Nice!", "You wrote: " + inputValue, "success");
+  
   });
 }, 2000);
-
+swal("Sweet Alert, brah!", null, "success");
 socket.on('chat message', function(msg){
   //$('#messages').append($('<div class="messageSpacer"/>'));
   var html = '';
@@ -31,10 +33,19 @@ socket.on('chat message', function(msg){
   $('#messages').append( html ); // $('<div class="messageSpacer"><li class="playerMessage"></div>').text(msg));
   document.getElementById("msgBox").scrollTop = document.getElementById("msgBox").scrollHeight;
 });
+socket.on('user join', function(msg){
+  $('#userList').empty();
+  for(var i = 0; i < msg.num; i++){
+    console.log("User " + msg.text[i] + " added");
+    if(msg.text != "" || msg.text != undefined){
+        $('#userList').append($('<li class="userMessage">').text(msg.text[i]));
+    }
+  }
+});
 
 socket.on('server message', function(msg){
   //$('#messages').append($('<div class="messageSpacer"/>'));
-  $('#messages').append($('<li class="serverMessage">').text(msg.text));
+  $('#messages').append($('<li class="userMessage">').text(msg.text));
   document.getElementById("msgBox").scrollTop = document.getElementById("msgBox").scrollHeight;
 });
 socket.on('username message', function(msg){ 
@@ -61,7 +72,8 @@ socket.emit('connect to chat', chatToConnect);
 
 setTimeout(function() {
   // insecurely transfers a user's username
-  socket.emit('username message', user_name);
+  
+  socket.emit('username message', $("#login_id").text());
 }, 50);
 
 
