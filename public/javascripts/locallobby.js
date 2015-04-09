@@ -25,7 +25,10 @@ var intialName = loggedIn;
 }, 2000);
 swal("You will need to enter your password", null, "success");*/
 
-var passwd = prompt("Please enter your password: ");
+
+if (window.location.pathname != "/lobby") {
+  var passwd = prompt("Please enter your password: ");
+}
 
 /*$.ajax({
   url: "/lobbyLogin",
@@ -143,12 +146,12 @@ var passwd = prompt("Please enter your password: ");
   */
   //Start Password code
   var connection = new RTCMultiConnection();
-  document.querySelector('#setup').onclick = function() {
+/*  document.querySelector('#setup').onclick = function() {
       // room password has been set before calling "open" method
       connection.extra.password = prompt('Setup password for your room!');
       connection.open();
       this.disabled = true;
-  };
+  };*/
   //Start Password Code
   /*    document.querySelector('#setup').onclick = function () {
         // room password has been set before calling "open" method
