@@ -12,7 +12,7 @@ var friendButtonClicked = function() {
         if(self){
             sweetAlert("Opps...", "We don't have a edit friends yet", "error");
         }
-        else{
+        else if (!isFriend) {
             console.log("before ajax");
             $.ajax({
                 url:"/users/addFriend",
@@ -23,6 +23,38 @@ var friendButtonClicked = function() {
                 success: function(data){
                     console.log("Successfully added friend");
                     var alertTitle = "Added ";
+                    alertTitle = alertTitle.concat(username);
+                    alertTitle = alertTitle.concat(" to your Friends List");
+                    swal({title:"Woot!", text: alertTitle, type:"success"},
+                        function(){
+                            var url = "/users/";
+                            url = url.concat(username);
+                            window.location.href = url;
+                        }
+                    );
+                },
+                error: function(data){
+                    console.log(data.responseText);
+                    swal({title: "Error",text: data.responseText , type:"error"}, 
+                        function(){
+                            var url = "/users/";
+                            url = url.concat(username);
+                            window.location.href = url;
+                        }
+                    );
+                }
+            });
+        } else {
+            console.log("before ajax");
+            $.ajax({
+                url:"/users/removeFriend",
+                type: "POST",
+                data: {
+                    removeFriend : username
+                },
+                success: function(data){
+                    console.log("Successfully removed friend");
+                    var alertTitle = "Remove ";
                     alertTitle = alertTitle.concat(username);
                     alertTitle = alertTitle.concat(" to your Friends List");
                     swal({title:"Woot!", text: alertTitle, type:"success"},

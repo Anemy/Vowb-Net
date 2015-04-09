@@ -220,11 +220,20 @@ router.post('/createlobby', function(req, res) {
         if (results.length == 0) {
             console.log("Ready to add new lobby");
             console.log("username is " + req.session.username);
-            db.add(db.lobbyDB, {
-                lobby_title: req.body.lobbyName,
-                password: db.hashPassword(req.body.password),
-                owner: req.session.username
-            });
+
+            if (req.body.password == null || req.body.password == "") {
+                db.add(db.lobbyDB, {
+                    lobby_title: req.body.lobbyName,
+                    password: null,
+                    owner: req.session.username
+                });
+            } else {
+                db.add(db.lobbyDB, {
+                    lobby_title: req.body.lobbyName,
+                    password: db.hashPassword(req.body.password),
+                    owner: req.session.username
+                });
+            }
             console.log("Successful!")
             res.end(JSON.stringify({value: "Success"}));
         } else {

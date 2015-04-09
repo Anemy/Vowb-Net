@@ -54,6 +54,9 @@ router.get('/edit/*', function(req, res, next) {
                             //dataObject.description = split.length > 1 ? split[1] : split[0];//"No profile? That's OK. This guy has yet to make one.";
                             //dataObject.user_age = split[0];//dataObject.birth_date;
                             //dataObject.user_age = dataObject.birth_date;
+                            dataObject.profileURL = user.avatar_URL;
+                            res.render('editProfPage', dataObject);
+
                         });
                     });
                 } else {
@@ -67,9 +70,9 @@ router.get('/edit/*', function(req, res, next) {
                     //dataObject.description = split.length > 1 ? split[1] : split[0];//"No profile? That's OK. This guy has yet to make one.";
                     //dataObject.user_age = split[0];//dataObject.birth_date;
                     //dataObject.user_age = dataObject.birth_date;
+                    dataObject.profileURL = user.avatar_URL;
+                    res.render('editProfPage', dataObject);
                 }
-                dataObject.profileURL = user.avatar_URL;
-                res.render('editProfPage', dataObject);
             });
         }
         else {
@@ -119,6 +122,7 @@ router.get('/*', function(req, res, next) {
                 dataObject.login = loginData;
                 dataObject.title = "Vowb.net - Edit Profile";
                 dataObject.username = req.params[0];
+                dataObject.isFriend = (dataObject.friends && dataObject.friends.indexOf(loginData) != -1) || req.params[0] == loginData;
                 
                 //dataObject.user_age = dataObject.birth_date;
                 if( !dataObject.description )
@@ -156,6 +160,17 @@ router.post('/addFriend', function(req, res, next) {
     var loginData = getLoginData(req);
     console.log("Adding " + req.body.addFriend + " as a friend of " + loginData);
     db.addFriend(loginData,req.body.addFriend,function(success,text) {
+        if( success )
+            res.send(text);
+        else
+            res.status(400).send(text);
+    }); 
+});
+
+router.post('/removeFriend', function(req, res, next) {
+    var loginData = getLoginData(req);
+    console.log("Removing " + req.body.removeFriend + " as a friend of " + loginData);
+    db.removeFriend(loginData,req.body.removeFriend,function(success,text) {
         if( success )
             res.send(text);
         else

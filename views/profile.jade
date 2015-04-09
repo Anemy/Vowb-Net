@@ -5,7 +5,9 @@ block content
 	.profilePage
 		script.
 			var username = "!{username}";
+			var isFriend = !{isFriend};
 			var friends = !{JSON.stringify(friends)};
+
 		script(defer="defer" src="/javascripts/profile.js")
 		.leftPane
 			img(class="profIMG" src='#{profileURL?profileURL:"/images/profile/chicken.png"}')
