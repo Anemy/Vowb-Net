@@ -230,7 +230,7 @@ router.post('/createlobby', function(req, res) {
             } else {
                 db.add(db.lobbyDB, {
                     lobby_title: req.body.lobbyName,
-                    password: db.hashPassword(req.body.password),
+                    password: req.body.password,//db.hashPassword(req.body.password),
                     owner: req.session.username
                 });
             }
