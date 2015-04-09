@@ -54,6 +54,9 @@ router.get('/edit/*', function(req, res, next) {
                             //dataObject.description = split.length > 1 ? split[1] : split[0];//"No profile? That's OK. This guy has yet to make one.";
                             //dataObject.user_age = split[0];//dataObject.birth_date;
                             //dataObject.user_age = dataObject.birth_date;
+                            dataObject.profileURL = user.avatar_URL;
+                            res.render('editProfPage', dataObject);
+
                         });
                     });
                 } else {
@@ -67,9 +70,9 @@ router.get('/edit/*', function(req, res, next) {
                     //dataObject.description = split.length > 1 ? split[1] : split[0];//"No profile? That's OK. This guy has yet to make one.";
                     //dataObject.user_age = split[0];//dataObject.birth_date;
                     //dataObject.user_age = dataObject.birth_date;
+                    dataObject.profileURL = user.avatar_URL;
+                    res.render('editProfPage', dataObject);
                 }
-                dataObject.profileURL = user.avatar_URL;
-                res.render('editProfPage', dataObject);
             });
         }
         else {
