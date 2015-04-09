@@ -63,6 +63,13 @@ var changeButtons = function() {
         $("#sendViewMSG").text("View Messages");
         $("#sendViewMSG").attr("href","VIEWMSGES");
     }
+    if(isFriend) {
+        self = false;
+        $("#addEditFriend").text("Remove Friend");
+        $("#addEditFriend").attr("href","");
+        $("#sendViewMSG").text("Send Message");
+        // $("#sendViewMSG").attr("href","VIEWMSGES");
+    }
     else {
         self = false;
         $("#addEditFriend").text("Add to Friends List");
@@ -87,13 +94,13 @@ var msgButtonClicked = function() {
 }
 /* This javascript manages the sign up page's client side interactions */
 $(document).ready(function() {    
-    if(loginData != "none") {
-        console.log("Has a session! " + loginData);
-        showLoggedIn( loginData );
+
+    $('#FList').empty();
+    for(var i = 0; i < friends.length;i++){
+        $('#FList').append('<li id="friend['+i+']">'+friends[i]+'</li>');
     }
-    else {
-      console.log("No session :'(");
-    }
+    console.log("Friends = " + friends);
+
     changeButtons();
     var checkurl = "/users/";
     checkurl = checkurl.concat(user_name)
