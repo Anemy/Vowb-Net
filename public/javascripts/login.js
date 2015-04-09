@@ -80,9 +80,9 @@ var loginSubClicked = function() {
                 window.location.reload();
 
               //}              
-              if(intialName != loggedIn){
-                socket.emit('username message', user_name);
-              }
+              // if(intialName != loggedIn){
+              //   socket.emit('username message', user_name);
+              // }
           }
           else {
             loginRecentlyClicked = false;

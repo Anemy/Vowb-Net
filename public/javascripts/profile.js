@@ -94,16 +94,20 @@ var changeButtons = function() {
         $("#addEditFriend").attr("href","");
         $("#sendViewMSG").text("View Messages");
         $("#sendViewMSG").attr("href","VIEWMSGES");
+        $('.editProfButton').show();
+
     }
-    if(isFriend) {
+    else if(isFriend) {
         self = false;
         $("#addEditFriend").text("Remove Friend");
         $("#addEditFriend").attr("href","");
         $("#sendViewMSG").text("Send Message");
+        $('.editProfButton').hide();
         // $("#sendViewMSG").attr("href","VIEWMSGES");
     }
     else {
         self = false;
+        $('.editProfButton').hide();
         $("#addEditFriend").text("Add to Friends List");
         // $("#addEditFriend").attr("href","/ADDFRIEND");
         $("#sendViewMSG").text("Send Message");
@@ -127,22 +131,24 @@ var msgButtonClicked = function() {
 /* This javascript manages the sign up page's client side interactions */
 $(document).ready(function() {    
 
-    $('#FList').empty();
-    for(var i = 0; i < friends.length;i++){
-        $('#FList').append('<li class = "friend" id="friend['+i+']">'+friends[i]+'</li>');
-    }
+
     // console.log("Friends = " + friends);
 
     changeButtons();
-    var checkurl = "/users/";
-    checkurl = checkurl.concat(user_name)
-    // console.log(window.location.pathname);
-    // console.log(checkurl);
-    if(window.location.pathname != checkurl) {
-      $('.editProfButton').hide();
+    $('#FList').empty();
+    if(friends != null){
+        for(var i = 0; i < friends.length;i++){
+            $('#FList').append('<li class="friend" id="friend['+i+']">'+friends[i]+'</li>');
+        }
     }
-    else {
-      $('.editProfButton').show();
-    }
+    //href = "'window.location.href' + "/users/" + 'friend['+i+']'"
+    // var checkurl = "/users/";
+    // checkurl = checkurl.concat(user_name)
+    // // console.log(window.location.pathname);
+    // // console.log(checkurl);
+    // if(window.location.pathname != checkurl) {
+    // }
+    // else {
+    // }
 
 });
