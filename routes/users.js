@@ -119,6 +119,7 @@ router.get('/*', function(req, res, next) {
                 dataObject.login = loginData;
                 dataObject.title = "Vowb.net - Edit Profile";
                 dataObject.username = req.params[0];
+                dataObject.isFriend = (dataObject.friends && dataObject.friends.indexOf(loginData) != -1) || req.params[0] == loginData;
                 
                 //dataObject.user_age = dataObject.birth_date;
                 if( !dataObject.description )
