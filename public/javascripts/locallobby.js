@@ -6,11 +6,11 @@ var intialName = loggedIn;
 setTimeout( function() {
   //var sAlert = function() {
   swal({   
-      title: "An input!",
-      text: "Write something interesting:",
-      type: "warning",   showCancelButton: true,
+      title: "Password",
+      text: "Please enter your password:",
+      type: "input",   showCancelButton: true,
       closeOnConfirm: false
-      // animation: "slide-from-top"
+      //animation: "slide-from-top"
     },
     function(inputValue){
       if (inputValue === false)
@@ -23,7 +23,7 @@ setTimeout( function() {
   
   });
 }, 2000);
-
+swal("You will need to enter your password", null, "success");
 socket.on('chat message', function(msg){
   //$('#messages').append($('<div class="messageSpacer"/>'));
   var html = '';
@@ -63,7 +63,7 @@ $('form').submit(function(){
 
 // Gets the lobby name and transfers that to the server as to connect to that specific chat socket io
 var url = window.location.pathname;
-var to = url.lastIndexOf('/') +1;
+var to = url.lastIndexOf('/') + 1;
 
 var chatToConnect =  url.substring(to,url.length);
 //alert(chatToConnect);
