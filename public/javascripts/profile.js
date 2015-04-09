@@ -129,7 +129,7 @@ $(document).ready(function() {
 
     $('#FList').empty();
     for(var i = 0; i < friends.length;i++){
-        $('#FList').append('<li id="friend['+i+']">'+friends[i]+'</li>');
+        $('#FList').append('<li class = "friend" id="friend['+i+']">'+friends[i]+'</li>');
     }
     console.log("Friends = " + friends);
 
