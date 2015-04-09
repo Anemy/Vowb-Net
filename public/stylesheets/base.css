@@ -1384,134 +1384,140 @@ table {
         line-height: 1.4em; }
 
 /* This is the styling page for the lobby page */
-.lobbyPage .voiceChatPanel {
-  margin-top: 2em;
-  text-align: center;
-  width: 80%; }
-  .lobbyPage .voiceChatPanel audio {
-    -webkit-transition: all 0.5s linear;
-    transition: all 0.5s linear;
-    box-shadow: 2px 2px 4px 0px #006773;
-    border-radius: 7px 7px 7px 7px; }
-  .lobbyPage .voiceChatPanel .joinVoiceChat {
-    margin-left: 1em;
+.lobbyPage {
+  font-family: 'Cabin'; }
+  .lobbyPage .voiceChatPanel {
     text-align: center;
-    color: #290E03;
-    background: -webkit-linear-gradient(white, #ECF0F1);
-    /* For Safari 5.1 to 6.0 */
-    /* For Opera 11.1 to 12.0 */
-    /* For Firefox 3.6 to 15 */
-    background: linear-gradient(white, #ECF0F1);
-    /* Standard syntax */
-    border-radius: 5px;
-    border: 2px solid #BDC3C7;
-    font-size: 14px;
-    width: 140px;
-    height: 2em;
-    padding-top: 3px;
-    padding-bottom: 8px;
-    -webkit-transition: all .25s ease;
-    transition: all .25s ease;
-    outline: none; }
-  .lobbyPage .voiceChatPanel .joinVoiceChat:hover {
-    cursor: pointer;
-    background: -webkit-linear-gradient(white, #E4E8E8);
-    /* For Safari 5.1 to 6.0 */
-    /* For Opera 11.1 to 12.0 */
-    /* For Firefox 3.6 to 15 */
-    background: linear-gradient(white, #E4E8E8);
-    /* Standard syntax */
-    border: 2px solid #FF474E;
-    color: #FC4349; }
-  .lobbyPage .voiceChatPanel .joinVoiceChat:active {
-    box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.2); }
-  .lobbyPage .voiceChatPanel .joinPrivateVoiceChat {
-    text-align: center;
-    color: #290E03;
-    background: -webkit-linear-gradient(white, #ECF0F1);
-    /* For Safari 5.1 to 6.0 */
-    /* For Opera 11.1 to 12.0 */
-    /* For Firefox 3.6 to 15 */
-    background: linear-gradient(white, #ECF0F1);
-    /* Standard syntax */
-    border-radius: 5px;
-    border: 2px solid #BDC3C7;
-    font-size: 14px;
-    width: 140px;
-    height: 2em;
-    padding-top: 3px;
-    padding-bottom: 8px;
-    -webkit-transition: all .35s ease;
-    transition: all .35s ease;
-    outline: none; }
-  .lobbyPage .voiceChatPanel .joinPrivateVoiceChat:hover {
-    cursor: pointer;
-    background: -webkit-linear-gradient(white, #E4E8E8);
-    /* For Safari 5.1 to 6.0 */
-    /* For Opera 11.1 to 12.0 */
-    /* For Firefox 3.6 to 15 */
-    background: linear-gradient(white, #E4E8E8);
-    /* Standard syntax */
-    border: 2px #0B486B #290E03;
-    color: #290E03; }
-  .lobbyPage .voiceChatPanel .joinPrivateVoiceChat:active {
-    box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.2); }
-  .lobbyPage .voiceChatPanel .inputBox {
-    height: 2em;
-    width: 50%;
-    border: none;
-    outline: none;
-    box-shadow: 0 0 2px #290E03;
-    font-size: 0.8em;
-    padding: 0px 6px;
-    border-radius: 5px;
-    font-size: 0.8em; }
-  .lobbyPage .voiceChatPanel .inputBox:focus {
-    background: -webkit-linear-gradient(white, #F7FCFC);
-    /* For Safari 5.1 to 6.0 */
-    /* For Opera 11.1 to 12.0 */
-    /* For Firefox 3.6 to 15 */
-    background: linear-gradient(white, #F7FCFC);
-    /* Standard syntax */
-    border: 2px #290E03 #290E03;
-    color: #290E03; }
-  .lobbyPage .voiceChatPanel #rooms-list {
-    font-family: 'Cabin';
-    font-size: 1.1em;
-    margin-top: 1em;
-    margin-left: 35%;
-    width: 30%; }
-    .lobbyPage .voiceChatPanel #rooms-list td {
-      height: 100%;
-      vertical-align: bottom; }
-    .lobbyPage .voiceChatPanel #rooms-list tr {
-      border-bottom: 1px solid #ECF0F1;
-      margin: 0.2em; }
-.lobbyPage .userArea {
-  position: absolute;
-  left: 0;
-  bottom: 24px;
-  height: 100%;
-  width: 100%;
-  z-index: -1; }
-  .lobbyPage .userArea .userText {
-    text-align: center; }
-  .lobbyPage .userArea .chatbox {
-    font-family: 'Cabin';
-    font-size: 12px;
-    color: black;
+    width: 80%; }
+    .lobbyPage .voiceChatPanel .lobbyTitle {
+      font-size: 1.6em;
+      color: #290E03;
+      text-decoration: underline;
+      margin-top: 0.5em; }
+    .lobbyPage .voiceChatPanel audio {
+      -webkit-transition: all 0.5s linear;
+      transition: all 0.5s linear;
+      box-shadow: 2px 2px 4px 0px #006773;
+      border-radius: 7px 7px 7px 7px; }
+    .lobbyPage .voiceChatPanel .joinVoiceChat {
+      margin-left: 1em;
+      text-align: center;
+      color: #290E03;
+      background: -webkit-linear-gradient(white, #ECF0F1);
+      /* For Safari 5.1 to 6.0 */
+      /* For Opera 11.1 to 12.0 */
+      /* For Firefox 3.6 to 15 */
+      background: linear-gradient(white, #ECF0F1);
+      /* Standard syntax */
+      border-radius: 5px;
+      border: 2px solid #BDC3C7;
+      font-size: 14px;
+      width: 140px;
+      height: 2em;
+      padding-top: 3px;
+      padding-bottom: 8px;
+      -webkit-transition: all .25s ease;
+      transition: all .25s ease;
+      outline: none; }
+    .lobbyPage .voiceChatPanel .joinVoiceChat:hover {
+      cursor: pointer;
+      background: -webkit-linear-gradient(white, #E4E8E8);
+      /* For Safari 5.1 to 6.0 */
+      /* For Opera 11.1 to 12.0 */
+      /* For Firefox 3.6 to 15 */
+      background: linear-gradient(white, #E4E8E8);
+      /* Standard syntax */
+      border: 2px solid #FF474E;
+      color: #FC4349; }
+    .lobbyPage .voiceChatPanel .joinVoiceChat:active {
+      box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.2); }
+    .lobbyPage .voiceChatPanel .joinPrivateVoiceChat {
+      text-align: center;
+      color: #290E03;
+      background: -webkit-linear-gradient(white, #ECF0F1);
+      /* For Safari 5.1 to 6.0 */
+      /* For Opera 11.1 to 12.0 */
+      /* For Firefox 3.6 to 15 */
+      background: linear-gradient(white, #ECF0F1);
+      /* Standard syntax */
+      border-radius: 5px;
+      border: 2px solid #BDC3C7;
+      font-size: 14px;
+      width: 140px;
+      height: 2em;
+      padding-top: 3px;
+      padding-bottom: 8px;
+      -webkit-transition: all .35s ease;
+      transition: all .35s ease;
+      outline: none; }
+    .lobbyPage .voiceChatPanel .joinPrivateVoiceChat:hover {
+      cursor: pointer;
+      background: -webkit-linear-gradient(white, #E4E8E8);
+      /* For Safari 5.1 to 6.0 */
+      /* For Opera 11.1 to 12.0 */
+      /* For Firefox 3.6 to 15 */
+      background: linear-gradient(white, #E4E8E8);
+      /* Standard syntax */
+      border: 2px #0B486B #290E03;
+      color: #290E03; }
+    .lobbyPage .voiceChatPanel .joinPrivateVoiceChat:active {
+      box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.2); }
+    .lobbyPage .voiceChatPanel .inputBox {
+      height: 2em;
+      width: 50%;
+      border: none;
+      outline: none;
+      box-shadow: 0 0 2px #290E03;
+      font-size: 0.8em;
+      padding: 0px 6px;
+      border-radius: 5px;
+      font-size: 0.8em; }
+    .lobbyPage .voiceChatPanel .inputBox:focus {
+      background: -webkit-linear-gradient(white, #F7FCFC);
+      /* For Safari 5.1 to 6.0 */
+      /* For Opera 11.1 to 12.0 */
+      /* For Firefox 3.6 to 15 */
+      background: linear-gradient(white, #F7FCFC);
+      /* Standard syntax */
+      border: 2px #290E03 #290E03;
+      color: #290E03; }
+    .lobbyPage .voiceChatPanel #rooms-list {
+      font-family: 'Cabin';
+      font-size: 1.1em;
+      margin-top: 1em;
+      margin-left: 35%;
+      width: 30%; }
+      .lobbyPage .voiceChatPanel #rooms-list td {
+        height: 100%;
+        vertical-align: bottom; }
+      .lobbyPage .voiceChatPanel #rooms-list tr {
+        border-bottom: 1px solid #ECF0F1;
+        margin: 0.2em; }
+  .lobbyPage .userArea {
     position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 24px;
-    left: 200;
-    background-color: #FBFBFB;
-    word-wrap: break-word;
-    overflow-y: auto; }
-    .lobbyPage .userArea .chatbox #userList {
-      height: 50%;
-      width: 23%;
-      top: 33px; }
+    height: 25%;
+    width: 25%;
+    top: 3em;
+    bottom: 1.7em;
+    border: 2px solid #BDC3C7;
+    z-index: -1; }
+    .lobbyPage .userArea .userText {
+      font-family: 'Cabin';
+      font-size: 12px;
+      color: black;
+      position: relative;
+      left: 0;
+      text-align: center; }
+    .lobbyPage .userArea .chatbox {
+      font-family: 'Cabin';
+      font-size: 12px;
+      color: black;
+      position: relative;
+      height: 100%;
+      width: 100%;
+      background-color: #FBFBFB;
+      word-wrap: break-word;
+      overflow-y: auto; }
       .lobbyPage .userArea .chatbox #userList .messageSpacer {
         width: 100%;
         float: left;
@@ -1528,50 +1534,50 @@ table {
           float: left;
           width: 100%;
           background-color: #FBFBFB; }
-.lobbyPage .chatArea {
-  position: absolute;
-  width: 24%;
-  top: 3em;
-  bottom: 1.7em;
-  right: 0;
-  /* -moz-border-radius: 0px;
+  .lobbyPage .chatArea {
+    position: absolute;
+    width: 24%;
+    top: 3em;
+    bottom: 1.7em;
+    right: 0;
+    /* -moz-border-radius: 0px;
         -webkit-border-radius: 3px 3px 0px 0px;
         border-radius: 3px 3px 0px 0px; */
-  border-left: 2px solid #BDC3C7;
-  border-top: 2px solid #BDC3C7;
-  border-bottom: 2px solid #BDC3C7; }
-  .lobbyPage .chatArea .lobbySideBar {
-    position: absolute;
-    right: 0%;
-    width: 14%;
-    height: 100%;
-    bottom: 24px;
-    font-family: tahoma;
-    font-size: 14;
-    color: orange;
-    overflow: scroll;
-    margin-left: 1px; }
-  .lobbyPage .chatArea .chatboxWrapper {
-    position: absolute;
-    left: 0;
-    bottom: 24px;
-    height: 100%;
-    width: 100%;
-    z-index: -1; }
-    .lobbyPage .chatArea .chatboxWrapper .chatbox {
-      font-family: 'Cabin';
-      font-size: 12px;
-      color: black;
+    border-left: 2px solid #BDC3C7;
+    border-top: 2px solid #BDC3C7;
+    border-bottom: 2px solid #BDC3C7; }
+    .lobbyPage .chatArea .lobbySideBar {
       position: absolute;
+      right: 0%;
+      width: 14%;
+      height: 100%;
+      bottom: 24px;
+      font-family: tahoma;
+      font-size: 14;
+      color: orange;
+      overflow: scroll;
+      margin-left: 1px; }
+    .lobbyPage .chatArea .chatboxWrapper {
+      position: absolute;
+      left: 0;
+      bottom: 24px;
       height: 100%;
       width: 100%;
-      top: 24px;
-      left: 0;
-      background-color: #FBFBFB;
-      word-wrap: break-word;
-      overflow-y: auto; }
-      .lobbyPage .chatArea .chatboxWrapper .chatbox #messages {
-        /*.playerMessage::after {
+      z-index: -1; }
+      .lobbyPage .chatArea .chatboxWrapper .chatbox {
+        font-family: 'Cabin';
+        font-size: 12px;
+        color: black;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 24px;
+        left: 0;
+        background-color: #FBFBFB;
+        word-wrap: break-word;
+        overflow-y: auto; }
+        .lobbyPage .chatArea .chatboxWrapper .chatbox #messages {
+          /*.playerMessage::after {
                         content: "";
                         position: absolute;
                         left: 5px;
@@ -1580,41 +1586,41 @@ table {
                         border-left-color: transparent;
                         border-top-color: transparent;
                     }*/ }
-        .lobbyPage .chatArea .chatboxWrapper .chatbox #messages .messageSpacer {
-          width: 100%;
-          float: left;
-          margin: 4px; }
-          .lobbyPage .chatArea .chatboxWrapper .chatbox #messages .messageSpacer .playerMessage {
+          .lobbyPage .chatArea .chatboxWrapper .chatbox #messages .messageSpacer {
+            width: 100%;
             float: left;
-            border: 1px solid #290E03;
-            border-radius: 5px; }
-          .lobbyPage .chatArea .chatboxWrapper .chatbox #messages .messageSpacer .selfMessage {
-            margin-right: 8px;
-            float: right;
-            border: 1px solid #BDC3C7;
-            border-radius: 10px; }
-        .lobbyPage .chatArea .chatboxWrapper .chatbox #messages li {
-          padding-top: 4px;
-          padding-bottom: 4px;
-          padding-left: 10px;
-          padding-right: 10px;
-          line-height: 20px;
-          background-color: white; }
-        .lobbyPage .chatArea .chatboxWrapper .chatbox #messages .serverMessage {
-          margin: 0;
-          float: left;
-          width: 100%;
-          background-color: #FBFBFB; }
-  .lobbyPage .chatArea .controls {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    bottom: 0;
-    font-size: 12px;
-    padding: 6px 6px;
-    outline: none;
-    border: none;
-    border-top: 1px solid #BDC3C7; }
+            margin: 4px; }
+            .lobbyPage .chatArea .chatboxWrapper .chatbox #messages .messageSpacer .playerMessage {
+              float: left;
+              border: 1px solid #290E03;
+              border-radius: 5px; }
+            .lobbyPage .chatArea .chatboxWrapper .chatbox #messages .messageSpacer .selfMessage {
+              margin-right: 8px;
+              float: right;
+              border: 1px solid #BDC3C7;
+              border-radius: 10px; }
+          .lobbyPage .chatArea .chatboxWrapper .chatbox #messages li {
+            padding-top: 4px;
+            padding-bottom: 4px;
+            padding-left: 10px;
+            padding-right: 10px;
+            line-height: 20px;
+            background-color: white; }
+          .lobbyPage .chatArea .chatboxWrapper .chatbox #messages .serverMessage {
+            margin: 0;
+            float: left;
+            width: 100%;
+            background-color: #FBFBFB; }
+    .lobbyPage .chatArea .controls {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      bottom: 0;
+      font-size: 12px;
+      padding: 6px 6px;
+      outline: none;
+      border: none;
+      border-top: 1px solid #BDC3C7; }
 
 .banner {
   background: -webkit-linear-gradient(#F7FCFC, #ECF0F1);

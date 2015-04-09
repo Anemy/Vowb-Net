@@ -100,12 +100,12 @@ $('#createLobbyForm').submit( function (event) {
                   })
               }
               else {
-                alert("Lobby already exists!");
+                sweetAlert("Oops...", "Lobby already exists.", "error");
                 console.log("Failure from server");
               }
             },
             error: function(data){
-                alert("Lobby already exists!!");
+                sweetAlert("Oops...", "Lobby already exists.", "error");
                 console.log("Failure from server");
             }
         });

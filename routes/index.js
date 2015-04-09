@@ -87,14 +87,14 @@ router.post('/edit-profile', function(req, res, next) {
                 favorite_food: req.body.userfavFoods,
                 security_level: security_level_integer
             }, function() {
-                console.log("Profile update success!");
+                // console.log("Profile update success!");
                 res.end(JSON.stringify({value: "Success"}));
             });
             db.update(db.userDB, { profile_pointer: req.body.secretProfileIdValue }, {
                 avatar_URL: req.body.profileURL
             });
         } else {
-            console.log("Error: credentials and profile edits did not match: "+JSON.stringify(searchParams)+".");
+            // console.log("Error: credentials and profile edits did not match: "+JSON.stringify(searchParams)+".");
             res.end(JSON.stringify({ value: "Error" }));
         }
     });
@@ -137,7 +137,7 @@ router.post('/signup', function(req, res) {
         if( results.length == 0 ) {
             // If there are no results when looking for a user of that name,
             // then we add a new one
-            console.log("Signup: Ready to add new user \""+req.body.username+"\".");
+            // console.log("Signup: Ready to add new user \""+req.body.username+"\".");
 
             // Add new user to the "userDB" database
             db.add(db.userDB, {
@@ -172,7 +172,7 @@ router.post('/signup', function(req, res) {
         } else {
             // Otherwise, complain -- the user already exists!
             // (In the future, warning message should be added here!)
-            console.log("Signup ERROR: User " + req.body.username + " already exists!");
+            // console.log("Signup ERROR: User " + req.body.username + " already exists!");
             res.end(JSON.stringify({value: "Error"}));
         }
     });
@@ -190,7 +190,7 @@ router.post('/login', function(req, res) {
     db.search(db.userDB, searchParams, function(results) {
         if( results.length == 0 ) {
             // If there are no results when looking for a user of that name, then display error
-            console.log("Incorrect username or password");
+            // console.log("Incorrect username or password");
             res.end(JSON.stringify({value: "Error"}));
 
         } else {
@@ -198,7 +198,7 @@ router.post('/login', function(req, res) {
             req.session.username = req.body.username;
 
             // Otherwise, redirect user to homepage
-            console.log("Username and password verified.");
+            // console.log("Username and password verified.");
             res.end(JSON.stringify({value: "Success"}));
         }
     });
@@ -218,8 +218,8 @@ router.post('/createlobby', function(req, res) {
 
     db.search(db.lobbyDB, searchParams, function(results) {
         if (results.length == 0) {
-            console.log("Ready to add new lobby");
-            console.log("username is " + req.session.username);
+            // console.log("Ready to add new lobby");
+            // console.log("username is " + req.session.username);
 
             if (req.body.password == null || req.body.password == "") {
                 db.add(db.lobbyDB, {
@@ -234,10 +234,10 @@ router.post('/createlobby', function(req, res) {
                     owner: req.session.username
                 });
             }
-            console.log("Successful!")
+            // console.log("Successful!")
             res.end(JSON.stringify({value: "Success"}));
         } else {
-            console.log("Lobby already exists");
+            // console.log("Lobby already exists");
             res.end(JSON.stringify({value: "Error"}));
         }
         

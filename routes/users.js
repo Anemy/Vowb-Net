@@ -158,8 +158,19 @@ router.get('/*', function(req, res, next) {
 
 router.post('/addFriend', function(req, res, next) {
     var loginData = getLoginData(req);
-    console.log("Adding " + req.body.addFriend + " as a friend of " + loginData);
+    // console.log("Adding " + req.body.addFriend + " as a friend of " + loginData);
     db.addFriend(loginData,req.body.addFriend,function(success,text) {
+        if( success )
+            res.send(text);
+        else
+            res.status(400).send(text);
+    }); 
+});
+
+router.post('/removeFriend', function(req, res, next) {
+    var loginData = getLoginData(req);
+    console.log("Removing " + req.body.removeFriend + " as a friend of " + loginData);
+    db.removeFriend(loginData,req.body.removeFriend,function(success,text) {
         if( success )
             res.send(text);
         else

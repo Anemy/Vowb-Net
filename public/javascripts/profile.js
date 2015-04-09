@@ -7,12 +7,12 @@ var editProfButtonClicked = function () {
     window.location.href = url;
 }
 var friendButtonClicked = function() {
-    console.log("friendButtonClicked");
+    // console.log("friendButtonClicked");
     if(loginData != "none") {
         if(self){
             sweetAlert("Opps...", "We don't have a edit friends yet", "error");
         }
-        else{
+        else if (!isFriend) {
             console.log("before ajax");
             $.ajax({
                 url:"/users/addFriend",
@@ -21,8 +21,40 @@ var friendButtonClicked = function() {
                     addFriend : username
                 },
                 success: function(data){
-                    console.log("Successfully added friend");
+                    // console.log("Successfully added friend");
                     var alertTitle = "Added ";
+                    alertTitle = alertTitle.concat(username);
+                    alertTitle = alertTitle.concat(" to your Friends List");
+                    swal({title:"Woot!", text: alertTitle, type:"success"},
+                        function(){
+                            var url = "/users/";
+                            url = url.concat(username);
+                            window.location.href = url;
+                        }
+                    );
+                },
+                error: function(data){
+                    // console.log(data.responseText);
+                    swal({title: "Error",text: data.responseText , type:"error"}, 
+                        function(){
+                            var url = "/users/";
+                            url = url.concat(username);
+                            window.location.href = url;
+                        }
+                    );
+                }
+            });
+        } else {
+            console.log("before ajax");
+            $.ajax({
+                url:"/users/removeFriend",
+                type: "POST",
+                data: {
+                    removeFriend : username
+                },
+                success: function(data){
+                    console.log("Successfully removed friend");
+                    var alertTitle = "Remove ";
                     alertTitle = alertTitle.concat(username);
                     alertTitle = alertTitle.concat(" to your Friends List");
                     swal({title:"Woot!", text: alertTitle, type:"success"},
@@ -54,14 +86,21 @@ var friendButtonClicked = function() {
 var changeButtons = function() {
         var checkurl = "/users/";
     checkurl = checkurl.concat(user_name)
-    console.log(window.location.pathname);
-    console.log(checkurl);
+    // console.log(window.location.pathname);
+    // console.log(checkurl);
     if(window.location.pathname == checkurl){
         self = true;
         $("#addEditFriend").text("Edit Friends List");
         $("#addEditFriend").attr("href","");
         $("#sendViewMSG").text("View Messages");
         $("#sendViewMSG").attr("href","VIEWMSGES");
+    }
+    if(isFriend) {
+        self = false;
+        $("#addEditFriend").text("Remove Friend");
+        $("#addEditFriend").attr("href","");
+        $("#sendViewMSG").text("Send Message");
+        // $("#sendViewMSG").attr("href","VIEWMSGES");
     }
     else {
         self = false;
@@ -87,18 +126,18 @@ var msgButtonClicked = function() {
 }
 /* This javascript manages the sign up page's client side interactions */
 $(document).ready(function() {    
-    if(loginData != "none") {
-        console.log("Has a session! " + loginData);
-        showLoggedIn( loginData );
+
+    $('#FList').empty();
+    for(var i = 0; i < friends.length;i++){
+        $('#FList').append('<li id="friend['+i+']">'+friends[i]+'</li>');
     }
-    else {
-      console.log("No session :'(");
-    }
+    // console.log("Friends = " + friends);
+
     changeButtons();
     var checkurl = "/users/";
     checkurl = checkurl.concat(user_name)
-    console.log(window.location.pathname);
-    console.log(checkurl);
+    // console.log(window.location.pathname);
+    // console.log(checkurl);
     if(window.location.pathname != checkurl) {
       $('.editProfButton').hide();
     }

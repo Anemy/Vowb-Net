@@ -10,6 +10,7 @@ block content
         .bodyLine
         .pageThings
             .voiceChatPanel
+                .lobbyTitle #{lobbyName}
                 //- .joinVoiceChat(onClick="connectToVoiceChat()").
                 //-    Voice Chat
                 //- input#conference-name.inputBox(type="text" placeHolder="Insert Lobby name")
@@ -27,11 +28,11 @@ block content
                 //- table#rooms-list(style='width: 100%;')
                 //- // local/remote videos container
                 //- #audios-container
-                //make password
-                input#setup(type="button" value="Enter Password")
+                //- make password
+                //- input#setup(type="button" value="Enter Password")
             .usernameArea
-                .userTitle
-                    Users in current chat
+                .userTitle.
+                    General Chat
                 #userBox.chatbox
                     ul#userList
             .chatArea

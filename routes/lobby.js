@@ -21,14 +21,13 @@ var getLoginData = function (req) {
 /* GET lobby listing. */
 router.get('/*', function(req, res, next) {
     // res.send('respond with a resource');
-
     // TODO: 
     // Check if the lobby is real. Respond with lobby data or 404 depending. 
 
     var loginData = getLoginData(req);
 
     // Example:
-    res.render('lobby', { title: 'A lobby' , name: 'Mystxc', login: loginData});
+    res.render('lobby', { title: 'Vowb.net Voice Chat Lobby' , lobbyName: req.params[0],  name: 'Mystxc', login: loginData});
 });
 
 module.exports = router;

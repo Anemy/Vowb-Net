@@ -25,26 +25,34 @@ var intialName = loggedIn;
 }, 2000);
 swal("You will need to enter your password", null, "success");*/
 
-/*var passwd = prompt("Please enter your password: ");
-if (passwd != d.search() ) {
-    var passwd = prompt("Please enter your password: ");
+var passwd = prompt("Please enter your password: ");
+while (passwd != ajax() ) {
+    passwd = prompt("Please enter your password: ");
 }
 console.log("User pass: " + passwd);
-*/
+
 socket.on('chat message', function(msg) {
+
   //$('#messages').append($('<div class="messageSpacer"/>'));
   var html = '';
   html += '<div class="messageSpacer">';
-  html +=   '<li class="playerMessage">' + msg + '</li>';
+  if(msg.name == loginData ){
+      html +=   '<li class="selfMessage">' + msg.text + '</li>';
+  }
+  else{
+      html +=   '<li class="playerMessage">' + msg.name + ":" + msg.text + '</li>';
+  }
   html += '</div>';
   $('#messages').append( html ); // $('<div class="messageSpacer"><li class="playerMessage"></div>').text(msg));
   document.getElementById("msgBox").scrollTop = document.getElementById("msgBox").scrollHeight;
 });
 socket.on('user join', function(msg){
   $('#userList').empty();
+  var nameList = [];
   for(var i = 0; i < msg.num; i++){
     console.log("User " + msg.text[i] + " added");
-    if(msg.text != "" || msg.text != undefined){
+    if(msg.text[i] != "" && msg.text[i] != undefined && nameList.indexOf(msg.text[i]) == -1){
+        nameList[i] = msg.text[i];
         $('#userList').append($('<li class="userMessage">').text(msg.text[i]));
     }
   }
@@ -52,14 +60,14 @@ socket.on('user join', function(msg){
 
 socket.on('server message', function(msg){
   //$('#messages').append($('<div class="messageSpacer"/>'));
-  $('#messages').append($('<li class="userMessage">').text(msg.text));
+  $('#messages').append($('<li class="serverMessage">').text(msg.text));
   document.getElementById("msgBox").scrollTop = document.getElementById("msgBox").scrollHeight;
 });
-socket.on('username message', function(msg){ 
+socket.on('username message', function(msg){
 
 });
 
-// submitting the chat form 
+// submitting the chat form
 $('form').submit(function(){
   if($('#m').val().length > 0) {
     socket.emit('chat message', $('#m').val());
@@ -74,13 +82,13 @@ var to = url.lastIndexOf('/') + 1;
 
 var chatToConnect =  url.substring(to,url.length);
 //alert(chatToConnect);
-console.log("Trying to connect to chat: " + chatToConnect);
+// console.log("Trying to connect to chat: " + chatToConnect);
 socket.emit('connect to chat', chatToConnect);
 
 setTimeout(function() {
   // insecurely transfers a user's username
-  
-  socket.emit('username message', $("#login_id").text());
+  console.log("user_name is: " + loginData);
+  socket.emit('username message', loginData);
 }, 50);
 
 
@@ -122,7 +130,7 @@ document.querySelector('#setup').onclick = function() {
     this.disabled = true;
 };
 //Start Password Code
-    document.querySelector('#setup').onclick = function () {
+/*    document.querySelector('#setup').onclick = function () {
       // room password has been set before calling "open" method
        connection.extra.password = prompt('Setup password for your room!');
       connection.open();
@@ -137,7 +145,7 @@ connection.onRequest = function (userid, extra) {
   if (extra.password != connection.extra.password)
     return alert('password: ' + extra.password + ' !== ' + connection.extra.password);
   connection.accept(userid, extra);
-};
+};*/
 //End Password Code
 
 connection.session = {
@@ -182,7 +190,7 @@ connection.onNewSession = function(session) {
     //};
 };
 //Start Password Code
-connection.onRequest = function(e) {
+/*connection.onRequest = function(e) {
     // validating password in "onRequest"
      if (e.extra.password != connection.extra.password)
          return alert('password: ' + e.extra.password + ' !== ' + connection.extra.password);
@@ -190,7 +198,7 @@ connection.onRequest = function(e) {
 };
 connection.onstream = function(e) {
     document.body.appendChild(e.mediaElement);
-};
+};*/
 //End Password Code
 
 var audioContainer = document.getElementById('audios-container') || document.body;
@@ -215,7 +223,7 @@ connection.connect();
 
 setTimeout(function() {
     if(jQuery.isEmptyObject(sessions)) {
-        console.log("\n \n WE MAKE OUR OWN!!! \n \n ");
+        // console.log("\n \n WE MAKE OUR OWN!!! \n \n ");
         // Make the voice chat
             // this.disabled = true;
         connection.extra = {
@@ -224,7 +232,7 @@ setTimeout(function() {
         connection.open();
     }
     else {
-        console.log("\n \n THERE IS ONE ALREADY!!!! \n \n ");
+        // console.log("\n \n THERE IS ONE ALREADY!!!! \n \n ");
 
         //console.log("This many sessions made: " + sessions.length);
         for(sessionID in sessions) {
@@ -239,7 +247,7 @@ setTimeout(function() {
         if (!session) throw 'No such session exists.';
 
         // set password for person who is trying to join the room
-        connection.extra.password = prompt('Enter password to join this room.');
+       // connection.extra.password = prompt('Enter password to join this room.');
 
         connection.join(session);
     }
