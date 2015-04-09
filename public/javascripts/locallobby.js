@@ -3,9 +3,9 @@
 var socket = io();
 var intialName = loggedIn;
 
-setTimeout( function() {
+/*setTimeout( function() {
   //var sAlert = function() {
-  swal({   
+  swal({
       title: "An input!",
       text: "Write something interesting:",
       type: "warning",   showCancelButton: true,
@@ -15,29 +15,36 @@ setTimeout( function() {
     function(inputValue){
       if (inputValue === false)
         return false;
-      if (inputValue === "") { 
+      if (inputValue === "") {
         swal.showInputError("You need to write something!");
         return false ;
       }
       swal("Nice!", "You wrote: " + inputValue, "success");
-  
+
   });
-}, 2000);
+}, 2000);*/
 
 socket.on('chat message', function(msg){
   //$('#messages').append($('<div class="messageSpacer"/>'));
   var html = '';
   html += '<div class="messageSpacer">';
-  html +=   '<li class="playerMessage">' + msg + '</li>';
+  if(msg.name == loginData ){
+      html +=   '<li class="selfMessage">' + msg.text + '</li>';
+  }
+  else{
+      html +=   '<li class="playerMessage">' + msg.name + ":" + msg.text + '</li>';
+  }
   html += '</div>';
   $('#messages').append( html ); // $('<div class="messageSpacer"><li class="playerMessage"></div>').text(msg));
   document.getElementById("msgBox").scrollTop = document.getElementById("msgBox").scrollHeight;
 });
 socket.on('user join', function(msg){
   $('#userList').empty();
+  var nameList = [];
   for(var i = 0; i < msg.num; i++){
     console.log("User " + msg.text[i] + " added");
-    if(msg.text != "" || msg.text != undefined){
+    if(msg.text[i] != "" && msg.text[i] != undefined && nameList.indexOf(msg.text[i]) == -1){
+        nameList[i] = msg.text[i];
         $('#userList').append($('<li class="userMessage">').text(msg.text[i]));
     }
   }
@@ -45,14 +52,14 @@ socket.on('user join', function(msg){
 
 socket.on('server message', function(msg){
   //$('#messages').append($('<div class="messageSpacer"/>'));
-  $('#messages').append($('<li class="userMessage">').text(msg.text));
+  $('#messages').append($('<li class="serverMessage">').text(msg.text));
   document.getElementById("msgBox").scrollTop = document.getElementById("msgBox").scrollHeight;
 });
-socket.on('username message', function(msg){ 
+socket.on('username message', function(msg){
 
 });
 
-// submitting the chat form 
+// submitting the chat form
 $('form').submit(function(){
   if($('#m').val().length > 0) {
     socket.emit('chat message', $('#m').val());
@@ -72,8 +79,8 @@ socket.emit('connect to chat', chatToConnect);
 
 setTimeout(function() {
   // insecurely transfers a user's username
-  
-  socket.emit('username message', $("#login_id").text());
+  console.log("user_name is: " + loginData);
+  socket.emit('username message', loginData);
 }, 50);
 
 
