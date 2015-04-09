@@ -12,7 +12,7 @@ var friendButtonClicked = function() {
         if(self){
             sweetAlert("Opps...", "We don't have a edit friends yet", "error");
         }
-        else{
+        else if (!isFriend) {
             console.log("before ajax");
             $.ajax({
                 url:"/users/addFriend",
@@ -44,6 +44,38 @@ var friendButtonClicked = function() {
                     );
                 }
             });
+        } else {
+            console.log("before ajax");
+            $.ajax({
+                url:"/users/removeFriend",
+                type: "POST",
+                data: {
+                    removeFriend : username
+                },
+                success: function(data){
+                    console.log("Successfully removed friend");
+                    var alertTitle = "Remove ";
+                    alertTitle = alertTitle.concat(username);
+                    alertTitle = alertTitle.concat(" to your Friends List");
+                    swal({title:"Woot!", text: alertTitle, type:"success"},
+                        function(){
+                            var url = "/users/";
+                            url = url.concat(username);
+                            window.location.href = url;
+                        }
+                    );
+                },
+                error: function(data){
+                    console.log(data.responseText);
+                    swal({title: "Error",text: data.responseText , type:"error"}, 
+                        function(){
+                            var url = "/users/";
+                            url = url.concat(username);
+                            window.location.href = url;
+                        }
+                    );
+                }
+            });
         }
     }
     else{
@@ -62,6 +94,13 @@ var changeButtons = function() {
         $("#addEditFriend").attr("href","");
         $("#sendViewMSG").text("View Messages");
         $("#sendViewMSG").attr("href","VIEWMSGES");
+    }
+    if(isFriend) {
+        self = false;
+        $("#addEditFriend").text("Remove Friend");
+        $("#addEditFriend").attr("href","");
+        $("#sendViewMSG").text("Send Message");
+        // $("#sendViewMSG").attr("href","VIEWMSGES");
     }
     else {
         self = false;
@@ -87,6 +126,13 @@ var msgButtonClicked = function() {
 }
 /* This javascript manages the sign up page's client side interactions */
 $(document).ready(function() {    
+
+    $('#FList').empty();
+    for(var i = 0; i < friends.length;i++){
+        $('#FList').append('<li id="friend['+i+']">'+friends[i]+'</li>');
+    }
+    // console.log("Friends = " + friends);
+
     changeButtons();
     var checkurl = "/users/";
     checkurl = checkurl.concat(user_name)
