@@ -5,12 +5,19 @@ var intialName = loggedIn;
 
 /*setTimeout( function() {
   //var sAlert = function() {
+<<<<<<< HEAD
   swal({
       title: "An input!",
       text: "Write something interesting:",
       type: "warning",   showCancelButton: true,
+=======
+  swal({
+      title: "Password",
+      text: "Please enter your password:",
+      type: "input",   showCancelButton: true,
+>>>>>>> abf2fb448af997993f45bdac3d30a6d36718715a
       closeOnConfirm: false
-      // animation: "slide-from-top"
+      //animation: "slide-from-top"
     },
     function(inputValue){
       if (inputValue === false)
@@ -22,8 +29,14 @@ var intialName = loggedIn;
       swal("Nice!", "You wrote: " + inputValue, "success");
 
   });
-}, 2000);*/
+<<<<<<< HEAD
+}, 2000);
 
+=======
+}, 2000);
+swal("You will need to enter your password", null, "success");
+>>>>>>> abf2fb448af997993f45bdac3d30a6d36718715a
+*/
 socket.on('chat message', function(msg){
   //$('#messages').append($('<div class="messageSpacer"/>'));
   var html = '';
@@ -70,7 +83,7 @@ $('form').submit(function(){
 
 // Gets the lobby name and transfers that to the server as to connect to that specific chat socket io
 var url = window.location.pathname;
-var to = url.lastIndexOf('/') +1;
+var to = url.lastIndexOf('/') + 1;
 
 var chatToConnect =  url.substring(to,url.length);
 //alert(chatToConnect);
