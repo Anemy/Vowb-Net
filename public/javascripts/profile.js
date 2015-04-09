@@ -7,7 +7,7 @@ var editProfButtonClicked = function () {
     window.location.href = url;
 }
 var friendButtonClicked = function() {
-    console.log("friendButtonClicked");
+    // console.log("friendButtonClicked");
     if(loginData != "none") {
         if(self){
             sweetAlert("Opps...", "We don't have a edit friends yet", "error");
@@ -21,7 +21,7 @@ var friendButtonClicked = function() {
                     addFriend : username
                 },
                 success: function(data){
-                    console.log("Successfully added friend");
+                    // console.log("Successfully added friend");
                     var alertTitle = "Added ";
                     alertTitle = alertTitle.concat(username);
                     alertTitle = alertTitle.concat(" to your Friends List");
@@ -34,7 +34,7 @@ var friendButtonClicked = function() {
                     );
                 },
                 error: function(data){
-                    console.log(data.responseText);
+                    // console.log(data.responseText);
                     swal({title: "Error",text: data.responseText , type:"error"}, 
                         function(){
                             var url = "/users/";
@@ -54,8 +54,8 @@ var friendButtonClicked = function() {
 var changeButtons = function() {
         var checkurl = "/users/";
     checkurl = checkurl.concat(user_name)
-    console.log(window.location.pathname);
-    console.log(checkurl);
+    // console.log(window.location.pathname);
+    // console.log(checkurl);
     if(window.location.pathname == checkurl){
         self = true;
         $("#addEditFriend").text("Edit Friends List");
@@ -87,18 +87,11 @@ var msgButtonClicked = function() {
 }
 /* This javascript manages the sign up page's client side interactions */
 $(document).ready(function() {    
-    if(loginData != "none") {
-        console.log("Has a session! " + loginData);
-        showLoggedIn( loginData );
-    }
-    else {
-      console.log("No session :'(");
-    }
     changeButtons();
     var checkurl = "/users/";
     checkurl = checkurl.concat(user_name)
-    console.log(window.location.pathname);
-    console.log(checkurl);
+    // console.log(window.location.pathname);
+    // console.log(checkurl);
     if(window.location.pathname != checkurl) {
       $('.editProfButton').hide();
     }

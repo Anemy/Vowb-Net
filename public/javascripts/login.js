@@ -70,7 +70,7 @@ var loginSubClicked = function() {
               showLoggedIn( $("#un_id").val() );
               loginRecentlyClicked = false;
 
-              swal("Logged in!", null, "success")
+              // swal("Logged in!", null, "success")
               // var checkurl = "/users/";
               // checkurl = checkurl.concat(user_name)
               // console.log(window.location.pathname);
@@ -119,18 +119,17 @@ var showLoggedOut = function () {
 $(document).ready(function() {
 
       if(loginData != "none") {
-          console.log("Has a session! " + loginData);
+          // console.log("Has a session! " + loginData);
           showLoggedIn( loginData );
       }
       else {
-        console.log("No session :'(");
+        // console.log("No session :'(");
       }
     $(document).keypress(function(e) {
         if(e.which == 13) {
-         console.log("enter hit");
+         // console.log("enter hit");
           if(loginpop == true){
             loginSubClicked();
-            loginpop = false;
           }
         }
     });

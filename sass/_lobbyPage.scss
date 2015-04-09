@@ -1,7 +1,23 @@
 /* This is the styling page for the lobby page */
 
 .lobbyPage {
+        font-family: 'Cabin';
+
       .voiceChatPanel {
+
+        text-align: center;
+
+        width:80%;
+
+        .lobbyTitle {
+            font-size: 1.6em;
+            color: $dark;
+
+            text-decoration: underline;
+
+            margin-top: 0.5em;
+        }
+
         audio {
             -webkit-transition:all 0.5s linear;
             -moz-transition:all 0.5s linear;
@@ -14,11 +30,6 @@
             -webkit-border-radius:7px 7px 7px 7px ;
             border-radius:7px 7px 7px 7px ;
         }
-
-        margin-top: 2em;
-        text-align: center;
-
-        width:80%;
 
         .joinVoiceChat {
             margin-left: 1em;
