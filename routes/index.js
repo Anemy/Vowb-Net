@@ -204,6 +204,28 @@ router.post('/login', function(req, res) {
     });
 });
 
+
+router.post('/lobbyLogin', function(req, res) {
+    // Make a searchParams object for this
+    var searchParams = {
+        lobby_title: req.body.username,
+        password: db.hashPassword(req.body.password)
+    };
+
+    // Call search function using these parameters
+    db.search(db.lobbyDB, searchParams, function(results) {
+        if( results.length == 0 ) {
+            // If there are no results when looking for a lobby of that name, then display error
+            // console.log("Incorrect username or password");
+            res.end(JSON.stringify({value: "Error"}));
+        } else {
+            // Otherwise, redirect user to homepage
+            // console.log("Username and password verified.");
+            res.end(JSON.stringify({value: "Success"}));
+        }
+    });
+});
+
 //Pascal 03/31/2015 routing for createlobby
 router.post('/createlobby', function(req, res) {
 
@@ -230,7 +252,7 @@ router.post('/createlobby', function(req, res) {
             } else {
                 db.add(db.lobbyDB, {
                     lobby_title: req.body.lobbyName,
-                    password: req.body.password,//db.hashPassword(req.body.password),
+                    password: db.hashPassword(req.body.password),
                     owner: req.session.username
                 });
             }

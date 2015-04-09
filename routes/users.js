@@ -122,18 +122,38 @@ router.get('/*', function(req, res, next) {
                 dataObject.login = loginData;
                 dataObject.title = "Vowb.net - Edit Profile";
                 dataObject.username = req.params[0];
-                dataObject.isFriend = (dataObject.friends && dataObject.friends.indexOf(loginData) != -1) || req.params[0] == loginData;
                 
-                //dataObject.user_age = dataObject.birth_date;
-                if( !dataObject.description )
-                    dataObject.description = "No profile? That's OK. This guy has yet to make one.";
-                else {
-                    //var split = dataObject.description.split("------xAGE_SPLITx------");
-                    //dataObject.description = split.length > 1 ? split[1] : split[0];//"No profile? That's OK. This guy has yet to make one.";
-                    //dataObject.user_age = split[0];//dataObject.birth_date;
-                }
-                dataObject.profileURL = user_result[0].avatar_URL;
-                res.render('profile', dataObject);
+                dataObject.isFriend = false;
+                db.search(db.userDB, { username: loginData }, function(login_result) {
+                    if( login_result.length != 0 ) {
+                        db.search(db.profileDB, { profile_id: login_result[0].profile_pointer }, function( isfriend_result ) {
+                            if( isfriend_result.length != 0 ) {
+                                dataObject.isFriend = (isfriend_result[0].friends && isfriend_result.friends.indexOf(dataObject.username) != -1) || req.params[0] == loginData;
+                            }               
+                            //dataObject.user_age = dataObject.birth_date;
+                            if( !dataObject.description )
+                                dataObject.description = "No profile? That's OK. This guy has yet to make one.";
+                            else {
+                                //var split = dataObject.description.split("------xAGE_SPLITx------");
+                                //dataObject.description = split.length > 1 ? split[1] : split[0];//"No profile? That's OK. This guy has yet to make one.";
+                                //dataObject.user_age = split[0];//dataObject.birth_date;
+                            }
+                            dataObject.profileURL = user_result[0].avatar_URL;
+                            res.render('profile', dataObject);
+                        });
+                    } else {               
+                        //dataObject.user_age = dataObject.birth_date;
+                        if( !dataObject.description )
+                            dataObject.description = "No profile? That's OK. This guy has yet to make one.";
+                        else {
+                            //var split = dataObject.description.split("------xAGE_SPLITx------");
+                            //dataObject.description = split.length > 1 ? split[1] : split[0];//"No profile? That's OK. This guy has yet to make one.";
+                            //dataObject.user_age = split[0];//dataObject.birth_date;
+                        }
+                        dataObject.profileURL = user_result[0].avatar_URL;
+                        res.render('profile', dataObject);
+                    }
+                });
             });
         } else {
             res.render('404', { title: "404: Vowb.net page not found", url: "/users" + req.url });
