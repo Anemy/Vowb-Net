@@ -83,67 +83,6 @@ db.addUser = function(username, email, password) {
     console.log(qq);
 }
 
-Array.prototype.remove = function() {
-    var what, a = arguments, L = a.length, ax;
-    while (L && this.length) {
-        what = a[--L];
-        while ((ax = this.indexOf(what)) !== -1) {
-            this.splice(ax, 1);
-        }
-    }
-    return this;
-};
-
-db.removeFriend = function(user,friend,callback) {
-    db.search(db.userDB, {username: user}, function(user_result) {
-        if( user_result.length > 0 ) {
-            db.search(db.profileDB, { profile_id: user_result[0].profile_pointer }, function(profile_result) {
-                if( profile_result.length == 0 ) {
-                    db.addProfile({
-                        description: "Welcome to Vowb.net, "+user+"! Your profile got generated late.",
-                        full_name: user,
-                        friends: []
-                    }, function(pcresult) {
-                        console.log("!! created profile with ID: " + JSON.stringify(pcresult));
-                        db.update(db.userDB, { username: user.username }, { profile_pointer: pcresult[0].profile_id });
-                    });
-                    console.log("Didn't remove friend, wasn't a friend, also made a profile because user did not have one.");
-                    if( callback )
-                        callback(false,"That user was not your friend.");
-                } else {
-                    if( profile_result[0].friends ) {
-                        if( profile_result[0].friends.indexOf(friend) != -1 )  {
-                            profile_result[0].friends.remove(friend);
-                            db.update(db.profileDB, { profile_id: profile_result[0].profile_id }, {
-                                friends: profile_result[0].friends
-                            });
-                            console.log("Did remove friend because friend is already on list.");
-                            if( callback )
-                                callback(true,"Friend removed successfully.");
-                        } else {
-                            // Not a friend
-                            console.log("Did not remove friend, was not a friend.");
-                            if( callback )
-                                callback(false,"That user was not your friend.");
-                        }
-                    } else {
-                            db.update(db.profileDB, { profile_id: profile_result[0].profile_id }, {
-                                friends: [ ]
-                            });
-                            console.log("Did not remove friend, there were not already friends on the list.");
-                            if( callback )
-                                callback(false,"That user was not your friend.");
-                    }
-                }
-            });
-        } else {
-            console.log("Did not remove friend, user not found.");
-            if( callback )
-                callback(false,"You need to be logged in on a Vowb.net account for that to work!");
-        }
-    });
-}
-
 /*
  * For security's sake, only call it when we know we're logged
  * in as "user".

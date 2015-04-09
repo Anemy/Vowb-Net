@@ -27,7 +27,7 @@ router.get('/*', function(req, res, next) {
     var loginData = getLoginData(req);
 
     // Example:
-    res.render('lobby', { title: 'A lobby' , name: 'Mystxc', login: loginData});
+    res.render('lobby', { title: 'Vowb.net Voice Chat Lobby' , lobbyName: req.params[0],  name: 'Mystxc', login: loginData});
 });
 
 module.exports = router;

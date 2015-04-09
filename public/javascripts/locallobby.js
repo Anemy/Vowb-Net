@@ -3,40 +3,6 @@
 var socket = io();
 var intialName = loggedIn;
 
-/*setTimeout( function() {
-  //var sAlert = function() {
-<<<<<<< HEAD
-  swal({
-      title: "An input!",
-      text: "Write something interesting:",
-      type: "warning",   showCancelButton: true,
-=======
-  swal({
-      title: "Password",
-      text: "Please enter your password:",
-      type: "input",   showCancelButton: true,
->>>>>>> abf2fb448af997993f45bdac3d30a6d36718715a
-      closeOnConfirm: false
-      //animation: "slide-from-top"
-    },
-    function(inputValue){
-      if (inputValue === false)
-        return false;
-      if (inputValue === "") {
-        swal.showInputError("You need to write something!");
-        return false ;
-      }
-      swal("Nice!", "You wrote: " + inputValue, "success");
-
-  });
-<<<<<<< HEAD
-}, 2000);
-
-=======
-}, 2000);
-swal("You will need to enter your password", null, "success");
->>>>>>> abf2fb448af997993f45bdac3d30a6d36718715a
-*/
 socket.on('chat message', function(msg){
   //$('#messages').append($('<div class="messageSpacer"/>'));
   var html = '';
@@ -87,7 +53,7 @@ var to = url.lastIndexOf('/') + 1;
 
 var chatToConnect =  url.substring(to,url.length);
 //alert(chatToConnect);
-console.log("Trying to connect to chat: " + chatToConnect);
+// console.log("Trying to connect to chat: " + chatToConnect);
 socket.emit('connect to chat', chatToConnect);
 
 setTimeout(function() {
@@ -229,7 +195,7 @@ connection.connect();
 
 setTimeout(function() {
     if(jQuery.isEmptyObject(sessions)) {
-        console.log("\n \n WE MAKE OUR OWN!!! \n \n ");
+        // console.log("\n \n WE MAKE OUR OWN!!! \n \n ");
         // Make the voice chat
             // this.disabled = true;
         connection.extra = {
@@ -238,7 +204,7 @@ setTimeout(function() {
         connection.open();
     }
     else {
-        console.log("\n \n THERE IS ONE ALREADY!!!! \n \n ");
+        // console.log("\n \n THERE IS ONE ALREADY!!!! \n \n ");
 
         //console.log("This many sessions made: " + sessions.length);
         for(sessionID in sessions) {
