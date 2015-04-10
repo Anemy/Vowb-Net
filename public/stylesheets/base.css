@@ -485,15 +485,34 @@ table {
         box-sizing: border-box; }
       .profilePage .rightPage .friendsListPane .friendsList {
         float: right;
-        width: 180px;
-        height: 400px;
+        width: 100%;
+        padding-top: 4px;
+        height: 175px;
         font-size: 16px;
         border-spacing: 0px;
         position: relative;
         z-index: 1;
         display: block;
-        padding-top: 10px;
         text-align: left; }
+        .profilePage .rightPage .friendsListPane .friendsList .friend {
+          text-decoration: underline;
+          width: 156px;
+          text-align: left;
+          margin-right: 5px;
+          margin-left: 5px;
+          margin-top: 3px;
+          padding: 4px;
+          float: left;
+          display: block;
+          border-radius: 3px;
+          border: 1px solid black;
+          background-color: white;
+          border-left: 1px solid black;
+          box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.43);
+          padding-right: 4px;
+          padding-top: 4px;
+          padding-bottom: 5px;
+          padding-left: 5px; }
         .profilePage .rightPage .friendsListPane .friendsList .friend1 {
           text-align: left;
           padding-left: 6px;

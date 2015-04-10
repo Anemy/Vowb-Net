@@ -122,13 +122,18 @@ router.get('/*', function(req, res, next) {
                 dataObject.login = loginData;
                 dataObject.title = "Vowb.net - Edit Profile";
                 dataObject.username = req.params[0];
+                if( !dataObject.friends ) {
+                    dataObject.friends = [];
+                }
                 
                 dataObject.isFriend = false;
                 db.search(db.userDB, { username: loginData }, function(login_result) {
                     if( login_result.length != 0 ) {
                         db.search(db.profileDB, { profile_id: login_result[0].profile_pointer }, function( isfriend_result ) {
                             if( isfriend_result.length != 0 ) {
-                                dataObject.isFriend = (isfriend_result[0].friends && isfriend_result.friends.indexOf(dataObject.username) != -1) || req.params[0] == loginData;
+                                dataObject.isFriend = (isfriend_result[0].friends && isfriend_result[0].friends.indexOf(dataObject.username) != -1) || req.params[0] == loginData;
+                                if( !dataObject.isFriend )
+                                    dataObject.isFriend = false;
                             }               
                             //dataObject.user_age = dataObject.birth_date;
                             if( !dataObject.description )
@@ -189,7 +194,7 @@ router.post('/addFriend', function(req, res, next) {
 
 router.post('/removeFriend', function(req, res, next) {
     var loginData = getLoginData(req);
-    console.log("Removing " + req.body.removeFriend + " as a friend of " + loginData);
+    //console.log("Removing " + req.body.removeFriend + " as a friend of " + loginData);
     db.removeFriend(loginData,req.body.removeFriend,function(success,text) {
         if( success )
             res.send(text);

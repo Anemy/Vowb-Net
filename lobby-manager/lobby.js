@@ -14,7 +14,7 @@ var lobbyManager = module.exports =  {
 
 // used for sending a message to all clients in the audience lobby
 lobbyManager.sendMessageToAllClients = function (messageType, messageData, audience) {
-    console.log("Send message to lobby: " + audience + " : " + messageData);
+    console.log("Send message to everyone lobby: " + audience + " : " + messageData.text);
     for(var i = 0; i < audience.length; i++) {
       audience[i].emit(messageType,messageData);
     }
@@ -22,7 +22,7 @@ lobbyManager.sendMessageToAllClients = function (messageType, messageData, audie
 
 // used for socket emitting to all users in a lobby except one
 lobbyManager.sendMessageToAllExceptClient = function (messageType, messageData, audience, banID) {
-    console.log("Send message to lobby: " + audience + " : " + messageData);
+    console.log("Send message to lobby: " + audience + " : " + messageData.text);
     for(var i = 0; i < audience.length; i++) {
       if(i != banID) {
         audience[i].emit(messageType,messageData);
@@ -78,7 +78,7 @@ lobbyManager.startListening = function(http) {
 
       socket.on('username message', function(msg){
           if(socket.chatNumber !=  -1 && that.lobbies[socket.chatNumber] != undefined) {
-            if(msg == "log in"){
+            if(msg == "none"){
               socket.name = "User " + socket.chatID;//that.numberOfClients;
               that.numberOfClients++;
             }
@@ -98,7 +98,7 @@ lobbyManager.startListening = function(http) {
   	  socket.on('chat message', function(msg){
   	  	//console.log("Message Received");
   	    // socket.broadcast.emit('chat message', socket.name + ": " + msg);
-        that.sendMessageToAllExceptClient('chat message', socket.name + ": " + msg, that.lobbies[socket.chatNumber], socket.chatID);
+        that.sendMessageToAllExceptClient('chat message',{name:socket.name, text:msg}, that.lobbies[socket.chatNumber], socket.chatID);
   	  });
 
 
