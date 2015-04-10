@@ -160,7 +160,7 @@ db.addFriend = function(user,friend,callback) {
                         friends: [ friend ]
                     }, function(pcresult) {
                         console.log("!! created profile with ID: " + JSON.stringify(pcresult));
-                        db.update(db.userDB, { username: user.username }, { profile_pointer: pcresult[0].profile_id });
+                        db.update(db.userDB, { username: user }, { profile_pointer: pcresult[0].profile_id });
                     });
                     console.log("Did add friend, also made a profile because user did not have one.");
                     if( callback )
