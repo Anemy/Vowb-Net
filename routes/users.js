@@ -129,11 +129,8 @@ router.get('/*', function(req, res, next) {
                         db.search(db.profileDB, { profile_id: login_result[0].profile_pointer }, function( isfriend_result ) {
                             if( isfriend_result.length != 0 ) {
                                 dataObject.isFriend = (isfriend_result[0].friends && isfriend_result[0].friends.indexOf(dataObject.username) != -1) || req.params[0] == loginData;
-<<<<<<< HEAD
                                 if( !dataObject.isFriend )
                                     dataObject.isFriend = false;
-=======
->>>>>>> dde9fc412bc3081f82e1fe929bd32c3147ca5748
                             }               
                             //dataObject.user_age = dataObject.birth_date;
                             if( !dataObject.description )
