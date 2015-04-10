@@ -84,7 +84,7 @@ var friendButtonClicked = function() {
 
 }
 var changeButtons = function() {
-        var checkurl = "/users/";
+    var checkurl = "/users/";
     checkurl = checkurl.concat(user_name)
     // console.log(window.location.pathname);
     // console.log(checkurl);
