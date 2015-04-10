@@ -44,7 +44,8 @@ var friendButtonClicked = function() {
                     );
                 }
             });
-        } else {
+        } 
+        else if (isFriend) {
             console.log("before ajax");
             $.ajax({
                 url:"/users/removeFriend",
@@ -53,20 +54,22 @@ var friendButtonClicked = function() {
                     removeFriend : username
                 },
                 success: function(data){
-                    console.log("Successfully removed friend");
+                    //console.log("Successfully removed friend");
                     var alertTitle = "Remove ";
                     alertTitle = alertTitle.concat(username);
                     alertTitle = alertTitle.concat(" to your Friends List");
-                    swal({title:"Woot!", text: alertTitle, type:"success"},
+                    swal({title:"Woot!",text: alertTitle, type:"success"},
                         function(){
+                            console.log("Successfully removed friend");
                             var url = "/users/";
                             url = url.concat(username);
                             window.location.href = url;
                         }
                     );
+                    alert("close");
                 },
                 error: function(data){
-                    console.log(data.responseText);
+                    //console.log(data.responseText);
                     swal({title: "Error",text: data.responseText , type:"error"}, 
                         function(){
                             var url = "/users/";
@@ -78,7 +81,7 @@ var friendButtonClicked = function() {
             });
         }
     }
-    else{
+    else {
         sweetAlert("Opps...", "You're not logged in", "error");
     }
 
@@ -92,20 +95,26 @@ var changeButtons = function() {
         self = true;
         $("#addEditFriend").text("Edit Friends List");
         $("#addEditFriend").attr("href","");
+        $("#addEditFriend").css("background-image","url(/images/profile/add.png)");
         $("#sendViewMSG").text("View Messages");
         $("#sendViewMSG").attr("href","VIEWMSGES");
+        $('.editProfButton').show();
+
     }
-    if(isFriend) {
+    else if(isFriend) {
         self = false;
         $("#addEditFriend").text("Remove Friend");
         $("#addEditFriend").attr("href","");
+        $("#addEditFriend").css("background-image","url(/images/profile/delete.png)");
         $("#sendViewMSG").text("Send Message");
+        $('.editProfButton').hide();
         // $("#sendViewMSG").attr("href","VIEWMSGES");
     }
     else {
         self = false;
+        $('.editProfButton').hide();
         $("#addEditFriend").text("Add to Friends List");
-        // $("#addEditFriend").attr("href","/ADDFRIEND");
+        $("#addEditFriend").css("background-image","url(/images/profile/add.png)");
         $("#sendViewMSG").text("Send Message");
         // $("#sendViewMSG").attr("href","/SENDMSG");
     }
@@ -127,22 +136,25 @@ var msgButtonClicked = function() {
 /* This javascript manages the sign up page's client side interactions */
 $(document).ready(function() {    
 
-    $('#FList').empty();
-    for(var i = 0; i < friends.length;i++){
-        $('#FList').append('<li id="friend['+i+']">'+friends[i]+'</li>');
-    }
+
     // console.log("Friends = " + friends);
 
     changeButtons();
-    var checkurl = "/users/";
-    checkurl = checkurl.concat(user_name)
-    // console.log(window.location.pathname);
-    // console.log(checkurl);
-    if(window.location.pathname != checkurl) {
-      $('.editProfButton').hide();
+    $('#FList').empty();
+    if(friends != null){
+        for(var i = 0; i < friends.length;i++){
+            $('#FList').append('<li class="friend" id="friend['+i+']"><a href ="/users/'+friends[i]+'">'+friends[i]+'</a></li>');
+            console.log(friends[i]);
+        }
     }
-    else {
-      $('.editProfButton').show();
-    }
+    //href = "'window.location.href' + "/users/" + 'friend['+i+']'"
+    // var checkurl = "/users/";
+    // checkurl = checkurl.concat(user_name)
+    // // console.log(window.location.pathname);
+    // // console.log(checkurl);
+    // if(window.location.pathname != checkurl) {
+    // }
+    // else {
+    // }
 
 });
