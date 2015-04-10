@@ -10,7 +10,7 @@ var friendButtonClicked = function() {
     // console.log("friendButtonClicked");
     if(loginData != "none") {
         if(self){
-            sweetAlert("Opps...", "We don't have a edit friends yet", "error");
+            sweetAlert("Oops...", "We don't have a edit friends yet", "error");
         }
         else if (!isFriend) {
             console.log("before ajax");

@@ -4,11 +4,32 @@ var socket = io();
 var intialName = loggedIn;
 
 
+/*$.ajax({
+  url: "/lobbyLogin",
+  type: "POST",
+  data: {
+      lobby_title : //stuff,
+      password : //morestuff,
+  },
+  success: function(data){
+    data = JSON.parse(data);
+
+    if(data.value == "Success") {
+      // user made it into lobby
+      // go to the rest of page
+    }
+    else {
+      swal("Oops...", "Password is incorrect.", "error");
+    }
+  },
+  error: function(data){
+      swal("Oops...", "Password is incorrect.", "error");*/
+
 if (lobbyPassword != ".") {
   var passwd = "."; 
   while(passwd != lobbyPassword) {
     passwd = prompt("Please enter the lobby password: ");
-  }
+ }
 }
 
 
