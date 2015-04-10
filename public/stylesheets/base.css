@@ -226,35 +226,82 @@ table {
       .profilePage .leftPane .interactionBar a.addEditFriend {
         display: block;
         width: 120px;
-        height: 18px;
+        height: auto;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        width: fit-content;
+        margin-bottom: 6px;
         background: url(/images/profile/add.png) no-repeat;
         background-size: 10px 10px;
-        background-position: 2px 2px;
+        background-position: 2px 1px;
         padding-left: 16px; }
+      .profilePage .leftPane .interactionBar a.addEditFriend:hover {
+        cursor: pointer;
+        cursor: pointer;
+        border-radius: 3px;
+        background-color: #d4d4d4; }
+      .profilePage .leftPane .interactionBar a.addEditFriend:active {
+        cursor: pointer;
+        background-color: #DC2329; }
       .profilePage .leftPane .interactionBar a.sendViewMSG {
         display: block;
         width: 120px;
-        height: 18px;
+        height: auto;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        width: fit-content;
+        margin-bottom: 6px;
         background: url(/images/profile/msg.png) no-repeat;
         background-size: 10px 10px;
-        background-position: 2px 2px;
+        background-position: 2px 1px;
         padding-left: 16px; }
+      .profilePage .leftPane .interactionBar a.sendViewMSG:hover {
+        cursor: pointer;
+        cursor: pointer;
+        border-radius: 3px;
+        background-color: #d4d4d4; }
+      .profilePage .leftPane .interactionBar a.sendViewMSG:active {
+        cursor: pointer;
+        background-color: #DC2329; }
       .profilePage .leftPane .interactionBar a.posts {
         display: block;
         width: 120px;
-        height: 18px;
+        height: auto;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        width: fit-content;
+        margin-bottom: 6px;
         background: url(/images/profile/posts.png) no-repeat;
         background-size: 10px 10px;
-        background-position: 2px 2px;
+        background-position: 2px 1px;
         padding-left: 16px; }
+      .profilePage .leftPane .interactionBar a.posts:hover {
+        cursor: pointer;
+        cursor: pointer;
+        border-radius: 3px;
+        background-color: #d4d4d4; }
+      .profilePage .leftPane .interactionBar a.posts:active {
+        cursor: pointer;
+        background-color: #DC2329; }
       .profilePage .leftPane .interactionBar a.threads {
         display: block;
-        width: 120px;
-        height: 18px;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        width: fit-content;
+        height: auto;
+        margin-bottom: 6px;
         background: url(/images/profile/threads.png) no-repeat;
         background-size: 10px 10px;
-        background-position: 2px 2px;
+        background-position: 2px 1px;
         padding-left: 16px; }
+      .profilePage .leftPane .interactionBar a.threads:hover {
+        cursor: pointer;
+        cursor: pointer;
+        border-radius: 3px;
+        background-color: #d4d4d4; }
+      .profilePage .leftPane .interactionBar a.threads:active {
+        cursor: pointer;
+        background-color: #DC2329; }
   .profilePage .centerPane {
     width: 615px;
     margin-left: 12px;
@@ -513,6 +560,14 @@ table {
           padding-top: 4px;
           padding-bottom: 5px;
           padding-left: 5px; }
+        .profilePage .rightPage .friendsListPane .friendsList .friend:hover {
+          cursor: pointer;
+          cursor: pointer;
+          border-radius: 3px;
+          background-color: #d4d4d4; }
+        .profilePage .rightPage .friendsListPane .friendsList .friend:active {
+          cursor: pointer;
+          background-color: #DC2329; }
         .profilePage .rightPage .friendsListPane .friendsList .friend1 {
           text-align: left;
           padding-left: 6px;
