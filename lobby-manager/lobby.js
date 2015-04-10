@@ -78,7 +78,7 @@ lobbyManager.startListening = function(http) {
 
       socket.on('username message', function(msg){
           if(socket.chatNumber !=  -1 && that.lobbies[socket.chatNumber] != undefined) {
-            if(msg == "log in"){
+            if(msg == "none"){
               socket.name = "User " + socket.chatID;//that.numberOfClients;
               that.numberOfClients++;
             }
@@ -98,7 +98,7 @@ lobbyManager.startListening = function(http) {
   	  socket.on('chat message', function(msg){
   	  	//console.log("Message Received");
   	    // socket.broadcast.emit('chat message', socket.name + ": " + msg);
-        that.sendMessageToAllExceptClient('chat message', socket.name + ": " + msg, that.lobbies[socket.chatNumber], socket.chatID);
+        that.sendMessageToAllExceptClient('chat message',{name:socket.name, text:msg}, that.lobbies[socket.chatNumber], socket.chatID);
   	  });
 
 

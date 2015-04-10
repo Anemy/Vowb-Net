@@ -5,7 +5,7 @@ var intialName = loggedIn;
 
 /*setTimeout( function() {
   //var sAlert = function() {
-  swal({   
+  swal({
       title: "Password",
       text: "Please enter your password:",
       type: "input",   showCancelButton: true,
@@ -15,12 +15,12 @@ var intialName = loggedIn;
     function(inputValue){
       if (inputValue === false)
         return false;
-      if (inputValue === "") { 
+      if (inputValue === "") {
         swal.showInputError("You need to write something!");
         return false ;
       }
       swal("Nice!", "You wrote: " + inputValue, "success");
-  
+
   });
 }, 2000);
 swal("You will need to enter your password", null, "success");*/
@@ -39,7 +39,7 @@ if (window.location.pathname != "/lobby") {
   },
   success: function(data){
     data = JSON.parse(data);
-    
+
     if(data.value == "Success") {
       // user made it into lobby
       // go to the rest of page
@@ -63,7 +63,7 @@ if (window.location.pathname != "/lobby") {
         html +=   '<li class="selfMessage">' + msg.text + '</li>';
     }
     else{
-        html +=   '<li class="playerMessage">' + msg.name + ":" + msg.text + '</li>';
+        html +=   '<li class="playerMessage">' + msg.name + ": " + msg.text + '</li>';
     }
     html += '</div>';
     $('#messages').append( html ); // $('<div class="messageSpacer"><li class="playerMessage"></div>').text(msg));
