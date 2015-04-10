@@ -147,6 +147,16 @@
             }
         }
     }
+    .usernameArea {
+        padding-left: 1em;
+        .userTitle {
+            font-size: 1.2em;
+            text-decoration: underline;
+        }
+        #userList {
+            margin-top: 2px;
+        }
+    }
     .userArea {
         position: absolute;
         height: 25%;

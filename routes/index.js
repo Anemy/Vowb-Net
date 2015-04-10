@@ -246,13 +246,13 @@ router.post('/createlobby', function(req, res) {
             if (req.body.password == null || req.body.password == "") {
                 db.add(db.lobbyDB, {
                     lobby_title: req.body.lobbyName,
-                    password: null,
+                    password: '.',
                     owner: req.session.username
                 });
             } else {
                 db.add(db.lobbyDB, {
                     lobby_title: req.body.lobbyName,
-                    password: db.hashPassword(req.body.password),
+                    password: req.body.password,//db.hashPassword(req.body.password),
                     owner: req.session.username
                 });
             }

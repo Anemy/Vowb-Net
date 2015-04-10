@@ -122,7 +122,7 @@ $(document).ready(function() {
           // console.log("Has a session! " + loginData);
           showLoggedIn( loginData );
       }
-      else {
+      else { 
         // console.log("No session :'(");
       }
     $(document).keypress(function(e) {

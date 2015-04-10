@@ -10,7 +10,7 @@ var friendButtonClicked = function() {
     // console.log("friendButtonClicked");
     if(loginData != "none") {
         if(self){
-            sweetAlert("Opps...", "We don't have a edit friends yet", "error");
+            sweetAlert("Oops...", "We don't have a edit friends yet", "error");
         }
         else if (!isFriend) {
             console.log("before ajax");
@@ -25,7 +25,7 @@ var friendButtonClicked = function() {
                     var alertTitle = "Added ";
                     alertTitle = alertTitle.concat(username);
                     alertTitle = alertTitle.concat(" to your Friends List");
-                    swal({title:"Woot!", text: alertTitle, type:"success"},
+                    swal({title:"Success!", text: alertTitle, type:"success"},
                         function(){
                             var url = "/users/";
                             url = url.concat(username);
@@ -58,15 +58,15 @@ var friendButtonClicked = function() {
                     var alertTitle = "Remove ";
                     alertTitle = alertTitle.concat(username);
                     alertTitle = alertTitle.concat(" to your Friends List");
-                    swal({title:"Woot!",text: alertTitle, type:"success"},
-                        function(){
-                            console.log("Successfully removed friend");
-                            var url = "/users/";
-                            url = url.concat(username);
-                            window.location.href = url;
-                        }
-                    );
-                    alert("close");
+                    // swal({title:"Success!",text: alertTitle, type:"success"},
+                    //     function(){
+                    //         console.log("Successfully removed friend");
+                    //         var url = "/users/";
+                    //         url = url.concat(username);
+                    //         window.location.href = url;
+                    //     }
+                    // );
+                    // alert("close");
                 },
                 error: function(data){
                     //console.log(data.responseText);

@@ -98,7 +98,7 @@ lobbyManager.startListening = function(http) {
   	  socket.on('chat message', function(msg){
   	  	//console.log("Message Received");
   	    // socket.broadcast.emit('chat message', socket.name + ": " + msg);
-        that.sendMessageToAllExceptClient('chat message',{name:socket.name, text:msg}, that.lobbies[socket.chatNumber], socket.chatID);
+        that.sendMessageToAllExceptClient('chat message', {name:socket.name, text: msg}, that.lobbies[socket.chatNumber], socket.chatID);
   	  });
 
 
