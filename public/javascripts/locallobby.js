@@ -33,7 +33,12 @@ if (lobbyPassword != ".") {
       console.log("User " + msg.text[i] + " added");
       if(msg.text[i] != "" && msg.text[i] != undefined && nameList.indexOf(msg.text[i]) == -1){
           nameList[i] = msg.text[i];
-          $('#userList').append($('<li class="userMessage">').text("- " + msg.text[i]));
+          if(msg.text[i].indexOf("User") == 0) {
+            $('#userList').append($('<li class="userMessage">'+"- " + msg.text[i]+'</li>'));
+          }
+          else {
+            $('#userList').append($('<li class="userMessage"><a href ="/users/'+msg.text[i]+'">'+"- " + msg.text[i]+'</a></li>'));
+          }
       }
     }
   });
