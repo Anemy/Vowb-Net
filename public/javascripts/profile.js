@@ -44,7 +44,8 @@ var friendButtonClicked = function() {
                     );
                 }
             });
-        } else {
+        } 
+        else if (isFriend) {
             console.log("before ajax");
             $.ajax({
                 url:"/users/removeFriend",
@@ -53,20 +54,22 @@ var friendButtonClicked = function() {
                     removeFriend : username
                 },
                 success: function(data){
-                    console.log("Successfully removed friend");
+                    //console.log("Successfully removed friend");
                     var alertTitle = "Remove ";
                     alertTitle = alertTitle.concat(username);
                     alertTitle = alertTitle.concat(" to your Friends List");
-                    swal({title:"Woot!", text: alertTitle, type:"success"},
+                    swal({title:"Woot!",text: alertTitle, type:"success"},
                         function(){
+                            console.log("Successfully removed friend");
                             var url = "/users/";
                             url = url.concat(username);
                             window.location.href = url;
                         }
                     );
+                    alert("close");
                 },
                 error: function(data){
-                    console.log(data.responseText);
+                    //console.log(data.responseText);
                     swal({title: "Error",text: data.responseText , type:"error"}, 
                         function(){
                             var url = "/users/";
@@ -78,13 +81,13 @@ var friendButtonClicked = function() {
             });
         }
     }
-    else{
+    else {
         sweetAlert("Opps...", "You're not logged in", "error");
     }
 
 }
 var changeButtons = function() {
-        var checkurl = "/users/";
+    var checkurl = "/users/";
     checkurl = checkurl.concat(user_name)
     // console.log(window.location.pathname);
     // console.log(checkurl);
@@ -92,6 +95,7 @@ var changeButtons = function() {
         self = true;
         $("#addEditFriend").text("Edit Friends List");
         $("#addEditFriend").attr("href","");
+        $("#addEditFriend").css("background-image","url(/images/profile/add.png)");
         $("#sendViewMSG").text("View Messages");
         $("#sendViewMSG").attr("href","VIEWMSGES");
         $('.editProfButton').show();
@@ -101,6 +105,7 @@ var changeButtons = function() {
         self = false;
         $("#addEditFriend").text("Remove Friend");
         $("#addEditFriend").attr("href","");
+        $("#addEditFriend").css("background-image","url(/images/profile/delete.png)");
         $("#sendViewMSG").text("Send Message");
         $('.editProfButton').hide();
         // $("#sendViewMSG").attr("href","VIEWMSGES");
@@ -109,7 +114,7 @@ var changeButtons = function() {
         self = false;
         $('.editProfButton').hide();
         $("#addEditFriend").text("Add to Friends List");
-        // $("#addEditFriend").attr("href","/ADDFRIEND");
+        $("#addEditFriend").css("background-image","url(/images/profile/add.png)");
         $("#sendViewMSG").text("Send Message");
         // $("#sendViewMSG").attr("href","/SENDMSG");
     }

@@ -28,7 +28,7 @@ block content
 
 		.centerPane
 			.userAboutHeader
-				.userName !{username}
+				.userName !{username} 
 				img(class="userRank" src="/images/profile/rank1.png") 
 				.userStatus / last online 7 seconds ago
 			.userAbout
@@ -64,7 +64,10 @@ block content
 					Edit Profile
 		.rightPage
 			.friendsListPane
-				.friendsHeader Friends List
+				if login == username
+					.friendsHeader Your Friends List
+				else 
+					.friendsHeader Friends List
 				.friendsList
 					ul#FList
 					//- .friend1

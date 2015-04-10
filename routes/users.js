@@ -189,7 +189,7 @@ router.post('/addFriend', function(req, res, next) {
 
 router.post('/removeFriend', function(req, res, next) {
     var loginData = getLoginData(req);
-    console.log("Removing " + req.body.removeFriend + " as a friend of " + loginData);
+    //console.log("Removing " + req.body.removeFriend + " as a friend of " + loginData);
     db.removeFriend(loginData,req.body.removeFriend,function(success,text) {
         if( success )
             res.send(text);
