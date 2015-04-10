@@ -6,6 +6,17 @@ block content
     script(defer="defer" src="/javascripts/locallobby.js")
 
     include banner
+    script.
+        // gets the login data from the server (none if user doesn't exist)
+        //- console.log("Trying to parse data from the server");
+        if(!{JSON.stringify(lobbyPassword)} != undefined) {
+            lobbyPassword = !{JSON.stringify(lobbyPassword)};
+            //- console.log("Parse success: " + loginData);
+        }
+        else {
+            //- console.log("Parse failure");
+            lobbyPassword = false;
+        }
     .lobbyPage
         .bodyLine
         .pageThings
@@ -23,7 +34,7 @@ block content
                 //- .createLobby
                 //-     input#conference-name(type="text" placeHolder="Insert Lobby name")
                 //-     button#setup-new-conference.setup Create lobby
-                //-
+
                 //- // list of all available broadcasting rooms
                 //- table#rooms-list(style='width: 100%;')
                 //- // local/remote videos container
@@ -42,25 +53,25 @@ block content
                         ul#messages
                 input#m.controls(type="text" placeHolder="Enter a message...")
 
-.loginPage
-    .overlay
-    .loginPopup
-        header.loginHeader
-          span.headerTitle Log in
-          span.loginClose(onclick = "exitButtonClicked()") X
-        .loginBody
-          .loginForm
-            label username
-            input(type='username' id = "un_id")
-            br
-            label password
-            input(type='password' id = "pw_id")
-            br
-            .checkbox
-              input#remember(type='checkbox')
-              label(for='remember') remember me on this computer
-            .action_btns
-              a.btn.btn_red(onclick="loginSubClicked()") log in
+    //- .loginPage
+    //-     .overlay
+    //-     .loginPopup
+    //-         header.loginHeader
+    //-           span.headerTitle Log in
+    //-           span.loginClose(onclick = "exitButtonClicked()") X
+    //-         .loginBody
+    //-           .loginForm
+    //-             label username
+    //-             input(type='username' id = "un_id")
+    //-             br
+    //-             label password
+    //-             input(type='password' id = "pw_id")
+    //-             br
+    //-             .checkbox
+    //-               input#remember(type='checkbox')
+    //-               label(for='remember') remember me on this computer
+    //-             .action_btns
+    //-               a.btn.btn_red(onclick="loginSubClicked()") log in
 
 
-            include copyright
+    include copyright

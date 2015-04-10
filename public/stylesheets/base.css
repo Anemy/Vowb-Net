@@ -1512,6 +1512,13 @@ table {
       .lobbyPage .voiceChatPanel #rooms-list tr {
         border-bottom: 1px solid #ECF0F1;
         margin: 0.2em; }
+  .lobbyPage .usernameArea {
+    padding-left: 1em; }
+    .lobbyPage .usernameArea .userTitle {
+      font-size: 1.2em;
+      text-decoration: underline; }
+    .lobbyPage .usernameArea #userList {
+      margin-top: 2px; }
   .lobbyPage .userArea {
     position: absolute;
     height: 25%;
