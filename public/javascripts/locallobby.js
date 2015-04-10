@@ -45,11 +45,11 @@ if (window.location.pathname != "/lobby") {
       // go to the rest of page
     }
     else {
-      sweetAlert("Oops...", "Password is incorrect.", "error");
+      swal("Oops...", "Password is incorrect.", "error");
     }
   },
   error: function(data){
-      sweetAlert("Oops...", "Password is incorrect.", "error");
+      swal("Oops...", "Password is incorrect.", "error");
   }
 });
 */
