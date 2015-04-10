@@ -14,7 +14,7 @@ var lobbyManager = module.exports =  {
 
 // used for sending a message to all clients in the audience lobby
 lobbyManager.sendMessageToAllClients = function (messageType, messageData, audience) {
-    console.log("Send message to lobby: " + audience + " : " + messageData);
+    console.log("Send message to everyone lobby: " + audience + " : " + messageData.text);
     for(var i = 0; i < audience.length; i++) {
       audience[i].emit(messageType,messageData);
     }
@@ -22,7 +22,7 @@ lobbyManager.sendMessageToAllClients = function (messageType, messageData, audie
 
 // used for socket emitting to all users in a lobby except one
 lobbyManager.sendMessageToAllExceptClient = function (messageType, messageData, audience, banID) {
-    console.log("Send message to lobby: " + audience + " : " + messageData);
+    console.log("Send message to lobby: " + audience + " : " + messageData.text);
     for(var i = 0; i < audience.length; i++) {
       if(i != banID) {
         audience[i].emit(messageType,messageData);
