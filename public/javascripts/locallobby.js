@@ -4,11 +4,32 @@ var socket = io();
 var intialName = loggedIn;
 
 
+/*$.ajax({
+  url: "/lobbyLogin",
+  type: "POST",
+  data: {
+      lobby_title : //stuff,
+      password : //morestuff,
+  },
+  success: function(data){
+    data = JSON.parse(data);
+
+    if(data.value == "Success") {
+      // user made it into lobby
+      // go to the rest of page
+    }
+    else {
+      swal("Oops...", "Password is incorrect.", "error");
+    }
+  },
+  error: function(data){
+      swal("Oops...", "Password is incorrect.", "error");*/
+
 if (lobbyPassword != ".") {
   var passwd = "."; 
   while(passwd != lobbyPassword) {
     passwd = prompt("Please enter the lobby password: ");
-  }
+ }
 }
 
 
@@ -33,7 +54,12 @@ if (lobbyPassword != ".") {
       console.log("User " + msg.text[i] + " added");
       if(msg.text[i] != "" && msg.text[i] != undefined && nameList.indexOf(msg.text[i]) == -1){
           nameList[i] = msg.text[i];
-          $('#userList').append($('<li class="userMessage">').text("- " + msg.text[i]));
+          if(msg.text[i].indexOf("User") == 0) {
+            $('#userList').append($('<li class="userMessage">'+"- " + msg.text[i]+'</li>'));
+          }
+          else {
+            $('#userList').append($('<li class="userMessage"><a href ="/users/'+msg.text[i]+'">'+"- " + msg.text[i]+'</a></li>'));
+          }
       }
     }
   });

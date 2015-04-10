@@ -101,39 +101,111 @@
 			a.addEditFriend {
 				display:block;
 				width:120px;
-				height: 18px;
+				height: auto;
+				width: -webkit-fit-content;
+  				width: -moz-fit-content;
+  				width: fit-content;
+				margin-bottom: 6px;
 				background: url(/images/profile/add.png) no-repeat;
 				background-size: 10px 10px;
-				background-position: 2px 2px;
+				background-position: 2px 1px;
+
 				padding-left: 16px;
 			}
+		    a.addEditFriend:hover {
+	        	cursor: pointer;
+	            cursor: pointer;
+	            //color: white;
+	            border-radius: 3px;
+	            background-color: #d4d4d4;
+		    }
+		    a.addEditFriend:active {
+		            cursor: pointer;
+		            // position: relative;
+		            // top: 2px;
+		            background-color: $accent-dark;
+		            // box-shadow: inset 0px 0px 10px 10px rgba(0,0,0, 0.1);
+		    } 
 			a.sendViewMSG {
 				display:block;
 				width: 120px;
-				height: 18px;
+				height: auto;
+				width: -webkit-fit-content;
+  				width: -moz-fit-content;
+  				width: fit-content;
+				margin-bottom: 6px;
 				background: url(/images/profile/msg.png) no-repeat;
 				background-size: 10px 10px;
-				background-position: 2px 2px;
+				background-position: 2px 1px;
 				padding-left: 16px;
 			}
+			a.sendViewMSG:hover {
+	        	cursor: pointer;
+	            cursor: pointer;
+	            //color: white;
+	            border-radius: 3px;
+	            background-color: #d4d4d4;
+		    }
+		    a.sendViewMSG:active {
+		            cursor: pointer;
+		            // position: relative;
+		            // top: 2px;
+		            background-color: $accent-dark;
+		            // box-shadow: inset 0px 0px 10px 10px rgba(0,0,0, 0.1);
+		    } 
 			a.posts {
 				display:block;
 				width: 120px;
-				height: 18px;
+				height: auto;
+				width: -webkit-fit-content;
+  				width: -moz-fit-content;
+  				width: fit-content;
+				margin-bottom: 6px;
 				background: url(/images/profile/posts.png) no-repeat;
 				background-size: 10px 10px;
-				background-position: 2px 2px;
+				background-position: 2px 1px;
 				padding-left: 16px;
 			}
-			a.threads {
+		    a.posts:hover {
+	        	cursor: pointer;
+	            cursor: pointer;
+	            //color: white;
+	            border-radius: 3px;
+	            background-color: #d4d4d4;
+		    }
+		    a.posts:active {
+		            cursor: pointer;
+		            // position: relative;
+		            // top: 2px;
+		            background-color: $accent-dark;
+		            // box-shadow: inset 0px 0px 10px 10px rgba(0,0,0, 0.1);
+		    } 
+		    a.threads {
 				display:block;
-				width: 120px;
-				height: 18px;
+				width: -webkit-fit-content;
+  				width: -moz-fit-content;
+  				width: fit-content;
+				height: auto;
+				margin-bottom: 6px;
 				background: url(/images/profile/threads.png) no-repeat;
 				background-size: 10px 10px;
-				background-position: 2px 2px;
+				background-position: 2px 1px;
 				padding-left: 16px;
 			}
+		    a.threads:hover {
+	        	cursor: pointer;
+	            cursor: pointer;
+	            //color: white;
+	            border-radius: 3px;
+	            background-color: #d4d4d4;
+		    }
+		    a.threads:active {
+		            cursor: pointer;
+		            // position: relative;
+		            // top: 2px;
+		            background-color: $accent-dark;
+		            // box-shadow: inset 0px 0px 10px 10px rgba(0,0,0, 0.1);
+		    } 			
 		}
 	}
 	.centerPane {
@@ -504,6 +576,20 @@
 						// border-top: 1px solid lightgrey;
 						// border-bottom: 1px solid lightgrey;
 					}
+					.friend:hover {
+			        	cursor: pointer;
+			            cursor: pointer;
+			            //color: white;
+			            border-radius: 3px;
+			            background-color: #d4d4d4;
+				    }
+				    .friend:active {
+				            cursor: pointer;
+				            // position: relative;
+				            // top: 2px;
+				            background-color: $accent-dark;
+				            // box-shadow: inset 0px 0px 10px 10px rgba(0,0,0, 0.1);
+				    } 
 
 				.friend1{
 					text-align: left;
