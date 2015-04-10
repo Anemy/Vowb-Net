@@ -82,7 +82,7 @@ var friendButtonClicked = function() {
         }
     }
     else {
-        sweetAlert("Opps...", "You're not logged in", "error");
+        sweetAlert("Oops...", "You're not logged in", "error");
     }
 
 }
