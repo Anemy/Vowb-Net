@@ -3,56 +3,13 @@
 var socket = io();
 var intialName = loggedIn;
 
-/*setTimeout( function() {
-  //var sAlert = function() {
-  swal({
-      title: "Password",
-      text: "Please enter your password:",
-      type: "input",   showCancelButton: true,
-      closeOnConfirm: false
-      //animation: "slide-from-top"
-    },
-    function(inputValue){
-      if (inputValue === false)
-        return false;
-      if (inputValue === "") {
-        swal.showInputError("You need to write something!");
-        return false ;
-      }
-      swal("Nice!", "You wrote: " + inputValue, "success");
 
-  });
-}, 2000);
-swal("You will need to enter your password", null, "success");*/
-
-
-if (window.location.pathname != "/lobby") {
-  var passwd = prompt("Please enter your password: ");
-}
-
-/*$.ajax({
-  url: "/lobbyLogin",
-  type: "POST",
-  data: {
-      lobby_title : //stuff,
-      password : //morestuff,
-  },
-  success: function(data){
-    data = JSON.parse(data);
-
-    if(data.value == "Success") {
-      // user made it into lobby
-      // go to the rest of page
-    }
-    else {
-      sweetAlert("Oops...", "Password is incorrect.", "error");
-    }
-  },
-  error: function(data){
-      sweetAlert("Oops...", "Password is incorrect.", "error");
+if (lobbyPassword != ".") {
+  var passwd = "."; 
+  while(passwd != lobbyPassword) {
+    passwd = prompt("Please enter the lobby password: ");
   }
-});
-*/
+}
 
 
   socket.on('chat message', function(msg) {
@@ -76,7 +33,7 @@ if (window.location.pathname != "/lobby") {
       console.log("User " + msg.text[i] + " added");
       if(msg.text[i] != "" && msg.text[i] != undefined && nameList.indexOf(msg.text[i]) == -1){
           nameList[i] = msg.text[i];
-          $('#userList').append($('<li class="userMessage">').text(msg.text[i]));
+          $('#userList').append($('<li class="userMessage">').text("- " + msg.text[i]));
       }
     }
   });
