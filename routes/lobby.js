@@ -65,4 +65,16 @@ router.get('/*', function(req, res, next) {
     });
 });
 
+
+/* POST get lobby info by name. */
+router.post('/getInfo', function(req, res, next) {
+    db.search(db.lobbyDB, { lobby_title: req.body.lobbyName }, function(results) {
+        if( results.length ) {
+            res.send(JSON.stringify({value:results[0].owner}));
+        } else {
+            res.status(400).send(JSON.stringify({value:"Lobby not found."}));
+        }
+    });
+});
+
 module.exports = router;

@@ -53,10 +53,47 @@ var db = module.exports = {
 }
 
 db.userDB = "users";
+//                                        Table "public.users"
+//     Column      |          Type           |                        Modifiers
+//-----------------+-------------------------+---------------------------------------------------------
+// username        | text                    |
+// email_account   | character varying(256)  |
+// user_id         | integer                 | not null default nextval('users_user_id_seq'::regclass)
+// password_hash   | text                    |
+// hours           | double precision        |
+// signature       | text                    |
+// avatar_URL      | character varying(2048) |
+// profile_pointer | integer                 |
+// current_lobby   | integer                 |
+// online          | boolean                 |
+//Indexes:
+//    "Primary Key is User ID" PRIMARY KEY, btree (user_id)
+
 db.forumDB = "forums";
 db.lobbyDB = "lobbies";
 db.postDB = "posts";
 db.profileDB = "profiles";
+//                                         Table "public.profiles"
+//      Column      |         Type          |                           Modifiers
+//------------------+-----------------------+---------------------------------------------------------------
+// description      | text                  |
+// friends          | text[]                |
+// posts            | integer[]             |
+// threads          | integer[]             |
+// mods_for         | integer[]             |
+// profile_id       | integer               | not null default nextval('profiles_profile_id_seq'::regclass)
+// join_date        | date                  |
+// birth_date       | date                  |
+// gender           | character varying(32) |
+// state            | character varying(2)  |
+// favorite_game    | character varying     |
+// favorite_tv_show | character varying     |
+// favorite_food    | character varying     |
+// full_name        | text                  |
+// security_level   | integer               |
+// user_age         | character varying(4)  |
+//Indexes:
+//    "Primary Key is Profile ID" PRIMARY KEY, btree (profile_id)
 db.threadDB = "threads";
 
 db.user = function(username, callback) {
