@@ -2,7 +2,7 @@
 //makes local client connection
 var socket = io();
 var intialName = loggedIn;
-
+var owner = "";
 
 /*$.ajax({
   url: "/lobbyLogin",
@@ -24,6 +24,28 @@ var intialName = loggedIn;
   },
   error: function(data){
       swal("Oops...", "Password is incorrect.", "error");*/
+    var url = window.location.pathname;
+    var to = url.lastIndexOf('/') + 1;
+    var chatToConnect =  url.substring(to,url.length);
+
+      $.ajax({
+
+          //Pascal 03/31/15 changing url from signup to createlobby
+          url: "/lobby/getInfo",
+          type: "POST",
+          data: {
+              lobbyName: chatToConnect
+          },
+          success: function(data){
+              data = JSON.parse(data);
+              console.log("OWNER is: " + data.value);
+              owner = data.value;
+          },
+          error: function(data){
+              sweetAlert("Oops...", "Can't get name", "error");
+              console.log("Failure from server");
+          }
+      });
 
 if (lobbyPassword != ".") {
   var passwd = ".";
@@ -51,27 +73,8 @@ if (lobbyPassword != ".") {
   socket.on('user join', function(msg){
     $('#userList').empty();
     var nameList = [];
-    var owner;
-    $.ajax({
 
-        //Pascal 03/31/15 changing url from signup to createlobby
-        url: "/getInfo",
-        type: "POST",
-        data: {
-            lobbyName : $("#lobbyname_id").val(),
-        },
-        success: function(data){
-          data = JSON.parse(data);
-          owner = data.value();
-        },
-        error: function(data){
-            sweetAlert("Oops...", "Can't get name", "error");
-            console.log("Failure from server");
-        }
-    });
-
-
-    $('#userList').append($('<li class="userMessage">'+"- OWNERIS:" + owner +'</li>'));
+    $('#userList').append($('<li class="userMessage"><a href ="/users/'+owner+'">'+"Owner: " + owner+'</a></li>'));
     for(var i = 0; i < msg.num; i++){
       console.log("User " + msg.text[i] + " added");
       if(msg.text[i] != "" && msg.text[i] != undefined && nameList.indexOf(msg.text[i]) == -1){
