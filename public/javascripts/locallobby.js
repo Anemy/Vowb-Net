@@ -26,7 +26,7 @@ var intialName = loggedIn;
       swal("Oops...", "Password is incorrect.", "error");*/
 
 if (lobbyPassword != ".") {
-  var passwd = "."; 
+  var passwd = ".";
   while(passwd != lobbyPassword) {
     passwd = prompt("Please enter the lobby password: ");
  }
@@ -47,9 +47,31 @@ if (lobbyPassword != ".") {
     $('#messages').append( html ); // $('<div class="messageSpacer"><li class="playerMessage"></div>').text(msg));
     document.getElementById("msgBox").scrollTop = document.getElementById("msgBox").scrollHeight;
   });
+
   socket.on('user join', function(msg){
     $('#userList').empty();
     var nameList = [];
+    var owner;
+    $.ajax({
+
+        //Pascal 03/31/15 changing url from signup to createlobby
+        url: "/getInfo",
+        type: "POST",
+        data: {
+            lobbyName : $("#lobbyname_id").val(),
+        },
+        success: function(data){
+          data = JSON.parse(data);
+          owner = data.value();
+        },
+        error: function(data){
+            sweetAlert("Oops...", "Can't get name", "error");
+            console.log("Failure from server");
+        }
+    });
+
+
+    $('#userList').append($('<li class="userMessage">'+"- OWNERIS:" + owner +'</li>'));
     for(var i = 0; i < msg.num; i++){
       console.log("User " + msg.text[i] + " added");
       if(msg.text[i] != "" && msg.text[i] != undefined && nameList.indexOf(msg.text[i]) == -1){
@@ -90,7 +112,7 @@ if (lobbyPassword != ".") {
   //alert(chatToConnect);
   // console.log("Trying to connect to chat: " + chatToConnect);
   socket.emit('connect to chat', chatToConnect);
-
+  console.log("chat connected to : " + chatToConnect);
   setTimeout(function() {
     // insecurely transfers a user's username
     console.log("user_name is: " + loginData);
