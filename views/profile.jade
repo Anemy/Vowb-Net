@@ -18,11 +18,11 @@ block content
 				else
 					img(class="statusIMG" src="/images/profile/offline.png") 
 					.pStatus OFFLINE
-				.p Current Lobby:  
-				if current_lobby == OFFLINE
-					.pCurrLobby OFFLINE
+				.p Current Lobby:
+				if current_lobby == "OFFLINE"
+					.pCurrLobbyOFF OFFLINE
 				else
-					a(id="pCurrLobby" class="pCurrLobby" href="!{current_lobby}").
+					a(id="pCurrLobby" class="pCurrLobby" href='/lobby/'+current_lobby).
 						!{current_lobby}
 			.interactionBar
 				a(id="addEditFriend" class ="addEditFriend" onclick="friendButtonClicked()" href="#").

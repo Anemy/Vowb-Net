@@ -208,8 +208,14 @@ table {
         margin-left: 3px;
         font-weight: bold;
         display: inline-block; }
+      .profilePage .leftPane .statusBar .pCurrLobbyOFF {
+        margin-left: 5px;
+        display: inline-block; }
       .profilePage .leftPane .statusBar .pCurrLobby {
-        margin-left: 3px;
+        margin-left: 6px;
+        text-decoration: underline;
+        color: blue;
+        font-weight: bold;
         display: inline-block; }
     .profilePage .leftPane .interactionBar {
       border-left: 2px solid #BDC3C7;

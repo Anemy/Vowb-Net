@@ -81,8 +81,15 @@
 				display: inline-block;
 
 			}
+			.pCurrLobbyOFF{
+				margin-left: 5px;
+				display: inline-block;
+			}
 			.pCurrLobby{
-				margin-left: 3px;
+				margin-left: 6px;
+				text-decoration: underline;
+				color: blue;
+				font-weight: bold;
 				display: inline-block;
 			}
 
