@@ -24,39 +24,39 @@ var convertLastOnline= function(lastOnline) {
         return "never";
     var time = Date.now() - parseInt(lastOnline);
     if( time < 1000 ) {
-        return time + " millisecond" +(time==1?"":"s")+ " ago";
+        return time.toPrecision(4) + " millisecond" +(time==1?"":"s")+ " ago";
     }
     time /= 1000;
     if( time < 60 ) {
-        return time + " second" +(time==1?"":"s")+ " ago";
+        return time.toPrecision(4) + " second" +(time==1?"":"s")+ " ago";
     }
     time /= 60;
     if( time < 60 ) {
-        return time + " minute" +(time==1?"":"s")+ " ago";
+        return time.toPrecision(4) + " minute" +(time==1?"":"s")+ " ago";
     }
     time /= 60;
     if( time < 24 ) {
-        return time + " hour" +(time==1?"":"s")+ " ago";
+        return time.toPrecision(4) + " hour" +(time==1?"":"s")+ " ago";
     }
     time /= 24;
     if( time < 365 ) {
-        return time + " day" +(time==1?"":"s")+ " ago";
+        return time.toPrecision(4) + " day" +(time==1?"":"s")+ " ago";
     }
     time /= 365;
     if( time < 10 ) {
-        return time + " decade" +(time==1?"":"s")+ " ago";
+        return time.toPrecision(4) + " decade" +(time==1?"":"s")+ " ago";
     }
     time /= 10;
     if( time < 10 ) {
-        return time + " centur" +(time==1?"y":"ies")+ " ago";
+        return time.toPrecision(4) + " centur" +(time==1?"y":"ies")+ " ago";
     }
     time /= 10;
     if( time < 20 ) {
-        return time + " millenni" +(time==1?"um":"a")+ " ago";
+        return time.toPrecision(4) + " millenni" +(time==1?"um":"a")+ " ago";
     }
     time /= 20;
     if( time < 1000 ) {
-        return time + " ice age" +(time==1?"":"s")+ " ago";
+        return time.toPrecision(4) + " ice age" +(time==1?"":"s")+ " ago";
     }
     return "forever ago";
 }
@@ -97,7 +97,7 @@ router.get('/edit/*', function(req, res, next) {
                             //dataObject.user_age = split[0];//dataObject.birth_date;
                             //dataObject.user_age = dataObject.birth_date;
                             dataObject.profileURL = user.avatar_URL;
-                            dataObject.time = user.time/60000;
+                            dataObject.time = (user.time/60000).toPrecision(5);
                             dataObject.online = user.online;
                             dataObject.current_lobby = user.current_lobby;
                             dataObject.last_online = convertLastOnline(user.last_online);
@@ -123,7 +123,7 @@ router.get('/edit/*', function(req, res, next) {
                     //dataObject.user_age = split[0];//dataObject.birth_date;
                     //dataObject.user_age = dataObject.birth_date;
                     dataObject.profileURL = user.avatar_URL;
-                    dataObject.time = user.time/60000;
+                    dataObject.time = (user.time/60000).toPrecision(5);
                     dataObject.online = user.online;
                     dataObject.current_lobby = user.current_lobby;
                     dataObject.last_online = convertLastOnline(user.last_online);
@@ -206,7 +206,7 @@ router.get('/*', function(req, res, next) {
                                 //dataObject.user_age = split[0];//dataObject.birth_date;
                             }
                             dataObject.profileURL = user_result[0].avatar_URL;
-                            dataObject.time = user_result[0].time/60000;
+                            dataObject.time = (user_result[0].time/60000).toPrecision(5);
                             dataObject.online = user_result[0].online;
                             dataObject.current_lobby = user_result[0].current_lobby;
                             dataObject.last_online = convertLastOnline(user_result[0].last_online);
@@ -228,7 +228,7 @@ router.get('/*', function(req, res, next) {
                             //dataObject.user_age = split[0];//dataObject.birth_date;
                         }
                         dataObject.profileURL = user_result[0].avatar_URL;
-                        dataObject.time = user_result[0].time/60000;
+                        dataObject.time = (user_result[0].time/60000).toPrecision(5);
                         dataObject.online = user_result[0].online;
                         dataObject.current_lobby = user_result[0].current_lobby;
                         dataObject.last_online = convertLastOnline(user_result[0].last_online);
