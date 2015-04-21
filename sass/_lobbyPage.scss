@@ -18,18 +18,20 @@
             margin-top: 0.5em;
         }
 
-        audio {
-            -webkit-transition:all 0.5s linear;
-            -moz-transition:all 0.5s linear;
-            -o-transition:all 0.5s linear;
-            transition:all 0.5s linear;
-            -moz-box-shadow: 2px 2px 4px 0px #006773;
-            -webkit-box-shadow:  2px 2px 4px 0px #006773;
-            box-shadow: 2px 2px 4px 0px #006773;
-            -moz-border-radius:7px 7px 7px 7px ;
-            -webkit-border-radius:7px 7px 7px 7px ;
-            border-radius:7px 7px 7px 7px ;
-        }
+        // audio {
+        //     // display: none;
+
+        //     -webkit-transition:all 0.5s linear;
+        //     -moz-transition:all 0.5s linear;
+        //     -o-transition:all 0.5s linear;
+        //     transition:all 0.5s linear;
+        //     -moz-box-shadow: 2px 2px 4px 0px #006773;
+        //     -webkit-box-shadow:  2px 2px 4px 0px #006773;
+        //     box-shadow: 2px 2px 4px 0px #006773;
+        //     -moz-border-radius:7px 7px 7px 7px ;
+        //     -webkit-border-radius:7px 7px 7px 7px ;
+        //     border-radius:7px 7px 7px 7px ;
+        // }
 
         .joinVoiceChat {
             margin-left: 1em;
@@ -130,7 +132,7 @@
             color: $dark;
         }
         #rooms-list {
-            font-family: 'Cabin';
+            font-family: 'Cabin'; 
             font-size: 1.1em;
             margin-top: 1em;
             margin-left: 35%;
@@ -146,6 +148,12 @@
                 margin: 0.2em;
             }
         }
+    }
+    .lobbyOwner {
+        position: absolute;
+        top: 3.5em;
+        text-align: right;
+        right: 25%;
     }
     .usernameArea {
         padding-left: 1em;
