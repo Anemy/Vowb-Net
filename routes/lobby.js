@@ -56,7 +56,7 @@ router.get('/*', function(req, res, next) {
                 password = ".";
             }
 
-            console.log("Lobby password found: " + password);
+            // console.log("Lobby password found: " + password);
             // if(password == ".") {
 
             // }
