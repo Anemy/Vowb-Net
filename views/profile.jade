@@ -7,16 +7,15 @@ block content
 			var username = "!{username}";
 			var isFriend = !{isFriend};
 			var friends = !{JSON.stringify(friends)};
-
+			var ifonline = !{online};
 		script(defer="defer" src="/javascripts/profile.js")
 		.leftPane
 			img(class="profIMG" src='#{profileURL?profileURL:"/images/profile/chicken.png"}')
 			.statusBar
-				if !{online} 
-					img(class="statusIMG" src="/images/profile/online.png") 
+				img(class="statusIMG" src="/images/profile/offline.png") 
+				if  "!{online}"
 					.pStatus ONLINE
 				else
-					img(class="statusIMG" src="/images/profile/offline.png") 
 					.pStatus OFFLINE
 				.p Current Lobby:  
 				.pCurrLobby OFFLINE
@@ -52,7 +51,7 @@ block content
 					.postCount Posts:
 						.userpostCount 2
 					.timeOnline Time Online:
-						.usertimeOnline !{time} hrs
+						.usertimeOnline !{time} minutes
 				.userAboutR
 					.ABOUTME About Me
 					.aboutMeDesc.
