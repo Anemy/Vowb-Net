@@ -137,9 +137,9 @@ lobbyManager.startListening = function(http) {
                 if( results.length ) {
                     console.log("socket io is updating user time");
                     if( results[0].time ) {
-                        db.update(db.userDB,{username:socket.name},{online:false,time:(timeInChat+parseInt(results[0].time)),current_lobby:"offline",last_online:Date.now()});
+                        db.update(db.userDB,{username:socket.name},{online:false,time:(timeInChat+parseInt(results[0].time)),current_lobby:"OFFLINE",last_online:Date.now()});
                     } else {
-                        db.update(db.userDB,{username:socket.name},{online:false,time:(timeInChat),current_lobby:"offline",last_online:Date.now()});
+                        db.update(db.userDB,{username:socket.name},{online:false,time:(timeInChat),current_lobby:"OFFLINE",last_online:Date.now()});
                     }
                 }
               });

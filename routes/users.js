@@ -102,7 +102,7 @@ router.get('/edit/*', function(req, res, next) {
                             dataObject.current_lobby = user.current_lobby;
                             dataObject.last_online = convertLastOnline(user.last_online);
                             if( !dataObject.current_lobby )
-                                dataObject.current_lobby = "offline";
+                                dataObject.current_lobby = "OFFLINE";
                             if( !dataObject.time )
                                 dataObject.time = 0;
                             if( !dataObject.online )
@@ -128,7 +128,7 @@ router.get('/edit/*', function(req, res, next) {
                     dataObject.current_lobby = user.current_lobby;
                     dataObject.last_online = convertLastOnline(user.last_online);
                     if( !dataObject.current_lobby )
-                        dataObject.current_lobby = "offline";
+                        dataObject.current_lobby = "OFFLINE";
                     if( !dataObject.time )
                         dataObject.time = 0;
                     if( !dataObject.online )
@@ -211,7 +211,7 @@ router.get('/*', function(req, res, next) {
                             dataObject.current_lobby = user_result[0].current_lobby;
                             dataObject.last_online = convertLastOnline(user_result[0].last_online);
                             if( !dataObject.current_lobby )
-                                dataObject.current_lobby = "offline";
+                                dataObject.current_lobby = "OFFLINE";
                             if( !dataObject.time )
                                 dataObject.time = 0;
                             if( !dataObject.online )
@@ -233,7 +233,7 @@ router.get('/*', function(req, res, next) {
                         dataObject.current_lobby = user_result[0].current_lobby;
                         dataObject.last_online = convertLastOnline(user_result[0].last_online);
                         if( !dataObject.current_lobby )
-                            dataObject.current_lobby = "offline";
+                            dataObject.current_lobby = "OFFLINE";
                         if( !dataObject.time )
                             dataObject.time = 0;
                         if( !dataObject.online )
