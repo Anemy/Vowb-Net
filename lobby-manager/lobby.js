@@ -2,6 +2,7 @@
 /* It controls their chat and current sub-lobby */
 var fs = require('fs');
 var vm = require('vm');
+var db = require('../database-manager/database.js');
 var includeInThisContext = function(path) {
     var code = fs.readFileSync(path);
     vm.runInThisContext(code, path);
@@ -87,11 +88,12 @@ lobbyManager.startListening = function(http) {
             }
             else{
               socket.name = msg;
-              socket.hasUsername = false;
+              socket.hasUsername = true;
               socket.startTime = Date.now();
 
               // TODO:
               // socket.name is the username - update db so that they're online here
+              db.update(db.userDB,{username:socket.name},{online:true});
             }
             socket.emit('server message', {text: '  -- Hi ' + socket.name + '! Welcome to the lobby chat room! --  ' ,type: 'join'});
             that.sendMessageToAllClients('server message', {text:' -- ' + socket.name + ' has connected. -- ',type: 'disconnect'}, that.lobbies[socket.chatNumber]);
@@ -129,6 +131,18 @@ lobbyManager.startListening = function(http) {
               var timeInChat = Date.now() - socket.startTime;
               // TODO:
               // socket.name is the username - update db so that they're offline here
+              console.log("socket io is logging out user in database field!");
+              console.log("user was logged in for " + timeInChat);
+              db.search(db.userDB,{username:socket.name},function(results) {
+                if( results.length ) {
+                    console.log("socket io is updating user time");
+                    if( results[0].time ) {
+                        db.update(db.userDB,{username:socket.name},{online:false,time:(timeInChat+parseInt(results[0].time))});
+                    } else {
+                        db.update(db.userDB,{username:socket.name},{online:false,time:(timeInChat)});
+                    }
+                }
+              });
             }
         }
       });

@@ -57,6 +57,10 @@ router.get('/edit/*', function(req, res, next) {
                             dataObject.profileURL = user.avatar_URL;
                             dataObject.time = user.time;
                             dataObject.online = user.online;
+                            if( !dataObject.time )
+                                dataObject.time = 0;
+                            if( !dataObject.online )
+                                dataObject.online = false;
                             res.render('editProfPage', dataObject);
 
                         });
@@ -75,6 +79,10 @@ router.get('/edit/*', function(req, res, next) {
                     dataObject.profileURL = user.avatar_URL;
                     dataObject.time = user.time;
                     dataObject.online = user.online;
+                    if( !dataObject.time )
+                        dataObject.time = 0;
+                    if( !dataObject.online )
+                        dataObject.online = false;
                     res.render('editProfPage', dataObject);
                 }
             });
@@ -150,6 +158,10 @@ router.get('/*', function(req, res, next) {
                             dataObject.profileURL = user_result[0].avatar_URL;
                             dataObject.time = user_result[0].time;
                             dataObject.online = user_result[0].online;
+                            if( !dataObject.time )
+                                dataObject.time = 0;
+                            if( !dataObject.online )
+                                dataObject.online = false;
                             res.render('profile', dataObject);
                         });
                     } else {               
@@ -164,6 +176,10 @@ router.get('/*', function(req, res, next) {
                         dataObject.profileURL = user_result[0].avatar_URL;
                         dataObject.time = user_result[0].time;
                         dataObject.online = user_result[0].online;
+                        if( !dataObject.time )
+                            dataObject.time = 0;
+                        if( !dataObject.online )
+                            dataObject.online = false;
                         res.render('profile', dataObject);
                     }
                 });
