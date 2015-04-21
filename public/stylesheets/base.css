@@ -1460,11 +1460,10 @@ table {
 /* This is the styling page for the lobby page */
 .lobbyPage {
   font-family: 'Cabin'; }
-  .lobbyPage .pageThings {
-    width: 75%; }
   .lobbyPage .lobbyTitle {
     font-size: 2.2em;
     color: #290E03;
+    width: 100%;
     text-decoration: underline;
     margin-top: 0.5em;
     margin-bottom: 1em; }
@@ -1483,6 +1482,13 @@ table {
       margin-top: 6px;
       font-size: 1.1em;
       padding-left: 0.6em; }
+  .lobbyPage .friendButton {
+    background-size: 10px 10px;
+    background-position: 2px 1px; }
+    .lobbyPage .friendButton .addButton {
+      background: url(/images/profile/add.png) no-repeat; }
+    .lobbyPage .friendButton .removeButton {
+      background: url(/images/profile/delete.png) no-repeat; }
   .lobbyPage .userArea {
     position: absolute;
     height: 35%;
@@ -1614,7 +1620,7 @@ table {
       border-top: 1px solid #BDC3C7; }
   .lobbyPage .voiceChatPanel {
     text-align: center;
-    width: 80%; }
+    width: 65%; }
     .lobbyPage .voiceChatPanel .joinVoiceChat {
       margin-left: 1em;
       text-align: center;
