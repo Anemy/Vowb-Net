@@ -93,7 +93,7 @@ lobbyManager.startListening = function(http) {
 
               // TODO:
               // socket.name is the username - update db so that they're online here
-              db.update(db.userDB,{username:socket.name},{online:true});
+              db.update(db.userDB,{username:socket.name},{online:true,current_lobby:socket.chatNumber,last_online:Date.now()});
             }
             socket.emit('server message', {text: '  -- Hi ' + socket.name + '! Welcome to the lobby chat room! --  ' ,type: 'join'});
             that.sendMessageToAllClients('server message', {text:' -- ' + socket.name + ' has connected. -- ',type: 'disconnect'}, that.lobbies[socket.chatNumber]);
@@ -137,9 +137,9 @@ lobbyManager.startListening = function(http) {
                 if( results.length ) {
                     console.log("socket io is updating user time");
                     if( results[0].time ) {
-                        db.update(db.userDB,{username:socket.name},{online:false,time:(timeInChat+parseInt(results[0].time))});
+                        db.update(db.userDB,{username:socket.name},{online:false,time:(timeInChat+parseInt(results[0].time)),current_lobby:"offline",last_online:Date.now()});
                     } else {
-                        db.update(db.userDB,{username:socket.name},{online:false,time:(timeInChat)});
+                        db.update(db.userDB,{username:socket.name},{online:false,time:(timeInChat),current_lobby:"offline",last_online:Date.now()});
                     }
                 }
               });
