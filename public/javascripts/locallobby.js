@@ -1,6 +1,7 @@
 /*this script will handle lobby creation and management*/
 //makes local client connection
 var socket = io();
+// logged in is a varaible in login.js
 var intialName = loggedIn;
 var owner = "";
 
@@ -28,24 +29,24 @@ var owner = "";
     var to = url.lastIndexOf('/') + 1;
     var chatToConnect =  url.substring(to,url.length);
 
-      $.ajax({
+    $.ajax({
 
-          //Pascal 03/31/15 changing url from signup to createlobby
-          url: "/lobby/getInfo",
-          type: "POST",
-          data: {
-              lobbyName: chatToConnect
-          },
-          success: function(data){
-              data = JSON.parse(data);
-              console.log("OWNER is: " + data.value);
-              owner = data.value;
-          },
-          error: function(data){
-              sweetAlert("Oops...", "Can't get name", "error");
-              console.log("Failure from server");
-          }
-      });
+        //Pascal 03/31/15 changing url from signup to createlobby
+        url: "/lobby/getInfo",
+        type: "POST",
+        data: {
+            lobbyName: chatToConnect
+        },
+        success: function(data){
+            data = JSON.parse(data);
+            // console.log("OWNER is: " + data.value);
+            owner = data.value;
+        },
+        error: function(data){
+            sweetAlert("Oops...", "Can't get name", "error");
+            // console.log("Failure from server");
+        }
+    });
 
 if (lobbyPassword != ".") {
   var passwd = ".";
@@ -60,9 +61,9 @@ if (lobbyPassword != ".") {
     var html = '';
     html += '<div class="messageSpacer">';
     if(msg.name == loginData ){
-        html +=   '<li class="selfMessage">' + msg.text + '</li>';
+        // html +=   '<li class="selfMessage">' + msg.text + '</li>';
     }
-    else{
+    else {
         html +=   '<li class="playerMessage">' + msg.name + ": " + msg.text + '</li>';
     }
     html += '</div>';
@@ -84,6 +85,9 @@ if (lobbyPassword != ".") {
           }
           else {
             $('#userList').append($('<li class="userMessage"><a href ="/users/'+msg.text[i]+'">'+"- " + msg.text[i]+'</a></li>'));
+            // if(loggedIn) {
+            //   $('#userList').append($(''));
+            // }
           }
       }
     }
@@ -115,10 +119,10 @@ if (lobbyPassword != ".") {
   //alert(chatToConnect);
   // console.log("Trying to connect to chat: " + chatToConnect);
   socket.emit('connect to chat', chatToConnect);
-  console.log("chat connected to : " + chatToConnect);
+  // console.log("chat connected to : " + chatToConnect);
   setTimeout(function() {
     // insecurely transfers a user's username
-    console.log("user_name is: " + loginData);
+    // console.log("user_name is: " + loginData);
     socket.emit('username message', loginData);
   }, 50);
 

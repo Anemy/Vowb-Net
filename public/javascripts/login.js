@@ -2,7 +2,7 @@
 
 var loggedIn = false;
 var user_name = "";
-var loginpop = false;
+var loginpop = false; 
 
 var loginRecentlyClicked = false;
 
