@@ -19,6 +19,48 @@ var getLoginData = function (req) {
     } 
 } 
 
+var convertLastOnline(lastOnline) {
+    if( !lastOnline )
+        return "never";
+    var time = Date.now() - parseInt(lastOnline);
+    if( time < 1000 ) {
+        return time + " millisecond" +(time==1?"":"s"+ " ago";
+    }
+    time /= 1000;
+    if( time < 60 ) {
+        return time + " second" +(time==1?"":"s"+ " ago";
+    }
+    time /= 60;
+    if( time < 60 ) {
+        return time + " minute" +(time==1?"":"s"+ " ago";
+    }
+    time /= 60;
+    if( time < 24 ) {
+        return time + " hour" +(time==1?"":"s"+ " ago";
+    }
+    time /= 24;
+    if( time < 365 ) {
+        return time + " day" +(time==1?"":"s"+ " ago";
+    }
+    time /= 365;
+    if( time < 10 ) {
+        return time + " decade" +(time==1?"":"s"+ " ago";
+    }
+    time /= 10;
+    if( time < 10 ) {
+        return time + " centur" +(time==1?"y":"ies"+ " ago";
+    }
+    time /= 10;
+    if( time < 20 ) {
+        return time + " millenni" +(time==1?"um":"a"+ " ago";
+    }
+    time /= 20;
+    if( time < 1000 ) {
+        return time + " ice age" +(time==1?"":"s"+ " ago";
+    }
+    return "forever ago";
+}
+
 /* GET EDIT users listing. */
 router.get('/edit/*', function(req, res, next) {
 
@@ -57,6 +99,10 @@ router.get('/edit/*', function(req, res, next) {
                             dataObject.profileURL = user.avatar_URL;
                             dataObject.time = user.time/60000;
                             dataObject.online = user.online;
+                            dataObject.current_lobby = user.current_lobby;
+                            dataObject.last_online = convertLastOnline(user.last_online);
+                            if( !dataObject.current_lobby )
+                                dataObject.current_lobby = "offline";
                             if( !dataObject.time )
                                 dataObject.time = 0;
                             if( !dataObject.online )
@@ -79,6 +125,10 @@ router.get('/edit/*', function(req, res, next) {
                     dataObject.profileURL = user.avatar_URL;
                     dataObject.time = user.time/60000;
                     dataObject.online = user.online;
+                    dataObject.current_lobby = user.current_lobby;
+                    dataObject.last_online = convertLastOnline(user.last_online);
+                    if( !dataObject.current_lobby )
+                        dataObject.current_lobby = "offline";
                     if( !dataObject.time )
                         dataObject.time = 0;
                     if( !dataObject.online )
@@ -158,6 +208,10 @@ router.get('/*', function(req, res, next) {
                             dataObject.profileURL = user_result[0].avatar_URL;
                             dataObject.time = user_result[0].time/60000;
                             dataObject.online = user_result[0].online;
+                            dataObject.current_lobby = user_result[0].current_lobby;
+                            dataObject.last_online = convertLastOnline(user_result[0].last_online);
+                            if( !dataObject.current_lobby )
+                                dataObject.current_lobby = "offline";
                             if( !dataObject.time )
                                 dataObject.time = 0;
                             if( !dataObject.online )
@@ -176,6 +230,10 @@ router.get('/*', function(req, res, next) {
                         dataObject.profileURL = user_result[0].avatar_URL;
                         dataObject.time = user_result[0].time/60000;
                         dataObject.online = user_result[0].online;
+                        dataObject.current_lobby = user_result[0].current_lobby;
+                        dataObject.last_online = convertLastOnline(user_result[0].last_online);
+                        if( !dataObject.current_lobby )
+                            dataObject.current_lobby = "offline";
                         if( !dataObject.time )
                             dataObject.time = 0;
                         if( !dataObject.online )
