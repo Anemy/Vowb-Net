@@ -12,13 +12,14 @@ block content
 		.leftPane
 			img(class="profIMG" src='#{profileURL?profileURL:"/images/profile/chicken.png"}')
 			.statusBar
-				img(class="statusIMG" src="/images/profile/offline.png") 
-				if  "!{online}"
+				if  online
+					img(class="statusIMG" src="/images/profile/offline.png") 
 					.pStatus ONLINE
 				else
+					img(class="statusIMG" src="/images/profile/offline.png") 
 					.pStatus OFFLINE
 				.p Current Lobby:  
-				.pCurrLobby OFFLINE
+				.pCurrLobby !{current_lobby}
 			.interactionBar
 				a(id="addEditFriend" class ="addEditFriend" onclick="friendButtonClicked()" href="#").
 					Add to Friends List <br>
@@ -34,7 +35,7 @@ block content
 			.userAboutHeader
 				.userName !{username} 
 				img(class="userRank" src="/images/profile/rank1.png") 
-				.userStatus / last online 7 seconds ago
+				.userStatus / !{last_online}
 			.userAbout
 				.userAboutL
 					.PERSONAL Personal
