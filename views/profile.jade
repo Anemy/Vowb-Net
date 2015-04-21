@@ -12,8 +12,12 @@ block content
 		.leftPane
 			img(class="profIMG" src='#{profileURL?profileURL:"/images/profile/chicken.png"}')
 			.statusBar
-				img(class="statusIMG" src="/images/profile/offline.png") 
-				.pStatus OFFLINE
+				if !{online} 
+					img(class="statusIMG" src="/images/profile/online.png") 
+					.pStatus ONLINE
+				else
+					img(class="statusIMG" src="/images/profile/offline.png") 
+					.pStatus OFFLINE
 				.p Current Lobby:  
 				.pCurrLobby OFFLINE
 			.interactionBar
@@ -48,7 +52,7 @@ block content
 					.postCount Posts:
 						.userpostCount 2
 					.timeOnline Time Online:
-						.usertimeOnline 287 hrs
+						.usertimeOnline !{time} hrs
 				.userAboutR
 					.ABOUTME About Me
 					.aboutMeDesc.

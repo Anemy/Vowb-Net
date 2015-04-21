@@ -23,20 +23,26 @@
 			height: 180px;
      		width: 180px;
      		//margin: 2px;
-     		border: 1px solid black;
-      		-webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
-			-moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
-			box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
-			-moz-box-sizing: border-box;
-			-webkit-box-sizing: border-box;
-			box-sizing: border-box;
-			border-radius: 5px;
+     		        border-left: 2px solid $medium;
+        border-top: 2px solid $medium;
+        border-bottom: 2px solid $medium;
+   //   		border: 1px solid black;
+   //    		-webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
+			// -moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
+			// box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
+			// -moz-box-sizing: border-box;
+			// -webkit-box-sizing: border-box;
+			// box-sizing: border-box;
+			// border-radius: 5px;
 		}
 		.statusBar {
-			border: 1px solid black;
-      		-webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
-			-moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
-			box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
+			        border-left: 2px solid $medium;
+        border-top: 2px solid $medium;
+        border-bottom: 2px solid $medium;
+			// border: 1px solid black;
+   //    		-webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
+			// -moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
+			// box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
 			margin-top: 3px;
 			width: 180px;
 			height: 40px;
@@ -44,7 +50,7 @@
 			font-size: 12px;
 			text-align: left;
 			display:inline-block;
-			border-radius: 5px;
+			// border-radius: 5px;
 			position: relative;
 
 			-moz-box-sizing: border-box;
@@ -81,10 +87,13 @@
 
 		}
 		.interactionBar {
-			border: 1px solid black;
-            -webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
-			-moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
-			box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
+			        border-left: 2px solid $medium;
+        border-top: 2px solid $medium;
+        border-bottom: 2px solid $medium;
+			// border: 1px solid black;
+   //          -webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
+			// -moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
+			// box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
 			margin-top: 6px;
 			//font-weight: bold;
 			font-size: 12px;
@@ -96,7 +105,7 @@
 			-moz-box-sizing: border-box;
 			-webkit-box-sizing: border-box;
 			box-sizing: border-box;
-			border-radius: 5px;
+			// border-radius: 5px;
 
 			a.addEditFriend {
 				display:block;
@@ -239,10 +248,13 @@
 		.userAbout {
 			text-align: left;
 			position: absolute;
-			border: 1px solid black;
-       		-webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
-			-moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
-			box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
+			        border-left: 2px solid $medium;
+        border-top: 2px solid $medium;
+        border-bottom: 2px solid $medium;
+			// border: 1px solid black;
+   //     		-webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
+			// -moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
+			// box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
 			display: block;
 			border-spacing: 0px;
 			width: 615px;
@@ -250,7 +262,7 @@
 			font-size: 0;
   			letter-spacing: 0;
  			word-spacing: 0;
- 			border-radius: 5px;
+ 			// border-radius: 5px;
 			//margin-top: 5px;
 			//padding:0;
 			-moz-box-sizing: border-box;
@@ -353,7 +365,10 @@
 			}
 
 			.userAboutR {
-				border-left: 1px solid black;
+				        border-left: 2px solid $medium;
+        // border-top: 2px solid $medium;
+        // border-bottom: 2px solid $medium;
+				// border-left: 1px solid black;
 				vertical-align: top;
 				width: 400px;
 				height: 137px;
@@ -371,9 +386,11 @@
 					height:15px;
 					padding-top: 2px;
 					padding-left: 2px;
-
-					border-top: 1px solid black;
-					border-bottom: 1px solid black;
+        // border-left: 2px solid $medium;
+        border-top: 2px solid $medium;
+        border-bottom: 2px solid $medium;
+					// border-top: 1px solid black;
+					// border-bottom: 1px solid black;
 
 				}
 				.aboutMeDesc{
@@ -390,8 +407,11 @@
 					height:15px;
 					padding-top: 2px;
 					padding-left: 2px;
-					border-top: 1px solid black;
-					border-bottom: 1px solid black;
+					        // border-left: 2px solid $medium;
+        border-top: 2px solid $medium;
+        border-bottom: 2px solid $medium;
+					// border-top: 1px solid black;
+					// border-bottom: 1px solid black;
 
 				}
 				.favGames {
@@ -453,7 +473,7 @@
 
 	            border: 2px solid $accent;
 
-	            border-radius: 5px;
+	            // border-radius: 5px;
 	            padding-top: 0.5em;
 	            padding-bottom: 0.5em;
 	            padding-left: 1.0em;
@@ -492,14 +512,16 @@
 		display:inline-block;
 
 		.friendsListPane {
-			border-radius: 5px;
+			// border-radius: 5px;
 			width: 180px;
 			height: 420px;
-			border: 1px solid black;
-           	-webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
-			-moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
-			box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
-
+			// border: 1px solid black;
+   //         	-webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
+			// -moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
+			// box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
+        border-left: 2px solid $medium;
+        border-top: 2px solid $medium;
+        border-bottom: 2px solid $medium;
 			text-align: left;
 			display: block;
 			-moz-box-sizing: border-box;
@@ -508,7 +530,7 @@
 
 			.friendsHeader{
 				text-align: left;
-				border-radius: 5px;
+				// border-radius: 5px;
 				border: 1px solid black;
 				background-color: white;
 				border-left: 1px solid black;
@@ -562,7 +584,7 @@
 						padding: 4px;
 						float: left;
 						display:block;
-						border-radius: 3px;
+						// border-radius: 3px;
 				border: 1px solid black;
 				background-color: white;
 				border-left: 1px solid black;
