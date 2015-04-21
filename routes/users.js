@@ -56,6 +56,7 @@ router.get('/edit/*', function(req, res, next) {
                             //dataObject.user_age = dataObject.birth_date;
                             dataObject.profileURL = user.avatar_URL;
                             dataObject.time = user.time;
+                            dataObject.online = user.online;
                             res.render('editProfPage', dataObject);
 
                         });
@@ -73,6 +74,7 @@ router.get('/edit/*', function(req, res, next) {
                     //dataObject.user_age = dataObject.birth_date;
                     dataObject.profileURL = user.avatar_URL;
                     dataObject.time = user.time;
+                    dataObject.online = user.online;
                     res.render('editProfPage', dataObject);
                 }
             });
@@ -147,6 +149,7 @@ router.get('/*', function(req, res, next) {
                             }
                             dataObject.profileURL = user_result[0].avatar_URL;
                             dataObject.time = user_result[0].time;
+                            dataObject.online = user_result[0].online;
                             res.render('profile', dataObject);
                         });
                     } else {               
@@ -160,6 +163,7 @@ router.get('/*', function(req, res, next) {
                         }
                         dataObject.profileURL = user_result[0].avatar_URL;
                         dataObject.time = user_result[0].time;
+                        dataObject.online = user_result[0].online;
                         res.render('profile', dataObject);
                     }
                 });
