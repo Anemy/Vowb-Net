@@ -55,7 +55,7 @@ router.get('/edit/*', function(req, res, next) {
                             //dataObject.user_age = split[0];//dataObject.birth_date;
                             //dataObject.user_age = dataObject.birth_date;
                             dataObject.profileURL = user.avatar_URL;
-                            dataObject.time = user.time;
+                            dataObject.time = user.time/60000;
                             dataObject.online = user.online;
                             if( !dataObject.time )
                                 dataObject.time = 0;
@@ -77,7 +77,7 @@ router.get('/edit/*', function(req, res, next) {
                     //dataObject.user_age = split[0];//dataObject.birth_date;
                     //dataObject.user_age = dataObject.birth_date;
                     dataObject.profileURL = user.avatar_URL;
-                    dataObject.time = user.time;
+                    dataObject.time = user.time/60000;
                     dataObject.online = user.online;
                     if( !dataObject.time )
                         dataObject.time = 0;
@@ -156,7 +156,7 @@ router.get('/*', function(req, res, next) {
                                 //dataObject.user_age = split[0];//dataObject.birth_date;
                             }
                             dataObject.profileURL = user_result[0].avatar_URL;
-                            dataObject.time = user_result[0].time;
+                            dataObject.time = user_result[0].time/60000;
                             dataObject.online = user_result[0].online;
                             if( !dataObject.time )
                                 dataObject.time = 0;
@@ -174,7 +174,7 @@ router.get('/*', function(req, res, next) {
                             //dataObject.user_age = split[0];//dataObject.birth_date;
                         }
                         dataObject.profileURL = user_result[0].avatar_URL;
-                        dataObject.time = user_result[0].time;
+                        dataObject.time = user_result[0].time/60000;
                         dataObject.online = user_result[0].online;
                         if( !dataObject.time )
                             dataObject.time = 0;
