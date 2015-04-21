@@ -3,13 +3,12 @@
 .lobbyPage {
     font-family: 'Cabin';
 
-    .pageThings {
-        width: 75%;
-    }
+    .pageThings {    }
 
     .lobbyTitle {
         font-size: 2.2em;
         color: $dark;
+        width: 100%;
 
         text-decoration: underline;
         // border-bottom: solid 2px $
@@ -35,6 +34,16 @@
             margin-top: 6px;
             font-size: 1.1em;
             padding-left: 0.6em;
+        }
+    }
+    .friendButton {
+        background-size: 10px 10px;
+        background-position: 2px 1px;
+        .addButton {
+            background: url(/images/profile/add.png) no-repeat;
+        }
+        .removeButton {
+            background: url(/images/profile/delete.png) no-repeat;
         }
     }
     .userArea {
@@ -228,7 +237,7 @@
 
         text-align: center;
 
-        width:80%;
+        width:65%;
 
 
 

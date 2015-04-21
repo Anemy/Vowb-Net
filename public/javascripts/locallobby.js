@@ -91,7 +91,7 @@ if (lobbyPassword != ".") {
           else {
             $('#userList').append($('<li class="userMessage"><a href ="/users/'+msg.text[i]+'">'+"- " + msg.text[i]+'</a></li>'));
             // if(loggedIn) {
-            //   $('#userList').append($(''));
+            //   $('#userList').append($('<div class="friendButton addButton"></div>'));
             // }
           }
       }
