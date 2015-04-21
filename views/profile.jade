@@ -19,7 +19,11 @@ block content
 					img(class="statusIMG" src="/images/profile/offline.png") 
 					.pStatus OFFLINE
 				.p Current Lobby:  
-				.pCurrLobby !{current_lobby}
+				if current_lobby == OFFLINE
+					.pCurrLobby OFFLINE
+				else
+					a(id="pCurrLobby" class="pCurrLobby" href="!{current_lobby}").
+						!{current_lobby}
 			.interactionBar
 				a(id="addEditFriend" class ="addEditFriend" onclick="friendButtonClicked()" href="#").
 					Add to Friends List <br>
