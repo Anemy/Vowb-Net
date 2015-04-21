@@ -30,8 +30,6 @@ var owner = "";
     var chatToConnect =  url.substring(to,url.length);
 
     $.ajax({
-
-        //Pascal 03/31/15 changing url from signup to createlobby
         url: "/lobby/getInfo",
         type: "POST",
         data: {
@@ -41,12 +39,13 @@ var owner = "";
             data = JSON.parse(data);
             // console.log("OWNER is: " + data.value);
             owner = data.value;
-            $('.lobbyOwner').html("Lobby Owner: " + owner);
+            $('.lobbyOwner').html("Lobby Owner: " + '<a href="/users/'+owner+'">' + owner + "</a>");
         },
         error: function(data){
             // sweetAlert("Oops...", "Can't get name", "error");
-            // console.log("Failure from server");
+            console.log("Failure from server: " + data);
             $('.lobbyOwner').html("Lobby Owner: None");
+            owner = "None";
         }
     });
 
@@ -80,7 +79,7 @@ if (lobbyPassword != ".") {
     // add the lobby owner
     // console.log("The lobby owner is: " + owner);
     // $('.pageThings').append($('<li class="lobbyOwner"><a href ="/users/'+owner+'">'+"Owner: " + owner+'</a></li>'));
-    $('.lobbyOwner').html("Lobby Owner: " + owner);
+    $('.lobbyOwner').html("Lobby Owner: " + '<a href="/users/'+owner+'">' + owner + "</a>");
 
     for(var i = 0; i < msg.num; i++){
       // console.log("User " + msg.text[i] + " added");
@@ -197,7 +196,7 @@ if (lobbyPassword != ".") {
       OfferToReceiveVideo: false
   };
   connection.onstream = function(e) {
-      audioContainer.insertBefore(e.mediaElement, audioContainer.firstChild);
+      // audioContainer.insertBefore(e.mediaElement, audioContainer.firstChild);
   };
 
 

@@ -1460,19 +1460,161 @@ table {
 /* This is the styling page for the lobby page */
 .lobbyPage {
   font-family: 'Cabin'; }
+  .lobbyPage .pageThings {
+    width: 75%; }
+  .lobbyPage .lobbyTitle {
+    font-size: 2.2em;
+    color: #290E03;
+    text-decoration: underline;
+    margin-top: 0.5em;
+    margin-bottom: 1em; }
+  .lobbyPage .lobbyOwner {
+    position: absolute;
+    top: 3.5em;
+    text-align: right;
+    right: 36%; }
+  .lobbyPage .usernameArea {
+    width: 64%;
+    padding-left: 1.4em; }
+    .lobbyPage .usernameArea .userTitle {
+      font-size: 1.6em;
+      text-decoration: underline; }
+    .lobbyPage .usernameArea #userList {
+      margin-top: 6px;
+      font-size: 1.1em;
+      padding-left: 0.6em; }
+  .lobbyPage .userArea {
+    position: absolute;
+    height: 35%;
+    width: 35%;
+    top: 3em;
+    bottom: 1.7em;
+    border: 2px solid #BDC3C7;
+    z-index: -1; }
+    .lobbyPage .userArea .userText {
+      font-family: 'Cabin';
+      font-size: 12px;
+      color: black;
+      position: relative;
+      left: 0;
+      text-align: center; }
+    .lobbyPage .userArea .chatbox {
+      font-family: 'Cabin';
+      font-size: 12px;
+      color: black;
+      position: relative;
+      height: 100%;
+      width: 100%;
+      background-color: #FBFBFB;
+      word-wrap: break-word;
+      overflow-y: auto; }
+      .lobbyPage .userArea .chatbox #userList .messageSpacer {
+        width: 100%;
+        float: left;
+        margin: 4px; }
+        .lobbyPage .userArea .chatbox #userList .messageSpacer li {
+          padding-top: 4px;
+          padding-bottom: 4px;
+          padding-left: 10px;
+          padding-right: 10px;
+          line-height: 20px;
+          background-color: white; }
+        .lobbyPage .userArea .chatbox #userList .messageSpacer .userMessage {
+          margin: 0;
+          float: left;
+          width: 100%;
+          background-color: #FBFBFB; }
+  .lobbyPage .chatArea {
+    position: absolute;
+    width: 35%;
+    top: 3em;
+    bottom: 1.7em;
+    right: 0;
+    /* -moz-border-radius: 0px;
+        -webkit-border-radius: 3px 3px 0px 0px;
+        border-radius: 3px 3px 0px 0px; */
+    border-left: 2px solid #BDC3C7;
+    border-top: 2px solid #BDC3C7;
+    border-bottom: 2px solid #BDC3C7; }
+    .lobbyPage .chatArea .lobbySideBar {
+      position: absolute;
+      right: 0%;
+      width: 14%;
+      height: 100%;
+      bottom: 24px;
+      font-family: tahoma;
+      font-size: 14;
+      color: orange;
+      overflow: scroll;
+      margin-left: 1px; }
+    .lobbyPage .chatArea .chatboxWrapper {
+      position: absolute;
+      left: 0;
+      bottom: 24px;
+      height: 100%;
+      width: 100%;
+      z-index: -1; }
+      .lobbyPage .chatArea .chatboxWrapper .chatbox {
+        font-family: 'Cabin';
+        font-size: 12px;
+        color: black;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 24px;
+        left: 0;
+        background-color: #FBFBFB;
+        word-wrap: break-word;
+        overflow-y: auto; }
+        .lobbyPage .chatArea .chatboxWrapper .chatbox #messages {
+          /*.playerMessage::after {
+                        content: "";
+                        position: absolute;
+                        left: 5px;
+                        margin-top: 4px;
+                        border: 5px solid $medium;
+                        border-left-color: transparent;
+                        border-top-color: transparent;
+                    }*/ }
+          .lobbyPage .chatArea .chatboxWrapper .chatbox #messages .messageSpacer {
+            width: 100%;
+            float: left;
+            margin: 4px; }
+            .lobbyPage .chatArea .chatboxWrapper .chatbox #messages .messageSpacer .playerMessage {
+              float: left;
+              border: 1px solid #290E03;
+              border-radius: 5px; }
+            .lobbyPage .chatArea .chatboxWrapper .chatbox #messages .messageSpacer .selfMessage {
+              margin-right: 8px;
+              float: right;
+              border: 1px solid #BDC3C7;
+              border-radius: 10px; }
+          .lobbyPage .chatArea .chatboxWrapper .chatbox #messages li {
+            padding-top: 4px;
+            padding-bottom: 4px;
+            padding-left: 10px;
+            padding-right: 10px;
+            line-height: 20px;
+            background-color: white; }
+          .lobbyPage .chatArea .chatboxWrapper .chatbox #messages .serverMessage {
+            margin: 0;
+            float: left;
+            width: 100%;
+            background-color: #FBFBFB;
+            color: #FC4349; }
+    .lobbyPage .chatArea .controls {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      bottom: 0;
+      font-size: 12px;
+      padding: 6px 6px;
+      outline: none;
+      border: none;
+      border-top: 1px solid #BDC3C7; }
   .lobbyPage .voiceChatPanel {
     text-align: center;
     width: 80%; }
-    .lobbyPage .voiceChatPanel .lobbyTitle {
-      font-size: 1.6em;
-      color: #290E03;
-      text-decoration: underline;
-      margin-top: 0.5em; }
-    .lobbyPage .voiceChatPanel audio {
-      -webkit-transition: all 0.5s linear;
-      transition: all 0.5s linear;
-      box-shadow: 2px 2px 4px 0px #006773;
-      border-radius: 7px 7px 7px 7px; }
     .lobbyPage .voiceChatPanel .joinVoiceChat {
       margin-left: 1em;
       text-align: center;
@@ -1567,141 +1709,6 @@ table {
       .lobbyPage .voiceChatPanel #rooms-list tr {
         border-bottom: 1px solid #ECF0F1;
         margin: 0.2em; }
-  .lobbyPage .usernameArea {
-    padding-left: 1em; }
-    .lobbyPage .usernameArea .userTitle {
-      font-size: 1.2em;
-      text-decoration: underline; }
-    .lobbyPage .usernameArea #userList {
-      margin-top: 2px; }
-  .lobbyPage .userArea {
-    position: absolute;
-    height: 25%;
-    width: 25%;
-    top: 3em;
-    bottom: 1.7em;
-    border: 2px solid #BDC3C7;
-    z-index: -1; }
-    .lobbyPage .userArea .userText {
-      font-family: 'Cabin';
-      font-size: 12px;
-      color: black;
-      position: relative;
-      left: 0;
-      text-align: center; }
-    .lobbyPage .userArea .chatbox {
-      font-family: 'Cabin';
-      font-size: 12px;
-      color: black;
-      position: relative;
-      height: 100%;
-      width: 100%;
-      background-color: #FBFBFB;
-      word-wrap: break-word;
-      overflow-y: auto; }
-      .lobbyPage .userArea .chatbox #userList .messageSpacer {
-        width: 100%;
-        float: left;
-        margin: 4px; }
-        .lobbyPage .userArea .chatbox #userList .messageSpacer li {
-          padding-top: 4px;
-          padding-bottom: 4px;
-          padding-left: 10px;
-          padding-right: 10px;
-          line-height: 20px;
-          background-color: white; }
-        .lobbyPage .userArea .chatbox #userList .messageSpacer .userMessage {
-          margin: 0;
-          float: left;
-          width: 100%;
-          background-color: #FBFBFB; }
-  .lobbyPage .chatArea {
-    position: absolute;
-    width: 24%;
-    top: 3em;
-    bottom: 1.7em;
-    right: 0;
-    /* -moz-border-radius: 0px;
-        -webkit-border-radius: 3px 3px 0px 0px;
-        border-radius: 3px 3px 0px 0px; */
-    border-left: 2px solid #BDC3C7;
-    border-top: 2px solid #BDC3C7;
-    border-bottom: 2px solid #BDC3C7; }
-    .lobbyPage .chatArea .lobbySideBar {
-      position: absolute;
-      right: 0%;
-      width: 14%;
-      height: 100%;
-      bottom: 24px;
-      font-family: tahoma;
-      font-size: 14;
-      color: orange;
-      overflow: scroll;
-      margin-left: 1px; }
-    .lobbyPage .chatArea .chatboxWrapper {
-      position: absolute;
-      left: 0;
-      bottom: 24px;
-      height: 100%;
-      width: 100%;
-      z-index: -1; }
-      .lobbyPage .chatArea .chatboxWrapper .chatbox {
-        font-family: 'Cabin';
-        font-size: 12px;
-        color: black;
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        top: 24px;
-        left: 0;
-        background-color: #FBFBFB;
-        word-wrap: break-word;
-        overflow-y: auto; }
-        .lobbyPage .chatArea .chatboxWrapper .chatbox #messages {
-          /*.playerMessage::after {
-                        content: "";
-                        position: absolute;
-                        left: 5px;
-                        margin-top: 4px;
-                        border: 5px solid $medium;
-                        border-left-color: transparent;
-                        border-top-color: transparent;
-                    }*/ }
-          .lobbyPage .chatArea .chatboxWrapper .chatbox #messages .messageSpacer {
-            width: 100%;
-            float: left;
-            margin: 4px; }
-            .lobbyPage .chatArea .chatboxWrapper .chatbox #messages .messageSpacer .playerMessage {
-              float: left;
-              border: 1px solid #290E03;
-              border-radius: 5px; }
-            .lobbyPage .chatArea .chatboxWrapper .chatbox #messages .messageSpacer .selfMessage {
-              margin-right: 8px;
-              float: right;
-              border: 1px solid #BDC3C7;
-              border-radius: 10px; }
-          .lobbyPage .chatArea .chatboxWrapper .chatbox #messages li {
-            padding-top: 4px;
-            padding-bottom: 4px;
-            padding-left: 10px;
-            padding-right: 10px;
-            line-height: 20px;
-            background-color: white; }
-          .lobbyPage .chatArea .chatboxWrapper .chatbox #messages .serverMessage {
-            margin: 0;
-            float: left;
-            width: 100%;
-            background-color: #FBFBFB; }
-    .lobbyPage .chatArea .controls {
-      position: absolute;
-      left: 0;
-      width: 100%;
-      bottom: 0;
-      font-size: 12px;
-      padding: 6px 6px;
-      outline: none;
-      border: none;
-      border-top: 1px solid #BDC3C7; }
 
 .banner {
   background: -webkit-linear-gradient(#F7FCFC, #ECF0F1);
