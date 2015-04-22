@@ -109,7 +109,7 @@ router.post('/get-avatar',function(req, res, next) {
             res.end(JSON.stringify({ value: "Error" }));
         }
     });
-}
+});
 
 //retrieves the creating lobby page - maybe add redirect if not logged in?
 router.get('/create', function(req, res, next) { //tmp
