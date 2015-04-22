@@ -3,7 +3,50 @@
 .lobbyPage {
     font-family: 'Cabin';
 
-    .pageThings {    }
+    .pageThings { 
+        .deleteWrapper {
+                    float: left;
+                    width: 100%;
+                    margin-top: 20px;
+
+                    .deleteButton {
+                        text-align:center;
+                        z-index: 1;
+                        outline: none;
+
+                        color: white;
+                        font-size: 14px;
+                        font-family: 'Cabin';
+
+                        background-color: $accent;
+                        // background-color: white;
+                        border: 2px solid $accent;
+
+                        border-radius: 5px;
+                        padding-top: 0.5em;
+                        padding-bottom: 0.5em;
+                        padding-left: 1.8em;
+                        padding-right: 1.8em;
+                        display: inline-block;
+
+                        -webkit-transition: all .25s ease;
+                        -moz-transition: all .25s ease;
+                        -ms-transition: all .25s ease;
+                        -o-transition: all .25s ease;
+                        transition: all .25s ease;
+                    }
+                    .deleteButton:hover {
+                        cursor: pointer;
+                        background-color: $accent-dark;
+                        border: 2px solid $accent-dark;
+                    }
+                    .deleteButton:active {
+                        cursor: pointer;
+                        background-color: $accent-dark;
+                        box-shadow: inset 0px 0px 2px 2px rgba(0,0,0, 0.2);
+                    }
+                }
+    }
 
     .lobbyTitle {
         font-size: 2.2em;
@@ -23,6 +66,9 @@
         text-align: right;
         right: 36%;
     }
+
+    
+
     .usernameArea {
         width: 64%;
         padding-left: 1.4em;

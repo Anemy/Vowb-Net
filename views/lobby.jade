@@ -21,8 +21,12 @@ block content
         .bodyLine
         .pageThings
             .lobbyOwner
+            .deleteWrapper
+                input.deleteButton(id="delete_id" type="submit" value="Delete Lobby")
+
             .voiceChatPanel
                 .lobbyTitle #{lobbyName}
+
                 //- .joinVoiceChat(onClick="connectToVoiceChat()").
                 //-    Voice Chat
                 //- input#conference-name.inputBox(type="text" placeHolder="Insert Lobby name")
