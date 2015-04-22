@@ -79,7 +79,7 @@
 
         padding-top: 0.4em;
         top: .5em;
-        right: 10em;
+        right: 8em;
 
 
         height: 1.5em;
@@ -109,13 +109,22 @@
        -ms-transition: none;
        -o-transition: none;
        transition: none;
-   }
-
+    }
+    .bannerIMG {
+        margin-left: .7em;
+        position:absolute;
+        top: -.6em;
+        border-radius: 5px;
+        border-left: 1px solid $medium;
+        border-right: 1px solid $medium;        
+        border-top: 1px solid $medium;
+        border-bottom: 1px solid $medium;
+    }
     .loginButton {
-        top: 1em;
+        //top: 1em;
         position: absolute;
         color: $dark;
-        right: 6em;
+        right: 4em;
         background: none;
     }
     .loginButton:hover {

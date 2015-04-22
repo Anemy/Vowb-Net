@@ -179,13 +179,13 @@ table {
       border-top: 2px solid #BDC3C7;
       border-bottom: 2px solid #BDC3C7; }
     .profilePage .leftPane .statusBar {
-      border-top: 2px solid #BDC3C7;
-      border-bottom: 2px solid #BDC3C7;
       background: -webkit-linear-gradient(#F7FCFC, #ECF0F1);
       /* For Safari 5.1 to 6.0 */
       /* For Opera 11.1 to 12.0 */
       /* For Firefox 3.6 to 15 */
       background: linear-gradient(#F7FCFC, #ECF0F1);
+      border-top: 2px solid #BDC3C7;
+      border-bottom: 2px solid #BDC3C7;
       border-left: 1px solid #BDC3C7;
       border-right: 1px solid #BDC3C7;
       margin-top: 3px;
@@ -644,17 +644,18 @@ table {
       height: 180px;
       width: 180px;
       overflow: hidden;
-      border: 1px solid black;
-      box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.43);
-      box-sizing: border-box;
-      border-radius: 5px; }
+      border-left: 1px solid #BDC3C7;
+      border-right: 1px solid #BDC3C7;
+      border-top: 2px solid #BDC3C7;
+      border-bottom: 2px solid #BDC3C7;
+      box-sizing: border-box; }
       .editProfPage .leftPane .imgContainer .imgContainerOverlay {
         position: absolute;
         z-index: 2;
-        top: 0;
+        top: -.002em;
         left: 0;
-        height: 100%;
-        width: 100%;
+        height: 100.2%;
+        width: 100.2%;
         -webkit-transition: all .4s ease;
         transition: all .4s ease; }
       .editProfPage .leftPane .imgContainer .imgContainerOverlay:hover {
@@ -664,7 +665,6 @@ table {
         top: 85%;
         left: 82%;
         background-color: #FC4349;
-        border-radius: 4px;
         padding-top: 1px;
         padding-bottom: 1.7px;
         padding-left: 3px;
@@ -681,8 +681,15 @@ table {
         height: 100%;
         width: 100%; }
     .editProfPage .leftPane .statusBar {
-      border: 1px solid black;
-      box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.43);
+      background: -webkit-linear-gradient(#F7FCFC, #ECF0F1);
+      /* For Safari 5.1 to 6.0 */
+      /* For Opera 11.1 to 12.0 */
+      /* For Firefox 3.6 to 15 */
+      background: linear-gradient(#F7FCFC, #ECF0F1);
+      border-top: 2px solid #BDC3C7;
+      border-bottom: 2px solid #BDC3C7;
+      border-left: 1px solid #BDC3C7;
+      border-right: 1px solid #BDC3C7;
       margin-top: 6px;
       width: 180px;
       height: 40px;
@@ -691,7 +698,6 @@ table {
       display: inline-block;
       box-sizing: border-box;
       padding-left: 4px;
-      border-radius: 5px;
       position: relative; }
       .editProfPage .leftPane .statusBar .overlayStat {
         width: 180px;
@@ -723,10 +729,16 @@ table {
         margin-left: 3px;
         display: inline-block; }
     .editProfPage .leftPane .interactionBar {
-      border: 1px solid black;
-      box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.43);
+      background: -webkit-linear-gradient(#F7FCFC, #ECF0F1);
+      /* For Safari 5.1 to 6.0 */
+      /* For Opera 11.1 to 12.0 */
+      /* For Firefox 3.6 to 15 */
+      background: linear-gradient(#F7FCFC, #ECF0F1);
+      border-top: 2px solid #BDC3C7;
+      border-bottom: 2px solid #BDC3C7;
+      border-left: 1px solid #BDC3C7;
+      border-right: 1px solid #BDC3C7;
       margin-top: 6px;
-      border-radius: 5px;
       font-size: 12px;
       text-align: left;
       width: 180px;
@@ -804,11 +816,17 @@ table {
         font-size: 10px;
         display: inline-block; }
     .editProfPage .centerPane .userAbout {
-      border-radius: 5px;
       text-align: left;
       position: absolute;
-      border: 1px solid black;
-      box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.43);
+      background: -webkit-linear-gradient(#F7FCFC, #ECF0F1);
+      /* For Safari 5.1 to 6.0 */
+      /* For Opera 11.1 to 12.0 */
+      /* For Firefox 3.6 to 15 */
+      background: linear-gradient(#F7FCFC, #ECF0F1);
+      border-top: 2px solid #BDC3C7;
+      border-bottom: 2px solid #BDC3C7;
+      border-left: 1px solid #BDC3C7;
+      border-right: 1px solid #BDC3C7;
       display: block;
       border-spacing: 0px;
       width: 615px;
@@ -828,12 +846,13 @@ table {
         .editProfPage .centerPane .userAbout .userAboutL .PERSONAL {
           font-size: 13px;
           font-weight: bold;
+          background: rgba(255, 255, 255, 0.9);
           width: 187px;
           height: 15px;
           padding-top: 2px;
           padding-left: 2px;
-          border-top: 1px solid black;
-          border-bottom: 1px solid black; }
+          border-top: 1px solid rgba(0, 0, 0, 0.18);
+          border-bottom: 1px solid rgba(0, 0, 0, 0.18); }
         .editProfPage .centerPane .userAbout .userAboutL .userPersonal {
           height: 50px;
           padding-top: 3px;
@@ -896,7 +915,7 @@ table {
             display: inline-block;
             font-weight: normal; }
       .editProfPage .centerPane .userAbout .userAboutR {
-        border-left: 1px solid black;
+        border-left: 1px solid rgba(189, 195, 199, 0.4);
         vertical-align: top;
         width: 400px;
         height: 213px;
@@ -906,14 +925,15 @@ table {
         padding-left: 10px;
         box-sizing: border-box; }
         .editProfPage .centerPane .userAbout .userAboutR .ABOUTME {
+          background: rgba(255, 255, 255, 0.9);
           font-size: 13px;
           font-weight: bold;
           width: 380px;
           height: 15px;
           padding-top: 2px;
           padding-left: 2px;
-          border-top: 1px solid black;
-          border-bottom: 1px solid black; }
+          border-top: 1px solid rgba(0, 0, 0, 0.18);
+          border-bottom: 1px solid rgba(0, 0, 0, 0.18); }
         .editProfPage .centerPane .userAbout .userAboutR .aboutMeDesc {
           resize: none;
           margin-top: 3px;
@@ -922,14 +942,15 @@ table {
           width: 374px;
           padding-left: 4px; }
         .editProfPage .centerPane .userAbout .userAboutR .FAVORITES {
+          background: rgba(255, 255, 255, 0.9);
+          border-top: 1px solid rgba(0, 0, 0, 0.18);
+          border-bottom: 1px solid rgba(0, 0, 0, 0.18);
           font-size: 13px;
           font-weight: bold;
           width: 380px;
           height: 15px;
           padding-top: 2px;
-          padding-left: 2px;
-          border-top: 1px solid black;
-          border-bottom: 1px solid black; }
+          padding-left: 2px; }
         .editProfPage .centerPane .userAbout .userAboutR .favGames {
           padding-top: 3px;
           padding-left: 4px;
@@ -1008,36 +1029,42 @@ table {
     left: 820px;
     text-align: center;
     display: inline-block; }
-    .editProfPage .rightPage .friendsListPane {
+    .editProfPage .rightPage .overlayFL {
+      position: absolute;
+      top: 0px;
+      left: -5px;
+      width: 185px;
+      height: 420px;
+      z-index: 10;
       border-radius: 5px;
+      background-color: rgba(255, 255, 255, 0.7); }
+    .editProfPage .rightPage .friendsListPane {
       width: 180px;
       height: 420px;
-      border: 1px solid black;
-      box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.43);
+      background: -webkit-linear-gradient(#F7FCFC, #ECF0F1);
+      /* For Safari 5.1 to 6.0 */
+      /* For Opera 11.1 to 12.0 */
+      /* For Firefox 3.6 to 15 */
+      background: linear-gradient(#F7FCFC, #ECF0F1);
+      border-left: 1px solid #BDC3C7;
+      border-right: 1px solid #BDC3C7;
+      border-top: 2px solid #BDC3C7;
+      border-bottom: 2px solid #BDC3C7;
       text-align: left;
       display: block;
       box-sizing: border-box; }
-      .editProfPage .rightPage .friendsListPane .overlayFL {
-        position: absolute;
-        top: 0px;
-        left: -5px;
-        width: 185px;
-        height: 420px;
-        z-index: 10;
-        border-radius: 5px;
-        background-color: rgba(255, 255, 255, 0.7); }
       .editProfPage .rightPage .friendsListPane .friendsHeader {
-        text-align: left;
-        border-radius: 5px;
-        border: 1px solid black;
-        background-color: white;
-        border-left: 1px solid black;
-        box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.43);
-        padding-right: 4px;
-        padding-top: 4px;
-        padding-bottom: 5px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.9);
+        border-top: 1px solid rgba(0, 0, 0, 0.18);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+        padding-right: 5px;
+        padding-top: 2px;
+        padding-bottom: 2px;
         padding-left: 5px;
-        width: 180px;
+        margin-top: 8px;
+        margin-right: 8px;
+        width: 160px;
         height: 30px;
         top: 1px;
         right: 1px;
@@ -1050,15 +1077,41 @@ table {
         box-sizing: border-box; }
       .editProfPage .rightPage .friendsListPane .friendsList {
         float: right;
-        width: 180px;
-        height: 400px;
+        width: 100%;
+        padding-top: 4px;
+        height: 175px;
         font-size: 16px;
         border-spacing: 0px;
         position: relative;
         z-index: 1;
         display: block;
-        padding-top: 10px;
         text-align: left; }
+        .editProfPage .rightPage .friendsListPane .friendsList .friend {
+          text-decoration: underline;
+          color: #2980B9;
+          background: rgba(255, 255, 255, 0.75);
+          border-top: 1px solid rgba(0, 0, 0, 0.18);
+          border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+          width: 135px;
+          text-align: left;
+          margin-right: 20px;
+          margin-left: 15px;
+          margin-top: 5px;
+          padding: 4px;
+          float: left;
+          display: block;
+          padding-right: 4px;
+          padding-top: 4px;
+          padding-bottom: 4px;
+          padding-left: 6px; }
+        .editProfPage .rightPage .friendsListPane .friendsList .friend:hover {
+          cursor: pointer;
+          cursor: pointer;
+          border-radius: 3px;
+          background-color: #d4d4d4; }
+        .editProfPage .rightPage .friendsListPane .friendsList .friend:active {
+          cursor: pointer;
+          background-color: #DC2329; }
         .editProfPage .rightPage .friendsListPane .friendsList .friend1 {
           text-align: left;
           padding-left: 6px;
@@ -1810,7 +1863,7 @@ table {
     border: 1px solid #BDC3C7;
     padding-top: 0.4em;
     top: .5em;
-    right: 10em;
+    right: 8em;
     height: 1.5em;
     width: 4.5em; }
   .banner .signupButton:hover {
@@ -1822,11 +1875,19 @@ table {
   .banner .dontShowGradient {
     -webkit-transition: none;
     transition: none; }
+  .banner .bannerIMG {
+    margin-left: .7em;
+    position: absolute;
+    top: -.6em;
+    border-radius: 5px;
+    border-left: 1px solid #BDC3C7;
+    border-right: 1px solid #BDC3C7;
+    border-top: 1px solid #BDC3C7;
+    border-bottom: 1px solid #BDC3C7; }
   .banner .loginButton {
-    top: 1em;
     position: absolute;
     color: #290E03;
-    right: 6em;
+    right: 4em;
     background: none; }
   .banner .loginButton:hover {
     cursor: pointer;

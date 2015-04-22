@@ -95,7 +95,7 @@ var changeButtons = function() {
         self = true;
         $("#addEditFriend").text("Edit Friends List");
         $("#addEditFriend").attr("href","");
-        $("#addEditFriend").css("background-image","url(/images/profile/add.png)");
+        $("#addEditFriend").css("background-image","url(/images/profile/edit.png)");
         $("#sendViewMSG").text("View Messages");
         $("#sendViewMSG").attr("href","VIEWMSGES");
         $('.editProfButton').show();

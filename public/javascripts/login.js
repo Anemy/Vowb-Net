@@ -97,9 +97,12 @@ var loginSubClicked = function() {
 }
 
 var showLoggedIn = function (username) {
+
   loggedIn = true;
   $("#signup_id").text("log out");
   $("#login_id").text(username);
+  $('#login_id').append('<img class="bannerIMG" id="bannerIMG" src="/images/profile/chicken.png" style="width:2em;height:2em">');
+  //$("#addEditFriend").css("background-image","url(/images/profile/add.png)");
   $("#login_id").css("text-decoration", "underline");
   user_name = username;
 

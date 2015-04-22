@@ -16,26 +16,16 @@ block content
                 //"/images/profile/M.jpg"
             .statusBar
                 .overlayStat
-                img(class="statusIMG" src="/images/profile/offline.png") 
-                .pStatus OFFLINE
-                .p Current Lobby:  
-                .pCurrLobby OFFLINE
+  
             .interactionBar
                 .overlayInt
-                .addFriend.
-                    Add to Friends List <br>
-                .msg.
-                    Send Message <br>
-                .posts.
-                    All Posts <br>
-                .threads.
-                    Threads Started <br>
+
 
         .centerPane
             .userAboutHeader
                 .userName !{login}
-                img(class="userRank" src="/images/profile/rank1.png") 
-                .userStatus / last online 7 seconds ago
+                //img(class="userRank" src="/images/profile/rank1.png") 
+                .userStatus 
             .userAbout
                 .userAboutL
                     .PERSONAL Personal
@@ -103,14 +93,8 @@ block content
                             <option value="WV" #{state==="WV"?"selected":""}>WV</option>
                             <option value="WI" #{state==="WI"?"selected":""}>WI</option>
                             <option value="WY" #{state==="WY"?"selected":""}>WY</option>
-                    .overlayAcc
-                    .ACCOUNTSTATS Account Stats
-                    .dateJoined Joined:
-                        .userdateJoined 5/3/2014
-                    .postCount Posts:
-                        .userpostCount 2
-                    .timeOnline Time Online:
-                        .usertimeOnline 287 hrs
+                    //.overlayAcc
+                    
                 .userAboutR
                     .ABOUTME About Me
                     textarea.aboutMeDesc(rows = "2",placeholder="Write a bit about yourself",cols= "30",maxlength="150",resize = "none") !{description}
@@ -136,7 +120,6 @@ block content
         .rightPage
             .friendsListPane
                 .overlayFL
-                .friendsHeader  Friends List
                 .friendsList
                     //- .friend1
                         //- img(class="friend1StatusIMG" src="/images/profile/online.png")

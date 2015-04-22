@@ -24,21 +24,24 @@
      		width: 180px;
      		overflow: hidden;
      		//margin: 2px;
-     		border: 1px solid black;
-      		-webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
-			-moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
-			box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
+     		border-left: 1px solid $medium;
+     		border-right: 1px solid $medium;
+        	border-top: 2px solid $medium;
+        	border-bottom: 2px solid $medium;
+   //      	-webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
+			// -moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
+			// box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
 			-moz-box-sizing: border-box;
 			-webkit-box-sizing: border-box;
 			box-sizing: border-box;
-			border-radius: 5px;
+			//border-radius: 5px;
 			.imgContainerOverlay{
 				position: absolute;
 				z-index: 2;
-            	top:0;
+            	top:-.002em;
             	left:0; 
-            	height: 100%;
-	     		width: 100%;
+            	height: 100.2%;
+	     		width: 100.2%;
             	-webkit-transition: all .4s ease;
 	  		    -moz-transition: all .4s ease;
 	     		-o-transition: all .4s ease;
@@ -55,7 +58,7 @@
             	left:82%; 
             	background-color: $accent;
 	            //border: 1px solid $accent;
-	            border-radius: 4px;
+	            //border-radius: 4px;
 	            padding-top: 1px;
 	            padding-bottom: 1.7px;
 	            padding-left: 3px;
@@ -76,10 +79,14 @@
 
 		}
 		.statusBar {
-			border: 1px solid black;
-      		-webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
-			-moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
-			box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
+			background: -webkit-linear-gradient($light-light, $light); /* For Safari 5.1 to 6.0 */
+    		background: -o-linear-gradient($light-light, $light); /* For Opera 11.1 to 12.0 */
+   			background: -moz-linear-gradient($light-light, $light); /* For Firefox 3.6 to 15 */
+    		background: linear-gradient($light-light, $light);
+			border-top: 2px solid $medium;
+        	border-bottom: 2px solid $medium;
+        	border-left: 1px solid $medium;
+			border-right: 1px solid $medium;
 			margin-top: 6px;
 			width: 180px;
 			height: 40px;
@@ -92,7 +99,7 @@
 			-webkit-box-sizing: border-box;
 			box-sizing: border-box;
 			padding-left: 4px;
-			border-radius: 5px;
+			//border-radius: 5px;
 			position:relative;
 			.overlayStat {
 
@@ -135,12 +142,16 @@
 			}
 		}
 		.interactionBar {
-			border: 1px solid black;
-            -webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
-			-moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
-			box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
+			background: -webkit-linear-gradient($light-light, $light); /* For Safari 5.1 to 6.0 */
+    		background: -o-linear-gradient($light-light, $light); /* For Opera 11.1 to 12.0 */
+   			background: -moz-linear-gradient($light-light, $light); /* For Firefox 3.6 to 15 */
+    		background: linear-gradient($light-light, $light);
+			border-top: 2px solid $medium;
+        	border-bottom: 2px solid $medium;
+        	border-left: 1px solid $medium;
+			border-right: 1px solid $medium;
 			margin-top: 6px;
-			border-radius: 5px;
+			//border-radius: 5px;
 			//font-weight: bold;
 
 			font-size: 12px;
@@ -238,13 +249,17 @@
 			}
 		}
 		.userAbout {
-			border-radius: 5px;
+			//border-radius: 5px;
 			text-align: left;
 			position: absolute;
-			border: 1px solid black;
-       		-webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
-			-moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
-			box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
+			background: -webkit-linear-gradient($light-light, $light); /* For Safari 5.1 to 6.0 */
+    		background: -o-linear-gradient($light-light, $light); /* For Opera 11.1 to 12.0 */
+   			background: -moz-linear-gradient($light-light, $light); /* For Firefox 3.6 to 15 */
+    		background: linear-gradient($light-light, $light);
+			border-top: 2px solid $medium;
+        	border-bottom: 2px solid $medium;
+        	border-left: 1px solid $medium;
+			border-right: 1px solid $medium;
 			display: block;
 			border-spacing: 0px;
 			width: 615px;
@@ -277,15 +292,16 @@
 				.PERSONAL {
 					font-size: 13px;
 					font-weight: bold;
+					background: rgba(255,255,255,.90);
+
 					width: 187px;
 					height:15px;
 					padding-top: 2px;
 					padding-left: 2px;
 					// padding-left: 10px;
-					border-top: 1px solid black;
-					border-bottom: 1px solid black;
+					border-top: 1px solid rgba(0,0,0,.18);
+					border-bottom: 1px solid rgba(0,0,0,.18);
 				}
-
 				.userPersonal{
 					height: 50px;
 					padding-top: 3px;
@@ -369,7 +385,7 @@
 			}
 
 			.userAboutR {
-				border-left: 1px solid black;
+				border-left: 1px solid rgba(189, 195, 199, 0.40);
 				vertical-align: top;
 				width: 400px;
 				height: 213px;
@@ -381,15 +397,16 @@
 				-webkit-box-sizing: border-box;
 				box-sizing: border-box;
 				.ABOUTME {
+					background: rgba(255,255,255,.90);
 					font-size: 13px;
 					font-weight: bold;
 					width: 380px;
 					height:15px;
 					padding-top: 2px;
 					padding-left: 2px;
-
-					border-top: 1px solid black;
-					border-bottom: 1px solid black;
+        // border-left: 2px solid $medium;
+					border-top: 1px solid rgba(0,0,0,.18);
+					border-bottom: 1px solid rgba(0,0,0,.18);
 
 				}
 				.aboutMeDesc{
@@ -402,14 +419,17 @@
   					padding-left: 4px;
 				}
 				.FAVORITES{
+					background: rgba(255,255,255,.90);
+					border-top: 1px solid rgba(0,0,0,.18);
+					border-bottom: 1px solid rgba(0,0,0,.18);
 					font-size: 13px;
 					font-weight: bold;
 					width: 380px;
 					height:15px;
 					padding-top: 2px;
 					padding-left: 2px;
-					border-top: 1px solid black;
-					border-bottom: 1px solid black;
+					        // border-left: 2px solid $medium;
+
 
 				}
 				.favGames {
@@ -535,21 +555,7 @@
 		text-align: center;
 
 		display:inline-block;
-		.friendsListPane {
-			border-radius: 5px;
-			width: 180px;
-			height: 420px;
-			border: 1px solid black;
-           	-webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
-			-moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
-			box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
-
-			text-align: left;
-			display: block;
-			-moz-box-sizing: border-box;
-			-webkit-box-sizing: border-box;
-			box-sizing: border-box;
-			.overlayFL {
+		.overlayFL {
 				position: absolute;
  				top: 0px;
   				left: -5px;
@@ -560,20 +566,47 @@
    				//background:rgba(252,67,73,.6);
   				background-color: rgba(255,255,255,0.7);
 			}
+		.friendsListPane {
+			// border-radius: 5px;
+			width: 180px;
+			height: 420px;
+			// border: 1px solid black;
+   //         	-webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
+			// -moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
+			// box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
+			background: -webkit-linear-gradient($light-light, $light); /* For Safari 5.1 to 6.0 */
+    		background: -o-linear-gradient($light-light, $light); /* For Opera 11.1 to 12.0 */
+   			background: -moz-linear-gradient($light-light, $light); /* For Firefox 3.6 to 15 */
+    		background: linear-gradient($light-light, $light);
+			border-left: 1px solid $medium;
+			border-right: 1px solid $medium;
+        border-top: 2px solid $medium;
+        border-bottom: 2px solid $medium;
+			text-align: left;
+			display: block;
+			-moz-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+
 			.friendsHeader{
-				text-align: left;
-				border-radius: 5px;
-				border: 1px solid black;
-				background-color: white;
-				border-left: 1px solid black;
-            	-webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.43);
-				-moz-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.43);
-				box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.43);
-				padding-right: 4px;
-				padding-top: 4px;
-				padding-bottom: 5px;
+				text-align: center;
+				// border-radius: 5px;
+				background: rgba(255,255,255,.90);
+				border-top: 1px solid rgba(0,0,0,.18);
+					border-bottom: 1px solid rgba(0,0,0,.18);
+				// border: 1px solid black;
+				// background-color: white;
+				// border-left: 1px solid black;
+    //         	-webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.43);
+				// -moz-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.43);
+				// box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.43);
+				padding-right: 5px;
+				padding-top: 2px;
+				padding-bottom: 2px;
 				padding-left: 5px;
-				width: 180px;
+				margin-top: 8px;				
+				margin-right: 8px;
+				width: 160px;
 				height: 30px;
 				top: 1px;
 				right:1px;
@@ -594,15 +627,59 @@
             	//-webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
 				//-moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
 				//box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
-				width: 180px;
-				height: 400px;
+				width: 100%;
+				padding-top: 4px;
+				height:175px;
 				font-size: 16px;
 				border-spacing: 0px;
 				position: relative;
 				z-index: 1;
 				display: block;
-				padding-top: 10px;
 				text-align: left;
+
+
+					.friend{
+						text-decoration: underline;
+						color:$belize-hole;
+						background: rgba(255,255,255,.75);
+						border-top: 1px solid rgba(0,0,0,.18);
+						border-bottom: 1px solid rgba(0,0,0,.18);
+						width: 135px;
+						text-align: left;
+						margin-right: 20px;
+						margin-left: 15px;
+						margin-top: 5px;
+						padding: 4px;
+						float: left;
+						display:block;
+						// border-radius: 3px;
+						// border: 1px solid black;
+						//background-color: white;
+						//border-left: 1px solid grey;
+		    //         	-webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.43);
+						// -moz-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.43);
+						// box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.43);
+						padding-right: 4px;
+						padding-top: 4px;
+						padding-bottom: 4px;
+						padding-left: 6px;
+						// border-top: 1px solid lightgrey;
+						// border-bottom: 1px solid lightgrey;
+					}
+					.friend:hover {
+			        	cursor: pointer;
+			            cursor: pointer;
+			            //color: white;
+			            border-radius: 3px;
+			            background-color: #d4d4d4;
+				    }
+				    .friend:active {
+				            cursor: pointer;
+				            // position: relative;
+				            // top: 2px;
+				            background-color: $accent-dark;
+				            // box-shadow: inset 0px 0px 10px 10px rgba(0,0,0, 0.1);
+				    } 
 
 				.friend1{
 					text-align: left;
