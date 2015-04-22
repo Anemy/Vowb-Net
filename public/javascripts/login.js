@@ -101,8 +101,22 @@ var showLoggedIn = function (username) {
   loggedIn = true;
   $("#signup_id").text("log out");
   $("#login_id").text(username);
-  $('#login_id').append('<img class="bannerIMG" id="bannerIMG" src="/images/profile/chicken.png" style="width:2em;height:2em">');
   //$("#addEditFriend").css("background-image","url(/images/profile/add.png)");
+	$.ajax({
+        url: "/get-avatar",
+        type: "POST",
+        data: {
+            username : username
+        },
+        success: function(data){
+          data = JSON.parse(data);
+            $('#login_id').append('<img class="bannerIMG" id="bannerIMG" src="'+data.value+'" style="width:2em;height:2em">');
+        },
+        error: function(data){
+          //data = JSON.parse(data);
+            $('#login_id').append('<img class="bannerIMG" id="bannerIMG" src="/images/profile/chicken.png" style="width:2em;height:2em">');
+        }
+    });
   $("#login_id").css("text-decoration", "underline");
   user_name = username;
 
