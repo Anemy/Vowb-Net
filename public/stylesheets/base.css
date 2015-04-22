@@ -172,15 +172,22 @@ table {
     text-align: center;
     display: inline-block; }
     .profilePage .leftPane .profIMG {
-      height: 180px;
-      width: 180px;
-      border-left: 2px solid #BDC3C7;
+      height: 178px;
+      width: 178px;
+      border-left: 1px solid #BDC3C7;
+      border-right: 1px solid #BDC3C7;
       border-top: 2px solid #BDC3C7;
       border-bottom: 2px solid #BDC3C7; }
     .profilePage .leftPane .statusBar {
-      border-left: 2px solid #BDC3C7;
       border-top: 2px solid #BDC3C7;
       border-bottom: 2px solid #BDC3C7;
+      background: -webkit-linear-gradient(#F7FCFC, #ECF0F1);
+      /* For Safari 5.1 to 6.0 */
+      /* For Opera 11.1 to 12.0 */
+      /* For Firefox 3.6 to 15 */
+      background: linear-gradient(#F7FCFC, #ECF0F1);
+      border-left: 1px solid #BDC3C7;
+      border-right: 1px solid #BDC3C7;
       margin-top: 3px;
       width: 180px;
       height: 40px;
@@ -214,13 +221,19 @@ table {
       .profilePage .leftPane .statusBar .pCurrLobby {
         margin-left: 6px;
         text-decoration: underline;
-        color: blue;
+        color: #2980B9;
         font-weight: bold;
         display: inline-block; }
     .profilePage .leftPane .interactionBar {
-      border-left: 2px solid #BDC3C7;
+      border-left: 1px solid #BDC3C7;
+      border-right: 1px solid #BDC3C7;
       border-top: 2px solid #BDC3C7;
       border-bottom: 2px solid #BDC3C7;
+      background: -webkit-linear-gradient(#F7FCFC, #ECF0F1);
+      /* For Safari 5.1 to 6.0 */
+      /* For Opera 11.1 to 12.0 */
+      /* For Firefox 3.6 to 15 */
+      background: linear-gradient(#F7FCFC, #ECF0F1);
       margin-top: 6px;
       font-size: 12px;
       text-align: left;
@@ -335,9 +348,15 @@ table {
     .profilePage .centerPane .userAbout {
       text-align: left;
       position: absolute;
-      border-left: 2px solid #BDC3C7;
       border-top: 2px solid #BDC3C7;
       border-bottom: 2px solid #BDC3C7;
+      background: -webkit-linear-gradient(#F7FCFC, #ECF0F1);
+      /* For Safari 5.1 to 6.0 */
+      /* For Opera 11.1 to 12.0 */
+      /* For Firefox 3.6 to 15 */
+      background: linear-gradient(#F7FCFC, #ECF0F1);
+      border-left: 1px solid #BDC3C7;
+      border-right: 1px solid #BDC3C7;
       display: block;
       border-spacing: 0px;
       width: 615px;
@@ -357,12 +376,13 @@ table {
         .profilePage .centerPane .userAbout .userAboutL .PERSONAL {
           font-size: 13px;
           font-weight: bold;
+          background: rgba(255, 255, 255, 0.9);
           width: 187px;
           height: 15px;
           padding-top: 2px;
           padding-left: 2px;
-          border-top: 1px solid black;
-          border-bottom: 1px solid black; }
+          border-top: 1px solid rgba(0, 0, 0, 0.18);
+          border-bottom: 1px solid rgba(0, 0, 0, 0.18); }
         .profilePage .centerPane .userAbout .userAboutL .userPersonal {
           height: 30px;
           padding-top: 3px;
@@ -381,13 +401,14 @@ table {
             display: inline-block; }
         .profilePage .centerPane .userAbout .userAboutL .ACCOUNTSTATS {
           font-size: 13px;
+          background: rgba(255, 255, 255, 0.9);
           font-weight: bold;
           width: 187px;
           height: 15px;
           padding-top: 2px;
           padding-left: 2px;
-          border-top: 1px solid black;
-          border-bottom: 1px solid black; }
+          border-top: 1px solid rgba(0, 0, 0, 0.18);
+          border-bottom: 1px solid rgba(0, 0, 0, 0.18); }
         .profilePage .centerPane .userAbout .userAboutL .dateJoined {
           padding-top: 4px;
           padding-left: 4px;
@@ -413,24 +434,25 @@ table {
             display: inline-block;
             font-weight: normal; }
       .profilePage .centerPane .userAbout .userAboutR {
-        border-left: 2px solid #BDC3C7;
+        border-left: 1px solid rgba(189, 195, 199, 0.4);
         vertical-align: top;
         width: 400px;
-        height: 137px;
+        height: 134px;
         font-size: 12px;
         display: inline-block;
         padding-top: 8px;
         padding-left: 10px;
         box-sizing: border-box; }
         .profilePage .centerPane .userAbout .userAboutR .ABOUTME {
+          background: rgba(255, 255, 255, 0.9);
           font-size: 13px;
           font-weight: bold;
           width: 380px;
           height: 15px;
           padding-top: 2px;
           padding-left: 2px;
-          border-top: 2px solid #BDC3C7;
-          border-bottom: 2px solid #BDC3C7; }
+          border-top: 1px solid rgba(0, 0, 0, 0.18);
+          border-bottom: 1px solid rgba(0, 0, 0, 0.18); }
         .profilePage .centerPane .userAbout .userAboutR .aboutMeDesc {
           height: 30px;
           width: 375px;
@@ -438,14 +460,15 @@ table {
           padding-left: 4px;
           word-wrap: break-word; }
         .profilePage .centerPane .userAbout .userAboutR .FAVORITES {
+          background: rgba(255, 255, 255, 0.9);
+          border-top: 1px solid rgba(0, 0, 0, 0.18);
+          border-bottom: 1px solid rgba(0, 0, 0, 0.18);
           font-size: 13px;
           font-weight: bold;
           width: 380px;
           height: 15px;
           padding-top: 2px;
-          padding-left: 2px;
-          border-top: 2px solid #BDC3C7;
-          border-bottom: 2px solid #BDC3C7; }
+          padding-left: 2px; }
         .profilePage .centerPane .userAbout .userAboutR .favGames {
           padding-top: 3px;
           padding-left: 4px;
@@ -482,6 +505,7 @@ table {
       color: white;
       background-color: #FC4349;
       border: 2px solid #FC4349;
+      border-radius: 5px;
       padding-top: 0.5em;
       padding-bottom: 0.5em;
       padding-left: 1em;
@@ -507,23 +531,30 @@ table {
     .profilePage .rightPage .friendsListPane {
       width: 180px;
       height: 420px;
-      border-left: 2px solid #BDC3C7;
+      background: -webkit-linear-gradient(#F7FCFC, #ECF0F1);
+      /* For Safari 5.1 to 6.0 */
+      /* For Opera 11.1 to 12.0 */
+      /* For Firefox 3.6 to 15 */
+      background: linear-gradient(#F7FCFC, #ECF0F1);
+      border-left: 1px solid #BDC3C7;
+      border-right: 1px solid #BDC3C7;
       border-top: 2px solid #BDC3C7;
       border-bottom: 2px solid #BDC3C7;
       text-align: left;
       display: block;
       box-sizing: border-box; }
       .profilePage .rightPage .friendsListPane .friendsHeader {
-        text-align: left;
-        border: 1px solid black;
-        background-color: white;
-        border-left: 1px solid black;
-        box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.43);
-        padding-right: 4px;
-        padding-top: 4px;
-        padding-bottom: 5px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.9);
+        border-top: 1px solid rgba(0, 0, 0, 0.18);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+        padding-right: 5px;
+        padding-top: 2px;
+        padding-bottom: 2px;
         padding-left: 5px;
-        width: 180px;
+        margin-top: 8px;
+        margin-right: 8px;
+        width: 160px;
         height: 30px;
         top: 1px;
         right: 1px;
@@ -547,22 +578,22 @@ table {
         text-align: left; }
         .profilePage .rightPage .friendsListPane .friendsList .friend {
           text-decoration: underline;
-          width: 156px;
+          color: #2980B9;
+          background: rgba(255, 255, 255, 0.75);
+          border-top: 1px solid rgba(0, 0, 0, 0.18);
+          border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+          width: 135px;
           text-align: left;
-          margin-right: 5px;
-          margin-left: 5px;
-          margin-top: 3px;
+          margin-right: 20px;
+          margin-left: 15px;
+          margin-top: 5px;
           padding: 4px;
           float: left;
           display: block;
-          border: 1px solid black;
-          background-color: white;
-          border-left: 1px solid black;
-          box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.43);
           padding-right: 4px;
           padding-top: 4px;
-          padding-bottom: 5px;
-          padding-left: 5px; }
+          padding-bottom: 4px;
+          padding-left: 6px; }
         .profilePage .rightPage .friendsListPane .friendsList .friend:hover {
           cursor: pointer;
           cursor: pointer;
