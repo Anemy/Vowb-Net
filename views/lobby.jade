@@ -21,8 +21,8 @@ block content
         .bodyLine
         .pageThings
             .lobbyOwner
-            .deleteWrapper
-                input.deleteButton(id="delete_id" type="submit" value="Delete Lobby")
+            .deleteWrapper(id="delete_wrapper")
+                input.deleteButton(id="delete_id" type="submit" value="Delete Lobby" onclick="redirectToDeleteClicked()")
 
             .voiceChatPanel
                 .lobbyTitle #{lobbyName}

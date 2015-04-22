@@ -5,6 +5,9 @@ var socket = io();
 var intialName = loggedIn;
 var owner = "";
 
+//keep it hidden at the beginning
+$('.deleteButton').hide();
+
 /*$.ajax({
   url: "/lobbyLogin",
   type: "POST",
@@ -40,6 +43,15 @@ var owner = "";
             // console.log("OWNER is: " + data.value);
             owner = data.value;
             $('.lobbyOwner').html("Lobby Owner: " + '<a href="/users/'+owner+'">' + owner + "</a>");
+            
+            //Pascal 04/22/15 if user is not owner of lobby, hide delete button
+            if (owner != loginData || url == "/lobby") {
+              console.log("testing!!!");
+              $('.deleteButton').hide();
+            } else {
+              $('.deleteButton').show();
+            }
+
         },
         error: function(data){
             // sweetAlert("Oops...", "Can't get name", "error");
@@ -48,6 +60,11 @@ var owner = "";
             owner = "None";
         }
     });
+
+//event handler for delete lobby button
+var redirectToDeleteClicked = function() {
+  
+}
 
 if (lobbyPassword != ".") {
   var passwd = ".";
