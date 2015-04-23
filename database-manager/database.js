@@ -303,6 +303,19 @@ db.add = function(tablename, data, onCreate) {
     });
 }
 
+db.getFriends = function(user, callback) {
+    db.query("SELECT username,\"avatar_URL\" FROM users,profiles WHERE username=ANY(friends) AND profile_id=(SELECT profile_pointer FROM users WHERE username=$1);",[user],function(err, result) {
+        if( err ) {
+            //console.log("Database .add ERROR: " + err.toString());
+            throw err;
+        } else {
+            //console.log("Database .add: No error");
+            if( callback )
+                callback(result);
+        }
+    });
+};
+
 db.addProfile = function( data, onCreate ) {
     //profiles_profile_id_seq
     var queryString = "INSERT INTO "+db.profileDB+"(";
