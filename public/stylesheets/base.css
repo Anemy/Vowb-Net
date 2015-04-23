@@ -1547,6 +1547,35 @@ table {
 /* This is the styling page for the lobby page */
 .lobbyPage {
   font-family: 'Cabin'; }
+  .lobbyPage .pageThings .deleteWrapper {
+    float: left;
+    width: 100%;
+    margin-top: 20px; }
+    .lobbyPage .pageThings .deleteWrapper .deleteButton {
+      text-align: center;
+      z-index: 1;
+      outline: none;
+      color: white;
+      font-size: 14px;
+      font-family: 'Cabin';
+      background-color: #FC4349;
+      border: 2px solid #FC4349;
+      border-radius: 5px;
+      padding-top: 0.5em;
+      padding-bottom: 0.5em;
+      padding-left: 1.8em;
+      padding-right: 1.8em;
+      display: inline-block;
+      -webkit-transition: all .25s ease;
+      transition: all .25s ease; }
+    .lobbyPage .pageThings .deleteWrapper .deleteButton:hover {
+      cursor: pointer;
+      background-color: #DC2329;
+      border: 2px solid #DC2329; }
+    .lobbyPage .pageThings .deleteWrapper .deleteButton:active {
+      cursor: pointer;
+      background-color: #DC2329;
+      box-shadow: inset 0px 0px 2px 2px rgba(0, 0, 0, 0.2); }
   .lobbyPage .lobbyTitle {
     font-size: 2.2em;
     color: #290E03;

@@ -9,6 +9,7 @@ block content
     script.
         // gets the login data from the server (none if user doesn't exist)
         //- console.log("Trying to parse data from the server");
+        var lobbies = !{JSON.stringify(lobbies)};
         if(!{JSON.stringify(lobbyPassword)} != undefined) {
             lobbyPassword = !{JSON.stringify(lobbyPassword)};
             //- console.log("Parse success: " + loginData);
@@ -26,7 +27,8 @@ block content
 
             .voiceChatPanel
                 .lobbyTitle #{lobbyName}
-
+                .currentLobbies
+                    ul#LList
                 //- .joinVoiceChat(onClick="connectToVoiceChat()").
                 //-    Voice Chat
                 //- input#conference-name.inputBox(type="text" placeHolder="Insert Lobby name")

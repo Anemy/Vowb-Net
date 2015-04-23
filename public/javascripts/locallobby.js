@@ -5,6 +5,18 @@ var socket = io();
 var intialName = loggedIn;
 var owner = "";
 
+
+
+if(window.location.pathname == "/lobby/" || window.location.pathname == "/lobby"){
+  console.log("adding the current lobbies to the main page");
+  $('#LList').empty();
+  if(lobbies != null){
+    for(var i = 0; i < lobbies.length;i++){
+        $('#LList').append('<li class="lobbyName" id="lobby['+i+']"><a href ="/lobby/'+lobbies[i]+'">'+lobbies[i]+'</a></li>');
+        console.log(lobbies[i]);
+    }
+  }
+}
 /*$.ajax({
   url: "/lobbyLogin",
   type: "POST",
