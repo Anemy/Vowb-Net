@@ -475,14 +475,16 @@ db.remove = function(tablename, searchParams, callback) {
             i++;
         }
     }
-    //console.log("search: " + queryString);
+    console.log("remove: " + queryString);
     db.query(queryString, values, function(err, result) {
         if( err ) {
             //console.log("Database .search ERROR: " + err.toString());
             throw err;
         } else {
             //console.log("Database .search: No error");
-            callback(result);
+            if (callback) {
+                callback(result);
+            }
         }
     });
 }

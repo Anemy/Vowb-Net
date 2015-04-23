@@ -64,31 +64,21 @@ $('.deleteButton').hide();
 //event handler for delete lobby button
 var redirectToDeleteClicked = function() {
   $.ajax({
-        url: "/lobby/deleteLobby",
+        url: "/deleteLobby",
         type: "POST",
         data: {
             lobbyName: chatToConnect
         },
         success: function(data){
-            data = JSON.parse(data);
-            // console.log("OWNER is: " + data.value);
-            owner = data.value;
-            $('.lobbyOwner').html("Lobby Owner: " + '<a href="/users/'+owner+'">' + owner + "</a>");
-            
-            //Pascal 04/22/15 if user is not owner of lobby, hide delete button
-            if (owner != loginData || url == "/lobby") {
-              console.log("testing!!!");
-              $('.deleteButton').hide();
-            } else {
-              $('.deleteButton').show();
-            }
+            $("body").fadeOut(1000,function(){
+              window.location.href = "/";
+            })
 
         },
         error: function(data){
-            // sweetAlert("Oops...", "Can't get name", "error");
-            console.log("Failure from server: " + data);
-            $('.lobbyOwner').html("Lobby Owner: None");
-            owner = "None";
+            $("body").fadeOut(1000,function(){
+              window.location.href = "/";
+            })
         }
     });
 }
