@@ -2,92 +2,71 @@
 
 .lobbyPage {
     font-family: 'Cabin';
-
-    .pageThings { 
-        .deleteWrapper {
-                    float: left;
-                    width: 100%;
-                    margin-top: 20px;
-
-                    .deleteButton {
-                        text-align:center;
-                        z-index: 1;
-                        outline: none;
-
-                        color: white;
-                        font-size: 14px;
-                        font-family: 'Cabin';
-
-                        background-color: $accent;
-                        // background-color: white;
-                        border: 2px solid $accent;
-
-                        border-radius: 5px;
-                        padding-top: 0.5em;
-                        padding-bottom: 0.5em;
-                        padding-left: 1.8em;
-                        padding-right: 1.8em;
-                        display: inline-block;
-
-                        -webkit-transition: all .25s ease;
-                        -moz-transition: all .25s ease;
-                        -ms-transition: all .25s ease;
-                        -o-transition: all .25s ease;
-                        transition: all .25s ease;
-                    }
-                    .deleteButton:hover {
-                        cursor: pointer;
-                        background-color: $accent-dark;
-                        border: 2px solid $accent-dark;
-                    }
-                    .deleteButton:active {
-                        cursor: pointer;
-                        background-color: $accent-dark;
-                        box-shadow: inset 0px 0px 2px 2px rgba(0,0,0, 0.2);
-                    }
-                }
+    .currentLobbiesCont {
+        margin-left: auto;
+        margin-right:auto;  
+        display: inline-block;
+        width: 23em;
+        // float:left;
     }
+    .lobbyOwnerCont {
+        padding: 7px;
+        margin-top: 6px;
+        background-color: blue;
+        position: absolute;
+        right:35.5%;
+        width:auto;
+        top:3em;
+        margin-top: 6px;
+        height: auto;
+        background: -webkit-linear-gradient($light-light, $light); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient($light-light, $light); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient($light-light, $light); /* For Firefox 3.6 to 15 */
+        background: linear-gradient($light-light, $light);        // background-color: black;
+        border-left: 1px solid $medium;
+        border-right: 1px solid $medium;
+        border-top: 2px solid $medium;
+        border-bottom: 2px solid $medium;
+    }    
 
-    .lobbyTitle {
-        font-size: 2.2em;
-        color: $dark;
-        width: 100%;
-
-        text-decoration: underline;
-        // border-bottom: solid 2px $
-
-        margin-top: 0.5em;
-        margin-bottom: 1em;
-    }
     .currentLobbies {
-        float: right;
         //border: 1px solid black;
         //-webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
         //-moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
         //box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.43);
-        width: 100%;
-        padding-top: 4px;
-        height:175px;
+        width: 10em;
+        left:6em;
+        // padding-top: 4px;
+        // padding-bottom: 4px;
         font-size: 16px;
-        border-spacing: 0px;
         position: relative;
+        margin-right: auto;
+        margin-left:auto;
         z-index: 1;
-        display: block;
+        display: inline-block;
         text-align: left;
+        //background-color: #FBFBFB;
+        // background-color: black;
+        // border-left: 1px solid $medium;
+        // border-right: 1px solid $medium;
+        // border-top: 2px solid $medium;
+        // border-bottom: 2px solid $medium;
+
 
     }
     .lobbyName{
         text-decoration: underline;
         color:$belize-hole;
-        background: rgba(255,255,255,.75);
+        background: rgba(255,255,255,.90);
         border-top: 1px solid rgba(0,0,0,.18);
         border-bottom: 1px solid rgba(0,0,0,.18);
-        width: 135px;
+        width: 8.77em;
         text-align: left;
-        margin-right: 20px;
-        margin-left: 15px;
-        margin-top: 5px;
-        padding: 4px;
+        margin: 4px;
+        // margin-right: 20px;
+        // margin-left: 15px;
+        // margin-top: 5px;
+        // padding: px;
         float: left;
         display:block;
         // border-radius: 3px;
@@ -111,33 +90,141 @@
         border-radius: 3px;
         background-color: #d4d4d4;
     }
-    .friendName:active {
+    .lobbyName:active {
             cursor: pointer;
             // position: relative;
             // top: 2px;
             background-color: $accent-dark;
             // box-shadow: inset 0px 0px 10px 10px rgba(0,0,0, 0.1);
     } 
+                        .deleteButton {
+                        text-align:center;
+                        z-index: 1;
+                        outline: none;
+
+                        color: white;
+                        font-size: 14px;
+                        font-family: 'Cabin';
+
+                        background-color: $accent;
+                        // background-color: white;
+                        border: 2px solid $accent;
+                        margin-top: 39px;
+                        border-radius: 5px;
+                        padding-top: 3px;
+                        padding-bottom: 3px;
+                        padding-left: 5px;
+                        padding-right: 5px;
+                        display: block;
+
+                        -webkit-transition: all .25s ease;
+                        -moz-transition: all .25s ease;
+                        -ms-transition: all .25s ease;
+                        -o-transition: all .25s ease;
+                        transition: all .25s ease;
+                    }
+                    .deleteButton:hover {
+                        cursor: pointer;
+                        background-color: $accent-dark;
+                        border: 2px solid $accent-dark;
+                    }
+                    .deleteButton:active {
+                        cursor: pointer;
+                        background-color: $accent-dark;
+                        box-shadow: inset 0px 0px 2px 2px rgba(0,0,0, 0.2);
+                    }.pageThings { 
+        .deleteWrapper {
+                    //float: right;
+                    width: 100%;
+                    margin-top: 8px;
+
+
+                }
+    }
+
+    .lobbyTitle {
+        width: 10em;
+        font-size: 2.2em;
+        color: $dark;
+        position: relative;
+        display:block;
+        margin-left: auto;
+        margin-right: auto;
+        text-decoration: underline;
+        // border-bottom: solid 2px $
+        padding-top: 20px;
+        position: relative;
+        margin-right: auto;
+        margin-left:auto;
+        z-index: 1;
+        display: inline-block;
+        text-align: center;
+        // background-color: #FBFBFB;
+        // border-left: 1px solid $medium;
+        // border-right: 1px solid $medium;
+        // border-top: 2px solid $medium;
+        // border-bottom: 2px solid $medium;
+    }
+
     .lobbyOwner {
-        position: absolute;
+        float: left;
+        display:block;
         top: 3.5em;
         text-align: right;
         right: 36%;
+        padding-left: 4px;
     }
 
     
 
     .usernameArea {
-        width: 64%;
+        width: 25em;
+        float:left;
+        margin-top: 5px;
         padding-left: 1.4em;
+
         .userTitle {
-            font-size: 1.6em;
-            text-decoration: underline;
+            padding: 5px;
+            width: 145px;
+            font-size: 1.6em;        
+            background: -webkit-linear-gradient($light-light, $light); /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient($light-light, $light); /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient($light-light, $light); /* For Firefox 3.6 to 15 */
+            background: linear-gradient($light-light, $light);        // background-color: black;
+            border-left: 1px solid $medium;
+            border-right: 1px solid $medium;
+            border-top: 2px solid $medium;
+            border-bottom: 2px solid $medium;
         }
         #userList {
-            margin-top: 6px;
+            //margin-top: 6px;
             font-size: 1.1em;
             padding-left: 0.6em;
+                    // text-decoration: underline;
+        color:$belize-hole;
+        background: rgba(255,255,255,.90);
+        border-top: 1px solid rgba(0,0,0,.18);
+        border-bottom: 1px solid rgba(0,0,0,.18);
+        width: 8.1em;
+        text-align: left;
+        margin: 4px;
+        // margin-right: 20px;
+        // margin-left: 15px;
+        // margin-top: 5px;
+        // padding: px;
+        float: left;
+        display:block;
+        // border-radius: 3px;
+        // border: 1px solid black;
+        //background-color: white;
+        //border-left: 1px solid grey;
+//          -webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.43);
+        // -moz-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.43);
+        // box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.43);
+        padding-right: 4px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        padding-left: 6px;
         }
     }
     .friendButton {
@@ -178,6 +265,7 @@
             height: 100%;
             width: 100%;
             //border-radius: 5px;
+
             background-color: #FBFBFB;
 
             word-wrap: break-word;

@@ -9,7 +9,8 @@ block content
     script.
         // gets the login data from the server (none if user doesn't exist)
         //- console.log("Trying to parse data from the server");
-        var lobbies = !{JSON.stringify(lobbies)};
+        var lobbies = !{lobbies?JSON.stringify(lobbies):"[]"};
+
         if(!{JSON.stringify(lobbyPassword)} != undefined) {
             lobbyPassword = !{JSON.stringify(lobbyPassword)};
             //- console.log("Parse success: " + loginData);
@@ -21,14 +22,26 @@ block content
     .lobbyPage
         .bodyLine
         .pageThings
-            .lobbyOwner
-            .deleteWrapper(id="delete_wrapper")
-                input.deleteButton(id="delete_id" type="submit" value="Delete Lobby" onclick="redirectToDeleteClicked()")
+            .usernameArea
+                .userTitle.
+                    General Chat
+                #userBox.chatbox
+                    ul#userList
+                    #audios-container
 
-            .voiceChatPanel
-                .lobbyTitle #{lobbyName}
+            //- .voiceChatPanel
+            .currentLobbiesCont
+                if lobbyName == NULL
+                    .lobbyTitle Public Lobbies
+                else
+                    .lobbyTitle #{lobbyName}
                 .currentLobbies
                     ul#LList
+            .lobbyOwnerCont       
+                .lobbyOwner 
+                .deleteWrapper(id="delete_wrapper")
+                input.deleteButton(id="delete_id" type="submit" value="Delete Lobby" onclick="redirectToDeleteClicked()")
+           
                 //- .joinVoiceChat(onClick="connectToVoiceChat()").
                 //-    Voice Chat
                 //- input#conference-name.inputBox(type="text" placeHolder="Insert Lobby name")
@@ -48,12 +61,7 @@ block content
                 //- #audios-container
                 //- make password
                 //- input#setup(type="button" value="Enter Password")
-            .usernameArea
-                .userTitle.
-                    General Chat
-                #userBox.chatbox
-                    ul#userList
-                    #audios-container
+
 
             .chatArea
                 //- .lobbySideBar

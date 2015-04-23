@@ -6,7 +6,6 @@ var intialName = loggedIn;
 var owner = "";
 
 
-
 if(window.location.pathname == "/lobby/" || window.location.pathname == "/lobby"){
   console.log("adding the current lobbies to the main page");
   $('#LList').empty();
@@ -54,8 +53,14 @@ $('.deleteButton').hide();
             data = JSON.parse(data);
             // console.log("OWNER is: " + data.value);
             owner = data.value;
-            $('.lobbyOwner').html("Lobby Owner: " + '<a href="/users/'+owner+'">' + owner + "</a>");
-            
+                console.log(owner);
+    console.log(owner+"DER");
+    console.log(owner);
+    console.log(owner);
+
+            if(owner != "None"){
+              $('.lobbyOwner').html("Lobby Owner:" + '<br>' + '<a text-decoration= underline; href="/users/'+owner+'">' + owner + "</a>");
+            }
             //Pascal 04/22/15 if user is not owner of lobby, hide delete button
             if (owner != loginData || url == "/lobby") {
               console.log("testing!!!");
@@ -108,8 +113,14 @@ if (lobbyPassword != ".") {
     // add the lobby owner
     // console.log("The lobby owner is: " + owner);
     // $('.pageThings').append($('<li class="lobbyOwner"><a href ="/users/'+owner+'">'+"Owner: " + owner+'</a></li>'));
-    $('.lobbyOwner').html("Lobby Owner: " + '<a href="/users/'+owner+'">' + owner + "</a>");
-
+    console.log(owner);
+    console.log(owner);
+    console.log(owner);
+    console.log(owner);
+    console.log(owner);
+    if(owner != "None"){
+      $('.lobbyOwner').html("Lobby Owner:" + '<br>' +'<a text-decoration= underline; href="/users/'+owner+'">' + owner + "</a>");
+    }
     for(var i = 0; i < msg.num; i++){
       // console.log("User " + msg.text[i] + " added");
       if(msg.text[i] != "" && msg.text[i] != undefined && nameList.indexOf(msg.text[i]) == -1){
