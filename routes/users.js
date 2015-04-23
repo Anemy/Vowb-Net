@@ -243,8 +243,13 @@ router.get('/*', function(req, res, next) {
                 } else {
                     db.getFriends(dataObject.username,function(friends_result){
                         var friendsAvatars = [];
-                        for( var i = 0; i < friends_result.length; i++ )
+                        dataObject.friends = [];
+                        for( var i = 0; i < friends_result.length; i++ ) {
+                            if( !friends_result[i].avatar_URL )
+                                friends_result[i].avatar_URL = "/images/profile/chicken.png";
                             friendsAvatars.push(friends_result[i].avatar_URL);
+                            dataObject.friends.push(friends_result[i].username);
+                        }
                         console.log(JSON.stringify(friendsAvatars));
                         dataObject.friendsAvatars = friendsAvatars;
                         dataObject.isFriend = false;
