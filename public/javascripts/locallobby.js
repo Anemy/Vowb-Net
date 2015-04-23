@@ -11,7 +11,7 @@ if(window.location.pathname == "/lobby/" || window.location.pathname == "/lobby"
   $('#LList').empty();
   if(lobbies != null){
     for(var i = 0; i < lobbies.length;i++){
-        $('#LList').append('<li class="lobbyName" id="lobby['+i+']"><a href ="/lobby/'+lobbies[i]+'">'+lobbies[i]+'</a></li>');
+        $('#LList').append('<a href ="/lobby/'+lobbies[i]+'"><li class="lobbyName" id="lobby['+i+']">'+lobbies[i]+'</li></a>');
         console.log(lobbies[i]);
     }
   }
