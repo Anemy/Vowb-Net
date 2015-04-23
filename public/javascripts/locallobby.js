@@ -3,7 +3,7 @@
 var socket = io();
 // logged in is a varaible in login.js
 var intialName = loggedIn;
-var owner = "";
+var owner;
 
 
 if(window.location.pathname == "/lobby/" || window.location.pathname == "/lobby"){
@@ -53,11 +53,6 @@ $('.deleteButton').hide();
             data = JSON.parse(data);
             // console.log("OWNER is: " + data.value);
             owner = data.value;
-                console.log(owner);
-    console.log(owner+"DER");
-    console.log(owner);
-    console.log(owner);
-
             if(owner != "None"){
               $('.lobbyOwner').html("Lobby Owner:" + '<br>' + '<a text-decoration= underline; href="/users/'+owner+'">' + owner + "</a>");
             }
@@ -130,11 +125,7 @@ if (lobbyPassword != ".") {
     // add the lobby owner
     // console.log("The lobby owner is: " + owner);
     // $('.pageThings').append($('<li class="lobbyOwner"><a href ="/users/'+owner+'">'+"Owner: " + owner+'</a></li>'));
-    console.log(owner);
-    console.log(owner);
-    console.log(owner);
-    console.log(owner);
-    console.log(owner);
+
     if(owner != "None"){
       $('.lobbyOwner').html("Lobby Owner:" + '<br>' +'<a text-decoration= underline; href="/users/'+owner+'">' + owner + "</a>");
     }
@@ -144,10 +135,17 @@ if (lobbyPassword != ".") {
           nameList[i] = msg.text[i];
           if(msg.text[i].indexOf("User") == 0) {
             $('#userList').append($('<li class="userMessage">'+"- " + msg.text[i]+'</li>'));
-          }
+          }//if we wanted to add color style="background-color:blue;"
           else {
-            $('#userList').append($('<li class="userMessage"><a href ="/users/'+msg.text[i]+'">'+"- " + msg.text[i]+'</a></li>'));
-            // if(loggedIn) {
+            console.log("loginDAta:" +msg.text[i]);
+            console.log("owner:" +owner);
+            if(owner == msg.text[i]){
+              $('#userList').append($('<a href ="/users/'+msg.text[i]+'"><li  class="userMessage">'+"- "+'<img class="bannerIMG" id="bannerIMG" src="/images/profile/rank1.png" style="width:1em;height:1em">' + msg.text[i]+'</li></a>'));
+
+            }
+            else{
+              $('#userList').append($('<a href ="/users/'+msg.text[i]+'"><li  class="userMessage">'+"- " + msg.text[i]+'</li></a>'));
+            }// if(loggedIn) {
             //   $('#userList').append($('<div class="friendButton addButton"></div>'));
             // }
           }
