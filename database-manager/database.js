@@ -408,6 +408,50 @@ db.search = function(tablename, searchParams, callback) {
     });
 }
 
+db.remove = function(tablename, searchParams, callback) {
+    /*if( !DUMMY_DATABASE[tablename] )
+        DUMMY_DATABASE[tablename] = [];
+    var dummyResults = [];
+    for(var i = 0; i < DUMMY_DATABASE[tablename].length; i++ ) {
+        var match = true;
+        for (var column in searchParams) {
+            if (searchParams.hasOwnProperty(column)) {
+                if( DUMMY_DATABASE[tablename][i][column] != searchParams[column] ) {
+                    match = false;
+                }
+            }
+        }
+        if( match )
+            dummyResults.push(DUMMY_DATABASE[tablename][i]);
+    }
+    console.log("dummy results: " + JSON.stringify(dummyResults));
+    callback(dummyResults);
+    return;*/
+    var queryString = "DELETE FROM "+tablename+" WHERE ";
+    var i = 0;
+    var itemIndex = 1;
+    var values = [];//tablename];
+    for (var column in searchParams) {
+        if (searchParams.hasOwnProperty(column)) {
+            if( i > 0 )
+                queryString += " AND ";
+            queryString += column + "=$" + (itemIndex++);
+            values.push(searchParams[column]);
+            i++;
+        }
+    }
+    //console.log("search: " + queryString);
+    db.query(queryString, values, function(err, result) {
+        if( err ) {
+            //console.log("Database .search ERROR: " + err.toString());
+            throw err;
+        } else {
+            //console.log("Database .search: No error");
+            callback(result);
+        }
+    });
+}
+
 
 /*
  *  Another generic database usage function.
