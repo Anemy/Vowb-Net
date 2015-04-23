@@ -28,8 +28,20 @@ router.get('/', function(req, res, next) {
     var loginData = getLoginData(req);
 
     var password = ".";
-
-    res.render('lobby', { title: 'Vowb.net Voice Chat Lobby' , lobbyName: req.params[0],  name: 'Mystxc', login: loginData, lobbyPassword: password});
+    
+    db.getPublicLobbies(function(results) {
+        if( results.length ) {
+            var titles = [];
+            for( var i = 0; i < results.length; i++ ) {
+                titles.push(results[i].lobby_title);
+            }
+            res.render('lobby', { title: 'Vowb.net Voice Chat Lobby' , lobbyName: req.params[0],  name: 'Mystxc', login: loginData, lobbyPassword: password, lobbies: titles });
+            //res.render('index', { title: 'Vowb.net', login: loginData, lobbies: titles });
+        } else
+            res.render('lobby', { title: 'Vowb.net Voice Chat Lobby' , lobbyName: req.params[0],  name: 'Mystxc', login: loginData, lobbyPassword: password, lobbies: [] });
+            //res.render('index', { title: 'Vowb.net', login: loginData, lobbies: [] });
+    });
+    
 });
 
 
