@@ -6,6 +6,7 @@ block content
 		script.
 			var username = "!{username}";
 			var isFriend = !{isFriend};
+			var friendsAvatars = !{JSON.stringify(friendsAvatars)};
 			var friends = !{JSON.stringify(friends)};
 			var ifonline = !{online};
 		script(defer="defer" src="/javascripts/profile.js")

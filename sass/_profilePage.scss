@@ -615,7 +615,19 @@
 				z-index: 1;
 				display: block;
 				text-align: left;
-
+					
+					.friendsAvatars{
+						border-radius: 5px;
+				        border-left: 1px solid $medium;
+				        border-right: 1px solid $medium;        
+				        border-top: 1px solid $medium;
+				        border-bottom: 1px solid $medium;
+				        width:2em;
+				        height:2em;
+					}
+					.FLNAME {
+						font-size: 20px;
+					}
 
 					.friend{
 						text-decoration: underline;

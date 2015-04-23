@@ -143,7 +143,7 @@ $(document).ready(function() {
     $('#FList').empty();
     if(friends != null){
         for(var i = 0; i < friends.length;i++){
-            $('#FList').append('<li class="friend" id="friend['+i+']"><img src="'friendsAvatars[i]'"><a href ="/users/'+friends[i]+'">'+friends[i]+'</a></li>');
+            $('#FList').append('<a href ="/users/'+friends[i]+'"><li class="friend" id="friend['+i+']"><img class = "friendsAvatars" src="'+friendsAvatars[i]+'"><span class = "FLNAME">'+friends[i]+'</span></li></a>');
             console.log(friends[i]);
         }
     }
