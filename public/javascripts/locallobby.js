@@ -80,7 +80,24 @@ $('.deleteButton').hide();
 
 //event handler for delete lobby button
 var redirectToDeleteClicked = function() {
-  
+  $.ajax({
+        url: "/deleteLobby",
+        type: "POST",
+        data: {
+            lobbyName: chatToConnect
+        },
+        success: function(data){
+            $("body").fadeOut(1000,function(){
+              window.location.href = "/";
+            })
+
+        },
+        error: function(data){
+            $("body").fadeOut(1000,function(){
+              window.location.href = "/";
+            })
+        }
+    });
 }
 
 if (lobbyPassword != ".") {

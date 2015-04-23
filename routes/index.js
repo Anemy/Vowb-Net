@@ -288,6 +288,14 @@ router.post('/createlobby', function(req, res) {
     
 });
 
+//Pascal 04/22/14 delete lobby
+router.post('/deleteLobby', function(req, res) {
+    db.remove(db.lobbyDB, {
+        lobby_title: req.body.lobbyName
+    });
+    res.end(JSON.stringify({value: "success"}));
+});
+
 router.post('/logout', function(req, res) {
     // VV This ends the user's login session if there is one.
     if(req.session != undefined) {
