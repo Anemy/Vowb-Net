@@ -21,8 +21,18 @@ var getLoginData = function (req) {
 /* GET home page. */
 router.get('/', function (req, res, next) {
     var loginData = getLoginData(req);
-
-    res.render('index', { title: 'Vowb.net', login: loginData });
+    
+    db.getPublicLobbies(function(results) {
+        if( results.length ) {
+            var titles = [];
+            for( var i = 0; i < results.length; i++ ) {
+                titles.push(results[i].lobby_title);
+            }
+            res.render('index', { title: 'Vowb.net', login: loginData, lobbies: titles });
+        } else
+            res.render('index', { title: 'Vowb.net', login: loginData, lobbies: [] });
+    });
+    
 });
 //tmp page
 // router.get('/profile', function(req, res, next) { //tmp
@@ -103,10 +113,12 @@ router.post('/edit-profile', function(req, res, next) {
 router.post('/get-avatar',function(req, res, next) {
     db.search(db.userDB, {username: req.body.username}, function(result) {
         if( result[0] ) {
+            if( !result[0].avatar_URL )
+                res.status(400).end(JSON.stringify({ value: "No image" }));
             res.end(JSON.stringify({ value: result[0].avatar_URL }));
         } else {
             // console.log("Error: credentials and profile edits did not match: "+JSON.stringify(searchParams)+".");
-            res.end(JSON.stringify({ value: "Error" }));
+            res.status(400).end(JSON.stringify({ value: "Error" }));
         }
     });
 });

@@ -170,7 +170,7 @@ router.get('/*', function(req, res, next) {
                         security_level_self: true
                     };
                 } else if ( dataObject.security_level_friends ) {
-                    if( !dataObject.friends || (dataObject.friends.indexOf(loginData) == -1 && req.params[0] != loginData) ) {
+                    if( (!dataObject.friends || dataObject.friends.indexOf(loginData) == -1) && req.params[0] != loginData ) {
                         dataObject = {
                             description: "User information not visible.",
                             full_name: "Not available",
