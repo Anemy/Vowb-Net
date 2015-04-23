@@ -585,7 +585,9 @@ table {
           width: 2em;
           height: 2em; }
         .profilePage .rightPage .friendsListPane .friendsList .FLNAME {
-          font-size: 20px; }
+          position: relative;
+          bottom: 11px;
+          left: 5px; }
         .profilePage .rightPage .friendsListPane .friendsList .friend {
           text-decoration: underline;
           color: #2980B9;
@@ -593,6 +595,7 @@ table {
           border-top: 1px solid rgba(0, 0, 0, 0.18);
           border-bottom: 1px solid rgba(0, 0, 0, 0.18);
           width: 135px;
+          height: 34px;
           text-align: left;
           margin-right: 20px;
           margin-left: 15px;

@@ -626,7 +626,9 @@
 				        height:2em;
 					}
 					.FLNAME {
-						font-size: 20px;
+						position:relative;
+						bottom: 11px;
+  						left: 5px;	
 					}
 
 					.friend{
@@ -636,6 +638,7 @@
 						border-top: 1px solid rgba(0,0,0,.18);
 						border-bottom: 1px solid rgba(0,0,0,.18);
 						width: 135px;
+						height:34px;
 						text-align: left;
 						margin-right: 20px;
 						margin-left: 15px;
