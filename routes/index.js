@@ -22,17 +22,7 @@ var getLoginData = function (req) {
 router.get('/', function (req, res, next) {
     var loginData = getLoginData(req);
     
-    db.getPublicLobbies(function(results) {
-        if( results.length ) {
-            var titles = [];
-            for( var i = 0; i < results.length; i++ ) {
-                titles.push(results[i].lobby_title);
-            }
-            res.render('index', { title: 'Vowb.net', login: loginData, lobbies: titles });
-        } else
-            res.render('index', { title: 'Vowb.net', login: loginData, lobbies: [] });
-    });
-    
+    res.render('index', { title: 'Vowb.net', login: loginData });
 });
 //tmp page
 // router.get('/profile', function(req, res, next) { //tmp
