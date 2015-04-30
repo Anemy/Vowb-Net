@@ -3,6 +3,7 @@
 var express = require('express');
 var db = require("../database-manager/database");
 var router = express.Router();
+var lobbycountlimit = 5;
 
 // used for session storing. Returns JSON of log info or nothing if not signed in 
 var getLoginData = function (req) {
@@ -156,7 +157,8 @@ router.post('/signup', function(req, res) {
             db.add(db.userDB, {
                 username: req.body.username,
                 email_account: req.body.email,
-                password_hash: db.hashPassword(req.body.password)
+                password_hash: db.hashPassword(req.body.password),
+                lobby_count: 0
             },
             function(userCreated) {
                 // This is the onCreate callback, called when it finishes
