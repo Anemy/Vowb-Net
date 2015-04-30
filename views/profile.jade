@@ -22,9 +22,12 @@ block content
 				.p Current Lobby:
 				if current_lobby == "OFFLINE"
 					.pCurrLobbyOFF OFFLINE
+				else if current_lobby == "lobby"
+					a(id="pCurrLobby" class="pCurrLobby" href='/lobby').
+						!{decodeURI(current_lobby)}
 				else
 					a(id="pCurrLobby" class="pCurrLobby" href='/lobby/'+current_lobby).
-						!{current_lobby}
+						!{decodeURI(current_lobby)}
 			.interactionBar
 				a(id="addEditFriend" class ="addEditFriend" onclick="friendButtonClicked()" href="#").
 					Add to Friends List <br>
