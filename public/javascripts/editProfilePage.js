@@ -30,7 +30,7 @@ $(document).ready(function() {
   //When image is clicked it loads and image a user chooses, uploads it then saves the URL
   $('.imgContainerOverlay').click(function(){
     filepicker.setKey("AxXSSg71vQROpwHyvp1Iaz");
-    filepicker.pickAndStore({mimetype:"image/*"},{},
+    filepicker.pickAndStore({mimetype:"image/*", maxSize: 1024*1024},{},
       function(InkBlobs){
         //console.log(JSON.stringify(InkBlobs));
         var uploadedPicURL = InkBlobs[0].url;
