@@ -139,13 +139,21 @@ if (lobbyPassword != ".") {
           else {
             // console.log("loginDAta:" +msg.text[i]);
             // console.log("owner:" +owner);
-            if(owner == msg.text[i]){
-              $('#userList').append($('<a href ="/users/'+msg.text[i]+'"><li  class="userName">'+"- "+'<img class="bannerIMG" id="bannerIMG" src="/images/profile/rank1.png" style="width:1em;height:1em">' + msg.text[i]+'</li></a>'));
-            }
-            else{
-              $('#userList').append($('<a href ="/users/'+msg.text[i]+'"><li  class="userName">'+"- " + msg.text[i]+'</li></a>'));
-            }
+            // if(owner == msg.text[i]){
+            //   $('#userList').append($('<a href ="/users/'+msg.text[i]+'"><li  class="userName">'+"- "+'<img class="bannerIMG" id="bannerIMG" src="/images/profile/rank1.png" style="width:1em;height:1em">' + msg.text[i]+'</li></a>'));
+            // }
+            // else{
+            //   $('#userList').append($('<a href ="/users/'+msg.text[i]+'"><li  class="userName">'+"- " + msg.text[i]+'</li></a>'));
+            // }
             // console.log("Msg text i: " + msg.text[i] + " loggedin: "+loginData);
+            if(msg.text[i] != 'me' && msg.text[i] != 'vv'){
+              $('#userList').append($('<a href ="/users/'+msg.text[i]+'"><li  class="userName">'+"- "+'<img class="bannerIMG" id="bannerIMG" src="/images/profile/rank3.png" style="width:1em;height:1em">' + msg.text[i]+'</li></a>'));
+            }
+            else {
+              $('#userList').append($('<a href ="/users/'+msg.text[i]+'"><li  class="userName">'+"- "+'<img class="bannerIMG" id="bannerIMG" src="/images/profile/rank2.png" style="width:1em;height:1em">' + msg.text[i]+'</li></a>'));
+            }
+
+
             if(loggedIn && msg.text[i] != loginData) {
               $('#userList').append($('<div id="' + msg.text[i]+'" class="friendButton addButton"></div>'));
             }
