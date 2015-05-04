@@ -304,7 +304,7 @@ db.add = function(tablename, data, onCreate) {
 }
 
 db.getFriends = function(user, callback) {
-    db.query("SELECT username,\"avatar_URL\" FROM users,profiles WHERE username=ANY(friends) AND profile_id=(SELECT profile_pointer FROM users WHERE username=$1) order by username;",[user],function(err, result) {
+    db.query("SELECT username,\"avatar_URL\",online FROM users,profiles WHERE username=ANY(friends) AND profile_id=(SELECT profile_pointer FROM users WHERE username=$1) order by username;",[user],function(err, result) {
         if( err ) {
             //console.log("Database .add ERROR: " + err.toString());
             throw err;

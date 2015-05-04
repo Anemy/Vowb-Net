@@ -187,6 +187,7 @@ router.get('/*', function(req, res, next) {
                 if( !dataObject.friends ) {
                     dataObject.friends = [];
                     dataObject.friendsAvatars = [];
+                    dataObject.friendsOnline = [];
                     dataObject.isFriend = false;
                     db.search(db.userDB, { username: loginData }, function(login_result) {
                         if( login_result.length != 0 ) {
@@ -243,15 +244,18 @@ router.get('/*', function(req, res, next) {
                 } else {
                     db.getFriends(dataObject.username,function(friends_result){
                         var friendsAvatars = [];
+                        var friendsOnline = [];
                         dataObject.friends = [];
                         for( var i = 0; i < friends_result.length; i++ ) {
                             if( !friends_result[i].avatar_URL )
                                 friends_result[i].avatar_URL = "/images/profile/chicken.png";
                             friendsAvatars.push(friends_result[i].avatar_URL);
                             dataObject.friends.push(friends_result[i].username);
+                            friendsOnline.push(friends_result[i].online);
                         }
                         console.log(JSON.stringify(friendsAvatars));
                         dataObject.friendsAvatars = friendsAvatars;
+                        dataObject.friendsOnline = friendsOnline;
                         dataObject.isFriend = false;
                         db.search(db.userDB, { username: loginData }, function(login_result) {
                             if( login_result.length != 0 ) {
