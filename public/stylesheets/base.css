@@ -1578,6 +1578,28 @@ table {
     border-right: 1px solid #BDC3C7;
     border-top: 2px solid #BDC3C7;
     border-bottom: 2px solid #BDC3C7; }
+  .lobbyPage .userName {
+    display: inline-block; }
+  .lobbyPage .addButton {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: url(/images/profile/add.png) no-repeat;
+    background-size: 12px 12px;
+    background-position: 0px 0px;
+    margin-left: 4px; }
+  .lobbyPage .addButton:hover {
+    cursor: pointer; }
+  .lobbyPage .removeButton {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: url(/images/profile/delete.png) no-repeat;
+    background-size: 12px 12px;
+    background-position: 0px 0px;
+    margin-left: 4px; }
+  .lobbyPage .removeButton:hover {
+    cursor: pointer; }
   .lobbyPage .currentLobbies {
     width: 10em;
     left: 6em;
@@ -1694,13 +1716,6 @@ table {
       padding-top: 4px;
       padding-bottom: 4px;
       padding-left: 6px; }
-  .lobbyPage .friendButton {
-    background-size: 10px 10px;
-    background-position: 2px 1px; }
-    .lobbyPage .friendButton .addButton {
-      background: url(/images/profile/add.png) no-repeat; }
-    .lobbyPage .friendButton .removeButton {
-      background: url(/images/profile/delete.png) no-repeat; }
   .lobbyPage .userArea {
     position: absolute;
     height: 35%;
