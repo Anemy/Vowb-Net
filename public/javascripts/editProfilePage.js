@@ -27,10 +27,10 @@ $(document).ready(function() {
         window.location.pathname = "404";
     }
 
-  //When image is clicked it loads and image a user chooses, uploads it then saves the URL
+  //When image is clicked it loads and image a user chooses, uploads it then saves the URL. MaxSize = 2MB
   $('.imgContainerOverlay').click(function(){
     filepicker.setKey("AxXSSg71vQROpwHyvp1Iaz");
-    filepicker.pickAndStore({mimetype:"image/*", maxSize: 1024*1024},{},
+    filepicker.pickAndStore({mimetype:"image/*", maxSize: 1024*1024*2},{},
       function(InkBlobs){
         //console.log(JSON.stringify(InkBlobs));
         var uploadedPicURL = InkBlobs[0].url;
