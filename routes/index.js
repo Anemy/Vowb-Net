@@ -3,7 +3,9 @@
 var express = require('express');
 var db = require("../database-manager/database");
 var router = express.Router();
-var lobbycountlimit = 5;
+
+//number of lobbies users can create
+var lobbycountlimit = 2;
 
 // used for session storing. Returns JSON of log info or nothing if not signed in 
 var getLoginData = function (req) {
@@ -248,37 +250,86 @@ router.post('/createlobby', function(req, res) {
    
     // req.session.username = req.body.username;
 
-
-    var searchParams = {
-        lobby_title: req.body.lobbyName
+    //Pascal 04/30/2015 check lobby_count limit
+    var searchParamsLimit = {
+        username: req.session.username
     };
 
-    db.search(db.lobbyDB, searchParams, function(results) {
-        if (results.length == 0) {
-            // console.log("Ready to add new lobby");
-            // console.log("username is " + req.session.username);
-
-            if (req.body.password == null || req.body.password == "") {
-                db.add(db.lobbyDB, {
-                    lobby_title: req.body.lobbyName,
-                    password: '.',
-                    owner: req.session.username
-                });
-            } else {
-                db.add(db.lobbyDB, {
-                    lobby_title: req.body.lobbyName,
-                    password: req.body.password,//db.hashPassword(req.body.password),
-                    owner: req.session.username
-                });
-            }
-            // console.log("Successful!")
-            res.end(JSON.stringify({value: "Success"}));
-        } else {
-            // console.log("Lobby already exists");
-            res.end(JSON.stringify({value: "Error"}));
+    db.search(db.userDB, searchParamsLimit, function(user_results) {
+        var userlobby_count = user_results[0].lobby_count;
+        if (!userlobby_count) {
+            userlobby_count = 0;
         }
-        
+        if (userlobby_count >= lobbycountlimit) {
+            res.end(JSON.stringify({value: "Error"}));
+            return;
+        } else {
+            var searchParams = {
+                lobby_title: req.body.lobbyName
+            };
+
+            db.search(db.lobbyDB, searchParams, function(results) {
+                if (results.length == 0) {
+                    // console.log("Ready to add new lobby");
+                    // console.log("username is " + req.session.username);
+
+                    if (req.body.password == null || req.body.password == "") {
+                        db.add(db.lobbyDB, {
+                            lobby_title: req.body.lobbyName,
+                            password: '.',
+                            owner: req.session.username
+                        });
+                    } else {
+                        db.add(db.lobbyDB, {
+                            lobby_title: req.body.lobbyName,
+                            password: req.body.password,//db.hashPassword(req.body.password),
+                            owner: req.session.username
+                        });
+                    }
+                    db.update(db.userDB, {username: req.session.username}, {lobby_count: userlobby_count + 1});
+                    // console.log("Successful!")
+                    res.end(JSON.stringify({value: "Success"}));
+                } else {
+                    // console.log("Lobby already exists");
+                    res.end(JSON.stringify({value: "Error"}));
+                }
+                
+            });
+        }
     });
+
+
+    // var searchParams = {
+    //     lobby_title: req.body.lobbyName
+    // };
+
+    // db.search(db.lobbyDB, searchParams, function(results) {
+    //     if (results.length == 0) {
+    //         // console.log("Ready to add new lobby");
+    //         // console.log("username is " + req.session.username);
+
+    //         if (req.body.password == null || req.body.password == "") {
+    //             db.add(db.lobbyDB, {
+    //                 lobby_title: req.body.lobbyName,
+    //                 password: '.',
+    //                 owner: req.session.username
+    //             });
+    //         } else {
+    //             db.add(db.lobbyDB, {
+    //                 lobby_title: req.body.lobbyName,
+    //                 password: req.body.password,//db.hashPassword(req.body.password),
+    //                 owner: req.session.username
+    //             });
+    //         }
+    //         // console.log("Successful!")
+    //         res.end(JSON.stringify({value: "Success"}));
+    //     } else {
+    //         // console.log("Lobby already exists");
+    //         res.end(JSON.stringify({value: "Error"}));
+    //     }
+        
+    // });
+
     // if (req.session.username == null) {
     //     console.log("Not logged in");
     //     res.end(JSON.stringify({value: "Error"}));
@@ -295,6 +346,19 @@ router.post('/deleteLobby', function(req, res) {
     db.remove(db.lobbyDB, {
         lobby_title: req.body.lobbyName
     });
+
+    //Pascal 04/30/2015 lower lobby_count when deleting
+    var searchParams = {
+        username: req.session.username
+    };
+
+    db.search(db.userDB, searchParams, function(user_results) {
+        var userlobby_count = user_results[0].lobby_count;
+        db.update(db.userDB, {username: req.session.username}, {lobby_count: userlobby_count - 1});
+
+    });
+
+
     res.end(JSON.stringify({value: "success"}));
 });
 

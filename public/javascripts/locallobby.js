@@ -36,7 +36,7 @@ $('.deleteButton').hide();
     else {
       swal("Oops...", "Password is incorrect.", "error");
     }
-  },
+  }, 
   error: function(data){
       swal("Oops...", "Password is incorrect.", "error");*/
     var url = window.location.pathname;
@@ -58,7 +58,7 @@ $('.deleteButton').hide();
             }
             //Pascal 04/22/15 if user is not owner of lobby, hide delete button
             if (owner != loginData || url == "/lobby") {
-              console.log("testing!!!");
+              // console.log("testing!!!");
               $('.deleteButton').hide();
             } else {
               $('.deleteButton').show();
@@ -134,23 +134,84 @@ if (lobbyPassword != ".") {
       if(msg.text[i] != "" && msg.text[i] != undefined && nameList.indexOf(msg.text[i]) == -1){
           nameList[i] = msg.text[i];
           if(msg.text[i].indexOf("User") == 0) {
-            $('#userList').append($('<li class="userMessage">'+"- " + msg.text[i]+'</li>'));
+            $('#userList').append($('<li class="userName">'+"- " + msg.text[i]+'</li>'));
           }//if we wanted to add color style="background-color:blue;"
           else {
-            console.log("loginDAta:" +msg.text[i]);
-            console.log("owner:" +owner);
-            if(owner == msg.text[i]){
-              $('#userList').append($('<a href ="/users/'+msg.text[i]+'"><li  class="userMessage">'+"- "+'<img class="bannerIMG" id="bannerIMG" src="/images/profile/rank1.png" style="width:1em;height:1em">' + msg.text[i]+'</li></a>'));
-
-            }
-            else{
-              $('#userList').append($('<a href ="/users/'+msg.text[i]+'"><li  class="userMessage">'+"- " + msg.text[i]+'</li></a>'));
-            }// if(loggedIn) {
-            //   $('#userList').append($('<div class="friendButton addButton"></div>'));
+            // console.log("loginDAta:" +msg.text[i]);
+            // console.log("owner:" +owner);
+            // if(owner == msg.text[i]){
+            //   $('#userList').append($('<a href ="/users/'+msg.text[i]+'"><li  class="userName">'+"- "+'<img class="bannerIMG" id="bannerIMG" src="/images/profile/rank1.png" style="width:1em;height:1em">' + msg.text[i]+'</li></a>'));
             // }
+            // else{
+            //   $('#userList').append($('<a href ="/users/'+msg.text[i]+'"><li  class="userName">'+"- " + msg.text[i]+'</li></a>'));
+            // }
+            // console.log("Msg text i: " + msg.text[i] + " loggedin: "+loginData);
+            if(msg.text[i] != 'me' && msg.text[i] != 'vv'){
+              $('#userList').append($('<a href ="/users/'+msg.text[i]+'"><li  class="userName">'+"- "+'<img class="bannerIMG" id="bannerIMG" src="/images/profile/rank3.png" style="width:1em;height:1em">' + msg.text[i]+'</li></a>'));
+            }
+            else {
+              $('#userList').append($('<a href ="/users/'+msg.text[i]+'"><li  class="userName">'+"- "+'<img class="bannerIMG" id="bannerIMG" src="/images/profile/rank2.png" style="width:1em;height:1em">' + msg.text[i]+'</li></a>'));
+            }
+
+
+            if(loggedIn && msg.text[i] != loginData) {
+              $('#userList').append($('<div id="' + msg.text[i]+'" class="friendButton addButton"></div>'));
+            }
           }
+          $('#userList').append($('<div class="lineSpacer"/>'));
       }
     }
+
+    $('.friendButton').click(function(event) {
+      var userToAddToFriends = $(this).attr('id');
+      if($(this).hasClass('addButton')) {
+        $(this).removeClass('addButton');
+        $(this).addClass('removeButton');
+
+        // make the request
+        $.ajax({
+            url:"/users/addFriend",
+            type: "POST",
+            data: {
+                addFriend : $(this).attr('id')
+            },
+            success: function(data){ 
+                // console.log("Successfully added friend");
+                var alertTitle = "Added ";
+                alertTitle = alertTitle.concat(userToAddToFriends);
+                alertTitle = alertTitle.concat(" to your Friends List");
+                swal({title:"Success!", text: alertTitle, type:"success"});
+            },
+            error: function(data){
+                // console.log(data.responseText);
+                swal({title: "Error",text: data.responseText , type:"error"});
+            }
+        });
+      }
+      else {
+        $(this).removeClass('removeButton');
+        $(this).addClass('addButton');
+
+        $.ajax({
+            url:"/users/removeFriend",
+            type: "POST",
+            data: {
+                removeFriend : $(this).attr('id')
+            },
+            success: function(data){
+                //console.log("Successfully removed friend");
+                var alertTitle = "Remove ";
+                alertTitle = alertTitle.concat(userToAddToFriends);
+                alertTitle = alertTitle.concat(" to your Friends List");
+            },
+            error: function(data){
+                //console.log(data.responseText);
+                swal({title: "Error",text: data.responseText , type:"error"});
+            }
+        });
+      }
+    });
+
   });
 
   socket.on('server message', function(msg){
