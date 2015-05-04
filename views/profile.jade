@@ -70,7 +70,7 @@ block content
 						if time < 60
 							.usertimeOnline !{time} minutes
 						else
-							.usertimeOnline !{time/60} hours
+							.usertimeOnline !{(Math.floor((time*10)/(60))/10)} hours
 				.userAboutR
 					.ABOUTME About Me
 					.aboutMeDesc.
