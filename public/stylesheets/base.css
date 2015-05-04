@@ -576,6 +576,9 @@ table {
         z-index: 1;
         display: block;
         text-align: left; }
+        .profilePage .rightPage .friendsListPane .friendsList .friendsOnline {
+          margin-top: 9px;
+          float: right; }
         .profilePage .rightPage .friendsListPane .friendsList .friendsAvatars {
           border-radius: 5px;
           border-left: 1px solid #BDC3C7;

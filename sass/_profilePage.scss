@@ -615,7 +615,10 @@
 				z-index: 1;
 				display: block;
 				text-align: left;
-					
+					.friendsOnline{
+						margin-top: 9px;
+						float:right; 
+					}
 					.friendsAvatars{
 						border-radius: 5px;
 				        border-left: 1px solid $medium;
