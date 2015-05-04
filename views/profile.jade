@@ -43,7 +43,13 @@ block content
 		.centerPane
 			.userAboutHeader
 				.userName !{username} 
-				img(class="userRank" src="/images/profile/rank1.png") 
+				if time > 6000
+					img(class="userRank" src="/images/profile/rank1.png") 				
+				else if time > 3000
+					img(class="userRank" src="/images/profile/rank2.png") 
+				else
+					img(class="userRank" src="/images/profile/rank3.png") 
+
 				.userStatus / !{last_online}
 			.userAbout
 				.userAboutL
@@ -61,7 +67,10 @@ block content
 					.postCount Posts:
 						.userpostCount 0
 					.timeOnline Time Online:
-						.usertimeOnline !{time} minutes
+						if time < 60
+							.usertimeOnline !{time} minutes
+						else
+							.usertimeOnline !{time/60} hours
 				.userAboutR
 					.ABOUTME About Me
 					.aboutMeDesc.
